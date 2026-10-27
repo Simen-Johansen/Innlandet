@@ -16,3 +16,6 @@ __pycache__/
 node_modules/
 .DS_Store
 .claude/settings.local.json
+
+# Cleaned grant pages: held back until person names are removed (docs/prompt-log.md, 2026-10-27)
+fixtures/grants/*.md

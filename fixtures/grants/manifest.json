@@ -1,0 +1,1168 @@
+{
+  "pages": [
+    {
+      "source": "fylke-34",
+      "id": "13998",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/regionale-forskningsfond.13998.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-13998.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "14057",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-hoyere-yrkesfaglig-utdanning.14057.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-14057.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "16690",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/klimasats-stotte-til-klimasatsing-i-kommunene.16690.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-16690.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "16834",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-16834.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "16841",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-bygninger-fra-middelalder.16841.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-16841.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "16843",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-istandsetting-av-freda-bygninger-og-anlegg.16843.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-16843.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "17009",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/utviklingsmidler-i-landbruket.17009.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-17009.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "17894",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-vilttiltak.17894.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-17894.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "18103",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/spillemidler.18103.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-18103.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "18476",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskuddsmidler-til-etablering-og-videreutvikling-av-frisklivs-larings-og-mestringstilbud.18476.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-18476.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "18509",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-kulturarenaer-i-innlandet.18509.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-18509.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19403",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stotteordning-for-reiselivsprosjekter-2026.19403.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19403.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19655",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/plan-for-friluftslivets-ferdselsarer.19655.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19655.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19786",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/den-kulturelle-spaserstokken.19786.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19786.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19843",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/bedriftsintern-opplaring-bio.19843.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19843.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19953",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-brannsikring-av-tette-trehusomrader.19953.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19953.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19954",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-forundersokelse-av-fredete-bygninger-og-anlegg.19954.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19954.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19955",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-arkitektfaglig-bistand-for-fredete-bygninger-og-anlegg.19955.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19955.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "19956",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-strakstiltak-sikringstiltak-pa-fredete-bygninger-og-anlegg.19956.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-19956.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "22003",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-skolevegtiltak-pa-kommunale-veger.22003.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-22003.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "22176",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-fylkesomspennende-pensjonistforeninger-i-innlandet.22176.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-22176.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "22177",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-organisasjoner-for-mennesker-med-nedsatt-funksjonsevne-i-innlandet.22177.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-22177.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "23015",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/enkelt-a-velge-sunt-fiskesprellaktivitet.23015.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-23015.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "23016",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-arbeid-med-folkehelse-og-livskvalitet-i-innlandet.23016.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-23016.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "23422",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ekstratilskudd-for-oppfolging-av-larlinger-og-larekandidater.23422.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-23422.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "24601",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/vassdragsmidler.24601.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-24601.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "24744",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-fartoyvern.24744.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-24744.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "24748",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-middelalderruiner.24748.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-24748.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "24749",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-tekniske-og-industrielle-kulturminner.24749.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-24749.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "2658",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-kunstnerisk-aktivitet-for-barn-og-ungdom.2658.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-2658.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "2659",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-kunstnerresidenser-i-innlandet.2659.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-2659.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "31340",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-verdensarv.31340.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-31340.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "35981",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/interreg-sverige-norge.35981.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-35981.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "36451",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-tiltak-i-statlig-sikret-friluftslivsomrade.36451.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-36451.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "36453",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-friluftslivsaktivitet.36453.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-36453.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "36454",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/statlig-sikring-av-friluftsomrader.36454.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-36454.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "36673",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/samfunnsnyttige-og-humanitare-organisasjoner.36673.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-36673.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "37057",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/naringsutvikling-i-innlandet.37057.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-37057.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "37168",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fondsordning-til-store-nasjonale-og-internasjonale-arrangementer-innen-idrett.37168.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-37168.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "38773",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/bredbandsutbygging-og-arealdekning-for-mobil.38773.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-38773.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "38821",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-verneverdige-bygninger-og-anlegg.38821.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-38821.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "40377",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fylkeskulturprisen.40377.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-40377.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "40406",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innlandsprisen.40406.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-40406.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "40407",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ung-innspirator.40407.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-40407.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "40936",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ekstratilskudd-for-larlinger-og-larekandidater-med-kort-botid.40936.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-40936.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "41165",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innovasjonsprisen.41165.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-41165.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "41312",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-forprosjekt-i-forregion.41312.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-41312.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "42109",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-etablerte-kulturaktorer-tidl-kulturinstitusjoner.42109.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-42109.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "49595",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stotteordning-for-destinasjonsselskapene-2027.49595.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-49595.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "50222",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-for-a-styrke-industriell-symbiose-i-gronne-hubber-i-innlandsportefoljen.50222.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-50222.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "52042",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/oppfolging-av-de-regionale-planene-for-samfunnstryggleik-og-klima-energi-og-miljo.52042.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-52042.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "52200",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/lokal-samfunnsutvikling-i-distriktskommunane.52200.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-52200.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "58403",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ulf-ungdommens-livskvalitetsfond.58403.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-58403.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "59195",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/midler-til-fjellandbruket.59195.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-59195.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "60952",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/den-kulturelle-skolesekken-utviklingsmidler.60952.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-60952.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "61228",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/friluftsliv-enkelt-og-nart-i-innlandet.61228.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-61228.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "61345",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-privatarkiver.61345.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-61345.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "62588",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-utviklingsprosjekt-kunst-og-kultur.62588.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-62588.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "62589",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/regionalt-kulturfond-innlandet.62589.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-62589.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "65400",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-arbeid-langs-pilegrimsleder.65400.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-65400.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "65926",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/kollektiv-kompetanseutvikling-for-yrkesfag.65926.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-65926.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "66248",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-enkle-tiltak-for-gaende-og-syklende.66248.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-66248.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "66424",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-forebyggende-trafikksikkerhetsarbeid.66424.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-66424.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "7069",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/gronn-framtid-innlandet.7069.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-7069.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "81216",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fleksible-transportlosninger-for-inkludering-av-flyktninger.81216.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-81216.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "81560",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/okt-internasjonalt-samarbeid.81560.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-81560.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "81671",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/formidlingstilskudd-til-larebedrifter-som-inngar-kontrakt-med-kandidater-som-ikke-har-blitt-formidlet.81671.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-81671.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "82277",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-gjennomforing-av-alternative-opplaringsmodeller.82277.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-82277.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "8302",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-unge-kunstnere-og-og-utovere-innen-husflid-og-handverk.8302.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-8302.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "8303",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-etablerte-kunstnere-og-utovere-innen-husflid-og-handverk.8303.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-8303.md",
+      "error": ""
+    },
+    {
+      "source": "fylke-34",
+      "id": "8573",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tt-kort.8573.aspx",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "fylke-34-8573.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskudd-og-stotte",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3403-tilskudd-og-stotte.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3403",
+      "id": "forskrift-om-tildeling-av-tilskudd-til-kulturarbeid",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/forskrift-om-tildeling-av-tilskudd-til-kulturarbeid/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3403-forskrift-om-tildeling-av-tilskudd-til-kulturarbeid.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskudd-til-kulturarbeid",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/tilskudd-til-kulturarbeid/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3403-tilskudd-til-kulturarbeid.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskuddsordninger-og-opprustning",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/turomrader-og-lekeplasser/lekeplasser/tilskuddsordninger-og-opprustning/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3403-tilskuddsordninger-og-opprustning.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskudd-til-inkludering-av-barn-og-unge-2027",
+      "url": "https://www.hamar.kommune.no/lokaldemokrati/tilskudd-til-inkludering-av-barn-og-unge-2027",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3403-tilskudd-til-inkludering-av-barn-og-unge-2027.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3403",
+      "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "url": "https://www.hamar.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3403-stotteordning-for-levering-av-avfall-plukket-pa-dugnad.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "tilskudd-og-priser",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-tilskudd-og-priser.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "ildsjelpris-olines-virke",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/ildsjelpris-olines-virke/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-ildsjelpris-olines-virke.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "kulturpris-edvards-palett",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturpris-edvards-palett/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-kulturpris-edvards-palett.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "kulturtilskudd",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-kulturtilskudd.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "retningslinjer-for-tildeling-av-kulturtilskudd",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-kulturtilskudd/retningslinjer-for-tildeling-av-kulturtilskudd",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-retningslinjer-for-tildeling-av-kulturtilskudd.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "soknadsskjema-kulturtiltskudd",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/soknadsskjema-kulturtiltskudd/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-soknadsskjema-kulturtiltskudd.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "nordbygda-sangforenings-musikkfond",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/nordbygda-sangforenings-musikkfond/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-nordbygda-sangforenings-musikkfond.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "samlet-legat-for-loten",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/samlet-legat-for-loten/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-samlet-legat-for-loten.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "spillemidler",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/spillemidler/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-spillemidler.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "tilskudd-barn-ungdomsformal",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/tilskudd-barn-ungdomsformal/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-tilskudd-barn-ungdomsformal.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "tilskudd-hos-innlandet-fylkeskommune",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/tilskudd-hos-innlandet-fylkeskommune/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-tilskudd-hos-innlandet-fylkeskommune.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "fire-anlegg-i-loten-er-tildelt-spillemidler",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/fire-anlegg-i-loten-er-tildelt-spillemidler",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-fire-anlegg-i-loten-er-tildelt-spillemidler.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "ni-anlegg-i-loten-er-tildelt-spillemidler",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/ni-anlegg-i-loten-er-tildelt-spillemidler",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-ni-anlegg-i-loten-er-tildelt-spillemidler.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-stotteordning-for-levering-av-avfall-plukket-pa-dugnad.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3412",
+      "id": "statutter-kriterier-for-hallvard-traettebergs-stipend",
+      "url": "https://www.loten.kommune.no/traetteberg/statutter-kriterier-for-hallvard-traettebergs-stipend/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3412-statutter-kriterier-for-hallvard-traettebergs-stipend.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer",
+      "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-stotteordning-for-levering-av-avfall-plukket-pa-dugnad.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "tilskudd-til-inkludering-av-barn-og-unge-2023",
+      "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2023",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-tilskudd-til-inkludering-av-barn-og-unge-2023.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "priser-og-stipend",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-priser-og-stipend.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "forslag-til-priser",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-forslag-til-priser.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "forslag-til-kulturvernprisen",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-kulturvernprisen",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-forslag-til-kulturvernprisen.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "forslag-til-stangeprisen",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-stangeprisen",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-forslag-til-stangeprisen.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "soknad-kunstnerstipend",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/soknad-kunstnerstipend",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-soknad-kunstnerstipend.md",
+      "error": ""
+    },
+    {
+      "source": "kommune-3413",
+      "id": "tilskudd-og-stotte",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/tilskudd-og-stotte/",
+      "status": 200,
+      "fetched": "2026-10-27",
+      "file": "kommune-3413-tilskudd-og-stotte.md",
+      "error": ""
+    }
+  ],
+  "skipped_documents": [
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i0158ef5d-fe72-4a2a-8c34-9be0f856e66f/tt-kort_innlandet-fylke_innlandstrafikk2022-skrivbar.pdf",
+      "found_in": "fylke-34-8573.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i06283014-4682-4ba0-b06c-26e2ca73d73c/soknadsskjema_soknad-om-tilskudd-til-middelalderruiner.xlsx",
+      "found_in": "fylke-34-24748.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i068fa673-5131-4c94-ae45-a09d409e17b0/slik-sender-du-soknad-i-regionalforvaltning.pdf",
+      "found_in": "fylke-34-36673.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i0962c08e-3879-4842-903a-b4938b25b414/soknadsskjema-transport-for-flyktninger.docx",
+      "found_in": "fylke-34-81216.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i13449e23-8938-4e06-9be0-10e75e48bc22/visningslokaler-for-visuell-kunst-tilskudd-til-kulturarena.PDF",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i1e4a0447-07e1-444a-b006-f67bf1fb5a8a/opplaringsplan-bio.xlsx",
+      "found_in": "fylke-34-19843.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i236f0330-1093-44de-a315-45172983fc61/prosjektdetaljer-stotte-mobil-2026.xlsx",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i26c9ee1c-32bf-47a3-acc5-3d5ce6b4bb84/tips-og-kompetansemiljo-til-sokere-om-spillemidler-til-kulturarena.PDF",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i37d1fd3f-2cde-4846-86c0-a63eee2b5f44/tilskudd_til_arkitektfaglig_bistand_for_fredete_bygninger_og_anlegg_skrivbar-innlandet.pdf",
+      "found_in": "fylke-34-19955.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i46aeeec9-ef14-46ae-bde6-7cb07d6283db/tiltaksplan-for-skog-og-tresektoren-i-innlandet-2022-2025.pdf",
+      "found_in": "fylke-34-17009.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i48b95639-7e0f-4a0b-88b6-dea124c3ae5d/tilskudd_til_forundersoekelse_av_fredete_bygninger_og_anlegg_skrivbar-innlandet.pdf",
+      "found_in": "fylke-34-19954.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i4f0bfe70-5b4d-4dc3-8da9-355c93042ad3/brukerveiledning-soke-tilskuddi-rf-funksjonshemmedes-organisasjoner.pdf",
+      "found_in": "fylke-34-22177.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i5256ac06-1dc7-464e-9202-83798f47bae6/lokaler-for-dans-tilskudd-til-kulturarena.pdf",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i5a76381e-1868-4c67-8a25-6dd396a07432/rapporteringsskjema-dkss-2023.docx",
+      "found_in": "fylke-34-19786.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i60b35a25-776e-4787-bbda-7139edee350b/intensjonsavtale-mal.docx",
+      "found_in": "fylke-34-82277.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i67550590-1a14-4470-b8de-2272d2e240cd/soknadsskjema_soknad-om-tilskudd-til-tekniske-og-industrielle-kulturminner_supplert.xlsx",
+      "found_in": "fylke-34-24749.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i69761b50-1710-4f8c-b19c-078c73f1602e/ideskiss-version-3-1.docx",
+      "found_in": "fylke-34-35981.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i6e85d7c2-0a76-4352-8875-8cc4a19cd5f4/tilskudd_strakstiltak_fredete_bygninger_og_anlegg_skrivbar-innlandet.pdf",
+      "found_in": "fylke-34-19956.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i71e66d8f-cde2-470e-bfa0-25af37bad499/prosjektdetaljer-bredbandsstotte-2026.xlsx",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i870ba09a-d367-4a1f-b819-bc3023437549/soknadsskjema_soknad-om-tilskudd-til-istandsetting-av-fredete-bygninger-i-privat-eie-fra-for-1537.xlsx",
+      "found_in": "fylke-34-16841.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i917c76d3-9c56-40f5-bebb-1161cabd4f17/prosjektskisse-utviklingsmidler-landbruk_arealfont_oppdatert.pdf",
+      "found_in": "fylke-34-17009.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/i9f2d0c8c-130a-47b1-ab26-090588448307/arsrapport-interreg-sverige-norge-2025-endelig.pdf",
+      "found_in": "fylke-34-35981.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ib425f91b-7ac7-4194-b717-9853a0f8a012/soknadsskjema-stotte-til-bredbandsutbygging-2026.docx",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ib65284b0-4218-476e-8805-b711d4efc85b/kravspesifikasjon-for-teater-innlandet-tilskudd-til-kulturarena.PDF",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ib74ce0fb-7152-4704-8f38-a87ad945ef6e/mal-rapport.pdf",
+      "found_in": "fylke-34-18476.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ibab5b51a-b0f5-46fd-915b-bd656330e322/regelverk-2023.pdf",
+      "found_in": "fylke-34-18476.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ibbe3a86b-f4a5-4745-aec2-e9843ae23292/soknadsprosessen-fra-a-til-a-2026.pdf",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ic40b9736-aeeb-49d8-966c-649e57eff410/legeerklaering.pdf",
+      "found_in": "fylke-34-8573.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/iceaf3397-d413-4ad1-8f9e-b360c4c0ac1f/oppdragsbrev-for-statsbudsjettet-2026-bredbandstilskudd.pdf",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/idb5ebf18-86f4-4c20-adc1-8d0efe710843/adresseliste-mal-2026.xlsx",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/idfcbef38-404f-4d87-808f-0ef17cc6642c/soknadsskjema-enkelt-a-velge-sunt-fiskesprellaktivitet.docx",
+      "found_in": "fylke-34-23015.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ie53bc11e-27e2-4f5e-878f-ee7afc726779/fylkeskommunale-retningslinjer-for-tilskudd-til-kulturarenaer-innlandet-fylkeskommune.PDF",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/if21b3b04-f184-451b-809a-06495e9ec7a4/l-702_kartaoriginal_med-logga-2024.pdf",
+      "found_in": "fylke-34-35981.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ifa16352f-bb27-49cd-b680-3689bf68496e/soknadsskjema-stotte-til-arealdekning-mobil-2026.docx",
+      "found_in": "fylke-34-38773.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://innlandetfylke.no/_f/p1/ifd401f65-7763-40bf-a558-f4980288aeee/brukerveiledning-soke-tilskudd-i-rf-pensjonistforeninger.pdf",
+      "found_in": "fylke-34-22176.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.hamar.kommune.no/getfile.php/138418-1647008529/Hamar%20kommune/Kategorier/Kultur%20og%20aktivitet/Rapporteringsskjema-for-utbetaling-av-omsokte-midler.pdf",
+      "found_in": "kommune-3403-tilskudd-til-kulturarbeid.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.ks.no/contentassets/b3b7ed461beb434f8615c0c92a5a1f1e/23343-UU-hefte-Kulturhus-web-NY.pdf",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.kulturlokaler.no/wp-content/uploads/2024/01/Veileder-Skolen-som-kulturarena-Viken-fk-231204-Universelt-utformet.pdf",
+      "found_in": "fylke-34-18509.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.loten.kommune.no/getfile.php/13115074-1739974061/L%C3%B8ten%20kommune/Filer/Soknadsskjema-midler-fra-LUR.pdf",
+      "found_in": "kommune-3412-tilskudd-barn-ungdomsformal.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.loten.kommune.no/getfile.php/13115077-1739974085/L%C3%B8ten%20kommune/Filer/Skjema/Soknadsskjema-midler-fra-LUR.docx",
+      "found_in": "kommune-3412-tilskudd-barn-ungdomsformal.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.loten.kommune.no/getfile.php/1326076-1668096328/L%C3%B8ten%20kommune/Filer/Skjema/Soknadsskjema-samlet-legat-for-Loten.pdf",
+      "found_in": "kommune-3412-samlet-legat-for-loten.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.loten.kommune.no/getfile.php/1326079-1668096304/L%C3%B8ten%20kommune/Filer/Skjema/Soknadsskjema-samlet-legat-for-Loten.doc",
+      "found_in": "kommune-3412-samlet-legat-for-loten.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.regjeringen.no/contentassets/4934157014d94e3986b2219111bdf806/matnasjonen-norge_strategi_uu.pdf",
+      "found_in": "fylke-34-17009.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.regjeringen.no/contentassets/b4525a252a9c45fb8f824531007644d0/no/pdfs/stm202420250011000dddpdfs.pdf",
+      "found_in": "fylke-34-14057.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.regjeringen.no/contentassets/cc8ab60bcffd4cd48317766f094c66ac/v-0732-b_2023-bestemmelser-om-tilskudd-til-anlegg-for-idrett-og-fysisk-aktivitet-v2.pdf",
+      "found_in": "kommune-3413-her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.stange.kommune.no/getfile.php/1369067-1768907684/Stange%20kommune/FILER%20OG%20DOKUMENTER/Planer%20og%20dokumenter/Handlingsplan%20for%20anlegg%20til%20kultur%2C%20idrett%20og%20fysisk%20aktivitet.pdf",
+      "found_in": "kommune-3413-tilskudd-og-stotte.md",
+      "reason": "documents not fetched yet (later task)"
+    },
+    {
+      "url": "https://www.stange.kommune.no/getfile.php/1369635-1707213322/Stange%20kommune/FILER%20OG%20DOKUMENTER/Sentrale%20planer%20og%20styringsdokumenter/Kommunedelplan%20for%20kultur%2C%20frivillighet%2C%20idrett%20og%20friluftsliv%202023-2035%20-UU.pdf",
+      "found_in": "kommune-3413-priser-og-stipend.md",
+      "reason": "documents not fetched yet (later task)"
+    }
+  ]
+}

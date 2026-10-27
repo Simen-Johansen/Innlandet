@@ -1,0 +1,1876 @@
+{
+  "run_date": "2026-10-27",
+  "robots": {
+    "fylke-34": {
+      "url": "https://innlandetfylke.no/robots.txt",
+      "fetched": "2026-10-27",
+      "status": 200
+    },
+    "kommune-3403": {
+      "url": "https://www.hamar.kommune.no/robots.txt",
+      "fetched": "2026-10-27",
+      "status": 200
+    },
+    "kommune-3412": {
+      "url": "https://www.loten.kommune.no/robots.txt",
+      "fetched": "2026-10-27",
+      "status": 200
+    },
+    "kommune-3413": {
+      "url": "https://www.stange.kommune.no/robots.txt",
+      "fetched": "2026-10-27",
+      "status": 200
+    }
+  },
+  "county": {
+    "index_pages": [
+      {
+        "page": 1,
+        "ids": [
+          "16690",
+          "16834",
+          "19786",
+          "19843",
+          "23015",
+          "23422",
+          "35981",
+          "37168",
+          "38773",
+          "40936",
+          "60952",
+          "65926",
+          "7069",
+          "81216",
+          "81671"
+        ]
+      },
+      {
+        "page": 2,
+        "ids": [
+          "13998",
+          "18103",
+          "19403",
+          "19655",
+          "19955",
+          "23016",
+          "36454",
+          "36673",
+          "37057",
+          "50222",
+          "52042",
+          "52200",
+          "62589",
+          "8302",
+          "8303"
+        ]
+      },
+      {
+        "page": 3,
+        "ids": [
+          "14057",
+          "16841",
+          "16843",
+          "18509",
+          "19954",
+          "22176",
+          "22177",
+          "2658",
+          "2659",
+          "36453",
+          "41312",
+          "42109",
+          "66248",
+          "66424",
+          "82277"
+        ]
+      },
+      {
+        "page": 4,
+        "ids": [
+          "17009",
+          "17894",
+          "18476",
+          "19956",
+          "22003",
+          "24601",
+          "36451",
+          "38821",
+          "58403",
+          "61345",
+          "62588",
+          "81560",
+          "8573"
+        ]
+      },
+      {
+        "page": 5,
+        "ids": []
+      }
+    ],
+    "categories": {
+      "folkehelse": [
+        "18476",
+        "23015",
+        "23016",
+        "58403"
+      ],
+      "frivilligheten": [
+        "16834",
+        "18103",
+        "18509",
+        "22176",
+        "22177",
+        "23016",
+        "2658",
+        "36453",
+        "36673",
+        "37168",
+        "42109",
+        "52042",
+        "58403",
+        "61345",
+        "62589",
+        "66424",
+        "81216"
+      ],
+      "idrett-og-friluftsliv": [
+        "16834",
+        "18103",
+        "19655",
+        "36451",
+        "36453",
+        "36454",
+        "37168",
+        "61228"
+      ],
+      "klima-og-miljo": [
+        "16690",
+        "17894",
+        "24601",
+        "52042",
+        "7069"
+      ],
+      "kulturarv": [
+        "16841",
+        "16843",
+        "19953",
+        "19954",
+        "19955",
+        "19956",
+        "24744",
+        "24748",
+        "24749",
+        "31340",
+        "38821",
+        "61345",
+        "65400"
+      ],
+      "kunst-og-kultur": [
+        "18509",
+        "19403",
+        "19786",
+        "2658",
+        "2659",
+        "35981",
+        "37168",
+        "42109",
+        "60952",
+        "62588",
+        "62589",
+        "8302",
+        "8303"
+      ],
+      "naring-og-internasjonalt": [
+        "17009",
+        "19403",
+        "19843",
+        "35981",
+        "37057",
+        "37168",
+        "38773",
+        "41312",
+        "49595",
+        "50222",
+        "59195",
+        "7069",
+        "81560"
+      ],
+      "pensjonister-og-funksjonshemmede": [
+        "19786",
+        "22176",
+        "22177",
+        "8573"
+      ],
+      "priser": [
+        "40377",
+        "40406",
+        "40407",
+        "41165"
+      ],
+      "skole-og-opplaring": [
+        "14057",
+        "19843",
+        "23422",
+        "40936",
+        "58403",
+        "65926",
+        "81671",
+        "82277"
+      ],
+      "veg-og-trafikk": [
+        "22003",
+        "66248",
+        "66424",
+        "81216",
+        "8573"
+      ]
+    }
+  },
+  "kommuner": {
+    "kommune-3403": {
+      "sitemap": "https://www.hamar.kommune.no/sitemap.xml",
+      "candidates": [
+        "https://www.hamar.kommune.no/barnehagene/private-barnehager/horing-av-forslag-til-forskrift-om-tilskuddssatser-private-barnehager-2027",
+        "https://www.hamar.kommune.no/bostotte/",
+        "https://www.hamar.kommune.no/bostotte_2/",
+        "https://www.hamar.kommune.no/familiehjelp-oversikt-over-tilbud/stottekontakt-og-besokshjem/",
+        "https://www.hamar.kommune.no/frivillighet/",
+        "https://www.hamar.kommune.no/frivillighet/aktiv-senior-frivilligsentral/",
+        "https://www.hamar.kommune.no/frivillighet/frivillig-arbeid-i-hamar/",
+        "https://www.hamar.kommune.no/frivillighet/hamar-frivilligsentral/",
+        "https://www.hamar.kommune.no/frivillighet/hamar-smajobbsentral-tidl-pensjonisthjelpen-i-hamar/",
+        "https://www.hamar.kommune.no/frivillighet/vi-anbefaler/",
+        "https://www.hamar.kommune.no/helseogmestring/parorende/frivilligsentralen/",
+        "https://www.hamar.kommune.no/helseogmestring/parorende/nytt-stottesenter-for-parorende-apnet-i-hamar",
+        "https://www.hamar.kommune.no/helseogomsorg/barn-unge-og-familie/barnevern/stottekontakt-og-besokshjem/",
+        "https://www.hamar.kommune.no/helseogomsorg/senior-i-hamar/frivilligsentralen-i-hamar/",
+        "https://www.hamar.kommune.no/helseogomsorg/sykehjem-og-omsorgsboliger/faq-sykehjem-og-omsorgsboliger/frivillighet",
+        "https://www.hamar.kommune.no/helseogomsorg/sykehjem-og-omsorgsboliger/seterlokka/livet-pa-seterlokka/en-varm-takk-til-de-frivillige",
+        "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/hjelpemidler/",
+        "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/hjelpemidler/hjelpemiddeltjenesten/",
+        "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/hjelpemidler/velferdsteknologi/",
+        "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/omsorgsstonad/",
+        "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/",
+        "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/forskrift-om-tildeling-av-tilskudd-til-kulturarbeid/",
+        "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/stromstotte-for-frivillige-lag-og-foreninger/",
+        "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/tilskudd-til-kulturarbeid/",
+        "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/vi-anbefaler/",
+        "https://www.hamar.kommune.no/kultur-og-aktivitet/turomrader-og-lekeplasser/lekeplasser/tilskuddsordninger-og-opprustning/",
+        "https://www.hamar.kommune.no/kulturkalender/frivilligrostens-sangglede",
+        "https://www.hamar.kommune.no/kulturkalender/frivilligrostens-sangglede-3",
+        "https://www.hamar.kommune.no/kulturkalender/gratis-synskafe-pa-hamar-frivilligsentral",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/bygdeutviklingsmidler/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/erstatningsordninger/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/tilskudd-i-skogbruket/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/tilskudd-til-beitebruk/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/",
+        "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/velferdsordninger/",
+        "https://www.hamar.kommune.no/lekeplasser/tilskuddsordninger-og-opprustning/",
+        "https://www.hamar.kommune.no/lokaldemokrati/horing-av-forslag-til-forskrift-om-tilskuddssatser-private-barnehager-2027",
+        "https://www.hamar.kommune.no/lokaldemokrati/legater/",
+        "https://www.hamar.kommune.no/lokaldemokrati/tilskudd-til-inkludering-av-barn-og-unge-2027",
+        "https://www.hamar.kommune.no/nyhetsarkiv/fristen-for-a-soke-bostotte-er-30-juni",
+        "https://www.hamar.kommune.no/nyhetsarkiv/godt-samarbeid-mellom-frivilligheten-og-hamar-kommune",
+        "https://www.hamar.kommune.no/nyhetsarkiv/kraftsenter-innlandet-far-stotte-fra-forskningsradet",
+        "https://www.hamar.kommune.no/nyhetsarkiv/nytt-stottesenter-for-parorende-apnet-i-hamar",
+        "https://www.hamar.kommune.no/nyhetsarkiv/politikk-og-administrasjon/tilskudd-til-inkludering-av-barn-og-unge-2027",
+        "https://www.hamar.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+        "https://www.hamar.kommune.no/nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2027",
+        "https://www.hamar.kommune.no/politikk-og-administrasjon/nyheter-fra-politikk-og-administrasjon/tilskudd-til-inkludering-av-barn-og-unge-2027",
+        "https://www.hamar.kommune.no/politikk-og-administrasjon/planer-i-en-kommune/temabaserte-planer/temaplan-for-frivillighet/",
+        "https://www.hamar.kommune.no/stottekontakt-fritidskontakt/",
+        "https://www.hamar.kommune.no/tilrettelagte-tjenester/stottekontakt-fritidskontakt/",
+        "https://www.hamar.kommune.no/utviklingssenter-for-sykehjem-og-hjemmetjenester-i-innlandet-hedmark/nytt-stottesenter-for-parorende-apnet-i-hamar"
+      ],
+      "excluded": [
+        {
+          "url": "https://www.hamar.kommune.no/barnehagene/private-barnehager/horing-av-forslag-til-forskrift-om-tilskuddssatser-private-barnehager-2027",
+          "reason": "kindergarten funding"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/bostotte/",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/bostotte_2/",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/familiehjelp-oversikt-over-tilbud/stottekontakt-og-besokshjem/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/frivillighet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/frivillighet/aktiv-senior-frivilligsentral/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/frivillighet/frivillig-arbeid-i-hamar/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/frivillighet/hamar-frivilligsentral/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/frivillighet/hamar-smajobbsentral-tidl-pensjonisthjelpen-i-hamar/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/frivillighet/vi-anbefaler/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogmestring/parorende/frivilligsentralen/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogmestring/parorende/nytt-stottesenter-for-parorende-apnet-i-hamar",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/barn-unge-og-familie/barnevern/stottekontakt-og-besokshjem/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/senior-i-hamar/frivilligsentralen-i-hamar/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/sykehjem-og-omsorgsboliger/faq-sykehjem-og-omsorgsboliger/frivillighet",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/sykehjem-og-omsorgsboliger/seterlokka/livet-pa-seterlokka/en-varm-takk-til-de-frivillige",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/hjelpemidler/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/hjelpemidler/hjelpemiddeltjenesten/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/hjelpemidler/velferdsteknologi/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/helseogomsorg/tjenester-til-hjemmeboende/omsorgsstonad/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/kulturkalender/frivilligrostens-sangglede",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/kulturkalender/frivilligrostens-sangglede-3",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/kulturkalender/gratis-synskafe-pa-hamar-frivilligsentral",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/bygdeutviklingsmidler/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/erstatningsordninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/tilskudd-i-skogbruket/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/tilskudd-til-beitebruk/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/landbruk/tilskudd-og-erstatninger/velferdsordninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/lekeplasser/tilskuddsordninger-og-opprustning/",
+          "reason": "duplicate of https://www.hamar.kommune.no/kultur-og-aktivitet/turomrader-og-lekeplasser/lekeplasser/tilskuddsordninger-og-opprustning/"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/lokaldemokrati/horing-av-forslag-til-forskrift-om-tilskuddssatser-private-barnehager-2027",
+          "reason": "kindergarten funding"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/nyhetsarkiv/fristen-for-a-soke-bostotte-er-30-juni",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/nyhetsarkiv/godt-samarbeid-mellom-frivilligheten-og-hamar-kommune",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/nyhetsarkiv/kraftsenter-innlandet-far-stotte-fra-forskningsradet",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/nyhetsarkiv/nytt-stottesenter-for-parorende-apnet-i-hamar",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/nyhetsarkiv/politikk-og-administrasjon/tilskudd-til-inkludering-av-barn-og-unge-2027",
+          "reason": "duplicate of https://www.hamar.kommune.no/lokaldemokrati/tilskudd-til-inkludering-av-barn-og-unge-2027"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2027",
+          "reason": "duplicate of https://www.hamar.kommune.no/lokaldemokrati/tilskudd-til-inkludering-av-barn-og-unge-2027"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/politikk-og-administrasjon/nyheter-fra-politikk-og-administrasjon/tilskudd-til-inkludering-av-barn-og-unge-2027",
+          "reason": "duplicate of https://www.hamar.kommune.no/lokaldemokrati/tilskudd-til-inkludering-av-barn-og-unge-2027"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/politikk-og-administrasjon/planer-i-en-kommune/temabaserte-planer/temaplan-for-frivillighet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/stottekontakt-fritidskontakt/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/tilrettelagte-tjenester/stottekontakt-fritidskontakt/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/utviklingssenter-for-sykehjem-og-hjemmetjenester-i-innlandet-hedmark/nytt-stottesenter-for-parorende-apnet-i-hamar",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/stromstotte-for-frivillige-lag-og-foreninger/",
+          "reason": "no main content (navigation page)"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/vi-anbefaler/",
+          "reason": "no main content (navigation page)"
+        },
+        {
+          "url": "https://www.hamar.kommune.no/lokaldemokrati/legater/",
+          "reason": "no main content (navigation page)"
+        }
+      ]
+    },
+    "kommune-3412": {
+      "sitemap": "https://www.loten.kommune.no/sitemap.xml",
+      "candidates": [
+        "https://www.loten.kommune.no/helse-sosial-og-familie/boligkontoret/bostotte/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/etikkrad-for-helse-og-omsorgstjenestene/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/ga-direkte-til/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/hjelpesider-for-deg-som-parorende/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/kommunal-radgivende-enhet-for-narkotikasaker/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/moteplass-for-parorende/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/nok-hamar/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/parorende/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/pasient-og-brukerombudet/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/rode-kors-vaketjeneste/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/tryggest/",
+        "https://www.loten.kommune.no/helse-sosial-og-familie/tildelingsteamet/tildelingskriterier-for-helse-og-omsorgstjenester/helsetjenester-i-hjemmet/omsorgsstonad/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/frivillighet/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/frivillighet/frivillighet-i-loten-kommune/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/ildsjelpris-olines-virke/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturpris-edvards-palett/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-folkehelsetiltak/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-folkehelsetiltak/retningslinjer-for-tildeling-av-folkehelsetiltak",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-kulturtilskudd/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-kulturtilskudd/retningslinjer-for-tildeling-av-kulturtilskudd",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-musikkfond/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/soknadsskjema-folkehelsetiltak/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/soknadsskjema-kulturtiltskudd/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/nordbygda-sangforenings-musikkfond/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/samlet-legat-for-loten/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/spillemidler/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/tilskudd-barn-ungdomsformal/",
+        "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/tilskudd-hos-innlandet-fylkeskommune/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/bygdeutviklingsmidler/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/erstatningsordninger/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-i-skogbruket/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-beitebruk/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/",
+        "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/velferdsordninger/",
+        "https://www.loten.kommune.no/naeringsstotte/",
+        "https://www.loten.kommune.no/naeringsstotte/vedtekter-naeringsstotte/",
+        "https://www.loten.kommune.no/naeringsstotte/vedtekter-naeringsstotte/vedtekter-naeringsstotte-loten-kommune",
+        "https://www.loten.kommune.no/nyhetsarkiv/dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
+        "https://www.loten.kommune.no/nyhetsarkiv/disse-fikk-naringsstotte-i-ar-1",
+        "https://www.loten.kommune.no/nyhetsarkiv/disse-fikk-naringsstotte-i-loten-i-2026",
+        "https://www.loten.kommune.no/nyhetsarkiv/fire-anlegg-i-loten-er-tildelt-spillemidler",
+        "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
+        "https://www.loten.kommune.no/nyhetsarkiv/frivilligbors-i-loten",
+        "https://www.loten.kommune.no/nyhetsarkiv/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+        "https://www.loten.kommune.no/nyhetsarkiv/ni-anlegg-i-loten-er-tildelt-spillemidler",
+        "https://www.loten.kommune.no/nyhetsarkiv/se-hvem-som-fikk-naringsstotte-i-ar",
+        "https://www.loten.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+        "https://www.loten.kommune.no/nyhetskategori-kultur/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+        "https://www.loten.kommune.no/nyhetskategori-naring/disse-fikk-naringsstotte-i-loten-i-2026",
+        "https://www.loten.kommune.no/politikk-og-organisasjon/horinger-offentlig-ettersyn/horing-forslag-til-lokal-forskrift-for-beregning-av-grunntilskudd-til-private-barnehager",
+        "https://www.loten.kommune.no/politikk-og-organisasjon/horinger-offentlig-ettersyn/horinger/horing-forslag-til-lokal-forskrift-for-beregning-av-grunntilskudd-til-private-barnehager",
+        "https://www.loten.kommune.no/traetteberg/statutter-kriterier-for-hallvard-traettebergs-stipend/",
+        "https://www.loten.kommune.no/traetteberg/"
+      ],
+      "excluded": [
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/boligkontoret/bostotte/",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/etikkrad-for-helse-og-omsorgstjenestene/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/ga-direkte-til/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/hjelpesider-for-deg-som-parorende/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/kommunal-radgivende-enhet-for-narkotikasaker/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/moteplass-for-parorende/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/nok-hamar/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/parorende/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/pasient-og-brukerombudet/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/rode-kors-vaketjeneste/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/parorende-hjelp-og-stotte/tryggest/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/helse-sosial-og-familie/tildelingsteamet/tildelingskriterier-for-helse-og-omsorgstjenester/helsetjenester-i-hjemmet/omsorgsstonad/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/frivillighet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/frivillighet/frivillighet-i-loten-kommune/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-folkehelsetiltak/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-folkehelsetiltak/retningslinjer-for-tildeling-av-folkehelsetiltak",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/soknadsskjema-folkehelsetiltak/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/bygdeutviklingsmidler/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/erstatningsordninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-i-skogbruket/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-beitebruk/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/velferdsordninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naeringsstotte/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naeringsstotte/vedtekter-naeringsstotte/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/naeringsstotte/vedtekter-naeringsstotte/vedtekter-naeringsstotte-loten-kommune",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/disse-fikk-naringsstotte-i-ar-1",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/disse-fikk-naringsstotte-i-loten-i-2026",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/frivilligbors-i-loten",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/se-hvem-som-fikk-naringsstotte-i-ar",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetskategori-kultur/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetskategori-naring/disse-fikk-naringsstotte-i-loten-i-2026",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/politikk-og-organisasjon/horinger-offentlig-ettersyn/horing-forslag-til-lokal-forskrift-for-beregning-av-grunntilskudd-til-private-barnehager",
+          "reason": "kindergarten funding"
+        },
+        {
+          "url": "https://www.loten.kommune.no/politikk-og-organisasjon/horinger-offentlig-ettersyn/horinger/horing-forslag-til-lokal-forskrift-for-beregning-av-grunntilskudd-til-private-barnehager",
+          "reason": "kindergarten funding"
+        },
+        {
+          "url": "https://www.loten.kommune.no/traetteberg/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-kulturtilskudd/",
+          "reason": "no main content (navigation page)"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-musikkfond/",
+          "reason": "no main content (navigation page)"
+        }
+      ]
+    },
+    "kommune-3413": {
+      "sitemap": "https://www.stange.kommune.no/sitemap.xml",
+      "candidates": [
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/apen-moteplass-ottestad-frivilligsentral",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/frivillig/",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/frivillig/na-kan-ditt-lag-eller-forening-soke-om-stromstotte",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/na-kan-ditt-lag-eller-forening-soke-om-stromstotte",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/se-filmen-om-de-frivillige-pa-stange-helse-og-omsorgssenter",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/stange-kommune-trenger-flere-stottekontakter",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+        "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2023",
+        "https://www.stange.kommune.no/helse-og-mestring/fysioterapi-ergoterapi-rehabilitering/hjelpemidler-til-utlan/",
+        "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/",
+        "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/hjelpemidler-til-utlan/",
+        "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/trygghetsalarm-og-andre-hjelpemidler/",
+        "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/velferdsteknologi/",
+        "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-mennesker-med-nedsatt-funksjonsevne/stottekontakt-og-ledsagerbevis/",
+        "https://www.stange.kommune.no/hva-skjer-i-stange/frivilligrostens-sangglede",
+        "https://www.stange.kommune.no/hva-skjer-i-stange/frivilligrostens-sangglede-3",
+        "https://www.stange.kommune.no/hva-skjer-i-stange/gratis-synskafe-pa-hamar-frivilligsentral",
+        "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/",
+        "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/aktuelt/",
+        "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/arrangementer/",
+        "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/arrangementer/test",
+        "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/arrangementer/test-1",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/aktiviteter-for-ungdom/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/aktiviteter-for-ungdom/aktivitetskalender-for-ungarena/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/dans-pa-stien/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/ingeborgdagene/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/jul-i-stange/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/konnband-tett-pa/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/konnband-uka/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/sankthanskonserten/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/stangedagene/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/fa-gratis-markedsforing-i-mange-kanaler",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/digihjelpen/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/frivillig-i-stange/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/manedens-frivillige/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/moteplasser/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/ottestad-frivilligsentral/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/ottestad-frivilligsentral/aktuelt/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/ottestad-frivilligsentral/arrangementer/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/ga-direkte-til-1/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/10-turer-i-stange/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/dagsturhytta/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/ottestadhallen/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/stange-svommehall/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/stangehallen/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsradet/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/stolpejakt/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturminner-og-kulturbygg/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturminner-og-kulturbygg/krigsminnesmerker/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturminner-og-kulturbygg/kulturminner/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/ansatte/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/den-kulturelle-spaserstokken/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/om-kulturskolen/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/om-kulturskolen/priser-kulturskolen-2026",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/undervisningstilbud/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/undervisningstilbud/priser-kulturskolen-2026",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/kunst-pa-nye-stange-skole",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/kunstapning-i-ottestad-svommehall",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/kunstgave-til-stange-og-kjonerud",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/grue/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/hamar/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/kommuner/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/kongsvinger/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/loten/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/mine-lag-foreninger/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/nord-odal/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/sor-odal/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/tilganger/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lalumsvangen-setermuseum/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-kulturvernprisen",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-stangeprisen",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/soknad-kunstnerstipend",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/tilrettelagte-aktivitetstilbud/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/tilskudd-og-stotte/",
+        "https://www.stange.kommune.no/kunngjoringer/lokal-forskrift-for-beregning-av-grunntilskudd-for-private-barnehager",
+        "https://www.stange.kommune.no/kunngjoringer/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+        "https://www.stange.kommune.no/kunngjoringer/tilskudd-til-inkludering-av-barn-og-unge-2023",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/bygdeutviklingsmidler/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/erstatningsordninger/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/erstatningsordninger/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-i-skogbruket/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-beitebruk/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/velferdsordninger/",
+        "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/velferdsordninger/priser-landbruksforvaltningen-2026",
+        "https://www.stange.kommune.no/sosiale-tjenester/bolig/bostotte/",
+        "https://www.stange.kommune.no/sosiale-tjenester/bolig/ofte-stilte-sporsmal/kan-jeg-soke-bostotte",
+        "https://www.stange.kommune.no/utviklingssenter-for-sykehjem-og-hjemmetjenester-i-innlandet-hedmark_2/nytt-stottesenter-for-parorende-apnet-i-hamar",
+        "https://www.stange.kommune.no/hva-skjer-i-stange/",
+        "https://www.stange.kommune.no/60/",
+        "https://www.stange.kommune.no/bibliotek/",
+        "https://www.stange.kommune.no/bibliotek/arrangementer/",
+        "https://www.stange.kommune.no/bibliotek/om-biblioteket/",
+        "https://www.stange.kommune.no/bibliotek/aktuelt/",
+        "https://www.stange.kommune.no/bua/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/",
+        "https://www.stange.kommune.no/badeplasser/",
+        "https://www.stange.kommune.no/badeplasser/badevannskvalitet-1/",
+        "https://www.stange.kommune.no/ottestadsvommehall/",
+        "https://www.stange.kommune.no/isbaner_2/",
+        "https://www.stange.kommune.no/skiloyper_2/",
+        "https://www.stange.kommune.no/turstier/",
+        "https://www.stange.kommune.no/kjonerudtunet/",
+        "https://www.stange.kommune.no/kjonerudtunet/om-kjonerudtunet/",
+        "https://www.stange.kommune.no/kjonerudtunet/leie-av-lokaler/",
+        "https://www.stange.kommune.no/kjonerudtunet/hva-skjer-pa-kjonerudtunet/",
+        "https://www.stange.kommune.no/kunstsamling/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/sok-om-redaktortilgang/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/jeg-er-styreleder/",
+        "https://www.stange.kommune.no/kultur-og-frivillighet/leie-av-lokaler/",
+        "https://www.stange.kommune.no/tilrettelagte-sommerturer/",
+        "https://www.stange.kommune.no/tilrettelagte-arrangementer/"
+      ],
+      "excluded": [
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/apen-moteplass-ottestad-frivilligsentral",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/frivillig/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/frivillig/na-kan-ditt-lag-eller-forening-soke-om-stromstotte",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/na-kan-ditt-lag-eller-forening-soke-om-stromstotte",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/se-filmen-om-de-frivillige-pa-stange-helse-og-omsorgssenter",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/stange-kommune-trenger-flere-stottekontakter",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/helse-og-mestring/fysioterapi-ergoterapi-rehabilitering/hjelpemidler-til-utlan/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/hjelpemidler-til-utlan/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/trygghetsalarm-og-andre-hjelpemidler/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-hjemmeboende/hjelpemidler/velferdsteknologi/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/helse-og-mestring/tjenester-til-mennesker-med-nedsatt-funksjonsevne/stottekontakt-og-ledsagerbevis/",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/hva-skjer-i-stange/frivilligrostens-sangglede",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/hva-skjer-i-stange/frivilligrostens-sangglede-3",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/hva-skjer-i-stange/gratis-synskafe-pa-hamar-frivilligsentral",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/aktuelt/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/arrangementer/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/arrangementer/test",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/ottestad-frivilligsentral/arrangementer/test-1",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/aktiviteter-for-ungdom/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/aktiviteter-for-ungdom/aktivitetskalender-for-ungarena/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/dans-pa-stien/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/ingeborgdagene/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/jul-i-stange/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/konnband-tett-pa/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/konnband-uka/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/sankthanskonserten/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/arrangement/stangedagene/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/fa-gratis-markedsforing-i-mange-kanaler",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/digihjelpen/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/frivillig-i-stange/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/manedens-frivillige/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/moteplasser/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/ottestad-frivilligsentral/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/ottestad-frivilligsentral/aktuelt/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/frivillighet/ottestad-frivilligsentral/arrangementer/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/ga-direkte-til-1/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/10-turer-i-stange/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/dagsturhytta/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/ottestadhallen/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/stange-svommehall/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsanlegg/stangehallen/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/idrettsradet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/idrett-og-friluftsliv/stolpejakt/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturminner-og-kulturbygg/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturminner-og-kulturbygg/krigsminnesmerker/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturminner-og-kulturbygg/kulturminner/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/ansatte/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/den-kulturelle-spaserstokken/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/om-kulturskolen/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/om-kulturskolen/priser-kulturskolen-2026",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/undervisningstilbud/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/undervisningstilbud/priser-kulturskolen-2026",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/kunst-pa-nye-stange-skole",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/kunstapning-i-ottestad-svommehall",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/kunstgave-til-stange-og-kjonerud",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/grue/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/hamar/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/kommuner/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/kongsvinger/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/loten/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/mine-lag-foreninger/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/nord-odal/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/sor-odal/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/tilganger/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lalumsvangen-setermuseum/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/tilrettelagte-aktivitetstilbud/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kunngjoringer/lokal-forskrift-for-beregning-av-grunntilskudd-for-private-barnehager",
+          "reason": "kindergarten funding"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kunngjoringer/na-kan-frivillige-organisasjoner-soke-momskompensasjon",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kunngjoringer/tilskudd-til-inkludering-av-barn-og-unge-2023",
+          "reason": "duplicate of https://www.stange.kommune.no/aktuelt-nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2023"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/bygdeutviklingsmidler/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/erstatningsordninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/erstatningsordninger/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/produksjonstilskudd/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/regionalt-miljotilskudd/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/spesielle-miljotiltak/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-i-skogbruket/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-beitebruk/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/tilskudd-til-drenering-av-jordbruksjord/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/velferdsordninger/",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/naring-miljo-landbruk/landbruk/tilskudd-og-erstatninger/velferdsordninger/priser-landbruksforvaltningen-2026",
+          "reason": "agriculture, not for clubs"
+        },
+        {
+          "url": "https://www.stange.kommune.no/sosiale-tjenester/bolig/bostotte/",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/sosiale-tjenester/bolig/ofte-stilte-sporsmal/kan-jeg-soke-bostotte",
+          "reason": "housing allowance for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/utviklingssenter-for-sykehjem-og-hjemmetjenester-i-innlandet-hedmark_2/nytt-stottesenter-for-parorende-apnet-i-hamar",
+          "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.stange.kommune.no/hva-skjer-i-stange/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/60/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/bibliotek/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/bibliotek/arrangementer/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/bibliotek/om-biblioteket/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/bibliotek/aktuelt/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/bua/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/badeplasser/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/badeplasser/badevannskvalitet-1/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/ottestadsvommehall/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/isbaner_2/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/skiloyper_2/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/turstier/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/om-kjonerudtunet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/leie-av-lokaler/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kjonerudtunet/hva-skjer-pa-kjonerudtunet/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kunstsamling/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/sok-om-redaktortilgang/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lag-og-foreninger/jeg-er-styreleder/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/leie-av-lokaler/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/tilrettelagte-sommerturer/",
+          "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/tilrettelagte-arrangementer/",
+          "reason": "no grant keyword in the URL"
+        }
+      ]
+    }
+  },
+  "grants": [
+    {
+      "source": "fylke-34",
+      "id": "13998",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/regionale-forskningsfond.13998.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "14057",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-hoyere-yrkesfaglig-utdanning.14057.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "16690",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/klimasats-stotte-til-klimasatsing-i-kommunene.16690.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "16834",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "16841",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-bygninger-fra-middelalder.16841.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "16843",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-istandsetting-av-freda-bygninger-og-anlegg.16843.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "17009",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/utviklingsmidler-i-landbruket.17009.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "17894",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-vilttiltak.17894.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "18103",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/spillemidler.18103.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "18476",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskuddsmidler-til-etablering-og-videreutvikling-av-frisklivs-larings-og-mestringstilbud.18476.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "18509",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-kulturarenaer-i-innlandet.18509.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19403",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stotteordning-for-reiselivsprosjekter-2026.19403.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19655",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/plan-for-friluftslivets-ferdselsarer.19655.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19786",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/den-kulturelle-spaserstokken.19786.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19843",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/bedriftsintern-opplaring-bio.19843.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19953",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-brannsikring-av-tette-trehusomrader.19953.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19954",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-forundersokelse-av-fredete-bygninger-og-anlegg.19954.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19955",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-arkitektfaglig-bistand-for-fredete-bygninger-og-anlegg.19955.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "19956",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-strakstiltak-sikringstiltak-pa-fredete-bygninger-og-anlegg.19956.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "22003",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-skolevegtiltak-pa-kommunale-veger.22003.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "22176",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-fylkesomspennende-pensjonistforeninger-i-innlandet.22176.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "22177",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-organisasjoner-for-mennesker-med-nedsatt-funksjonsevne-i-innlandet.22177.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "23015",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/enkelt-a-velge-sunt-fiskesprellaktivitet.23015.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "23016",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-arbeid-med-folkehelse-og-livskvalitet-i-innlandet.23016.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "23422",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ekstratilskudd-for-oppfolging-av-larlinger-og-larekandidater.23422.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "24601",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/vassdragsmidler.24601.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "24744",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-fartoyvern.24744.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "24748",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-middelalderruiner.24748.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "24749",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-tekniske-og-industrielle-kulturminner.24749.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "2658",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-kunstnerisk-aktivitet-for-barn-og-ungdom.2658.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "2659",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-kunstnerresidenser-i-innlandet.2659.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "31340",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-verdensarv.31340.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "35981",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/interreg-sverige-norge.35981.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "36451",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-tiltak-i-statlig-sikret-friluftslivsomrade.36451.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "36453",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-friluftslivsaktivitet.36453.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "36454",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/statlig-sikring-av-friluftsomrader.36454.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "36673",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/samfunnsnyttige-og-humanitare-organisasjoner.36673.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "37057",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/naringsutvikling-i-innlandet.37057.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "37168",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fondsordning-til-store-nasjonale-og-internasjonale-arrangementer-innen-idrett.37168.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "38773",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/bredbandsutbygging-og-arealdekning-for-mobil.38773.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "38821",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-verneverdige-bygninger-og-anlegg.38821.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "40377",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fylkeskulturprisen.40377.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "40406",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innlandsprisen.40406.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "40407",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ung-innspirator.40407.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "40936",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ekstratilskudd-for-larlinger-og-larekandidater-med-kort-botid.40936.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "41165",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innovasjonsprisen.41165.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "41312",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-forprosjekt-i-forregion.41312.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "42109",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-etablerte-kulturaktorer-tidl-kulturinstitusjoner.42109.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "49595",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stotteordning-for-destinasjonsselskapene-2027.49595.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "50222",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-for-a-styrke-industriell-symbiose-i-gronne-hubber-i-innlandsportefoljen.50222.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "52042",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/oppfolging-av-de-regionale-planene-for-samfunnstryggleik-og-klima-energi-og-miljo.52042.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "52200",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/lokal-samfunnsutvikling-i-distriktskommunane.52200.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "58403",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ulf-ungdommens-livskvalitetsfond.58403.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "59195",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/midler-til-fjellandbruket.59195.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "60952",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/den-kulturelle-skolesekken-utviklingsmidler.60952.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "61228",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/friluftsliv-enkelt-og-nart-i-innlandet.61228.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "61345",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-privatarkiver.61345.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "62588",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-utviklingsprosjekt-kunst-og-kultur.62588.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "62589",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/regionalt-kulturfond-innlandet.62589.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "65400",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-arbeid-langs-pilegrimsleder.65400.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "65926",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/kollektiv-kompetanseutvikling-for-yrkesfag.65926.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "66248",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-enkle-tiltak-for-gaende-og-syklende.66248.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "66424",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-forebyggende-trafikksikkerhetsarbeid.66424.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "7069",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/gronn-framtid-innlandet.7069.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "81216",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fleksible-transportlosninger-for-inkludering-av-flyktninger.81216.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "81560",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/okt-internasjonalt-samarbeid.81560.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "81671",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/formidlingstilskudd-til-larebedrifter-som-inngar-kontrakt-med-kandidater-som-ikke-har-blitt-formidlet.81671.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "82277",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tilskudd-til-gjennomforing-av-alternative-opplaringsmodeller.82277.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "8302",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-unge-kunstnere-og-og-utovere-innen-husflid-og-handverk.8302.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "8303",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-etablerte-kunstnere-og-utovere-innen-husflid-og-handverk.8303.aspx"
+    },
+    {
+      "source": "fylke-34",
+      "id": "8573",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tt-kort.8573.aspx"
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskudd-og-stotte",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/"
+    },
+    {
+      "source": "kommune-3403",
+      "id": "forskrift-om-tildeling-av-tilskudd-til-kulturarbeid",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/forskrift-om-tildeling-av-tilskudd-til-kulturarbeid/"
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskudd-til-kulturarbeid",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/tilskudd-til-kulturarbeid/"
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskuddsordninger-og-opprustning",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/turomrader-og-lekeplasser/lekeplasser/tilskuddsordninger-og-opprustning/"
+    },
+    {
+      "source": "kommune-3403",
+      "id": "tilskudd-til-inkludering-av-barn-og-unge-2027",
+      "url": "https://www.hamar.kommune.no/lokaldemokrati/tilskudd-til-inkludering-av-barn-og-unge-2027"
+    },
+    {
+      "source": "kommune-3403",
+      "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "url": "https://www.hamar.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "tilskudd-og-priser",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "ildsjelpris-olines-virke",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/ildsjelpris-olines-virke/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "kulturpris-edvards-palett",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturpris-edvards-palett/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "kulturtilskudd",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "retningslinjer-for-tildeling-av-kulturtilskudd",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-kulturtilskudd/retningslinjer-for-tildeling-av-kulturtilskudd"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "soknadsskjema-kulturtiltskudd",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/soknadsskjema-kulturtiltskudd/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "nordbygda-sangforenings-musikkfond",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/nordbygda-sangforenings-musikkfond/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "samlet-legat-for-loten",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/samlet-legat-for-loten/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "spillemidler",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/spillemidler/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "tilskudd-barn-ungdomsformal",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/tilskudd-barn-ungdomsformal/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "tilskudd-hos-innlandet-fylkeskommune",
+      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/tilskudd-hos-innlandet-fylkeskommune/"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "fire-anlegg-i-loten-er-tildelt-spillemidler",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/fire-anlegg-i-loten-er-tildelt-spillemidler"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "ni-anlegg-i-loten-er-tildelt-spillemidler",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/ni-anlegg-i-loten-er-tildelt-spillemidler"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "url": "https://www.loten.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad"
+    },
+    {
+      "source": "kommune-3412",
+      "id": "statutter-kriterier-for-hallvard-traettebergs-stipend",
+      "url": "https://www.loten.kommune.no/traetteberg/statutter-kriterier-for-hallvard-traettebergs-stipend/"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer",
+      "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/her-kan-du-soke-om-midler-til-idrettsanlegget-eller-kulturarenaer"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
+      "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "tilskudd-til-inkludering-av-barn-og-unge-2023",
+      "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2023"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "priser-og-stipend",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "forslag-til-priser",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "forslag-til-kulturvernprisen",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-kulturvernprisen"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "forslag-til-stangeprisen",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-stangeprisen"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "soknad-kunstnerstipend",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/soknad-kunstnerstipend"
+    },
+    {
+      "source": "kommune-3413",
+      "id": "tilskudd-og-stotte",
+      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/tilskudd-og-stotte/"
+    }
+  ]
+}

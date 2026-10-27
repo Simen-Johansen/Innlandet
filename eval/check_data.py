@@ -17,8 +17,9 @@ FIX = ROOT / "fixtures"
 USER_AGENT = "innlandet-course-project (github.com/Simen-Johansen/Innlandet)"
 MAX_AGE = timedelta(days=7)
 EMAIL_ALLOW = {"postmottak", "post"}
+# Spaces only as separators: with "-" allowed, ISO dates like 2026-10-27 matched as phone numbers.
 PHONE = re.compile(
-    r"(?<![\d.,])(?:\+47[\s-]?)?(?:\d{2}[\s-]?\d{2}[\s-]?\d{2}[\s-]?\d{2}|\d{3}[\s-]?\d{2}[\s-]?\d{3})(?![\d.,])"
+    r"(?<![\d.,-])(?:\+47\s?)?(?:\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{3})(?![\d.,-])"
 )
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 DOC_LINK = re.compile(
@@ -81,14 +82,21 @@ def main() -> int:
     )
     index_ids = {i for p in pages for i in p["ids"]}
     category_ids = {i for ids in discovery["county"]["categories"].values() for i in ids}
-    check(
-        "B2",
-        index_ids == category_ids and index_ids,
-        f"index-only {sorted(index_ids - category_ids)}, category-only {sorted(category_ids - index_ids)}",
-    )
+    # The two lists do not agree on the live site (2026-10-27: 2 index-only, 13 category-only),
+    # so neither is complete alone. B2: both were read, and we collected every grant in either.
+    check("B2", bool(index_ids) and bool(category_ids), "index or category pages listed no grants")
     grant_urls = {g["url"] for g in discovery["grants"]}
     county_grant_ids = {g["id"] for g in discovery["grants"] if g["source"] == "fylke-34"}
-    check("B2", county_grant_ids == index_ids, "county grants in discovery differ from the index")
+    union = index_ids | category_ids
+    check(
+        "B2",
+        county_grant_ids == union,
+        f"not collected {sorted(union - county_grant_ids)}, unlisted {sorted(county_grant_ids - union)}",
+    )
+    print(
+        f"info B2: {len(index_ids - category_ids)} index-only, "
+        f"{len(category_ids - index_ids)} category-only grant ids"
+    )
     for s in included:
         if s["kind"] != "kommune":
             continue

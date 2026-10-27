@@ -34,10 +34,15 @@ COUNTY_CATEGORY = re.compile(
 )
 
 # Kommune sitemap URLs: candidate -> grant, unless an exclusion matches (the reason is recorded).
-CANDIDATE = re.compile(r"tilskud|tilskot|stotte|støtte|stonad|stønad|fond|midler|frivillig")
-GRANT = re.compile(
-    r"tilskud|tilskot|kulturmidler|stotteordning|støtteordning|fond(?:et)?\b|-midler"
+# "midler(?!tid)": not "midlertidig" (temporary), which pulled in news about school buildings.
+CANDIDATE = re.compile(
+    r"tilskud|tilskot|stotte|støtte|stonad|stønad|fond|midler(?!tid)|legat|stipend|frivillig"
 )
+GRANT = re.compile(
+    r"tilskud|tilskot|stotteordning|støtteordning|fond(?:et)?\b|midler(?!tid)|legat|stipend"
+)
+HUB = re.compile(r"/tilskudd-og-[^/]+/?$")  # overview pages: their other links are candidates too
+FOLLOW_DEPTH = 2
 EXCLUDE = [
     (re.compile(r"bostotte|bostøtte|bolig"), "housing allowance for individuals"),
     (
@@ -53,10 +58,18 @@ EXCLUDE = [
 ]
 
 EMAIL_ALLOW = {"postmottak", "post"}
+# Spaces only as separators: with "-" allowed, ISO dates like 2026-10-27 matched as phone numbers.
 PHONE = re.compile(
-    r"(?<![\d.,])(?:\+47[\s-]?)?(?:\d{2}[\s-]?\d{2}[\s-]?\d{2}[\s-]?\d{2}|\d{3}[\s-]?\d{2}[\s-]?\d{3})(?![\d.,])"
+    r"(?<![\d.,-])(?:\+47\s?)?(?:\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{3})(?![\d.,-])"
 )
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
+CONTACT_HEADING = re.compile(r"kontakt|spørsmål\b|sporsmal\b|ta kontakt", re.IGNORECASE)
+ROLE = re.compile(
+    r"rådgiver|radgiver|saksbehandler|konsulent|leder\b|sjef\b|koordinator|kontaktperson|"
+    r"ansvarlig\b|\bkontakt\b",
+    re.IGNORECASE,
+)
+FULL_NAME = re.compile(r"\b[A-ZÆØÅ][a-zæøåéü]+(?:[ -][A-ZÆØÅ][a-zæøåéü]+)+\b")
 DOCUMENT = re.compile(
     r"\.(?:pdf|docx?|xlsx?)(?:$|\?)|filnedlasting\.aspx|dokumentnedlasting\.aspx", re.IGNORECASE
 )
@@ -156,17 +169,25 @@ def discover_county(s: dict, discovery: dict, offline: bool) -> list[dict]:
     first = cached_get(s["id"], f"{COUNTY_INDEX}?Side=1", offline)["body"].decode(
         "utf-8", "replace"
     )
-    categories = {}
+    categories, category_urls = {}, {}
     for cat in sorted(set(COUNTY_CATEGORY.findall(first))):
         cat_pages = paginate(s["id"], f"{COUNTY_INDEX}{cat}/", offline)
         categories[cat] = sorted({i for p in cat_pages for i in p["ids"]})
+        for p in cat_pages:
+            category_urls.update(p["urls"])
     discovery["county"] = {
         "index_pages": [{"page": p["page"], "ids": p["ids"]} for p in pages],
         "categories": categories,
     }
+    # Neither list is complete on its own (2026-10-27: 13 grants only in categories, 2 only in
+    # the index), so collect the union of both.
     urls = {gid: url for p in pages for gid, url in p["urls"].items()}
+    index_only = len(set(urls) - set(category_urls))
+    category_only = len(set(category_urls) - set(urls))
+    urls = category_urls | urls
     print(
-        f"  {s['id']}: {len(urls)} grants on {len(pages)} index pages, {len(categories)} categories"
+        f"  {s['id']}: {len(urls)} grants ({len(pages)} index pages, {len(categories)} categories;"
+        f" {index_only} index-only, {category_only} category-only)"
     )
     return [{"source": s["id"], "id": gid, "url": urls[gid]} for gid in sorted(urls)]
 
@@ -179,15 +200,21 @@ def sitemap_urls(source: str, url: str, offline: bool, depth: int = 0) -> list[s
     return locs
 
 
-def classify(url: str, rp: RobotFileParser, seen_slugs: dict[str, str]) -> str:
-    """Empty string = collect it; otherwise the reason it is excluded."""
+def classify(
+    url: str, rp: RobotFileParser, seen_slugs: dict[str, str], from_hub: bool = False
+) -> str:
+    """Empty string = collect it; otherwise the reason it is excluded.
+
+    Links found on a hub page skip the keyword test: "Spillemidler" or "Kulturpris" are
+    grants by context, not by URL.
+    """
     path = urlparse(url).path.lower()
     if not rp.can_fetch(USER_AGENT, url):
         return "disallowed by robots.txt"
     for pattern, reason in EXCLUDE:
         if pattern.search(path):
             return reason
-    if not GRANT.search(path):
+    if not from_hub and not GRANT.search(path):
         return "no grant keyword in the URL"
     slug = path.rstrip("/").rsplit("/", 1)[-1]
     if slug in seen_slugs:
@@ -202,19 +229,59 @@ def discover_kommune(s: dict, discovery: dict, rp: RobotFileParser, offline: boo
         {u for u in sitemap_urls(s["id"], sitemap, offline) if CANDIDATE.search(u.lower())}
     )
     grants, excluded, seen = [], [], {}
-    for url in candidates:
-        reason = classify(url, rp, seen)
+
+    def add(url: str, from_hub: bool = False) -> bool:
+        reason = classify(url, rp, seen, from_hub)
         if reason:
             excluded.append({"url": url, "reason": reason})
-        else:
-            slug = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
-            grants.append({"source": s["id"], "id": slug, "url": url})
+            return False
+        slug = urlparse(url).path.rstrip("/").rsplit("/", 1)[-1]
+        grants.append({"source": s["id"], "id": slug, "url": url})
+        return True
+
+    for url in candidates:
+        add(url)
+    from_sitemap = len(grants)
+
+    # Second enumeration: follow links on collected pages. Pages below a collected page are grants
+    # by context (Løten's ".../tilskudd-og-priser/spillemidler/"). Other links on a hub page also
+    # count, but need a grant keyword: hubs carry the whole site menu (Stange, 2026-10-27).
+    host = urlparse(s["base_url"]).netloc
+    frontier = list(grants)
+    for _ in range(FOLLOW_DEPTH):
+        found = []
+        for g in frontier:
+            html = cached_get(s["id"], g["url"], offline)["body"].decode("utf-8", "replace")
+            p = MarkdownExtractor(g["url"])
+            p.feed(html)
+            hub = bool(HUB.search(urlparse(g["url"]).path))
+            for link in p.links:
+                link = link.split("#")[0]
+                if urlparse(link).netloc != host or link in candidates or DOCUMENT.search(link):
+                    continue
+                child = link.startswith(g["url"].rstrip("/") + "/")
+                if child or hub:
+                    candidates.append(link)
+                    if add(link, from_hub=child):
+                        found.append(grants[-1])
+        frontier = found
+
+    from_links = len(grants) - from_sitemap
+    # Pages without a <main> element are site menus (e.g. Hamar's "vi-anbefaler"), not grants.
+    for g in list(grants):
+        if b"<main" not in cached_get(s["id"], g["url"], offline)["body"]:
+            grants.remove(g)
+            excluded.append({"url": g["url"], "reason": "no main content (navigation page)"})
+
     discovery["kommuner"][s["id"]] = {
         "sitemap": sitemap,
         "candidates": candidates,
         "excluded": excluded,
     }
-    print(f"  {s['id']}: {len(candidates)} candidates, {len(grants)} collected")
+    print(
+        f"  {s['id']}: {len(candidates)} candidates, {len(grants)} collected"
+        f" ({from_sitemap} from the sitemap, {from_links} from links, before dropping menus)"
+    )
     return grants
 
 
@@ -223,15 +290,13 @@ def discover_kommune(s: dict, discovery: dict, rp: RobotFileParser, offline: boo
 SKIP_TAGS = {
     "script",
     "style",
-    "nav",
-    "form",
     "button",
     "svg",
     "noscript",
     "iframe",
-    "header",
     "footer",
-}
+}  # not "form" (ASP.NET wraps the whole page in one), "header" (the county puts the h1 in one)
+# or "nav" (Hamar lists its grants in a nav menu inside <main>; breadcrumbs go by class)
 SKIP_CLASS = re.compile(r"person|byline|linktoolbar|share|social|breadcrumb|cookie", re.IGNORECASE)
 VOID = {"br", "img", "hr", "input", "meta", "link", "source", "wbr", "area", "col", "base"}
 BLOCK = {"p", "div", "section", "article", "li", "tr", "table", "ul", "ol", "dl", "dt", "dd"}
@@ -315,14 +380,33 @@ class MarkdownExtractor(HTMLParser):
 
 
 def sanitize(text: str) -> str:
-    """Drop every line that holds a phone number or a personal e-mail address."""
+    """Drop contact sections and every line that may identify a person.
 
-    def personal(line: str) -> bool:
-        if PHONE.search(line):
-            return True
-        return any(m.split("@")[0].lower() not in EMAIL_ALLOW for m in EMAIL.findall(line))
+    Errs towards dropping: a lost line of rules is cheaper than a published name.
+    """
+    out, drop_level = [], 0
+    for line in text.splitlines():
+        heading = re.match(r"(#+) (.*)", line)
+        if heading:
+            level = len(heading.group(1))
+            if drop_level and level > drop_level:
+                continue
+            drop_level = level if CONTACT_HEADING.match(heading.group(2)) else 0
+            if drop_level:
+                continue
+        elif drop_level or personal(line):
+            continue
+        out.append(line)
+    return "\n".join(out)
 
-    return "\n".join(line for line in text.splitlines() if not personal(line))
+
+def personal(line: str) -> bool:
+    if PHONE.search(line):
+        return True
+    if any(m.split("@")[0].lower() not in EMAIL_ALLOW for m in EMAIL.findall(line)):
+        return True
+    # County pages name caseworkers in body text: "Kontakt rådgiver Kari Nordmann".
+    return bool(ROLE.search(line) and FULL_NAME.search(line))
 
 
 def to_markdown(html: str, url: str, fetched: str) -> tuple[str, list[str]]:

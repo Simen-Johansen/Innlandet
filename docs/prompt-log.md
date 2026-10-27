@@ -58,3 +58,19 @@ or rejected (the report appendix asks for exactly those). Add entries with `/log
 - **Outcome:** PR #3 (elias → main) was opened, then closed on request.
 - **Correction:** Human rejected it: nothing goes into main yet. CLAUDE.md now says one task =
   one branch, no PRs until both partners decide.
+
+## 2026-10-27: Task 001 first live runs: what the checks caught
+- **Who:** Elias + Claude Code
+- **Prompt:** "Just get the data" (pilot: county + Hamar, Løten, Stange).
+- **Outcome:** 103 pages collected and cleaned; draft check passes; not committed (see last point).
+- **Correction:** Each of these was found by the check or by reading the output, not by the agent's
+  own confidence:
+  1. Check bug: the phone regex matched ISO dates (2026-10-27). Fix proposed in a draft check.
+  2. Wrong assumption in the check: "county index and category pages list the same grants". They
+     do not (2 index-only, 13 category-only, incl. our test grant 61228). Harness now takes the union.
+  3. Harness bug: the cleaner skipped `<form>`, and ASP.NET wraps the whole page in one, so 3 pages
+     came out empty. Also skipped `<nav>`, which hid Hamar's list of grants.
+  4. Keyword blind spots: "spillemidler", "legat", "stipend" missed; "midler" matched "midlertidig".
+  5. Privacy: PASS did not mean clean. Caseworker names in body text slipped through (fixed by
+     dropping contact sections and role+name lines), and prize/stipend pages list winners by name,
+     which a regex cannot tell apart from place names. Fixtures held back until this is solved.
