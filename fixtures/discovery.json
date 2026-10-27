@@ -224,7 +224,39 @@
         "81216",
         "8573"
       ]
-    }
+    },
+    "excluded": [
+      {
+        "id": "40377",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fylkeskulturprisen.40377.aspx",
+        "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+      },
+      {
+        "id": "40406",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innlandsprisen.40406.aspx",
+        "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+      },
+      {
+        "id": "40407",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ung-innspirator.40407.aspx",
+        "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+      },
+      {
+        "id": "41165",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innovasjonsprisen.41165.aspx",
+        "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+      },
+      {
+        "id": "8302",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-unge-kunstnere-og-og-utovere-innen-husflid-og-handverk.8302.aspx",
+        "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+      },
+      {
+        "id": "8303",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-etablerte-kunstnere-og-utovere-innen-husflid-og-handverk.8303.aspx",
+        "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+      }
+    ]
   },
   "kommuner": {
     "kommune-3403": {
@@ -428,6 +460,10 @@
           "reason": "kindergarten funding"
         },
         {
+          "url": "https://www.hamar.kommune.no/lokaldemokrati/legater/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
           "url": "https://www.hamar.kommune.no/nyhetsarkiv/fristen-for-a-soke-bostotte-er-30-juni",
           "reason": "housing allowance for individuals"
         },
@@ -477,10 +513,6 @@
         },
         {
           "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/vi-anbefaler/",
-          "reason": "no main content (navigation page)"
-        },
-        {
-          "url": "https://www.hamar.kommune.no/lokaldemokrati/legater/",
           "reason": "no main content (navigation page)"
         }
       ]
@@ -611,6 +643,14 @@
           "reason": "no grant keyword in the URL"
         },
         {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/ildsjelpris-olines-virke/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturpris-edvards-palett/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
           "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/faq-folkehelsetiltak/",
           "reason": "care for individuals"
         },
@@ -621,6 +661,10 @@
         {
           "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/soknadsskjema-folkehelsetiltak/",
           "reason": "care for individuals"
+        },
+        {
+          "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/samlet-legat-for-loten/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
         },
         {
           "url": "https://www.loten.kommune.no/naering-miljo-og-landbruk/landbruk/tilskudd-og-erstatninger/",
@@ -675,12 +719,20 @@
           "reason": "no grant keyword in the URL"
         },
         {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
           "url": "https://www.loten.kommune.no/nyhetsarkiv/disse-fikk-naringsstotte-i-ar-1",
           "reason": "no grant keyword in the URL"
         },
         {
           "url": "https://www.loten.kommune.no/nyhetsarkiv/disse-fikk-naringsstotte-i-loten-i-2026",
           "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
+          "reason": "news article quoting named persons; the fund's own page is collected"
         },
         {
           "url": "https://www.loten.kommune.no/nyhetsarkiv/frivilligbors-i-loten",
@@ -709,6 +761,10 @@
         {
           "url": "https://www.loten.kommune.no/politikk-og-organisasjon/horinger-offentlig-ettersyn/horinger/horing-forslag-til-lokal-forskrift-for-beregning-av-grunntilskudd-til-private-barnehager",
           "reason": "kindergarten funding"
+        },
+        {
+          "url": "https://www.loten.kommune.no/traetteberg/statutter-kriterier-for-hallvard-traettebergs-stipend/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
         },
         {
           "url": "https://www.loten.kommune.no/traetteberg/",
@@ -1095,7 +1151,7 @@
         },
         {
           "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/om-kulturskolen/priser-kulturskolen-2026",
-          "reason": "no grant keyword in the URL"
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
         },
         {
           "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/undervisningstilbud/",
@@ -1103,7 +1159,7 @@
         },
         {
           "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kulturskolen/undervisningstilbud/priser-kulturskolen-2026",
-          "reason": "no grant keyword in the URL"
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
         },
         {
           "url": "https://www.stange.kommune.no/kultur-og-frivillighet/kunst/",
@@ -1160,6 +1216,26 @@
         {
           "url": "https://www.stange.kommune.no/kultur-og-frivillighet/lalumsvangen-setermuseum/",
           "reason": "no grant keyword in the URL"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-kulturvernprisen",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-stangeprisen",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
+        },
+        {
+          "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/soknad-kunstnerstipend",
+          "reason": "prize/stipend/legat for individuals; page lists recipients by name"
         },
         {
           "url": "https://www.stange.kommune.no/kultur-og-frivillighet/tilrettelagte-aktivitetstilbud/",
@@ -1564,28 +1640,8 @@
     },
     {
       "source": "fylke-34",
-      "id": "40377",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fylkeskulturprisen.40377.aspx"
-    },
-    {
-      "source": "fylke-34",
-      "id": "40406",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innlandsprisen.40406.aspx"
-    },
-    {
-      "source": "fylke-34",
-      "id": "40407",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ung-innspirator.40407.aspx"
-    },
-    {
-      "source": "fylke-34",
       "id": "40936",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ekstratilskudd-for-larlinger-og-larekandidater-med-kort-botid.40936.aspx"
-    },
-    {
-      "source": "fylke-34",
-      "id": "41165",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innovasjonsprisen.41165.aspx"
     },
     {
       "source": "fylke-34",
@@ -1699,16 +1755,6 @@
     },
     {
       "source": "fylke-34",
-      "id": "8302",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-unge-kunstnere-og-og-utovere-innen-husflid-og-handverk.8302.aspx"
-    },
-    {
-      "source": "fylke-34",
-      "id": "8303",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-etablerte-kunstnere-og-utovere-innen-husflid-og-handverk.8303.aspx"
-    },
-    {
-      "source": "fylke-34",
       "id": "8573",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tt-kort.8573.aspx"
     },
@@ -1749,16 +1795,6 @@
     },
     {
       "source": "kommune-3412",
-      "id": "ildsjelpris-olines-virke",
-      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/ildsjelpris-olines-virke/"
-    },
-    {
-      "source": "kommune-3412",
-      "id": "kulturpris-edvards-palett",
-      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturpris-edvards-palett/"
-    },
-    {
-      "source": "kommune-3412",
       "id": "kulturtilskudd",
       "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/"
     },
@@ -1779,11 +1815,6 @@
     },
     {
       "source": "kommune-3412",
-      "id": "samlet-legat-for-loten",
-      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/samlet-legat-for-loten/"
-    },
-    {
-      "source": "kommune-3412",
       "id": "spillemidler",
       "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/spillemidler/"
     },
@@ -1799,18 +1830,8 @@
     },
     {
       "source": "kommune-3412",
-      "id": "dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
-      "url": "https://www.loten.kommune.no/nyhetsarkiv/dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025"
-    },
-    {
-      "source": "kommune-3412",
       "id": "fire-anlegg-i-loten-er-tildelt-spillemidler",
       "url": "https://www.loten.kommune.no/nyhetsarkiv/fire-anlegg-i-loten-er-tildelt-spillemidler"
-    },
-    {
-      "source": "kommune-3412",
-      "id": "fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
-      "url": "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge"
     },
     {
       "source": "kommune-3412",
@@ -1821,11 +1842,6 @@
       "source": "kommune-3412",
       "id": "stotteordning-for-levering-av-avfall-plukket-pa-dugnad",
       "url": "https://www.loten.kommune.no/nyhetsarkiv/stotteordning-for-levering-av-avfall-plukket-pa-dugnad"
-    },
-    {
-      "source": "kommune-3412",
-      "id": "statutter-kriterier-for-hallvard-traettebergs-stipend",
-      "url": "https://www.loten.kommune.no/traetteberg/statutter-kriterier-for-hallvard-traettebergs-stipend/"
     },
     {
       "source": "kommune-3413",
@@ -1841,31 +1857,6 @@
       "source": "kommune-3413",
       "id": "tilskudd-til-inkludering-av-barn-og-unge-2023",
       "url": "https://www.stange.kommune.no/aktuelt-nyhetsarkiv/tilskudd-til-inkludering-av-barn-og-unge-2023"
-    },
-    {
-      "source": "kommune-3413",
-      "id": "priser-og-stipend",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/"
-    },
-    {
-      "source": "kommune-3413",
-      "id": "forslag-til-priser",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/"
-    },
-    {
-      "source": "kommune-3413",
-      "id": "forslag-til-kulturvernprisen",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-kulturvernprisen"
-    },
-    {
-      "source": "kommune-3413",
-      "id": "forslag-til-stangeprisen",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-stangeprisen"
-    },
-    {
-      "source": "kommune-3413",
-      "id": "soknad-kunstnerstipend",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/soknad-kunstnerstipend"
     },
     {
       "source": "kommune-3413",

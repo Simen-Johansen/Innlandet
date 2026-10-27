@@ -56,20 +56,43 @@ EXCLUDE = [
     ),
     (re.compile(r"horing|høring"), "public hearing, not a grant"),
 ]
+# Prizes, stipends and legater go to individuals, not clubs, and their pages list recipients by
+# name (2026-10-27). The hub "tilskudd-og-priser" is an overview of grants, so it stays.
+PRIZE = re.compile(r"(?<!tilskudd-og-)priser|pris\b|prisen|stipend|legat|forslag-til|vinnerne")
+PRIZE_REASON = "prize/stipend/legat for individuals; page lists recipients by name"
+EXCLUDE.append((PRIZE, PRIZE_REASON))
 
 EMAIL_ALLOW = {"postmottak", "post"}
 # Spaces only as separators: with "-" allowed, ISO dates like 2026-10-27 matched as phone numbers.
+# A comma or full stop after the number is fine ("tlf. 959 92 848,"); one followed by a digit is not.
 PHONE = re.compile(
-    r"(?<![\d.,-])(?:\+47\s?)?(?:\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{3})(?![\d.,-])"
+    r"(?<!\d)(?<!\d[.,-])(?:\+47\s?)?(?:\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{3})"
+    r"(?!\d)(?![.,-]\d)"
 )
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 CONTACT_HEADING = re.compile(r"kontakt|spørsmål\b|sporsmal\b|ta kontakt", re.IGNORECASE)
+# Past awards ("Tildelinger 2025", "Tidligere tildelinger") list recipients, often individual
+# artists. They are not grant rules, so the whole section goes (manual review 2026-10-27).
+# Only the plural/round forms: "Tildelingskriterier", "Kriterier for tildeling" and
+# "Forskrift om tildeling" are rules, and "... er tildelt spillemidler" is a page title.
+AWARD_HEADING = re.compile(r"\btildelinger\b|tildelingsrunde", re.IGNORECASE)
 ROLE = re.compile(
     r"rådgiver|radgiver|saksbehandler|konsulent|leder\b|sjef\b|koordinator|kontaktperson|"
-    r"ansvarlig\b|\bkontakt\b",
+    r"ansvarlig\b|\bkontakt\b|ordfører",
     re.IGNORECASE,
 )
-FULL_NAME = re.compile(r"\b[A-ZÆØÅ][a-zæøåéü]+(?:[ -][A-ZÆØÅ][a-zæøåéü]+)+\b")
+NAME = r"[A-ZÆØÅ][a-zæøåéü]+"
+FULL_NAME = re.compile(rf"\b{NAME}(?:[ -]{NAME})+\b")
+NAME_ONLY_LINE = re.compile(rf"{NAME}(?: {NAME}){{1,3}}")
+# "v/ Kari Nordmann", "v/sekretær Kari M Nordmann", "ved Kari Nordmann", "Foto: ..."
+ATTRIBUTED = re.compile(rf"\b(?:v/|ved)\s*(?:[a-zæøå]+\s+)?{NAME}\s+[A-ZÆØÅ]|\bFoto:\s*[A-ZÆØÅ]")
+LEFTOVER_LABEL = re.compile(r"(?:telefon|tlf\.?|e-post|epost|mobil):?\s*", re.IGNORECASE)
+# Pages excluded after reading them; the reason is recorded in discovery.json.
+REVIEWED_EXCLUDE = {
+    "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge": (
+        "news article quoting named persons; the fund's own page is collected"
+    ),
+}
 DOCUMENT = re.compile(
     r"\.(?:pdf|docx?|xlsx?)(?:$|\?)|filnedlasting\.aspx|dokumentnedlasting\.aspx", re.IGNORECASE
 )
@@ -185,9 +208,14 @@ def discover_county(s: dict, discovery: dict, offline: bool) -> list[dict]:
     index_only = len(set(urls) - set(category_urls))
     category_only = len(set(category_urls) - set(urls))
     urls = category_urls | urls
+    excluded = []
+    for gid in sorted(urls):
+        if gid in categories.get("priser", []) or PRIZE.search(urlparse(urls[gid]).path):
+            excluded.append({"id": gid, "url": urls.pop(gid), "reason": PRIZE_REASON})
+    discovery["county"]["excluded"] = excluded
     print(
         f"  {s['id']}: {len(urls)} grants ({len(pages)} index pages, {len(categories)} categories;"
-        f" {index_only} index-only, {category_only} category-only)"
+        f" {index_only} index-only, {category_only} category-only; {len(excluded)} prizes excluded)"
     )
     return [{"source": s["id"], "id": gid, "url": urls[gid]} for gid in sorted(urls)]
 
@@ -209,6 +237,8 @@ def classify(
     grants by context, not by URL.
     """
     path = urlparse(url).path.lower()
+    if url in REVIEWED_EXCLUDE:
+        return REVIEWED_EXCLUDE[url]
     if not rp.can_fetch(USER_AGENT, url):
         return "disallowed by robots.txt"
     for pattern, reason in EXCLUDE:
@@ -391,7 +421,9 @@ def sanitize(text: str) -> str:
             level = len(heading.group(1))
             if drop_level and level > drop_level:
                 continue
-            drop_level = level if CONTACT_HEADING.match(heading.group(2)) else 0
+            title = heading.group(2)
+            drop = CONTACT_HEADING.match(title) or AWARD_HEADING.search(title)
+            drop_level = level if drop else 0
             if drop_level:
                 continue
         elif drop_level or personal(line):
@@ -405,6 +437,10 @@ def personal(line: str) -> bool:
         return True
     if any(m.split("@")[0].lower() not in EMAIL_ALLOW for m in EMAIL.findall(line)):
         return True
+    if ATTRIBUTED.search(line) or LEFTOVER_LABEL.fullmatch(line):
+        return True
+    if NAME_ONLY_LINE.fullmatch(line.removeprefix("- ")):
+        return True  # a bare name, e.g. a contact person above "telefon:"
     # County pages name caseworkers in body text: "Kontakt rådgiver Kari Nordmann".
     return bool(ROLE.search(line) and FULL_NAME.search(line))
 

@@ -47,6 +47,26 @@ def test_markdown_removes_names_in_body_text():
     assert "fylkeskommunens saksbehandler" in md  # a role without a name stays
 
 
+def test_markdown_removes_awards_and_attributed_names():
+    page = (
+        "<main><h1>Kulturmidler</h1><p>Frist 1. mars. Søk med tlf. 12 34 56 78, spør oss.</p>"
+        "<p>Ola Nordmann</p><p>telefon:</p><p>Se kart (Foto: Kari Nordmann)</p>"
+        "<p>Laget v/ Per Hansen søkte.</p><p>Beløpet er 1 250 000 kroner.</p>"
+        "<p>Ungdomsrådet v/sekretær Liv K Hansen</p><p>Gjelder elever ved Nord-Fron vgs.</p>"
+        "<h2>Tidligere tildelinger</h2><p>Anne Artist, Utstilling 50 000</p>"
+        "<h3>2024</h3><p>Bo Kunstner 40 000</p>"
+        "<h2>Hvem kan søke?</h2><p>Lag og foreninger.</p>"
+        "<h2>Tildelingskriterier</h2><p>Vi prioriterer barn og unge.</p></main>"
+    )
+    md, _ = to_markdown(page, "https://innlandetfylke.no/k.1.aspx", "2026-10-27")
+    for gone in ("12 34 56 78", "Nordmann", "telefon:", "Hansen", "Artist", "Kunstner"):
+        assert gone not in md
+    assert "Beløpet er 1 250 000 kroner." in md  # an amount is not a phone number
+    assert "Gjelder elever ved Nord-Fron vgs." in md  # "ved" + a place stays
+    assert "## Hvem kan søke?\n\nLag og foreninger." in md
+    assert "## Tildelingskriterier\n\nVi prioriterer barn og unge." in md  # rules, not awards
+
+
 def test_markdown_reads_main_inside_form_and_header():
     page = (
         "<html><body><form><main><article><header><h1>Spillemidler</h1></header>"
@@ -82,4 +102,6 @@ def test_classify_kommune_urls():
     assert classify(f"{base}/sok/tilskudd", rp, seen) == "disallowed by robots.txt"
     assert classify(f"{base}/nyheter/midlertidig-skole", rp, seen) == "no grant keyword in the URL"
     assert classify(f"{base}/tilskudd-og-priser/spillemidler/", rp, seen) == ""
-    assert classify(f"{base}/tilskudd-og-priser/kulturpris/", rp, seen, from_hub=True) == ""
+    assert classify(f"{base}/tilskudd-og-priser/", rp, seen) == ""
+    for prize in ("tilskudd-og-priser/kulturpris-x/", "priser-og-stipend/", "samlet-legat/"):
+        assert classify(f"{base}/{prize}", rp, seen, from_hub=True).startswith("prize/")

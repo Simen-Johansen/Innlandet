@@ -18,8 +18,10 @@ USER_AGENT = "innlandet-course-project (github.com/Simen-Johansen/Innlandet)"
 MAX_AGE = timedelta(days=7)
 EMAIL_ALLOW = {"postmottak", "post"}
 # Spaces only as separators: with "-" allowed, ISO dates like 2026-10-27 matched as phone numbers.
+# A comma or full stop after the number is fine ("tlf. 959 92 848,"); one followed by a digit is not.
 PHONE = re.compile(
-    r"(?<![\d.,-])(?:\+47\s?)?(?:\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{3})(?![\d.,-])"
+    r"(?<!\d)(?<!\d[.,-])(?:\+47\s?)?(?:\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{3})"
+    r"(?!\d)(?![.,-]\d)"
 )
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 DOC_LINK = re.compile(
@@ -88,6 +90,11 @@ def main() -> int:
     grant_urls = {g["url"] for g in discovery["grants"]}
     county_grant_ids = {g["id"] for g in discovery["grants"] if g["source"] == "fylke-34"}
     union = index_ids | category_ids
+    # Prizes and stipends are excluded on purpose (they go to individuals); each needs a reason.
+    county_excluded = discovery["county"].get("excluded", [])
+    for e in county_excluded:
+        check("B2", bool(e.get("reason", "").strip()), f"county {e['id']} excluded without reason")
+    county_grant_ids |= {e["id"] for e in county_excluded}
     check(
         "B2",
         county_grant_ids == union,

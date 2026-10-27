@@ -371,47 +371,11 @@
     },
     {
       "source": "fylke-34",
-      "id": "40377",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fylkeskulturprisen.40377.aspx",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "fylke-34-40377.md",
-      "error": ""
-    },
-    {
-      "source": "fylke-34",
-      "id": "40406",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innlandsprisen.40406.aspx",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "fylke-34-40406.md",
-      "error": ""
-    },
-    {
-      "source": "fylke-34",
-      "id": "40407",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ung-innspirator.40407.aspx",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "fylke-34-40407.md",
-      "error": ""
-    },
-    {
-      "source": "fylke-34",
       "id": "40936",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/ekstratilskudd-for-larlinger-og-larekandidater-med-kort-botid.40936.aspx",
       "status": 200,
       "fetched": "2026-10-27",
       "file": "fylke-34-40936.md",
-      "error": ""
-    },
-    {
-      "source": "fylke-34",
-      "id": "41165",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/innovasjonsprisen.41165.aspx",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "fylke-34-41165.md",
       "error": ""
     },
     {
@@ -614,24 +578,6 @@
     },
     {
       "source": "fylke-34",
-      "id": "8302",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-unge-kunstnere-og-og-utovere-innen-husflid-og-handverk.8302.aspx",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "fylke-34-8302.md",
-      "error": ""
-    },
-    {
-      "source": "fylke-34",
-      "id": "8303",
-      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/stipend-for-etablerte-kunstnere-og-utovere-innen-husflid-og-handverk.8303.aspx",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "fylke-34-8303.md",
-      "error": ""
-    },
-    {
-      "source": "fylke-34",
       "id": "8573",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/tt-kort.8573.aspx",
       "status": 200,
@@ -704,24 +650,6 @@
     },
     {
       "source": "kommune-3412",
-      "id": "ildsjelpris-olines-virke",
-      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/ildsjelpris-olines-virke/",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3412-ildsjelpris-olines-virke.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3412",
-      "id": "kulturpris-edvards-palett",
-      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturpris-edvards-palett/",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3412-kulturpris-edvards-palett.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3412",
       "id": "kulturtilskudd",
       "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/kulturtilskudd/",
       "status": 200,
@@ -758,15 +686,6 @@
     },
     {
       "source": "kommune-3412",
-      "id": "samlet-legat-for-loten",
-      "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/samlet-legat-for-loten/",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3412-samlet-legat-for-loten.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3412",
       "id": "spillemidler",
       "url": "https://www.loten.kommune.no/kultur-og-aktivitet/tilskudd-og-priser/spillemidler/",
       "status": 200,
@@ -794,29 +713,11 @@
     },
     {
       "source": "kommune-3412",
-      "id": "dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
-      "url": "https://www.loten.kommune.no/nyhetsarkiv/dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3412-dette-er-vinnerne-av-trattebergstipendet-kulturprisen-og-ildsjelprisen-2025.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3412",
       "id": "fire-anlegg-i-loten-er-tildelt-spillemidler",
       "url": "https://www.loten.kommune.no/nyhetsarkiv/fire-anlegg-i-loten-er-tildelt-spillemidler",
       "status": 200,
       "fetched": "2026-10-27",
       "file": "kommune-3412-fire-anlegg-i-loten-er-tildelt-spillemidler.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3412",
-      "id": "fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
-      "url": "https://www.loten.kommune.no/nyhetsarkiv/fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3412-fond-fra-nordbygda-sangforening-skal-bidra-i-musikklivet-for-barn-og-unge.md",
       "error": ""
     },
     {
@@ -835,15 +736,6 @@
       "status": 200,
       "fetched": "2026-10-27",
       "file": "kommune-3412-stotteordning-for-levering-av-avfall-plukket-pa-dugnad.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3412",
-      "id": "statutter-kriterier-for-hallvard-traettebergs-stipend",
-      "url": "https://www.loten.kommune.no/traetteberg/statutter-kriterier-for-hallvard-traettebergs-stipend/",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3412-statutter-kriterier-for-hallvard-traettebergs-stipend.md",
       "error": ""
     },
     {
@@ -871,51 +763,6 @@
       "status": 200,
       "fetched": "2026-10-27",
       "file": "kommune-3413-tilskudd-til-inkludering-av-barn-og-unge-2023.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3413",
-      "id": "priser-og-stipend",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3413-priser-og-stipend.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3413",
-      "id": "forslag-til-priser",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3413-forslag-til-priser.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3413",
-      "id": "forslag-til-kulturvernprisen",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-kulturvernprisen",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3413-forslag-til-kulturvernprisen.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3413",
-      "id": "forslag-til-stangeprisen",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/forslag-til-stangeprisen",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3413-forslag-til-stangeprisen.md",
-      "error": ""
-    },
-    {
-      "source": "kommune-3413",
-      "id": "soknad-kunstnerstipend",
-      "url": "https://www.stange.kommune.no/kultur-og-frivillighet/priser-og-stipend/forslag-til-priser/soknad-kunstnerstipend",
-      "status": 200,
-      "fetched": "2026-10-27",
-      "file": "kommune-3413-soknad-kunstnerstipend.md",
       "error": ""
     },
     {
@@ -1130,16 +977,6 @@
       "reason": "documents not fetched yet (later task)"
     },
     {
-      "url": "https://www.loten.kommune.no/getfile.php/1326076-1668096328/L%C3%B8ten%20kommune/Filer/Skjema/Soknadsskjema-samlet-legat-for-Loten.pdf",
-      "found_in": "kommune-3412-samlet-legat-for-loten.md",
-      "reason": "documents not fetched yet (later task)"
-    },
-    {
-      "url": "https://www.loten.kommune.no/getfile.php/1326079-1668096304/L%C3%B8ten%20kommune/Filer/Skjema/Soknadsskjema-samlet-legat-for-Loten.doc",
-      "found_in": "kommune-3412-samlet-legat-for-loten.md",
-      "reason": "documents not fetched yet (later task)"
-    },
-    {
       "url": "https://www.regjeringen.no/contentassets/4934157014d94e3986b2219111bdf806/matnasjonen-norge_strategi_uu.pdf",
       "found_in": "fylke-34-17009.md",
       "reason": "documents not fetched yet (later task)"
@@ -1161,7 +998,7 @@
     },
     {
       "url": "https://www.stange.kommune.no/getfile.php/1369635-1707213322/Stange%20kommune/FILER%20OG%20DOKUMENTER/Sentrale%20planer%20og%20styringsdokumenter/Kommunedelplan%20for%20kultur%2C%20frivillighet%2C%20idrett%20og%20friluftsliv%202023-2035%20-UU.pdf",
-      "found_in": "kommune-3413-priser-og-stipend.md",
+      "found_in": "kommune-3413-tilskudd-og-stotte.md",
       "reason": "documents not fetched yet (later task)"
     }
   ]

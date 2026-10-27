@@ -74,3 +74,20 @@ or rejected (the report appendix asks for exactly those). Add entries with `/log
   5. Privacy: PASS did not mean clean. Caseworker names in body text slipped through (fixed by
      dropping contact sections and role+name lines), and prize/stipend pages list winners by name,
      which a regex cannot tell apart from place names. Fixtures held back until this is solved.
+
+## 2026-10-27: Removing person names from the grant corpus
+- **Who:** Elias + Claude Code
+- **Prompt:** "A [exclude prize/stipend/legat pages]. And can you just go through reliably of
+  what's left?"
+- **Outcome:** 6 county prizes/stipends and the kommune prize pages excluded with a reason (86 pages
+  left). The agent read every line with two or more capitalised words (534, then 157) plus a sweep
+  for single names and contact details, and added rules for each pattern found: award-list
+  sections ("Tildelinger …"), "v/ Name", "Foto: Name", name-only lines, role + name, and one
+  news article excluded by URL. Final pass: no private persons left; remaining hits are places,
+  organisations, companies and historical figures.
+- **Correction:** (1) The phone regex in both the cleaner and the check missed numbers followed by a
+  comma, so a museum contact list with four names and numbers passed the check. (2) The agent's
+  first award-section rule ("tildeling") also deleted grant rules ("Tildelingskriterier",
+  "Forskrift om tildeling…") and emptied a news page; caught by listing every heading it removed,
+  then narrowed to "tildelinger"/"tildelingsrunde". Limitation: the review is the agent's reading,
+  not a guarantee; a human should skim a sample before the exam.
