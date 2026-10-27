@@ -1,8 +1,33 @@
 {
   "permissions": {
+    "allow": [
+      "Bash(uv run pytest *)",
+      "Bash(uv run ruff *)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ],
+    "ask": [
+      "Bash(git push *)"
+    ],
     "deny": [
       "Read(./.env)",
-      "Read(**/.env)"
+      "Read(**/.env)",
+      "Read(./.env.local)",
+      "Edit(/eval/**)",
+      "Write(/eval/**)"
+    ]
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run python \"$CLAUDE_PROJECT_DIR/.claude/hooks/stop_check.py\""
+          }
+        ]
+      }
     ]
   }
 }

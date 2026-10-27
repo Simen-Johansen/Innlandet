@@ -1,11 +1,13 @@
 # Prompt log
 
-One entry per significant prompt. Format:
+One entry per significant prompt, and always when agent output was corrected, challenged
+or rejected (the report appendix asks for exactly those). Add entries with `/log`. Format:
 
 ## YYYY-MM-DD: short title
 - **Who:**
 - **Prompt:**
 - **Outcome:**
+- **Correction:** what the human (or a check) corrected, challenged or rejected, and why
 
 ## 2026-10-15: Implement task 001 (probe)
 - **Who:** Simen + Claude Code (plan mode)
@@ -18,3 +20,34 @@ One entry per significant prompt. Format:
 - **Prompt:** Remove everything from the NRK Innlandet test so we can start on the task in SPEC.md
 - **Outcome:** Probe, its test, fixture, task file and eval check deleted in a removal
   commit; history (PR #1) kept.
+
+## 2026-10-27: Claude Code setup from the W40/W43 lectures
+- **Who:** Elias + Claude Code (auto mode)
+- **Prompt:** Use the W40 and W43 presentations as the Claude setup; edit CLAUDE.md and other
+  files to fit our rough plan; use repo files (not private memory) and keep the prompt log.
+- **Outcome:** Lean CLAUDE.md; settings.json with deny on Edit/Write in eval/ and a Stop hook
+  running the checks; skills `brreg-api` and `grant-sources`; `/task` and `/log` commands;
+  read-only `reviewer` subagent; CI `checks.yml`; task and meeting templates.
+- **Correction:** The agent asked before building and the human narrowed scope: no skeleton code
+  yet. The agent's first question (bash vs Python runner) was too technical; answered with a default.
+
+## 2026-10-27: Example orgnr in the rough plan does not exist
+- **Who:** Elias + Claude Code
+- **Prompt:** (while writing the brreg-api skill) verify the API against the rough plan's example.
+- **Outcome:** `GET /enheter/970169215` returns 404. The real Hamar Idrettslag (hovedlaget) is
+  `871586152` (FLI, 3403, in Frivillighetsregisteret). The API also returns `telefon`/`mobil`,
+  so the skill now says to strip them.
+- **Correction:** The rough plan (AI-drafted) invented an orgnr. Rule added to CLAUDE.md: never
+  invent APIs, URLs, orgnrs or deadlines; verify against the source.
+
+## 2026-10-27: Plan for collecting grant rules (RAG or not)
+- **Who:** Elias + Claude Code
+- **Prompt:** Plan how to retrieve all grant rules from Innlandet websites; should we use RAG?
+  Make a binary-verifiable checklist that proves we have all the information.
+- **Outcome:** docs/data-plan.md: structured catalogue + code filter + full-text reading instead
+  of vector RAG; 6-step pipeline; checklist A1–F2. Based on live recon of innlandetfylke.no
+  (58 grants), Geonorge (46 kommuner) and Hamar kommune.
+- **Correction:** (1) The agent first said county pages were not UTF-8; the HTTP header said
+  utf-8, and the broken æøå came from the Windows terminal. Retracted. (2) Recon showed the rough
+  plan's example grant is not open to clubs. (3) "Public, so scraping is allowed" was challenged:
+  robots.txt blocks PDF download paths on the county site and ClaudeBot on Hamar's.
