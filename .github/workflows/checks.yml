@@ -1,5 +1,5 @@
 name: checks
-on: [pull_request]
+on: [push, pull_request]
 jobs:
   offline:
     runs-on: ubuntu-latest

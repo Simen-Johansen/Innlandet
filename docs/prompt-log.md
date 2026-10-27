@@ -51,3 +51,10 @@ or rejected (the report appendix asks for exactly those). Add entries with `/log
   utf-8, and the broken æøå came from the Windows terminal. Retracted. (2) Recon showed the rough
   plan's example grant is not open to clubs. (3) "Public, so scraping is allowed" was challenged:
   robots.txt blocks PDF download paths on the county site and ClaudeBot on Hamar's.
+
+## 2026-10-27: PR opened too early
+- **Who:** Elias + Claude Code
+- **Prompt:** "Okay" to "push and open a pull request?"
+- **Outcome:** PR #3 (elias → main) was opened, then closed on request.
+- **Correction:** Human rejected it: nothing goes into main yet. CLAUDE.md now says one task =
+  one branch, no PRs until both partners decide.

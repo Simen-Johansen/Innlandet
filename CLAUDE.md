@@ -6,7 +6,8 @@ verified grant checklist out. Problem, users and success: SPEC.md.
 `uv run ruff check . && uv run ruff format --check . && uv run pytest`
 
 ## How we work
-- One task = one branch = one PR. Every task is `tasks/NNN-name.md` (copy `tasks/_template.md`).
+- One task = one branch. Nothing goes into main and no PRs are opened until we decide so.
+  Every task is `tasks/NNN-name.md` (copy `tasks/_template.md`).
   Run it with `/task NNN`: plan first, wait for approval, then run every Acceptance command.
 - Code where you can, model where you must: fetching, filtering and checking are plain Python.
 - Each stage writes a file to `out/`; the next stage reads it; a check in `eval/` runs in between.

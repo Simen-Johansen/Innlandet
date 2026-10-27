@@ -1,0 +1,474 @@
+{
+  "sources": [
+    {
+      "id": "fylke-34",
+      "kind": "fylke",
+      "nummer": "34",
+      "name": "Innlandet fylkeskommune",
+      "base_url": "https://innlandetfylke.no",
+      "discovery": "county-index",
+      "status": "included",
+      "reason": ""
+    },
+    {
+      "id": "kommune-3401",
+      "kind": "kommune",
+      "nummer": "3401",
+      "name": "Kongsvinger",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3403",
+      "kind": "kommune",
+      "nummer": "3403",
+      "name": "Hamar",
+      "base_url": "https://www.hamar.kommune.no",
+      "discovery": "sitemap",
+      "status": "included",
+      "reason": ""
+    },
+    {
+      "id": "kommune-3405",
+      "kind": "kommune",
+      "nummer": "3405",
+      "name": "Lillehammer",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3407",
+      "kind": "kommune",
+      "nummer": "3407",
+      "name": "Gjøvik",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3411",
+      "kind": "kommune",
+      "nummer": "3411",
+      "name": "Ringsaker",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "no sitemap.xml; discovery method not built yet"
+    },
+    {
+      "id": "kommune-3412",
+      "kind": "kommune",
+      "nummer": "3412",
+      "name": "Løten",
+      "base_url": "https://www.loten.kommune.no",
+      "discovery": "sitemap",
+      "status": "included",
+      "reason": ""
+    },
+    {
+      "id": "kommune-3413",
+      "kind": "kommune",
+      "nummer": "3413",
+      "name": "Stange",
+      "base_url": "https://www.stange.kommune.no",
+      "discovery": "sitemap",
+      "status": "included",
+      "reason": ""
+    },
+    {
+      "id": "kommune-3414",
+      "kind": "kommune",
+      "nummer": "3414",
+      "name": "Nord-Odal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3415",
+      "kind": "kommune",
+      "nummer": "3415",
+      "name": "Sør-Odal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3416",
+      "kind": "kommune",
+      "nummer": "3416",
+      "name": "Eidskog",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3417",
+      "kind": "kommune",
+      "nummer": "3417",
+      "name": "Grue",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3418",
+      "kind": "kommune",
+      "nummer": "3418",
+      "name": "Åsnes",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3419",
+      "kind": "kommune",
+      "nummer": "3419",
+      "name": "Våler",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3420",
+      "kind": "kommune",
+      "nummer": "3420",
+      "name": "Elverum",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3421",
+      "kind": "kommune",
+      "nummer": "3421",
+      "name": "Trysil",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3422",
+      "kind": "kommune",
+      "nummer": "3422",
+      "name": "Åmot",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3423",
+      "kind": "kommune",
+      "nummer": "3423",
+      "name": "Stor-Elvdal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3424",
+      "kind": "kommune",
+      "nummer": "3424",
+      "name": "Rendalen",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3425",
+      "kind": "kommune",
+      "nummer": "3425",
+      "name": "Engerdal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3426",
+      "kind": "kommune",
+      "nummer": "3426",
+      "name": "Tolga",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3427",
+      "kind": "kommune",
+      "nummer": "3427",
+      "name": "Tynset",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3428",
+      "kind": "kommune",
+      "nummer": "3428",
+      "name": "Alvdal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3429",
+      "kind": "kommune",
+      "nummer": "3429",
+      "name": "Folldal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3430",
+      "kind": "kommune",
+      "nummer": "3430",
+      "name": "Os",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3431",
+      "kind": "kommune",
+      "nummer": "3431",
+      "name": "Dovre",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3432",
+      "kind": "kommune",
+      "nummer": "3432",
+      "name": "Lesja",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3433",
+      "kind": "kommune",
+      "nummer": "3433",
+      "name": "Skjåk",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3434",
+      "kind": "kommune",
+      "nummer": "3434",
+      "name": "Lom",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3435",
+      "kind": "kommune",
+      "nummer": "3435",
+      "name": "Vågå",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3436",
+      "kind": "kommune",
+      "nummer": "3436",
+      "name": "Nord-Fron",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3437",
+      "kind": "kommune",
+      "nummer": "3437",
+      "name": "Sel",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3438",
+      "kind": "kommune",
+      "nummer": "3438",
+      "name": "Sør-Fron",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3439",
+      "kind": "kommune",
+      "nummer": "3439",
+      "name": "Ringebu",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3440",
+      "kind": "kommune",
+      "nummer": "3440",
+      "name": "Øyer",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3441",
+      "kind": "kommune",
+      "nummer": "3441",
+      "name": "Gausdal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3442",
+      "kind": "kommune",
+      "nummer": "3442",
+      "name": "Østre Toten",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3443",
+      "kind": "kommune",
+      "nummer": "3443",
+      "name": "Vestre Toten",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3446",
+      "kind": "kommune",
+      "nummer": "3446",
+      "name": "Gran",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3447",
+      "kind": "kommune",
+      "nummer": "3447",
+      "name": "Søndre Land",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3448",
+      "kind": "kommune",
+      "nummer": "3448",
+      "name": "Nordre Land",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3449",
+      "kind": "kommune",
+      "nummer": "3449",
+      "name": "Sør-Aurdal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3450",
+      "kind": "kommune",
+      "nummer": "3450",
+      "name": "Etnedal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3451",
+      "kind": "kommune",
+      "nummer": "3451",
+      "name": "Nord-Aurdal",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3452",
+      "kind": "kommune",
+      "nummer": "3452",
+      "name": "Vestre Slidre",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3453",
+      "kind": "kommune",
+      "nummer": "3453",
+      "name": "Øystre Slidre",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    },
+    {
+      "id": "kommune-3454",
+      "kind": "kommune",
+      "nummer": "3454",
+      "name": "Vang",
+      "base_url": null,
+      "discovery": null,
+      "status": "excluded",
+      "reason": "outside pilot scope (decision 2026-10-27)"
+    }
+  ]
+}
