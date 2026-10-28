@@ -4,7 +4,8 @@ Course project, KIUA2003. Agentic workflow, work in progress. See [SPEC.md](SPEC
 
 ## Setup
 
-1. Install [uv](https://docs.astral.sh/uv/): `winget install astral-sh.uv` (or `pip install uv`).
-2. `uv sync`
-3. Copy `.env.example` to `.env` and fill in values.
-4. Run checks: `uv run ruff check . && uv run ruff format --check . && uv run pytest`
+1. Python 3.12 or newer, available as `python`. Harness and checks use the standard library only.
+2. Copy `.env.example` to `.env` and fill in values.
+3. Run the checks for each stage, e.g. `python harness/entity.py fixtures/input_hamar.json --offline`,
+   then `python eval/check_entity.py`. Every check must print PASS. The checks in `eval/` are the source of truth.
+4. Optional extra unit tests: `python -m pytest` (needs pytest installed).
