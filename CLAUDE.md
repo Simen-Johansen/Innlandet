@@ -8,6 +8,9 @@
 
 ## Rules
 - Never edit `eval/` without asking. The checks grade you; if a check fails, report it, do not change it.
+- `eval/` is the source of truth: report every FAIL clearly with its output, and fix the code or the plan,
+  never the check.
+- Never commit or push without explicit approval from the person you are working with, every time.
 - No personal data: never call the Brreg roles endpoint, never store addresses beyond kommunenummer,
   never keep names, e-mails or phone numbers from grant pages.
 - Python standard library only in `harness/` and `eval/`. Always `open(..., encoding="utf-8")` (æ ø å).
