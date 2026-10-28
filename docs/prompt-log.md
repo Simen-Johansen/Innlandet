@@ -18,3 +18,11 @@ One entry per significant prompt. Format:
 - **Prompt:** Remove everything from the NRK Innlandet test so we can start on the task in SPEC.md
 - **Outcome:** Probe, its test, fixture, task file and eval check deleted in a removal
   commit; history (PR #1) kept.
+
+## 2026-10-28: Implement task 001 (Brreg entity)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/001-brreg-entity`
+- **Outcome:** `harness/entity.py` (MOD11 before any request, one GET or `--offline` fixture,
+  9-key flat entity, rejections exit 3). Real orgnr 942440618 (Hamarkameratene Fotball Elite)
+  verified live; the fixture was sanitized (e-mail, mobile and street address removed).
+  Corrected: a wrong check-digit-0 example in the agent's own unit test (123456780 → 123456750).
