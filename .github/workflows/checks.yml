@@ -1,0 +1,20 @@
+name: checks
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python harness/entity.py fixtures/input_hamar.json --offline
+      - run: python eval/check_entity.py
+      - run: python eval/check_grants.py
+      - run: python harness/filter.py fixtures/input_hamar.json --today 2026-10-30
+      - run: python eval/check_filter.py
+      - run: python eval/check_run.py
