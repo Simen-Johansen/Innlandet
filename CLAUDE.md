@@ -1,15 +1,19 @@
-# Innlandet
-Two-person KIUA2003 course project: an agentic workflow (spec in SPEC.md).
+# Volunteer Grant Navigator: org number + project idea → verified grant checklist for Innlandet clubs.
 
-## Layout
-- tasks/: task definitions · harness/: agent harness · eval/: evaluations
-- fixtures/: test inputs · docs/meetings/: meeting notes · docs/prompt-log.md: prompt log
-
-## Checks
-`uv run ruff check . && uv run ruff format --check . && uv run pytest`
+## Commands (use `python`, never `python3`: python3 does not exist on our machines)
+- Full offline run: `python harness/run.py --offline`
+- Wiring only: `python harness/run.py --offline --dry-run`
+- Checks: each stage has `python eval/check_<stage>.py`; all must print PASS
+- Eval (from task 009): `python eval/run_eval.py`
 
 ## Rules
-- Never edit anything in eval/ without asking first.
-- No personal data in the repo: not in fixtures, logs, prompts or commits.
-- Secrets go in .env (never committed, never read). Copy from .env.example.
-- Log significant prompts in docs/prompt-log.md.
+- Never edit `eval/` without asking. The checks grade you; if a check fails, report it, do not change it.
+- `eval/` is the source of truth: report every FAIL clearly with its output, and fix the code or the plan,
+  never the check.
+- Never commit or push without explicit approval from the person you are working with, every time.
+- No personal data: never call the Brreg roles endpoint, never store addresses beyond kommunenummer,
+  never keep names, e-mails or phone numbers from grant pages.
+- Python standard library only in `harness/` and `eval/`. Always `open(..., encoding="utf-8")` (æ ø å).
+- Paths with pathlib, not hard-coded `/` or `\` (we develop on Windows; CI is Linux).
+- Stages hand off through files in `out/`. A stage never reads another stage's code, only its output file.
+- Brreg details: use the `brreg-api` skill. Grant file format and sources: use the `innlandet-grants` skill.
