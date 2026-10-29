@@ -47,3 +47,13 @@ One entry per significant prompt. Format:
   Corrected: the first attempt passed the prompt from Windows PowerShell 5.1, which does not escape the
   embedded `"` and truncated the prompt; the agent then guessed the schema (`decision`, no quote) and the
   check FAILed. Calling `claude` from Python `subprocess.run([...])` (as task 007 will) fixes it.
+
+## 2026-10-29: Implement task 005 (guide writer)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/005-guide-writer`
+- **Outcome:** `harness/guide_input.py` copies the matched grant files to `out/guide_input/` and writes
+  `request.json` (language, requested amount, idea, and `today` from `out/eligible.json`); exit 3
+  `no_matching_grants` if nothing matched. `harness/prompts/guide.md` makes the model copy url, deadline
+  and max amount from the frontmatter and says what to do if no attachments or no maximum are listed.
+  Red first: `check_plan.py` FAILed ("out/plan.json does not exist"). Two runs on the Hamar fixture
+  both PASS with the same facts (friluftsliv, 2026-12-01, max `unknown`), costing about 0.15 and 0.08 USD.
