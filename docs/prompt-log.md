@@ -67,3 +67,11 @@ One entry per significant prompt. Format:
   `claude` is looked up only when stage 4 starts, so `check_run.py` stays model-free for CI.
   `check_run.py` PASS. The full offline run exits 0 (0.14 + 0.15 USD, both first attempt). The retry path was
   tested with a stubbed model call: FAIL, FAIL, PASS goes on; 3 FAILs exit 1.
+
+## 2026-10-29: Implement task 008 (CI)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/008-ci`
+- **Outcome:** `.github/workflows/checks.yml` runs stages 1 and 3 offline plus `check_entity`, `check_grants`,
+  `check_filter` and `check_run` on every PR, with no model and no secrets. PR #4 went green; changing
+  `region_prefix` to `340` in one grant file turned it red at `check_grants` ("region_prefix must be 2 or 4
+  digits"); the revert turned it green again. Screenshots of both are in the report.
