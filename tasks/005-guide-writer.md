@@ -26,14 +26,15 @@ matched grants, in the requested language.
   change facts
 
 ## Acceptance (all must pass)
-- After task 004: run the claude -p command, then `python eval/check_plan.py` prints PASS
+- After task 004: run the claude -p command, then `python eval/check_plan.py fixtures/input_hamar.json` prints PASS
 - The check failed before this task started (red first)
 
 ## What eval/check_plan.py asserts (the verification gate, Section 3.1 of the project description)
 - schema valid; `output_language` equals the request
 - **entity check:** `orgnr`, `org_name` equal `out/entity.json`
-- **grant check:** grant ids ⊆ matched ⊆ kept
-- **hallucination check:** `url`, `application_deadline`, `max_amount_nok` equal the frontmatter values
+- **grant check:** plan grants = matched grants (none dropped, none added), matched ⊆ kept
+- **hallucination check:** `url`, `max_amount_nok` equal the frontmatter; `application_deadline` is one of the
+  frontmatter deadlines and not in the past; `amount_note` is non-empty when the request is above the maximum
 - **privacy check:** no e-mail or phone pattern anywhere in the file
 - `why_qualifies` ≤ 60 words, each step ≤ 25 words, at least 1 attachment per grant
 

@@ -31,8 +31,9 @@ evidence quote from the grant text.
 - valid JSON matching the schema; one entry per kept grant, no other ids
 - every `evidence_quote` is an exact substring of the grant's file in `context/grants/`
   (normalise whitespace only)
-- for the Hamar ski-equipment fixture: the culture/arts grant is `reject`, at least one grant is `match`
-  (this expectation is the Author's, written before the run)
+- if `fixtures/expected_matches.json` exists (`{"must_match_any": [...], "must_reject": [...]}`):
+  for the Hamar ski-equipment fixture, the culture/arts grant is `reject` and at least one grant is `match`.
+  The Author writes this file **before** the first run; the agent never writes it
 
 ## Out of scope
 Writing the guide; retries (task 007)

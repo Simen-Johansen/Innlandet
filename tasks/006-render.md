@@ -16,13 +16,13 @@
 - Standard library only; deterministic: same JSON in, same bytes out
 
 ## Acceptance (all must pass)
-- `python harness/render.py && python eval/check_render.py` prints PASS
+- `python eval/check_render.py` prints PASS (it runs render.py twice itself)
 - The check failed before this task started (red first)
 
 ## What eval/check_render.py asserts
 - every grant title, URL and deadline in `plan.json` appears in the Markdown
 - running render twice gives byte-identical files
-- no text in the Markdown that is not in `plan.json` except the fixed labels and header
+- every URL in the Markdown is in `plan.json`; no dates except plan deadlines, today, and one `fetched_at`
 
 ## Out of scope
 HTML, PDF, sending the plan anywhere (that is a human gate, task 011)

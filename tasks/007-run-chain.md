@@ -10,7 +10,8 @@ with the check's error text, and exits with the codes in SPEC.md.
 - Stages and checks are a list in `run.py`; each check runs with `subprocess.run(["python", "eval/check_x.py"])`
 - Evaluator–optimizer loop for stages 4 and 5: at most 3 attempts; on failure, append
   `Previous check output (fix this): <stderr>` to the prompt; after 3 failures, exit 1
-- `--dry-run`: print each stage, its input → output and its check, then exit 0 without running anything
+- `--dry-run`: print one line per stage, `[N] name  input -> output   check: eval/check_x.py`,
+  then exit 0 without running anything (format as in W43)
 - Find claude with `shutil.which("claude")`; fail clearly if missing
 - Log each claude call's cost (from `--output-format json`) to `out/cost_log.jsonl`
 
@@ -20,10 +21,8 @@ with the check's error text, and exits with the codes in SPEC.md.
 - Exit 3 propagates from stage 1 or 3 rejections without calling the model
 
 ## Acceptance (all must pass)
-- `python harness/run.py --offline --dry-run` prints 6 stages and exits 0
+- `python eval/check_run.py` prints PASS (dry-run wiring + bad-checksum path, model-free)
 - `python harness/run.py --offline` exits 0 and `out/grant_action_plan.md` exists
-- `python harness/run.py --offline fixtures/input_bad_checksum.json` exits 3 and `out/cost_log.jsonl`
-  has no entries (no tokens spent on rejected input)
 - README.md has an "Offline run" section your partner follows **without asking you**
 
 ## Out of scope
