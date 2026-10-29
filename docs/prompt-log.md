@@ -26,3 +26,12 @@ One entry per significant prompt. Format:
   9-key flat entity, rejections exit 3). Real orgnr 942440618 (Hamarkameratene Fotball Elite)
   verified live; the fixture was sanitized (e-mail, mobile and street address removed).
   Corrected: a wrong check-digit-0 example in the agent's own unit test (123456780 → 123456750).
+
+## 2026-10-29: Verify task 002 (grant context)
+- **Who:** Simen + Claude Code
+- **Prompt:** Verify the four grant files against the live pages and mark them `verified_by: SJ`
+- **Outcome:** Claude compared the frontmatter with the pages; Simen confirmed the body text matches.
+  All four files have `verified_by: SJ`, and `eval/check_grants.py` prints PASS.
+  Corrected: `applicant_orgforms` for kunstnerisk aktivitet (`FLI, KOMM, ENK, AS, STI`) was our own
+  reading, not the page's text. The page says only "Arrangører", so a frontmatter comment now says so.
+  Friluftsliv keeps `FLI` only (interkommunalt friluftsråd left out on purpose).
