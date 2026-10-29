@@ -57,3 +57,13 @@ One entry per significant prompt. Format:
   and max amount from the frontmatter and says what to do if no attachments or no maximum are listed.
   Red first: `check_plan.py` FAILed ("out/plan.json does not exist"). Two runs on the Hamar fixture
   both PASS with the same facts (friluftsliv, 2026-12-01, max `unknown`), costing about 0.15 and 0.08 USD.
+
+## 2026-10-29: Implement task 007 (run chain)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/007-run-chain`
+- **Outcome:** `harness/run.py` runs the six stages from a list, with a check after each. It clears `out/`
+  first, and a rejection (exit 3) is confirmed with `check_rejection.py` before any model call.
+  Stages 4 and 5 retry up to 3 times, with `Previous check output (fix this): <stderr>` appended.
+  `claude` is looked up only when stage 4 starts, so `check_run.py` stays model-free for CI.
+  `check_run.py` PASS. The full offline run exits 0 (0.14 + 0.15 USD, both first attempt). The retry path was
+  tested with a stubbed model call: FAIL, FAIL, PASS goes on; 3 FAILs exit 1.
