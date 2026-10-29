@@ -35,3 +35,15 @@ One entry per significant prompt. Format:
   Corrected: `applicant_orgforms` for kunstnerisk aktivitet (`FLI, KOMM, ENK, AS, STI`) was our own
   reading, not the page's text. The page says only "Arrangører", so a frontmatter comment now says so.
   Friluftsliv keeps `FLI` only (interkommunalt friluftsråd left out on purpose).
+
+## 2026-10-29: Implement task 004 (matcher)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/004-matcher`
+- **Outcome:** `harness/prompts/match.md` with a three-condition match rule. The agent asked strict vs lenient;
+  we chose strict because a broad purpose (driftstilskudd's "fritidsaktiviteter i Hamar") is open to two
+  readings and would make verdicts unstable between runs; strict ties a match to what the grant actually funds.
+  Two runs on the Hamar fixture both PASS `eval/check_matches.py` with identical verdicts:
+  friluftsliv `match`, driftstilskudd `reject`, kunstnerisk `reject` (~0.13–0.14 USD each).
+  Corrected: the first attempt passed the prompt from Windows PowerShell 5.1, which does not escape the
+  embedded `"` and truncated the prompt; the agent then guessed the schema (`decision`, no quote) and the
+  check FAILed. Calling `claude` from Python `subprocess.run([...])` (as task 007 will) fixes it.
