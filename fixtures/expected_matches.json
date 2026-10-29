@@ -1,4 +1,7 @@
 {
   "must_match_any": ["tilskudd_til_friluftslivsaktivitet"],
-  "must_reject": ["tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom"]
+  "must_reject": [
+    "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
+    "hamar_driftstilskudd_frivillige_organisasjoner"
+  ]
 }
