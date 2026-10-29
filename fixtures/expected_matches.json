@@ -1,0 +1,4 @@
+{
+  "must_match_any": ["tilskudd_til_friluftslivsaktivitet"],
+  "must_reject": ["tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom"]
+}
