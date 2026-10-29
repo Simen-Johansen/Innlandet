@@ -5,7 +5,7 @@ url: https://innlandetfylke.no/tjenester/sok-tilskudd/idrett-og-friluftsliv/tils
 provider: miljodirektoratet
 applicant_orgforms: FLI
 requires_frivillighetsregisteret: false
-region_prefix: 34
+region_prefix: 340
 target_group: alle
 max_amount_nok: unknown
 deadlines: 2026-12-01
