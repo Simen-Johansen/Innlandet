@@ -11,6 +11,8 @@ max_amount_nok: unknown
 deadlines: 2026-09-15
 fetched_at: 2026-10-28
 verified_by: SJ
+checked_at: 
+source_modified: 
 ---
 
 ## Formål

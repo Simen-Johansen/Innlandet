@@ -32,7 +32,7 @@ evidence quote from the grant text.
 - every `evidence_quote` is an exact substring of the grant's file in `context/grants/`
   (normalise whitespace only)
 - if `fixtures/expected_matches.json` exists (`{"must_match_any": [...], "must_reject": [...]}`):
-  for the Hamar ski-equipment fixture, the culture/arts grant is `reject` and at least one grant is `match`.
+  for the running example (HHT, outdoor activity days), friluftsliv is `match` and the operating and arts grants are `reject`.
   The Author writes this file **before** the first run; the agent never writes it
 
 ## Out of scope
