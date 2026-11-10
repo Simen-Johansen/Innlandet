@@ -6,7 +6,8 @@
       "Read(./fixtures/expected_*)",
       "Edit(./fixtures/expected_*)",
       "Edit(./fixtures/update_cases/**)",
-      "Read(./fixtures/update_cases/*/expected.json)"
+      "Read(./fixtures/update_cases/*/expected.json)",
+      "Read(./fixtures/pages_raw/**)"
     ]
   }
 }
