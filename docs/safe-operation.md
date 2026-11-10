@@ -16,7 +16,9 @@ too. Measured by: inspection only. The rules are in `.claude/settings.json` and 
 but no automated check tries a forbidden edit yet (a candidate for task 012).
 
 ## Secrets
-The only secret is `ANTHROPIC_API_KEY`. It lives in `.env`, which `.gitignore` has ignored since
+The only possible secret is `ANTHROPIC_API_KEY`. Today there is none: `claude` runs on a Claude Pro
+login, there is no `.env`, and CI never calls `claude` (checked 2026-11-10). If a key is added, it
+lives in `.env`, which `.gitignore` has ignored since
 commit `ad47399` (2026-10-15, the second commit, minutes after the scaffold and before any secret
 existed). `git log --all -- .env` is empty, so the file has never been in the history.
 `.env.example` holds the variable name only, with no value. Claude Code may not read `.env` (see
@@ -24,6 +26,10 @@ above). Measured by: the CI step `git check-ignore .env` in `.github/workflows/c
 fails the build if the ignore rule is ever removed.
 
 ## Cost control
+On the Pro login used today, `total_cost_usd` is the CLI's estimate of what the call would cost on the
+paid API, not money billed; the caps below then limit model usage (the Pro plan has its own usage
+limits) rather than spending. They are kept as they are because a deployed service would run with an
+API key and pay per token, and because the estimate still stops a runaway loop.
 Every `claude -p` call has `--max-budget-usd 0.50`, which the CLI enforces itself. Each call's
 `total_cost_usd` is appended to `out/cost_log.jsonl` (this run) and to `out/cost_history.jsonl`
 (kept across runs). Before every model call, `run.py` sums this run's log and stops with exit 1
