@@ -1,0 +1,21 @@
+{
+  "user_agent": "innlandet-grant-navigator (https://github.com/Simen-Johansen/Innlandet)",
+  "sources": [
+    {
+      "domain": "innlandetfylke.no",
+      "policy": "auto",
+      "robots_file": "fixtures/robots/innlandetfylke.no.txt",
+      "robots_checked": "2026-11-10",
+      "checked_by": "SJ",
+      "note": "County grant pages, updated weekly by task 015. Set policy to manual if save_sources.py reports any agent blocked."
+    },
+    {
+      "domain": "hamar.kommune.no",
+      "policy": "manual",
+      "robots_file": "fixtures/robots/hamar.kommune.no.txt",
+      "robots_checked": "2026-11-10",
+      "checked_by": "SJ",
+      "note": "Municipal page, maintained by hand (scope decision W45)."
+    }
+  ]
+}

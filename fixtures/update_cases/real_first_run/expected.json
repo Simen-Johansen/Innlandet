@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "Page is newer and our hand copy differs from the extraction (e.g. the '(ikke oppgitt ...)' notes under Frister): the one-time human review.",
+  "grants": {"tilskudd_til_friluftslivsaktivitet": "needs_review"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}

@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "Newer date, one Formål sentence reworded, no number or date changed, Hvem/Frister unchanged: safe to apply.",
+  "grants": {"syn_friluftsaktivitet": "updated_text"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}

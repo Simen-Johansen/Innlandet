@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "Stored source_modified equals the page's Sist endret: only checked_at moves.",
+  "grants": {"tilskudd_til_friluftslivsaktivitet": "unchanged"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}

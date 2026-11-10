@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "Newer date and the deadline sentence changed (1. desember -> 15. november): a fact may change, a human decides.",
+  "grants": {"syn_friluftsaktivitet": "needs_review"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}

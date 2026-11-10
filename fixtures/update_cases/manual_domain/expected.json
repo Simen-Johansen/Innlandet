@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "hamar.kommune.no has policy manual: no request at all.",
+  "grants": {"hamar_driftstilskudd_frivillige_organisasjoner": "skipped_manual"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}

@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "The page cannot be read (no file offline, an HTTP error live): file untouched, reason given.",
+  "grants": {"tilskudd_til_friluftslivsaktivitet": "failed"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}

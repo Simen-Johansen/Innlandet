@@ -1,0 +1,9 @@
+{
+  "user_agent": "innlandet-grant-navigator (https://github.com/Simen-Johansen/Innlandet)",
+  "sources": [
+    {"domain": "innlandetfylke.no", "policy": "auto", "robots_file": null,
+     "robots_checked": "2026-11-05", "checked_by": "TEST", "note": "test policy for update cases only"},
+    {"domain": "hamar.kommune.no", "policy": "manual", "robots_file": null,
+     "robots_checked": "2026-11-05", "checked_by": "TEST", "note": "test policy for update cases only"}
+  ]
+}

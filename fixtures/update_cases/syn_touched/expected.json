@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "why": "Newer Sist endret, identical text: store the new date, keep the body.",
+  "grants": {"syn_friluftsaktivitet": "touched"},
+  "forbidden_strings": ["Kari Testesen", "kari.testesen@example.no"]
+}
