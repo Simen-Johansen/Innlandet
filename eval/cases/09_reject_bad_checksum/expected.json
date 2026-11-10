@@ -1,0 +1,5 @@
+{
+  "today": "2026-11-05",
+  "expected_exit": 3,
+  "rejection_reason": "invalid_orgnr"
+}

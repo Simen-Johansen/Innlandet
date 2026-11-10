@@ -1,0 +1,65 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://data.brreg.no/enhetsregisteret/api/enheter/994414682"
+    }
+  },
+  "aktivitet": [
+    "Tur, trim, rekreasjon og trivsel blant klubbens medlemmer."
+  ],
+  "erIKonsern": false,
+  "forretningsadresse": {
+    "kommune": "RINGEBU",
+    "kommunenummer": "3439",
+    "land": "Norge",
+    "landkode": "NO",
+    "postnummer": "2630",
+    "poststed": "RINGEBU"
+  },
+  "harRegistrertAntallAnsatte": false,
+  "historiskeNavn": [],
+  "hjemmeside": "www.rfil.no",
+  "institusjonellSektorkode": {
+    "beskrivelse": "Ideelle organisasjoner",
+    "kode": "7000"
+  },
+  "konkurs": false,
+  "maalform": "Bokmål",
+  "naeringskode1": {
+    "beskrivelse": "Aktiviteter i andre medlemsorganisasjoner ellers",
+    "kode": "94.992"
+  },
+  "navn": "RINGEBU FÅVANG TUR- OG TRIM KLUBB",
+  "organisasjonsform": {
+    "_links": {
+      "self": {
+        "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/FLI"
+      }
+    },
+    "beskrivelse": "Forening/lag/innretning",
+    "kode": "FLI"
+  },
+  "organisasjonsnummer": "994414682",
+  "paategninger": [],
+  "postadresse": {
+    "kommune": "RINGEBU",
+    "kommunenummer": "3439",
+    "land": "Norge",
+    "landkode": "NO",
+    "postnummer": "2630",
+    "poststed": "RINGEBU"
+  },
+  "registreringsdatoEnhetsregisteret": "2009-08-26",
+  "registreringsdatoFrivillighetsregisteret": "2009-08-26",
+  "registrertIForetaksregisteret": false,
+  "registrertIFrivillighetsregisteret": true,
+  "registrertIMvaregisteret": false,
+  "registrertIPartiregisteret": false,
+  "registrertIStiftelsesregisteret": false,
+  "respons_klasse": "Enhet",
+  "sisteInnsendteAarsregnskap": "2025",
+  "stiftelsesdato": "1995-02-21",
+  "underAvvikling": false,
+  "underTvangsavviklingEllerTvangsopplosning": false,
+  "_redacted": true
+}

@@ -3,15 +3,17 @@
 Usage: python harness/grants.py
 
 Reads context/grants/*.md (innlandet-grants format) and lists them.
+Env: GRANTS_DIR overrides the folder, e.g. eval/corpus/grants (task 009); relative to the repo root.
 Standard library only, no YAML: a simple `key: value` frontmatter parser.
 """
 
+import os
 import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-GRANTS = ROOT / "context" / "grants"
+GRANTS = ROOT / (os.environ.get("GRANTS_DIR") or Path("context") / "grants")
 
 LIST_KEYS = ("applicant_orgforms", "deadlines")
 BOOL_KEYS = ("requires_frivillighetsregisteret",)

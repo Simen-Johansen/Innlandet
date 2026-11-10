@@ -1,0 +1,25 @@
+{
+  "organisasjonsnummer": "123456785",
+  "navn": "SYNTETISK TESTLAG (FIKTIV, IKKE ET EKTE ORGNR)",
+  "organisasjonsform": {
+    "_links": {
+      "self": {
+        "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/FLI"
+      }
+    },
+    "beskrivelse": "Forening/lag/innretning",
+    "kode": "FLI"
+  },
+  "naeringskode1": {
+    "beskrivelse": "Aktiviteter i idrettslag og -klubber",
+    "kode": "93.120"
+  },
+  "registrertIFrivillighetsregisteret": false,
+  "konkurs": false,
+  "underAvvikling": false,
+  "underTvangsavviklingEllerTvangsopplosning": false,
+  "forretningsadresse": {
+    "kommune": "HAMAR",
+    "kommunenummer": "3403"
+  }
+}

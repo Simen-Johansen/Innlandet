@@ -54,4 +54,14 @@ See the exit code in PowerShell with `$LASTEXITCODE`, in bash with `echo $?`.
 - Each model call has a 0.50 USD budget cap. The worst case is 6 calls (3 retries × 2 stages), 3 USD.
 - Rejected input (for example a bad orgnr) stops before any model call and costs nothing.
 - `claude CLI not found on PATH`: install Claude Code, open a new terminal, and try `claude --version`.
-- Leave out `--offline` to look the club up live in Brreg. Grants are always read from `context/grants/`.
+- Leave out `--offline` to look the club up live in Brreg. Grants are read from `context/grants/`,
+  unless `GRANTS_DIR` is set; `EVAL_TODAY=YYYY-MM-DD` fixes the date the filter uses.
+
+## Evaluation (task 009)
+`python eval/run_eval.py` runs every case in `eval/cases/` against the frozen corpus
+`eval/corpus/grants/` (never `context/grants/`), 3 runs per case that calls the model.
+It prints a pass/fail table, writes `out/eval_report.json` and a raw log in `docs/eval-logs/`, and
+exits 0 only if all cases pass. `--case NAME` runs one case, `--runs 1` is a cheap smoke test.
+A full run costs up to about 3 USD per model run, roughly 27 runs, so check the budget first.
+Each case's `expected.json` is written by the Author before the case is first run.
+Refreshing the corpus is a human act: copy, re-check every `expected.json`, commit.

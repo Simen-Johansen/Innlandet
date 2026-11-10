@@ -27,18 +27,20 @@ DEFAULT_REQUEST = ROOT / "fixtures" / "input_hamar.json"
 
 MAX_ATTEMPTS = 3
 CLAUDE_TIMEOUT_S = 600
-CLAUDE_ARGS = ["--permission-mode", "dontAsk", "--allowedTools", "Read,Edit(/out/**)",
+CLAUDE_ARGS = ["--model", "sonnet",
+               "--permission-mode", "dontAsk", "--allowedTools", "Read,Edit(/out/**)",
                "--output-format", "json", "--max-budget-usd", "0.50"]
 CHILD_ENV = {**os.environ, "PYTHONUTF8": "1"}
 
-# In script/check args, "<req>" becomes the request path and "<offline>" becomes "--offline"
-# (or is dropped) at run time.
+# In script/check args, "<req>" becomes the request path, "<offline>" becomes "--offline"
+# (or is dropped) and "<today>" becomes "--today $EVAL_TODAY" (or is dropped) at run time.
+# GRANTS_DIR and EVAL_TODAY reach every stage and check through CHILD_ENV (task 009).
 STAGES = [
     {"name": "entity", "script": ["entity.py", "<req>", "<offline>"], "prompt": None,
      "input": "<request>", "output": "out/entity.json", "check": ["check_entity.py"]},
     {"name": "grants", "script": ["grants.py"], "prompt": None,
      "input": "context/grants/", "output": "(validated in place)", "check": ["check_grants.py"]},
-    {"name": "filter", "script": ["filter.py", "<req>"], "prompt": None,
+    {"name": "filter", "script": ["filter.py", "<req>", "<today>"], "prompt": None,
      "input": "out/entity.json + context/grants/", "output": "out/eligible.json, out/match_input.md",
      "check": ["check_filter.py"]},
     {"name": "matcher", "script": None, "prompt": "match.md",
@@ -52,7 +54,9 @@ STAGES = [
 
 
 def fill(args, req, offline=False):
-    subs = {"<req>": [str(req)], "<offline>": ["--offline"] if offline else []}
+    today = os.environ.get("EVAL_TODAY")
+    subs = {"<req>": [str(req)], "<offline>": ["--offline"] if offline else [],
+            "<today>": ["--today", today] if today else []}
     return [x for a in args for x in subs.get(a, [a])]
 
 
@@ -171,7 +175,9 @@ def run_stage(n, stage, req, offline):
 
 def dry_run(req_label):
     name_w = max(len(s["name"]) for s in STAGES)
-    flows = [f"{s['input'].replace('<request>', req_label)} -> {s['output']}" for s in STAGES]
+    grants_label = (os.environ.get("GRANTS_DIR") or "context/grants").rstrip("/\\") + "/"
+    flows = [f"{s['input'].replace('<request>', req_label).replace('context/grants/', grants_label)}"
+             f" -> {s['output']}" for s in STAGES]
     flow_w = max(len(f) for f in flows)
     for n, (s, flow) in enumerate(zip(STAGES, flows), 1):
         check = " ".join(["eval/" + s["check"][0], *fill(s["check"][1:], req_label)])

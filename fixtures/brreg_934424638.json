@@ -1,0 +1,25 @@
+{
+  "organisasjonsnummer": "934424638",
+  "navn": "FOTBALLENS VENNER INNLANDET",
+  "organisasjonsform": {
+    "_links": {
+      "self": {
+        "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/FLI"
+      }
+    },
+    "beskrivelse": "Forening/lag/innretning",
+    "kode": "FLI"
+  },
+  "naeringskode1": {
+    "beskrivelse": "Sportsaktiviteter ikke nevnt annet sted",
+    "kode": "93.190"
+  },
+  "registrertIFrivillighetsregisteret": true,
+  "konkurs": false,
+  "underAvvikling": false,
+  "underTvangsavviklingEllerTvangsopplosning": false,
+  "forretningsadresse": {
+    "kommune": "STANGE",
+    "kommunenummer": "3413"
+  }
+}

@@ -9,7 +9,11 @@ Optional Author expectations (written BEFORE the first run, never by the agent):
 
 Red first: fails with "out/matches.json does not exist" before the task.
 Run: python eval/check_matches.py
+Env: EXPECTED_MATCHES overrides the expectations path; empty disables it (task 009).
 """
+import os
+from pathlib import Path
+
 from common import FIXTURES, GRANTS, OUT, check, load_json
 
 
@@ -42,8 +46,11 @@ for m in entries:
     check(norm(quote) in norm(source),
           f"{gid}: evidence_quote is not a verbatim substring of context/grants/{gid}.md: {quote!r}")
 
-exp_path = FIXTURES / "expected_matches.json"
-if exp_path.exists():
+# EXPECTED_MATCHES overrides the path; set but empty disables it (eval/run_eval.py grades each
+# case against its own expected.json instead of the running example's).
+exp_env = os.environ.get("EXPECTED_MATCHES")
+exp_path = FIXTURES / "expected_matches.json" if exp_env is None else Path(exp_env) if exp_env else None
+if exp_path is not None and exp_path.exists():
     exp = load_json(exp_path)
     verdict = {m["grant_id"]: m["verdict"] for m in entries}
     want_any = exp.get("must_match_any", [])

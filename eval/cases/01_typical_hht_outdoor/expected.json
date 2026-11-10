@@ -1,0 +1,20 @@
+{
+  "today": "2026-11-05",
+  "expected_exit": 0,
+  "must_match": [
+    "tilskudd_til_friluftslivsaktivitet"
+  ],
+  "must_reject": [
+    "hamar_driftstilskudd_frivillige_organisasjoner",
+    "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
+    {
+      "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
+      "reason": "org_form_not_allowed"
+    }
+  ],
+  "must_not_include": [
+    "hamar_driftstilskudd_frivillige_organisasjoner",
+    "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
+    "tilskudd_til_folkehelse_og_livskvalitet"
+  ]
+}
