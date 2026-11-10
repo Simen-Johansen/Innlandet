@@ -5,17 +5,25 @@ Usage: python harness/run.py [input_request.json] [--offline] [--dry-run]
 
 Code decides the order; stages hand off through files in out/. Stages 4 and 5 are headless
 `claude -p` calls in an evaluator-optimizer loop: at most 3 attempts, each retry gets the
-check's error text. Exit codes (SPEC.md): 0 plan delivered, 1 a check failed, 3 input rejected.
-Standard library only.
+check's error text. Exit codes (SPEC.md): 0 plan delivered, 1 a check failed, 3 input rejected,
+4 halted by the kill switch (task 011).
+
+Safe operation (task 011, docs/safe-operation.md): out/ is wiped at the start of every run except
+three state files: out/HALTED (while it exists every run exits 4; a person deletes it),
+out/run_history.jsonl (exit code of every run) and out/cost_history.jsonl (every model call).
+A run stops with exit 1 once its own cost reaches 1.50 USD. The kill switch writes out/HALTED and
+exits 4 after 3 consecutive failed runs, above 3 USD in 24 h, or when a grant file was last
+checked more than 30 days ago. Standard library only.
 """
 
 import argparse
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -24,6 +32,17 @@ HARNESS = ROOT / "harness"
 EVAL = ROOT / "eval"
 COST_LOG = OUT / "cost_log.jsonl"
 DEFAULT_REQUEST = ROOT / "fixtures" / "input_hamar.json"
+
+# Kill switch state: survives the wipe of out/ (task 011)
+HALTED = OUT / "HALTED"
+RUN_HISTORY = OUT / "run_history.jsonl"
+COST_HISTORY = OUT / "cost_history.jsonl"
+KEEP = {HALTED.name, RUN_HISTORY.name, COST_HISTORY.name}
+RUN_BUDGET_USD = 1.50
+DAY_BUDGET_USD = 3.00
+MAX_FAILED_RUNS = 3
+MAX_GRANT_AGE_DAYS = 30
+EXIT_HALTED = 4
 
 MAX_ATTEMPTS = 3
 CLAUDE_TIMEOUT_S = 600
@@ -85,8 +104,9 @@ def log_cost(stage, attempt, result):
         "session_id": result.get("session_id"),
         "logged_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
-    with open(COST_LOG, "a", encoding="utf-8") as f:
-        f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    for log in (COST_LOG, COST_HISTORY):
+        with open(log, "a", encoding="utf-8") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
 def call_claude(stage, attempt, prompt):
@@ -115,6 +135,80 @@ def total_cost():
         return 0.0
     with open(COST_LOG, encoding="utf-8") as f:
         return sum(json.loads(line).get("total_cost_usd") or 0 for line in f if line.strip())
+
+
+def read_jsonl(path):
+    if not path.exists():
+        return []
+    with open(path, encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def cost_last_24h():
+    """Model cost of all runs in the last 24 h (real clock, also during eval)."""
+    since = datetime.now(timezone.utc) - timedelta(hours=24)
+    total = 0.0
+    for entry in read_jsonl(COST_HISTORY):
+        try:
+            logged = datetime.fromisoformat(entry["logged_at"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if logged >= since:
+            total += entry.get("total_cost_usd") or 0
+    return total
+
+
+def stale_grants():
+    """Grant files whose checked_at is more than 30 days before EVAL_TODAY (or today).
+
+    Files without a valid checked_at are left to check_grants.py.
+    """
+    grants = ROOT / (os.environ.get("GRANTS_DIR") or Path("context") / "grants")
+    today = date.fromisoformat(os.environ.get("EVAL_TODAY") or date.today().isoformat())
+    stale = []
+    for path in sorted(grants.glob("*.md")) if grants.exists() else []:
+        with open(path, encoding="utf-8") as f:
+            m = re.search(r"^checked_at:\s*(\d{4}-\d{2}-\d{2})", f.read(), flags=re.M)
+        try:
+            checked = date.fromisoformat(m.group(1)) if m else None
+        except ValueError:
+            checked = None
+        if checked and (today - checked).days > MAX_GRANT_AGE_DAYS:
+            stale.append(f"{path.name} (checked {checked})")
+    return stale
+
+
+def halt(reason):
+    """Kill switch: write out/HALTED and return exit code 4. A person deletes the file."""
+    stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    with open(HALTED, "w", encoding="utf-8") as f:
+        f.write(f"halted_at: {stamp}\nreason: {reason}\n"
+                "Fix the cause, then delete out/HALTED to allow runs again.\n")
+    print(f"HALTED: {reason} (exit {EXIT_HALTED}, see out/HALTED)", file=sys.stderr)
+    return EXIT_HALTED
+
+
+def record_run(code):
+    """Append the run's exit code; halt after MAX_FAILED_RUNS failed runs in a row."""
+    entry = {"exit": code, "logged_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    with open(RUN_HISTORY, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry) + "\n")
+    last = [e.get("exit") for e in read_jsonl(RUN_HISTORY)[-MAX_FAILED_RUNS:]]
+    if len(last) == MAX_FAILED_RUNS and all(c == 1 for c in last):
+        return halt(f"{MAX_FAILED_RUNS} consecutive runs failed the verification gate")
+    return code
+
+
+def wipe_out():
+    """Delete stale output (it would fake a PASS) but keep the kill switch state."""
+    OUT.mkdir(exist_ok=True)
+    for path in OUT.iterdir():
+        if path.name in KEEP:
+            continue
+        if path.is_dir():
+            shutil.rmtree(path, ignore_errors=True)
+        else:
+            path.unlink(missing_ok=True)
 
 
 def reject(n, stage):
@@ -159,6 +253,13 @@ def run_stage(n, stage, req, offline):
         prompt = base_prompt
         if feedback:
             prompt += f"\n\nPrevious check output (fix this): {feedback}"
+        if total_cost() >= RUN_BUDGET_USD:
+            print(f"[{n}] {name}  run budget {RUN_BUDGET_USD:.2f} USD reached "
+                  f"({total_cost():.2f} USD spent), stopping", file=sys.stderr)
+            return 1
+        if cost_last_24h() > DAY_BUDGET_USD:
+            return halt(f"model cost in the last 24 h is {cost_last_24h():.2f} USD "
+                        f"(max {DAY_BUDGET_USD:.2f})")
         result = call_claude(name, attempt, prompt)
         passed, detail = run_check(stage, req)
         cost = result.get("total_cost_usd")
@@ -203,20 +304,33 @@ def main(argv):
     except ValueError:
         req_label = str(req)
     if args.dry_run:
+        if HALTED.exists():
+            print("warning: out/HALTED exists, a real run would exit 4", file=sys.stderr)
         dry_run(req_label)
         return 0
+    if HALTED.exists():
+        with open(HALTED, encoding="utf-8") as f:
+            echo(f.read(), sys.stderr)
+        print(f"refusing to run while out/HALTED exists (exit {EXIT_HALTED})", file=sys.stderr)
+        return EXIT_HALTED
     if not req.exists():
         print(f"request file not found: {args.request}", file=sys.stderr)
         return 1
 
-    shutil.rmtree(OUT, ignore_errors=True)  # stale output would fake a PASS
-    OUT.mkdir()
+    wipe_out()
+    day_cost = cost_last_24h()
+    if day_cost > DAY_BUDGET_USD:
+        return halt(f"model cost in the last 24 h is {day_cost:.2f} USD (max {DAY_BUDGET_USD:.2f})")
+    stale = stale_grants()
+    if stale:
+        return halt(f"grant files not checked in {MAX_GRANT_AGE_DAYS} days: {', '.join(stale)}")
+
     for n, stage in enumerate(STAGES, 1):
         code = run_stage(n, stage, req, args.offline)
         if code is not None:
-            return code
+            return code if code == EXIT_HALTED else record_run(code)
     print(f"ok: out/grant_action_plan.md (model cost {total_cost():.2f} USD, see out/cost_log.jsonl)")
-    return 0
+    return record_run(0)
 
 
 if __name__ == "__main__":

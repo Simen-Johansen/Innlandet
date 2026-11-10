@@ -3,6 +3,8 @@
     "deny": [
       "Read(./.env)",
       "Read(**/.env)",
+      "Edit(/eval/**)",
+      "Edit(/context/**)",
       "Read(./fixtures/expected_*)",
       "Edit(./fixtures/expected_*)",
       "Edit(./fixtures/update_cases/**)",

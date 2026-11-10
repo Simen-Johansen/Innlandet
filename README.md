@@ -46,12 +46,16 @@ stage hands to the next.
 | 0 | Plan delivered | Open `out/grant_action_plan.md` |
 | 1 | A check failed | Read the `FAIL:` line printed above it. The model stages (4, 5) were already tried 3 times |
 | 3 | Input rejected (expected for bad input) | Read `out/rejection.json` for the reason |
+| 4 | Halted by the kill switch | Read `out/HALTED`, fix the cause, then delete the file. Every run exits 4 until you do |
 
 See the exit code in PowerShell with `$LASTEXITCODE`, in bash with `echo $?`.
 
 **Good to know**
-- `out/` is deleted at the start of every run, so copy anything you want to keep first.
-- Each model call has a 0.50 USD budget cap. The worst case is 6 calls (3 retries × 2 stages), 3 USD.
+- `out/` is emptied at the start of every run, so copy anything you want to keep first. Only the
+  kill switch state survives: `out/HALTED`, `out/run_history.jsonl` and `out/cost_history.jsonl`.
+- Each model call has a 0.50 USD budget cap, a run stops (exit 1) once it has spent 1.50 USD, and
+  the kill switch halts (exit 4) above 3 USD in 24 h, after 3 failed runs in a row, or when a grant
+  file was last checked more than 30 days ago. See `docs/safe-operation.md`.
 - Rejected input (for example a bad orgnr) stops before any model call and costs nothing.
 - `claude CLI not found on PATH`: install Claude Code, open a new terminal, and try `claude --version`.
 - Leave out `--offline` to look the club up live in Brreg. Grants are read from `context/grants/`,
