@@ -55,6 +55,8 @@ STOP_HEADING = "kontakt"  # the caseworker block; everything after it is dropped
 TEMPLATE = "template"  # reason prefix that counts towards the kill switch
 KILL_AFTER = 2
 
+DEADLINE_LINE = re.compile(r"(søknads)?frist", re.I)
+DEADLINE_SPLIT = re.compile(r"(?<=\.)\s+(?=(?:søknads)?frist)", re.I)  # "... samarbeid. Søknadsfrist: ..."
 SIST_ENDRET = re.compile(r"Sist endret\s+(\d{2})\.(\d{2})\.(\d{4})\s+(\d{2})[.:](\d{2})")
 AUTHOR_META = re.compile(r'<meta\s+name="author"[^>]*>', re.I)
 DROP_BLOCKS = re.compile(r"<(script|style|aside)\b.*?</\1\s*>", re.S | re.I)
@@ -134,7 +136,8 @@ def set_keys(block, values):
 
 class BodyParser(HTMLParser):
     """Collect h2 sections of paragraphs and list items inside <main>, until the Kontakt heading.
-    Skips <header> (title) and the ingress section (a summary of the sections below)."""
+    Skips <header> (title). The ingress (section.ingress) is kept apart in `lead`: on county pages it
+    often holds the only "what can you apply for" sentence and the deadline line."""
 
     SKIP = {"header", "script", "style", "aside", "nav", "footer"}
 
@@ -142,7 +145,9 @@ class BodyParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.main = 0
         self.skip_tag, self.skip_depth = None, 0
+        self.ingress = 0  # section nesting depth while inside the ingress
         self.stopped = False
+        self.lead = []  # ingress lines
         self.sections = []  # [(page heading, [(kind, text)])]
         self.heading = None  # text buffer while inside h2
         self.block = None  # (kind, text buffer) while inside p/li
@@ -156,15 +161,19 @@ class BodyParser(HTMLParser):
         if not self.main or self.stopped:
             return
         classes = (dict(attrs).get("class") or "").split()
-        if tag in self.SKIP or (tag == "section" and "ingress" in classes):
+        if tag == "section" and (self.ingress or "ingress" in classes):
+            self.flush()
+            self.ingress += 1
+        elif tag in self.SKIP:
             self.skip_tag, self.skip_depth = tag, 1
         elif tag == "h2":
             self.heading = []
         elif tag in ("p", "li") and self.heading is None:
             self.flush()
             self.block = (tag, [])
-        elif tag == "br" and self.block:
-            self.block[1].append(" ")
+        elif tag == "br" and self.block and self.block[0] == "p":
+            self.flush()  # a <br> inside a paragraph starts a new line
+            self.block = ("p", [])
 
     def handle_endtag(self, tag):
         if self.skip_tag:
@@ -177,7 +186,10 @@ class BodyParser(HTMLParser):
             self.main -= 1
         if not self.main or self.stopped:
             return
-        if tag == "h2" and self.heading is not None:
+        if tag == "section" and self.ingress:
+            self.flush()
+            self.ingress -= 1
+        elif tag == "h2" and self.heading is not None:
             text = norm("".join(self.heading))
             self.heading = None
             self.flush()
@@ -202,7 +214,11 @@ class BodyParser(HTMLParser):
         kind, parts = self.block
         self.block = None
         text = norm("".join(parts))
-        if text and self.sections and not text.startswith("Sist endret"):
+        if not text or text.startswith("Sist endret"):
+            return
+        if self.ingress:
+            self.lead.append(text)
+        elif self.sections:
             self.sections[-1][1].append((kind, text))
 
 
@@ -225,6 +241,18 @@ def extract(raw):
     missing_core = [h for h in CORE_HEADINGS if h not in found]
     if missing_core:
         return found, (True, f"{TEMPLATE}: heading missing: {', '.join(missing_core)}")
+    # Ingress lines lead their section: a deadline line goes to the deadlines, the rest describe what
+    # can be applied for. A page line already contained in an earlier line of the section is dropped.
+    lead = [s for line in p.lead for s in DEADLINE_SPLIT.split(line)]
+    for line in reversed(lead):
+        target = "Frister og rapportering" if DEADLINE_LINE.match(line) else "Hva kan det søkes om"
+        found.setdefault(target, []).insert(0, ("p", line))
+    for h, blocks in found.items():
+        kept = []
+        for kind, text in blocks:
+            if not any(text in t for _, t in kept):
+                kept.append((kind, text))
+        found[h] = kept
     problems = []
     if unknown:
         problems.append(f"unknown heading on page: {', '.join(unknown)}")

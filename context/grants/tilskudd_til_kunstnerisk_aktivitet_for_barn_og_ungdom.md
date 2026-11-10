@@ -9,23 +9,23 @@ region_prefix: 34
 target_group: barn_og_unge
 max_amount_nok: 100000
 deadlines: 2026-11-01, 2027-05-01
-fetched_at: 2026-10-28
+fetched_at: 2026-11-11
 verified_by: SJ
-checked_at: 2026-11-05
-source_modified: unknown
+checked_at: 2026-11-11
+source_modified: 2026-10-16T09:33
 ---
 
 ## Formål
 
 Ordningen skal styrke og løfte barne- og ungdomskulturfeltet ved å gi økonomisk støtte til kunstnerisk aktivitet med regionalt nedslagsfelt.
 
-Regionalt nedslagsfelt betyr her at prosjektet tilfaller barn og ungdom fra to eller flere kommuner. Lokale kulturtiltak som gjelder kun for én kommune, er ikke kvalifisert for å søke.
-
 ## Hvem kan søke
 
 Arrangører som utvikler og gjennomfører kunstnerisk aktivitet for og med barn og ungdom i Innlandet fylke kan søke.
 
 ## Hva kan det søkes om
+
+Ordningen skal styrke og løfte barne- og ungdomskulturfeltet ved å gi økonomisk støtte til kunstnerisk aktivitet med regionalt nedslagsfelt.
 
 Prosjekttilskudd med tydelig kunstnerisk aktivitet for barn og unge prioriteres.
 
@@ -37,32 +37,17 @@ Innlandet fylkeskommune har fokus på ungdom som medarrangører, og det ses posi
 
 Som hovedregel ønsker Innlandet fylkeskommune å engasjere seg i tiltak som går på tvers av kommunegrensene. Aktivitet med reelt regionalt nedslagsfelt vil bli prioritert. Regionalt nedslagsfelt betyr at prosjektet tilfaller barn og ungdom fra to eller flere kommuner. Lokale kulturtiltak som gjelder kun for én kommune, er ikke kvalifisert for å søke på denne ordningen.
 
-Støttenivå
-
-- Innlandet fylkeskommune fullfinansierer ingen prosjekter. Fylkeskommunen kan finansiere inntil 75 % av totalkostnaden.
-- Fullfinansiering betyr at Innlandet fylkeskommune ikke kan være eneste bidragsyter inn i prosjektet. Det må komme fram i søknaden hvilke andre bidragsytere som er involvert.
-- Søknader på under 10 000 kroner vil ikke bli behandlet.
-- Det bevilges ikke større tilskudd enn maksimum 100 000 kroner per søker eller søknad.
-
-Avgrensning
-
-- Innlandet fylkeskommune fullfinansierer ingen prosjekter.
-- Det gis ikke støtte innenfor felt eller aktivitet som dekkes av andre tilskuddsordninger der fylkeskommunen er vesentlig bidragsyter.
-- Det gis ikke tilskudd til prosjekter som allerede er gjennomført før søknadsfristen.
-- Det gis ikke tilskudd til bokutgivelser, turnévirksomhet, plateutgivelser og tilsvarende.
-- Det gis ikke reisestøtte for enkeltpersoner eller grupper.
-- Lokale kulturtiltak omfattes ikke av denne støtteordningen (prosjekter som gjelder kun for én kommune).
-- Det gis kun støtte til livssynsnøytrale prosjekter.
-- Det bevilges ikke støtte til drift av organisasjoner.
-
 ## Vedlegg
 
-- I søknadsskjemaet skal det fylles inn blant annet: en kort og konkret prosjektbeskrivelse, framdriftsplan, budsjett og finansieringsplan.
-- Alle felter i søknadsskjemaet som kan fylles ut, skal benyttes.
-- Det skal ikke legges med vedlegg til søknaden. All informasjon skal komme fram i skjemaløsningen.
-- Vi gjør oppmerksom på at rubrikken kort prosjektbeskrivelse i skjemaløsningen vil bli benyttet i saksbehandlingen videre. Skriv teksten kort og konkret slik at hovedbudskapet kommer godt fram.
+Denne tilskuddsordningen har digitalt søknadsskjema. Kunst og kultur bruker søknadsløsningen på regionalforvaltning.no, som alle må benytte for å få godkjent søknaden. Innsendte søknader på andre plattformer vil ikke godkjennes.
+
+Du må registrere deg for å komme inn på selve søknadsskjemaet til tilskuddordningen. Du kan gå inn og ut av søknadsskjemaet, så lenge du lagrer underveis.
+
+Gå til regionalforvaltning.no
 
 ## Frister og rapportering
+
+Søknadsfristen er 1. november og 1. mai kl. 23:59.
 
 Søknadsfristene er 1. mai og 1. november kl. 23.59.
 

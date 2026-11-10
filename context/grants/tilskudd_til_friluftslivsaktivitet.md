@@ -9,10 +9,10 @@ region_prefix: 34
 target_group: alle
 max_amount_nok: unknown
 deadlines: 2026-12-01
-fetched_at: 2026-10-28
+fetched_at: 2026-11-11
 verified_by: SJ
-checked_at: 2026-11-05
-source_modified: unknown
+checked_at: 2026-11-11
+source_modified: 2026-10-15T09:37
 ---
 
 ## Formål
@@ -30,18 +30,14 @@ Tilskuddsordningen skal bidra til å støtte organiserte friluftslivsaktiviteter
 
 Les mer på søknadsportalen til Miljødirektoratet
 
-https://www.miljodirektoratet.no/skjema/tilskudd-til-friluftslivsaktivitet-kap.-1420-post-78
-
 ## Vedlegg
-
-(ikke oppgitt på kildesiden)
 
 Du søker via elektronisk skjema på søknadsportalen til Miljødirektoratet.
 
 Vi ønsker at søkere kun sender inn én søknad selv om det gjelder flere tiltak.
 
+Gå til søknadsskjema og mer informasjon
+
 ## Frister og rapportering
 
 Søknadsfrist: 1. desember.
-
-(rapportering ikke oppgitt på kildesiden)
