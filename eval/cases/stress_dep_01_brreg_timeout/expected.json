@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "fault": "brreg_timeout",
+  "expected_exit": 1,
+  "rejection_reason": "upstream_unavailable"
+}

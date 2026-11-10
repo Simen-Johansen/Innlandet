@@ -1,0 +1,11 @@
+python eval/run_eval.py --case stress_dep_04_brreg_silent
+started 2026-11-10_230444, GRANTS_DIR=eval/corpus/grants
+
+===== stress_dep_04_brreg_silent run 1/3: exit 3, FAIL =====
+rejected: not_found (stage 1, exit 3)
+  FAIL: exit 3, expected [1]
+  FAIL: rejection 'not_found', expected 'upstream_unavailable'
+
+case                         pass  result  detail
+stress_dep_04_brreg_silent    0/1  FAIL    exit 3, expected [1]
+total: 0/1 cases passed, model cost 0.00 USD

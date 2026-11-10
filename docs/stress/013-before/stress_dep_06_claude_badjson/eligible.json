@@ -1,0 +1,19 @@
+{
+  "today": "2026-11-05",
+  "kept": [
+    "hamar_driftstilskudd_frivillige_organisasjoner",
+    "test_synthetic_frivillighetsregisteret",
+    "tilskudd_til_friluftslivsaktivitet",
+    "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom"
+  ],
+  "rejected": [
+    {
+      "grant_id": "test_synthetic_injection",
+      "reason": "outside_region"
+    },
+    {
+      "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
+      "reason": "org_form_not_allowed"
+    }
+  ]
+}

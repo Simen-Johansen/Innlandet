@@ -38,7 +38,9 @@ A volunteer treasurer or board member of a club registered in Enhetsregisteret, 
    actually helpful to a volunteer.
 
 ## Exit codes of `python harness/run.py`
-`0` plan delivered · `1` a check failed after retries · `3` input rejected (expected) · `4` halted by kill switch
+`0` plan delivered · `1` a check failed after retries, or a dependency is down (`upstream_unavailable`
+in `out/rejection.json`: Brreg after 2 retries, or the `claude` CLI; never a partial plan) ·
+`3` input rejected (expected) · `4` halted by kill switch
 
 ## Out of scope
 Writing the application itself, submitting it, any login-protected portal, and any data about persons

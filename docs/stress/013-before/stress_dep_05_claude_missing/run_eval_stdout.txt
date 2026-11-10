@@ -1,0 +1,5 @@
+  stress_dep_05_claude_missing run 1: FAIL (exit 1)
+case                           pass  result  detail
+stress_dep_05_claude_missing    0/1  FAIL    rejection None, expected 'upstream_unavailable'
+total: 0/1 cases passed, model cost 0.00 USD
+report: out/eval_report.json, log: docs/eval-logs/eval_2026-11-10_230444.log

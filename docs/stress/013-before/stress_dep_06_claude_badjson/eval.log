@@ -1,0 +1,71 @@
+python eval/run_eval.py --case stress_dep_06_claude_badjson
+started 2026-11-10_230445, GRANTS_DIR=eval/corpus/grants
+
+===== stress_dep_06_claude_badjson run 1/3: exit 1, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (cost unknown)  check FAIL
+[4] matcher  attempt 2/3 (cost unknown)  check FAIL
+[4] matcher  attempt 3/3 (cost unknown)  check FAIL
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+[4] matcher  failed 3 attempts, stopping
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+===== stress_dep_06_claude_badjson run 2/3: exit 1, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (cost unknown)  check FAIL
+[4] matcher  attempt 2/3 (cost unknown)  check FAIL
+[4] matcher  attempt 3/3 (cost unknown)  check FAIL
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+[4] matcher  failed 3 attempts, stopping
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+===== stress_dep_06_claude_badjson run 3/3: exit 4, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (cost unknown)  check FAIL
+[4] matcher  attempt 2/3 (cost unknown)  check FAIL
+[4] matcher  attempt 3/3 (cost unknown)  check FAIL
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+[4] matcher  failed 3 attempts, stopping
+HALTED: 3 consecutive runs failed the verification gate (exit 4, see out/HALTED)
+  FAIL: exit 4, expected [1]
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+case                           pass  result  detail
+stress_dep_06_claude_badjson    0/3  FAIL    rejection None, expected 'upstream_unavailable'
+total: 0/1 cases passed, model cost 0.00 USD

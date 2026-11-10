@@ -50,7 +50,8 @@ trades speed for being right, and for this user that is the right trade.
 ## Kill switch
 `harness/run.py` writes `out/HALTED` (time and reason) and exits 4 when any of these happens:
 (1) 3 runs in a row fail the verification gate (exit 1; rejections and delivered plans reset the
-count), (2) the model cost in the last 24 h passes 5 USD (raised from 3 USD in task 012, so one
+count; a run that stopped on `upstream_unavailable` is logged with that reason but neither counts
+nor resets, because an outage costs no model money and says nothing about our code, task 013), (2) the model cost in the last 24 h passes 5 USD (raised from 3 USD in task 012, so one
 full eval of 17 cases fits with room for a few runs), or (3) a grant file in use was last
 checked more than 30 days ago (measured from `EVAL_TODAY` when it is set). While `out/HALTED`
 exists every run exits 4 at once, before touching anything. Only a person can resume, by reading

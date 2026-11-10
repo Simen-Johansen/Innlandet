@@ -39,7 +39,7 @@ LOGS = ROOT / "docs" / "eval-logs"
 RUN = ROOT / "harness" / "run.py"
 DEFAULT_TODAY = "2026-11-05"
 KEYS = {"today", "expected_exit", "rejection_reason", "must_match", "must_reject",
-        "must_not_include", "amount_note_required"}
+        "must_not_include", "amount_note_required", "fault"}
 # Rejections made by stages 1-3, before any model call.
 PRE_MODEL_REASONS = {"invalid_orgnr", "invalid_request", "not_found", "outside_innlandet", "bankrupt_or_dissolving",
                      "no_eligible_grants"}
@@ -119,7 +119,8 @@ def run_case(case, runs, log):
                 "error": f"expected.json: unknown keys {sorted(unknown)} or no expected_exit"}
     requested = (read_json(req) or {}).get("requested_amount_nok")
     env = {**os.environ, "PYTHONUTF8": "1", "GRANTS_DIR": str(CORPUS),
-           "EVAL_TODAY": exp.get("today", DEFAULT_TODAY), "EXPECTED_MATCHES": ""}
+           "EVAL_TODAY": exp.get("today", DEFAULT_TODAY), "EXPECTED_MATCHES": "", 
+           "FAULT": exp.get("fault", "")}
     results = []
     for k in range(1, runs + 1):
         r = subprocess.run([sys.executable, str(RUN), str(req), "--offline"], cwd=ROOT, env=env,

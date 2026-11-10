@@ -1,0 +1,6 @@
+{
+  "today": "2026-11-05",
+  "fault": "claude_badjson",
+  "expected_exit": 1,
+  "rejection_reason": "upstream_unavailable"
+}

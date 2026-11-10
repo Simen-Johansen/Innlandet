@@ -1,0 +1,5 @@
+  stress_dep_03_brreg_429 run 1: FAIL (exit 3)
+case                      pass  result  detail
+stress_dep_03_brreg_429    0/1  FAIL    exit 3, expected [1]
+total: 0/1 cases passed, model cost 0.00 USD
+report: out/eval_report.json, log: docs/eval-logs/eval_2026-11-10_230443.log

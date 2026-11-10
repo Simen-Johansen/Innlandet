@@ -1,0 +1,7 @@
+  stress_dep_06_claude_badjson run 1: FAIL (exit 1)
+  stress_dep_06_claude_badjson run 2: FAIL (exit 1)
+  stress_dep_06_claude_badjson run 3: FAIL (exit 4)
+case                           pass  result  detail
+stress_dep_06_claude_badjson    0/3  FAIL    rejection None, expected 'upstream_unavailable'
+total: 0/1 cases passed, model cost 0.00 USD
+report: out/eval_report.json, log: docs/eval-logs/eval_2026-11-10_230445.log

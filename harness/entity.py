@@ -2,16 +2,20 @@
 
 Usage: python harness/entity.py input_request.json [--offline]
 
-Writes out/entity.json (exit 0) or out/rejection.json (exit 3).
+Writes out/entity.json (exit 0), out/rejection.json (exit 3), or out/rejection.json with reason
+upstream_unavailable (exit 1) when Brreg is down or its response fails the schema check (task 013).
 Standard library only. Never calls the roles endpoint and keeps no street address.
 """
 
 import json
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import date
 from pathlib import Path
+
+import faults
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
@@ -20,6 +24,8 @@ FIXTURES = ROOT / "fixtures"
 API = "https://data.brreg.no/enhetsregisteret/api/enheter/{orgnr}"
 USER_AGENT = "innlandet-grant-navigator (https://github.com/Simen-Johansen/Innlandet)"
 TIMEOUT_S = 10
+BACKOFF_S = (1, 2)  # seconds before retry 1 and 2: at most 3 attempts (task 013)
+NOT_FOUND_CODES = (404, 410)  # unknown or deleted entity
 INNLANDET_PREFIX = "34"
 MAX_IDEA_CHARS = 300  # SPEC.md: "one sentence, max 300 chars"
 LANGUAGES = ("en", "no")
@@ -30,6 +36,13 @@ class Rejection(Exception):
         super().__init__(detail)
         self.reason = reason
         self.detail = detail
+
+
+class UpstreamError(Rejection):
+    """Brreg is down or degraded: exit 1 with upstream_unavailable, not a rejection (task 013)."""
+
+    def __init__(self, detail):
+        super().__init__("upstream_unavailable", detail)
 
 
 def mod11_ok(orgnr):
@@ -75,8 +88,8 @@ def validate_request(request):
         )
 
 
-def fetch(orgnr, offline):
-    """Return the raw Brreg JSON for orgnr. One request, no retries (task 013)."""
+def fetch_once(url, orgnr, offline):
+    faults.brreg_request(url)
     if offline:
         path = FIXTURES / f"brreg_{orgnr}.json"
         if not path.exists():
@@ -84,23 +97,54 @@ def fetch(orgnr, offline):
         with open(path, encoding="utf-8") as f:
             return json.load(f)
     req = urllib.request.Request(
-        API.format(orgnr=orgnr),
-        headers={"User-Agent": USER_AGENT, "Accept": "application/json"},
+        url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"}
     )
-    try:
-        with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        raise Rejection("not_found", f"Brreg returned HTTP {e.code} for {orgnr}") from e
+    with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 
-def extract(raw):
-    """Flat entity with exactly the fields allowed by the brreg-api skill."""
-    if "registrertIFrivillighetsregisteret" not in raw:
-        # Do not silently default to False.
-        raise Rejection(
-            "not_found",
-            "Brreg response has no registrertIFrivillighetsregisteret field",
+def fetch(orgnr, offline):
+    """Return the raw Brreg JSON for orgnr (task 013).
+
+    404/410 (unknown or deleted entity) is a rejection. 429, 5xx, timeouts and network errors
+    are retried with backoff; when the retries run out it is an outage, not a rejection.
+    """
+    url = API.format(orgnr=orgnr)
+    for attempt, wait in enumerate((*BACKOFF_S, None), 1):
+        try:
+            return faults.brreg_response(fetch_once(url, orgnr, offline))
+        except urllib.error.HTTPError as e:
+            if e.code in NOT_FOUND_CODES:
+                raise Rejection("not_found", f"Brreg returned HTTP {e.code} for {orgnr}") from e
+            if e.code != 429 and e.code < 500:
+                raise UpstreamError(f"Brreg returned HTTP {e.code} for {orgnr}") from e
+            problem = f"HTTP {e.code}"
+        except (urllib.error.URLError, TimeoutError) as e:
+            problem = f"{type(e).__name__}: {getattr(e, 'reason', e)}"
+        except json.JSONDecodeError as e:
+            raise UpstreamError(f"Brreg response for {orgnr} is not JSON: {e}") from e
+        if wait is None:
+            raise UpstreamError(f"Brreg unavailable after {attempt} attempts, last: {problem}")
+        print(f"Brreg attempt {attempt} failed ({problem}), retrying in {wait} s", file=sys.stderr)
+        time.sleep(wait)
+
+
+def extract(raw, orgnr=None):
+    """Flat entity with exactly the fields allowed by the brreg-api skill.
+
+    Schema check first: a response without a boolean registrertIFrivillighetsregisteret is
+    degraded, never read as False (that would quietly remove grants, task 013).
+    """
+    if not isinstance(raw, dict):
+        raise UpstreamError(f"Brreg response is {type(raw).__name__}, not an object")
+    if orgnr is not None and raw.get("organisasjonsnummer") != orgnr:
+        raise UpstreamError(
+            f"Brreg response is for {raw.get('organisasjonsnummer')!r}, not {orgnr!r}"
+        )
+    if not isinstance(raw.get("registrertIFrivillighetsregisteret"), bool):
+        raise UpstreamError(
+            "Brreg response has no boolean registrertIFrivillighetsregisteret field "
+            f"(got {raw.get('registrertIFrivillighetsregisteret', 'nothing')!r})"
         )
     addr = raw.get("forretningsadresse") or raw.get("postadresse") or {}
     return {
@@ -122,7 +166,7 @@ def lookup(orgnr, offline):
             "invalid_orgnr", f"{orgnr!r} is not 9 digits with a valid MOD11 check digit"
         )
     raw = fetch(orgnr, offline)
-    entity = extract(raw)
+    entity = extract(raw, orgnr)
     kommunenummer = str(entity["kommunenummer"] or "")
     if not kommunenummer.startswith(INNLANDET_PREFIX):
         raise Rejection(
@@ -158,6 +202,10 @@ def main(argv):
     try:
         validate_request(request)
         entity = lookup(request["orgnr"], offline)
+    except UpstreamError as r:
+        write_json(OUT / "rejection.json", {"reason": r.reason, "detail": r.detail})
+        print(f"upstream unavailable: {r.detail}", file=sys.stderr)
+        return 1
     except Rejection as r:
         write_json(OUT / "rejection.json", {"reason": r.reason, "detail": r.detail})
         print(f"rejected: {r.reason}: {r.detail}", file=sys.stderr)

@@ -45,6 +45,7 @@ stage hands to the next.
 |------|---------|------------|
 | 0 | Plan delivered | Open `out/grant_action_plan.md` |
 | 1 | A check failed | Read the `FAIL:` line printed above it. The model stages (4, 5) were already tried 3 times |
+| 1 | Brreg or `claude` is down (`upstream_unavailable` in `out/rejection.json`) | Not your input: try again later. Brreg was already retried twice |
 | 3 | Input rejected (expected for bad input) | Read `out/rejection.json` for the reason |
 | 4 | Halted by the kill switch | Read `out/HALTED`, fix the cause, then delete the file. Every run exits 4 until you do |
 
@@ -58,6 +59,10 @@ See the exit code in PowerShell with `$LASTEXITCODE`, in bash with `echo $?`.
   file was last checked more than 30 days ago. See `docs/safe-operation.md`.
 - Rejected input (for example a bad orgnr) stops before any model call and costs nothing.
 - `claude CLI not found on PATH`: install Claude Code, open a new terminal, and try `claude --version`.
+- Fault injection (task 013): set `FAULT` to `brreg_timeout`, `brreg_500`, `brreg_429`,
+  `brreg_500_once`, `brreg_429_once`, `brreg_silent`, `claude_missing` or `claude_badjson`
+  (comma-separated for several) to simulate a broken dependency, also with `--offline`. Unset, it
+  does nothing. See `harness/faults.py` and `docs/stress/013-stress-dependency.md`.
 - Leave out `--offline` to look the club up live in Brreg. Grants are read from `context/grants/`,
   unless `GRANTS_DIR` is set; `EVAL_TODAY=YYYY-MM-DD` fixes the date the filter uses.
 

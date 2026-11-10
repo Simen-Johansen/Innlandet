@@ -1,0 +1,125 @@
+python eval/run_eval.py --case stress_dep_01_brreg_timeout --case stress_dep_02_brreg_500 --case stress_dep_03_brreg_429 --case stress_dep_04_brreg_silent --case stress_dep_05_claude_missing --case stress_dep_06_claude_badjson
+started 2026-11-10_230352, GRANTS_DIR=eval/corpus/grants
+
+===== stress_dep_01_brreg_timeout run 1/3: exit 1, FAIL =====
+[1] entity  entity.py exited 1
+      Traceback (most recent call last):
+        File "C:\Users\Simen\KIUA2003\Innlandet\harness\entity.py", line 176, in <module>
+          sys.exit(main(sys.argv[1:]))
+                   ^^^^^^^^^^^^^^^^^^
+        File "C:\Users\Simen\KIUA2003\Innlandet\harness\entity.py", line 165, in main
+          entity = lookup(request["orgnr"], offline)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "C:\Users\Simen\KIUA2003\Innlandet\harness\entity.py", line 129, in lookup
+          raw = fetch(orgnr, offline)
+                ^^^^^^^^^^^^^^^^^^^^^
+        File "C:\Users\Simen\KIUA2003\Innlandet\harness\entity.py", line 84, in fetch
+          faults.brreg_request(url)
+        File "C:\Users\Simen\KIUA2003\Innlandet\harness\faults.py", line 47, in brreg_request
+          raise TimeoutError("injected fault: Brreg request timed out")
+      TimeoutError: injected fault: Brreg request timed out
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+===== stress_dep_02_brreg_500 run 1/3: exit 3, FAIL =====
+rejected: not_found (stage 1, exit 3)
+  FAIL: exit 3, expected [1]
+  FAIL: rejection 'not_found', expected 'upstream_unavailable'
+
+===== stress_dep_03_brreg_429 run 1/3: exit 3, FAIL =====
+rejected: not_found (stage 1, exit 3)
+  FAIL: exit 3, expected [1]
+  FAIL: rejection 'not_found', expected 'upstream_unavailable'
+
+===== stress_dep_04_brreg_silent run 1/3: exit 3, FAIL =====
+rejected: not_found (stage 1, exit 3)
+  FAIL: exit 3, expected [1]
+  FAIL: rejection 'not_found', expected 'upstream_unavailable'
+
+===== stress_dep_05_claude_missing run 1/3: exit 1, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+claude CLI not found on PATH: install Claude Code and log in (see README, Offline run)
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+===== stress_dep_06_claude_badjson run 1/3: exit 1, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (cost unknown)  check FAIL
+[4] matcher  attempt 2/3 (cost unknown)  check FAIL
+[4] matcher  attempt 3/3 (cost unknown)  check FAIL
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+[4] matcher  failed 3 attempts, stopping
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+===== stress_dep_06_claude_badjson run 2/3: exit 1, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (cost unknown)  check FAIL
+[4] matcher  attempt 2/3 (cost unknown)  check FAIL
+[4] matcher  attempt 3/3 (cost unknown)  check FAIL
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+[4] matcher  failed 3 attempts, stopping
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+===== stress_dep_06_claude_badjson run 3/3: exit 4, FAIL =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (cost unknown)  check FAIL
+[4] matcher  attempt 2/3 (cost unknown)  check FAIL
+[4] matcher  attempt 3/3 (cost unknown)  check FAIL
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+      FAIL: out\matches.json does not exist
+[4] matcher  failed 3 attempts, stopping
+HALTED: 3 consecutive runs failed the verification gate (exit 4, see out/HALTED)
+  FAIL: exit 4, expected [1]
+  FAIL: rejection None, expected 'upstream_unavailable'
+
+case                           pass  result  detail
+stress_dep_01_brreg_timeout     0/1  FAIL    rejection None, expected 'upstream_unavailable'
+stress_dep_02_brreg_500         0/1  FAIL    exit 3, expected [1]
+stress_dep_03_brreg_429         0/1  FAIL    exit 3, expected [1]
+stress_dep_04_brreg_silent      0/1  FAIL    exit 3, expected [1]
+stress_dep_05_claude_missing    0/1  FAIL    rejection None, expected 'upstream_unavailable'
+stress_dep_06_claude_badjson    0/3  FAIL    rejection None, expected 'upstream_unavailable'
+total: 0/6 cases passed, model cost 0.00 USD

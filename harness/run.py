@@ -5,8 +5,9 @@ Usage: python harness/run.py [input_request.json] [--offline] [--dry-run]
 
 Code decides the order; stages hand off through files in out/. Stages 4 and 5 are headless
 `claude -p` calls in an evaluator-optimizer loop: at most 3 attempts, each retry gets the
-check's error text. Exit codes (SPEC.md): 0 plan delivered, 1 a check failed, 3 input rejected,
-4 halted by the kill switch (task 011).
+check's error text. Exit codes (SPEC.md): 0 plan delivered, 1 a check failed or a dependency is
+down (out/rejection.json reason upstream_unavailable, task 013), 3 input rejected, 4 halted by
+the kill switch (task 011). harness/faults.py injects dependency faults when FAULT is set.
 
 Safe operation (task 011, docs/safe-operation.md): out/ is wiped at the start of every run except
 three state files: out/HALTED (while it exists every run exits 4; a person deletes it),
@@ -26,6 +27,8 @@ import sys
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
+import faults
+
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
 HARNESS = ROOT / "harness"
@@ -43,6 +46,7 @@ DAY_BUDGET_USD = 5.00
 MAX_FAILED_RUNS = 3
 MAX_GRANT_AGE_DAYS = 30
 EXIT_HALTED = 4
+UPSTREAM = "upstream_unavailable"  # Brreg or claude down: exit 1, not counted (task 013)
 
 MAX_ATTEMPTS = 3
 CLAUDE_TIMEOUT_S = 600
@@ -109,24 +113,35 @@ def log_cost(stage, attempt, result):
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
+class UpstreamUnavailable(Exception):
+    """A dependency (Brreg, claude) is down: exit 1 with reason upstream_unavailable (task 013)."""
+
+
 def call_claude(stage, attempt, prompt):
-    claude = shutil.which("claude")
+    claude = faults.claude_path(shutil.which("claude"))
     if claude is None:
-        print("claude CLI not found on PATH: install Claude Code and log in "
-              "(see README, Offline run)", file=sys.stderr)
-        sys.exit(1)
+        raise UpstreamUnavailable("claude CLI not found on PATH: install Claude Code and log in "
+                                  "(see README, Offline run)")
     try:
-        r = subprocess.run([claude, "-p", prompt, *CLAUDE_ARGS], cwd=ROOT, capture_output=True,
-                           text=True, encoding="utf-8", timeout=CLAUDE_TIMEOUT_S)
-        out = r.stdout
+        if faults.claude_badjson():
+            r = subprocess.CompletedProcess([claude], 1, faults.BADJSON_STDOUT, "")
+        else:
+            r = subprocess.run([claude, "-p", prompt, *CLAUDE_ARGS], cwd=ROOT, capture_output=True,
+                               text=True, encoding="utf-8", timeout=CLAUDE_TIMEOUT_S)
+        out, returncode = r.stdout, r.returncode
     except subprocess.TimeoutExpired:
-        out = ""
+        out, returncode = "", None
         print(f"      claude timed out after {CLAUDE_TIMEOUT_S} s", file=sys.stderr)
     try:
         result = json.loads(out)
     except json.JSONDecodeError:
         result = {"is_error": True}  # cost unknown; the check decides
     log_cost(stage, attempt, result)
+    if "total_cost_usd" not in result and returncode != 0:
+        # No JSON and a failed or timed-out CLI: the CLI itself is broken, a retry with check
+        # feedback cannot fix that.
+        status = "timed out" if returncode is None else f"exited {returncode}"
+        raise UpstreamUnavailable(f"claude {status} without JSON output: {out.strip()[:200]!r}")
     return result
 
 
@@ -188,15 +203,41 @@ def halt(reason):
     return EXIT_HALTED
 
 
-def record_run(code):
-    """Append the run's exit code; halt after MAX_FAILED_RUNS failed runs in a row."""
+def record_run(code, reason=None):
+    """Append the run's exit code; halt after MAX_FAILED_RUNS failed runs in a row.
+
+    A run that stopped on upstream_unavailable is logged but not counted: an outage costs no
+    model money and says nothing about our code, so it neither trips nor resets the streak
+    (task 013).
+    """
     entry = {"exit": code, "logged_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+    if reason:
+        entry["reason"] = reason
     with open(RUN_HISTORY, "a", encoding="utf-8") as f:
         f.write(json.dumps(entry) + "\n")
-    last = [e.get("exit") for e in read_jsonl(RUN_HISTORY)[-MAX_FAILED_RUNS:]]
-    if len(last) == MAX_FAILED_RUNS and all(c == 1 for c in last):
+    counted = [e for e in read_jsonl(RUN_HISTORY) if e.get("reason") != UPSTREAM]
+    last = [e.get("exit") for e in counted[-MAX_FAILED_RUNS:]]
+    if reason != UPSTREAM and len(last) == MAX_FAILED_RUNS and all(c == 1 for c in last):
         return halt(f"{MAX_FAILED_RUNS} consecutive runs failed the verification gate")
     return code
+
+
+def upstream_failure(detail):
+    """Write the outage as out/rejection.json and return exit 1 (no partial plan)."""
+    (OUT / "plan.json").unlink(missing_ok=True)
+    with open(OUT / "rejection.json", "w", encoding="utf-8") as f:
+        json.dump({"reason": UPSTREAM, "detail": detail}, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"upstream unavailable: {detail} (exit 1)", file=sys.stderr)
+    return 1
+
+
+def rejection_reason():
+    path = OUT / "rejection.json"
+    if not path.exists():
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f).get("reason")
 
 
 def wipe_out():
@@ -326,9 +367,12 @@ def main(argv):
         return halt(f"grant files not checked in {MAX_GRANT_AGE_DAYS} days: {', '.join(stale)}")
 
     for n, stage in enumerate(STAGES, 1):
-        code = run_stage(n, stage, req, args.offline)
+        try:
+            code = run_stage(n, stage, req, args.offline)
+        except UpstreamUnavailable as e:
+            code = upstream_failure(f"stage {n} {stage['name']}: {e}")
         if code is not None:
-            return code if code == EXIT_HALTED else record_run(code)
+            return code if code == EXIT_HALTED else record_run(code, rejection_reason())
     print(f"ok: out/grant_action_plan.md (model cost {total_cost():.2f} USD, see out/cost_log.jsonl)")
     return record_run(0)
 

@@ -1,0 +1,89 @@
+python eval/run_eval.py --case stress_dep_01_brreg_timeout --case stress_dep_02_brreg_500 --case stress_dep_03_brreg_429 --case stress_dep_04_brreg_silent --case stress_dep_05_claude_missing --case stress_dep_06_claude_badjson
+started 2026-11-10_230552, GRANTS_DIR=eval/corpus/grants
+
+===== stress_dep_01_brreg_timeout run 1/3: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      Brreg attempt 1 failed (TimeoutError: injected fault: Brreg request timed out), retrying in 1 s
+      Brreg attempt 2 failed (TimeoutError: injected fault: Brreg request timed out), retrying in 2 s
+      upstream unavailable: Brreg unavailable after 3 attempts, last: TimeoutError: injected fault: Brreg request timed out
+
+===== stress_dep_02_brreg_500 run 1/3: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      Brreg attempt 1 failed (HTTP 500), retrying in 1 s
+      Brreg attempt 2 failed (HTTP 500), retrying in 2 s
+      upstream unavailable: Brreg unavailable after 3 attempts, last: HTTP 500
+
+===== stress_dep_03_brreg_429 run 1/3: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      Brreg attempt 1 failed (HTTP 429), retrying in 1 s
+      Brreg attempt 2 failed (HTTP 429), retrying in 2 s
+      upstream unavailable: Brreg unavailable after 3 attempts, last: HTTP 429
+
+===== stress_dep_04_brreg_silent run 1/3: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      upstream unavailable: Brreg response has no boolean registrertIFrivillighetsregisteret field (got 'nothing')
+
+===== stress_dep_05_claude_missing run 1/3: exit 1, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+upstream unavailable: stage 4 matcher: claude CLI not found on PATH: install Claude Code and log in (see README, Offline run) (exit 1)
+
+===== stress_dep_06_claude_badjson run 1/3: exit 1, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+upstream unavailable: stage 4 matcher: claude exited 1 without JSON output: 'Error: injected fault, the claude CLI printed this instead of JSON' (exit 1)
+
+===== stress_dep_06_claude_badjson run 2/3: exit 1, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+upstream unavailable: stage 4 matcher: claude exited 1 without JSON output: 'Error: injected fault, the claude CLI printed this instead of JSON' (exit 1)
+
+===== stress_dep_06_claude_badjson run 3/3: exit 1, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+upstream unavailable: stage 4 matcher: claude exited 1 without JSON output: 'Error: injected fault, the claude CLI printed this instead of JSON' (exit 1)
+
+case                           pass  result  detail
+stress_dep_01_brreg_timeout     1/1  PASS    
+stress_dep_02_brreg_500         1/1  PASS    
+stress_dep_03_brreg_429         1/1  PASS    
+stress_dep_04_brreg_silent      1/1  PASS    
+stress_dep_05_claude_missing    1/1  PASS    
+stress_dep_06_claude_badjson    3/3  PASS    
+total: 6/6 cases passed, model cost 0.00 USD

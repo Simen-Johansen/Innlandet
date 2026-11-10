@@ -1,0 +1,28 @@
+{
+  "generated": "2026-11-10_230443",
+  "grants_dir": "eval/corpus/grants",
+  "cases": [
+    {
+      "case": "stress_dep_03_brreg_429",
+      "today": "2026-11-05",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 3,
+          "passed": false,
+          "errors": [
+            "exit 3, expected [1]",
+            "rejection 'not_found', expected 'upstream_unavailable'"
+          ],
+          "model_calls": 0,
+          "cost_usd": 0
+        }
+      ],
+      "pass_rate": "0/1",
+      "passed": false
+    }
+  ],
+  "passed": 0,
+  "total": 1,
+  "cost_usd": 0
+}

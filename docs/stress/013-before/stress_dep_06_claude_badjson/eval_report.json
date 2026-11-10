@@ -1,0 +1,48 @@
+{
+  "generated": "2026-11-10_230445",
+  "grants_dir": "eval/corpus/grants",
+  "cases": [
+    {
+      "case": "stress_dep_06_claude_badjson",
+      "today": "2026-11-05",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 1,
+          "passed": false,
+          "errors": [
+            "rejection None, expected 'upstream_unavailable'"
+          ],
+          "model_calls": 3,
+          "cost_usd": 0
+        },
+        {
+          "run": 2,
+          "exit": 1,
+          "passed": false,
+          "errors": [
+            "rejection None, expected 'upstream_unavailable'"
+          ],
+          "model_calls": 3,
+          "cost_usd": 0
+        },
+        {
+          "run": 3,
+          "exit": 4,
+          "passed": false,
+          "errors": [
+            "exit 4, expected [1]",
+            "rejection None, expected 'upstream_unavailable'"
+          ],
+          "model_calls": 3,
+          "cost_usd": 0
+        }
+      ],
+      "pass_rate": "0/3",
+      "passed": false
+    }
+  ],
+  "passed": 0,
+  "total": 1,
+  "cost_usd": 0
+}
