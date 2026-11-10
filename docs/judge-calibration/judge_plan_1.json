@@ -1,0 +1,24 @@
+{
+  "plan": "out/grant_action_plan.md",
+  "scores": {
+    "plain_language": {
+      "score": 4,
+      "justification": "Most sentences are short and everyday, though a few lines such as the 'Why your club qualifies' paragraph and the 'Max amount' note are slightly dense."
+    },
+    "actionable_steps": {
+      "score": 4,
+      "justification": "The numbered steps are concrete and in a sensible order, but they say nothing about who does each one or what to do first, such as checking the application form for attachments, and the last step to confirm the deadline would work better at the start."
+    },
+    "no_jargon": {
+      "score": 4,
+      "justification": "The plan mostly avoids jargon, but 'attachments', 'application portal' and 'grant provider' are not explained, and the Norwegian grant title and 'Miljødirektoratet' appear without context."
+    },
+    "tone": {
+      "score": 4,
+      "justification": "The tone is direct and treats the reader as a capable adult, though it is somewhat neutral and not especially encouraging."
+    }
+  },
+  "total_cost_usd": 0.0547985,
+  "judged_at": "2026-11-10T23:01:34+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

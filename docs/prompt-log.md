@@ -93,3 +93,13 @@ One entry per significant prompt. Format:
   MOD11); 03b and 03c reached the model and failed. Repairs: `validate_request()` in stage 1, `<grant_text>` /
   `<project_idea>` tags in stages 3 and 5 with updated `match.md` and `guide.md`, quote guard in
   `guide_input.py`; 24 h cap 3 → 5 USD. Full eval 17/17, 2.33 USD. Write-up: `docs/stress/012-stress-injection.md`.
+
+## 2026-11-11: Implement task 014 (LLM-as-judge)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/014`; Simen wrote the judge prompt `eval/prompts/judge.md` (sha256
+  `7b057e22…`) and copied Claude's drafted `eval/judge.py` into `eval/` (the `Edit(/eval/**)` deny rule stays)
+- **Outcome:** `judge.py` was tested free with a stub `claude` (bad score, missing key, no JSON, HALTED, 24 h cap
+  → exit 1, the last two with no call). Real run on the Hamar plan: 4/4/4/4, 0.05 USD (plan run 0.15 USD).
+  The judge only advises and is not wired into `run.py` or `run_eval.py`. Calibration (blind human scorer,
+  5 plans in `docs/judge-calibration/`) and the length-bias probe are deferred until after the 12 Nov demo.
+  Write-up: `docs/llm-judge.md`.
