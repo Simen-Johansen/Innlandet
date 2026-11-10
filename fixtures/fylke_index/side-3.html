@@ -1,0 +1,1414 @@
+
+
+<!DOCTYPE html>
+<html lang="nb">
+<head><meta charset="utf-8" /><meta name="format-detection" content="telephone=no" />
+        <base href="/">
+    <link href="/templates/assets/css/default.css?v=18.0.5012" type="text/css" rel="stylesheet">
+<script src="/ClientApp/vanilla/templates/dist/bundle.js?v=18.0.5012" type="module"></script>
+<script src="/ClientApp/vanilla/web-component-library/dist/index.js" type="module"></script>
+<script src="/clientapp/reactjs-front/shared-components/dist/acos-shared-components.umd.js"></script><link href="/templates/assets/legacy-css/default-typography.css?v=20250526" rel="stylesheet" type="text/css" /><link href="/templates/assets/legacy-css/default-skip-to-links.css?v=20230510" rel="stylesheet" type="text/css" /><link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css" rel="stylesheet" /><link href="/templates/assets/legacy-css/default-article-teaser.css?v=20230606" rel="stylesheet" type="text/css" /><link href="/templates/assets/legacy-css/default-tabfocus-styles.css?v=20250331" rel="stylesheet" type="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script src="/script/jQuery/jquery-1.12.4.min.js"></script>
+<script src="/script/jQuery/jquery-migrate-1.4.1.min.js"></script>
+
+
+
+
+
+<script src="/script/js/basefunksjoner.js?v=20210408"></script>
+
+
+
+
+<script src="/script/jQuery/jquery.acos.js?v=20102020"></script>
+
+
+<link type="text/css" rel="stylesheet" href="/clientApp/reactjs-front/tilbakemelding/build/static/css/main.da8afa71.css?v=18.0.5012" />
+<link type="text/css" rel="stylesheet" href="/clientApp/reactjs-front/cookie-notice/dist/assets/index-CO6Crme_.css?v=18.0.5012" />
+<link type="text/css" rel="stylesheet" href="/css/deleknapper-v2.css?v=1.1" />
+<link type="text/css" rel="stylesheet" href="/Maler/Default/assets/css/themes/default/default.css?v=18.0.5012" />
+<link type="text/css" rel="stylesheet" href="/Maler/Standard/Handlers/StyleHandler.ashx?bundle=signature&portalID=1&sprakID=1&designID=1&v=18.0.5012" />
+<link type="text/css" rel="stylesheet" href="/Design/fylkeskommunene/fylkene/v2019/assets/css/themes/innlandet/innlandet/innlandet.css?v=v18.0.05012" />
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" />
+<link type="text/css" rel="stylesheet" href="/css/autoSuggest/autoSuggest.min.css?v=20230704" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    
+    
+    
+    
+<title>
+	Søk tilskudd - Innlandet fylkeskommune
+</title><script>
+    (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector(':root').style.setProperty('--bc-primary-color-500', '#005850');
+            document.querySelector(':root').style.setProperty('--bc-primary-color-400', '#196861');
+            document.querySelector(':root').style.setProperty('--bc-primary-color-300', '#478680');
+            document.querySelector(':root').style.setProperty('--bc-primary-color-200', '#7EAAA6');
+            document.querySelector(':root').style.setProperty('--bc-primary-color-100', '#B1CCC9');
+        });
+     })();
+</script>
+<link href="/css/css.ashx?style=artikkel" rel="stylesheet" type="text/css" /><link href="/css/css.ashx?style=login" rel="stylesheet" type="text/css" /><link rel="shortcut icon" href="/handlers/bv.ashx/iefe3ee3a-1357-40e1-8b37-58a303f8096a/favicon.png"/>
+<meta name="keywords" content="støtte, søk-støtte, søknader, økonomisk-støtte, stipender, videregående skole, tannklinikk, fylkesveg, kulturarv" />
+<meta name="language" content="nb" />
+<meta name="robots" content="index,follow" />
+<meta name="acos-cmscontext" content="w-1$o-1$m1591$sl0" />
+</head>
+<body lang="nb">
+    <cc-event-bus-component></cc-event-bus-component>
+    
+    
+        <cc-cookie-manager-component identitfier="1"></cc-cookie-manager-component>
+        <div class="cookie-notice" data-cookie-mode="1" data-identifier="1"></div>
+    
+    
+    
+    <div aria-label="Snarveier " role="navigation">
+
+	<ul class="il-skip-to-links hidden">
+
+		<li class="il-skip-to-link-item"><a class="il-skip-to-link" href="#contentInnhold">Hopp til innhold</a></li>
+		<li class="il-skip-to-link-item"><a class="il-skip-to-link" href="#contentHovedmeny">Hopp til meny</a></li>
+		<li class="il-skip-to-link-item"><a class="il-skip-to-link" href="#contentSok">Hopp til søk</a></li>
+
+	</ul>
+</div>
+
+    
+
+    <script async src="https://siteimproveanalytics.com/js/siteanalyze_6002401.js"></script>
+
+    
+    
+    <form name="aspnetForm" method="post" action="/tjenester/sok-tilskudd?Side=3" id="aspnetForm" class="no-script right-column subpage">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+function addLoadEvent(func) {
+var oldonload = window.onload;
+if (typeof window.onload != 'function') {
+window.onload = func;
+} else {
+window.onload = function() {
+if (oldonload) {
+oldonload();
+}
+func();
+}
+}
+}   
+//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4BEBD591" />
+<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="czox6LaDssK9uGf3tVgDDRQ7uQqwk6Tp5GunQeXrP3X1A1aEOaQRNinJWrl34AuVkb6WJpLzMOMXQj+JpERiCWJ2YBcn30zdwMEPxUxeRbFkQkveaLb9RexkWLs21Gxicg+33J39W5SqZVNB414j4wGIxtnQk+RaAKDDWdiZwNVllwps0OsMb5/MjTGPIVVW2iNYSPwjJA4zATO3OKoDKZq3LKbmVEEqx3IjK2uhhCoqJag5IbwKVxDizB6U1XsoeLyqW84wm0PyXVTrkkTpMw==" />
+
+        
+        
+        
+        
+            <header class="header">
+                <a name="header"></a>
+                
+                    <div class="header-upper wrapper-outer">
+                        <div class="header-upper-content wrapper-inner wrapper-inner--full-width">
+                            <!-- Start sone -->
+<div id="Sone2003" class="zone Zone webPartZoneVertical">
+
+</div>
+<!-- Slutt sone --><!-- Start sone -->
+<div id="Sone2004" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl04_WebpartId_67">
+		<div class="webPartInnhold">
+			<!--Fromcache-->
+<ul class="vListe"><li class="toplevel"><a href="https://innlandetfylke.no/om-fylkeskommunen/ledige-stillinger/" data-id="23" class=""><span><span class="img"></span><span class="text">Ledige stillinger</span></span></a></li><li class="toplevel"><a href="https://innlandetfylke.no/politikk/se-politiske-moter-pa-nett-tv/" data-id="2475" class=""><span><span class="img"></span><span class="text">Nett-TV</span></span></a></li><li class="toplevel js-google-translate"><a href="#" data-id="26" class=""><span><span class="img"></span><span class="text">Language/språk</span></span></a></li></ul>
+		</div>
+	</div>
+
+	<div class="webPart google-translate-container" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl04_WebpartId_2725">
+		<div class="webPartInnhold">
+			<cc-cookie-consent-conditional-content-component class="cc-cookie-consent-conditional-content" class-prefix="cc" identifier="1" categories="3,4" role="alert">
+    <template data-template="acceptedBodyContent">
+        <div id="google_translate_element" class="notranslate skiptranslate" data-languages=""></div>
+    </template>
+    <template data-template="rejectedBodyContent">
+        <div class="cc-div">
+            For å bruke Google Oversett må du godta følgende informasjonskapsler:
+        </div>
+        <ul class="cc-unordered-list">
+            <li class="cc-list-item">
+                Målrettede informasjonskapsler
+            </li>
+            <li class="cc-list-item">
+                Funksjonelle informasjonskapsler
+            </li>
+        </ul>
+    </template>
+    <template data-template="acceptedBodyEndContent">
+        
+                <script src="/script/js/googleTranslate.js"></script>
+                <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+            
+    </template>
+</cc-cookie-consent-conditional-content-component>
+
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                        </div>
+                    </div>
+                
+                <div class="header-lower wrapper-outer">
+                    <div class="header-lower-content wrapper-inner wrapper-inner--full-width">
+                        <div class="logo">
+                            <a id="ctl00_ctl00_ctl00_ctl00_innhold_hlDefault" href="/">
+                                    <span class="custom-logo">
+                                        <img alt="Innlandet fylkeskommune" src="/handlers/bv.ashx/if09ff81a-87d8-4669-96b4-247931372741/ifk-sisdajven_fylhkentjielte-skjerm_liggende_svart.svg" />
+                                    </span>
+                                </a>
+                        </div>
+                        <div class="navigation">
+                            
+                                <div class="navigation-links">
+                                    <!-- Start sone -->
+<div id="Sone2002" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl05_WebpartId_68">
+		<div class="webPartInnhold">
+			<!--Fromcache-->
+<ul class="vListe"><li class="toplevel"><a href="https://innlandetfylke.no/tjenester/" data-id="37" class="">Våre tjenester</a></li><li class="toplevel"><a href="https://innlandetfylke.no/politikk/" data-id="38" class="">Politikk</a></li><li class="toplevel"><a href="https://innlandetfylke.no/om-fylkeskommunen/" data-id="39" class="">Om oss</a></li><li class="toplevel"><a href="https://innlandetfylke.no/kontakt-oss/" data-id="2473" class="">Kontakt oss</a></li></ul>
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                                </div>
+                            
+
+                        </div>
+                        <div class="navigation-buttons">
+                            <a name="contentHovedmeny"></a>
+
+                            <button type="button" class="search-box-toggle">
+                                <span>
+                                    Søk 
+                                </span>
+                            </button>
+                            <button type="button" class="main-menu-toggle">
+                                <span class="vis-meny">
+                                    Meny 
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+        <nav class="main-menu">
+            <div class="main-menu-content">
+                
+                <!-- Start sone -->
+<div id="Sone100000" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart nav-menu" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl07_WebpartId_158">
+		<div class="webPartInnhold">
+			<!--Fromcache-->
+<ul class="vListe"><li class="toplevel"><a href="https://innlandetfylke.no/tjenester/" data-id="37" class="">Våre tjenester</a></li><li class="toplevel"><a href="https://innlandetfylke.no/politikk/" data-id="38" class="">Politikk</a></li><li class="toplevel"><a href="https://innlandetfylke.no/om-fylkeskommunen/" data-id="39" class="">Om oss</a></li><li class="toplevel"><a href="https://innlandetfylke.no/kontakt-oss/" data-id="2473" class="">Kontakt oss</a></li></ul>
+		</div>
+	</div>
+
+	<div class="webPart top-menu" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl07_WebpartId_159">
+		<div class="webPartInnhold">
+			<!--Fromcache-->
+<ul class="vListe"><li class="toplevel"><a href="https://innlandetfylke.no/om-fylkeskommunen/ledige-stillinger/" data-id="23" class=""><span><span class="img"></span><span class="text">Ledige stillinger</span></span></a></li><li class="toplevel"><a href="https://innlandetfylke.no/politikk/se-politiske-moter-pa-nett-tv/" data-id="2475" class=""><span><span class="img"></span><span class="text">Nett-TV</span></span></a></li><li class="toplevel js-google-translate"><a href="#" data-id="26" class=""><span><span class="img"></span><span class="text">Language/språk</span></span></a></li></ul>
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+            </div>
+        </nav>
+        <div class="search-box wrapper-outer" role="search">
+            <div class="search-box-content wrapper-inner">
+                <div id="ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_pnlSok">
+	
+<div class="js-searchform" data-action-url="/sok.aspx">
+    <div id="ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_pnlAutoSuggest">
+		
+        
+        
+        
+        <script>
+            $(function () {
+                if (typeof window.AutoSuggest !== 'undefined') { 
+                    document.querySelector("#ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_txtSearch").setAttribute('autocomplete', 'off');
+                    AutoSuggest.init(document.querySelector("#ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_txtSearch"), {
+                        PortalID: 1,
+                        SprakID: 1,
+                        Token: 'b45fa2204a6b4b8cb882d7555517aa27',
+                        AutoSuggestWordsURL: '/api/presentation/sok/Forslag',
+                        DidYouMeanURL: '/api/presentation/sok/ForslagPaAndreOrd',
+                        Container: $("#ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_pnlSok"),
+                        btnSearch: $("#ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_btnSearch, #ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_btnImageSearch"),
+                        oSeResultatFor: ''
+                    });
+				}
+            });
+        </script>
+    
+	</div>
+    <a name="contentSok"></a>
+	
+
+    <input type="hidden" name="ctl00$ctl00$ctl00$ctl00$innhold$ucSokLiten$hdMId1" id="ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_hdMId1" value="8" />
+    <input name="ctl00$ctl00$ctl00$ctl00$innhold$ucSokLiten$txtSearch" type="text" id="ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_txtSearch" class="js-liten-trigger-search" aria-label="Søketekst" placeholder="Hva kan vi hjelpe deg med?" />
+    <input type="submit" name="ctl00$ctl00$ctl00$ctl00$innhold$ucSokLiten$btnSearch" value="Søk" id="ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_btnSearch" />
+    
+
+    <script>
+        (function () {
+
+            const input = document.getElementById('ctl00_ctl00_ctl00_ctl00_innhold_ucSokLiten_txtSearch');
+            const searchBase = '/sok.aspx';
+            const searchUrl = searchBase + (searchBase.includes('?') ? '&' : '?') + 'MId1=8&soketekst='
+
+            if(input) {
+                var searchBoxes = document.querySelectorAll('.js-searchform .js-liten-trigger-search');
+
+                if (searchBoxes) {
+                    for (var i = 0; i < searchBoxes.length; i++) {
+                        var searchBox = searchBoxes[i];
+
+                        if (!searchBox.hasAttribute('data-handled')) {
+                            searchBox.setAttribute('data-handled', 'true');
+
+                            searchBox.addEventListener('keydown', function(e) {
+                                if (e.which == 13) {
+                                    window.location.href = searchUrl + input.value;
+                                }
+                            });
+                        }
+                    }
+                }
+
+                var submitButtons = document.querySelectorAll('.js-searchform input[type="submit"]');
+        
+                if (submitButtons) {
+                    for (var i = 0; i < submitButtons.length; i++) {
+                        var submitButton = submitButtons[i];
+                    
+                        if (!submitButton.hasAttribute('data-handled')) {
+                            submitButton.setAttribute('data-handled', 'true');
+
+                            submitButton.addEventListener('click', function (e) { 
+                                e.preventDefault();
+                                window.location.href = searchUrl + input.value;
+                            });
+                        }
+                    }
+                }
+            }
+
+        })();
+    </script>
+</div>
+
+</div>
+            </div>
+        </div>
+        
+        
+    
+
+    
+    
+        <div class="page-navigation-banner">
+            
+                <div class="upper-page-navigation wrapper-outer">
+                    <div
+                        class="upper-page-navigation-content wrapper-inner wrapper-inner--full-width">
+                        
+                            <div class="breadcrumbs">
+                                <div class="breadcrumbsWrapper">
+                                    
+        <span>
+            <span class="breadcrumbs__label ">
+                Du er her:
+            </span>
+        </span>
+        <ul id="breadcrumb-ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_ucBreadcrumbs" class="breadcrumbs__list js-breadcrumb">
+    
+        <li class="breadcrumbs__item">
+            <a href="https://innlandetfylke.no:443/" 
+                >
+                <span>Forsiden</span>
+            </a> 
+        </li>
+    
+        <li class="breadcrumbs__item">
+            <a href="https://innlandetfylke.no:443/tjenester/" 
+                >
+                <span>Tjenester</span>
+            </a> 
+        </li>
+    
+        <li class="breadcrumbs__item">
+            <a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/" 
+                >
+                <span>Søk tilskudd</span>
+            </a> 
+        </li>
+    
+        </ul>
+    
+
+<script>
+
+    (function () {
+
+        
+
+        var initialBreadcrumbs = [];
+
+        function createBreadcrumbItem(title, url) {
+            var liElement = document.createElement('li');
+            liElement.classList.add('breadcrumbs__item');
+
+            var aElement = document.createElement('a');
+            aElement.href = url;
+
+            liElement.appendChild(aElement);
+
+            var spanElement = document.createElement('span');
+            spanElement.innerText = title;
+
+            aElement.appendChild(spanElement);
+
+            return liElement;
+        }
+
+        function initialize() {
+            var breadcrumbElements = document.querySelectorAll('.js-breadcrumb');
+
+            if (breadcrumbElements) {
+                for (var i = 0, length = breadcrumbElements.length; i < length; i++) {
+                    var breadcrumbElement = breadcrumbElements[i];
+
+                    initialBreadcrumbs[breadcrumbElement.id] = breadcrumbElement.querySelectorAll('li');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.legacyBreadcrumbsInitialized) {
+                initialize();
+
+                if (window.eventBus) {
+                    window.eventBus.addEventListener('add-breadcrumb-item', function (event) {
+                        var breadcrumbElements = document.querySelectorAll('.js-breadcrumb');
+
+                        if (breadcrumbElements) {
+                            for (var i = 0, length = breadcrumbElements.length; i < length; i++) {
+                                var breadcrumbElement = breadcrumbElements[i];
+
+                                var breadcrumbItemElement = createBreadcrumbItem(event.target.title, event.target.url);
+
+                                breadcrumbElement.appendChild(breadcrumbItemElement);
+                            }
+                        }
+                    });
+
+                    window.eventBus.addEventListener('remove-breadcrumb-item', function (event) {
+                        var breadcrumbElements = document.querySelectorAll('.js-breadcrumb');
+
+                        if (breadcrumbElements) {
+                            for (var i = 0, length = breadcrumbElements.length; i < length; i++) {
+                                var breadcrumbElement = breadcrumbElements[i];
+
+                                if (breadcrumbElement.lastElementChild) {
+                                    breadcrumbElement.removeChild(breadcrumbElement.lastElementChild);
+                                }
+                            }
+                        }
+                    });
+
+                    window.eventBus.addEventListener('reset-breadcrumb', function (event) {
+                        var breadcrumbElements = document.querySelectorAll('.js-breadcrumb');
+
+                        if (breadcrumbElements) {
+                            for (var i = 0, length = breadcrumbElements.length; i < length; i++) {
+                                var breadcrumbElement = breadcrumbElements[i];
+
+                                breadcrumbElement.innerHTML = '';
+
+                                for (var j = 0; j < initialBreadcrumbs[breadcrumbElement.id].length; j++) {
+                                    var breadcrumbItemElement = initialBreadcrumbs[breadcrumbElement.id][j];
+
+                                    breadcrumbElement.appendChild(breadcrumbItemElement);
+                                }                           
+                            }
+                        }
+                    });
+                }
+
+                window.legacyBreadcrumbsInitialized = true;
+            }
+        });
+
+    })();
+
+</script>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            <a name="contentInnhold"></a>
+
+                <div class="page-title wrapper-outer js-page-title">
+                    <div class="page-title-content wrapper-inner">
+                        <div
+                            class="page-title-content-block page-title-content-block--left">
+                            <h1 class="js-page-title-text">
+                                Søk tilskudd
+                            </h1>
+                            <!-- Start sone -->
+<div id="Sone10002" class="zone Zone webPartZoneVertical">
+
+</div>
+<!-- Slutt sone -->
+                        </div>
+                        
+                    </div>
+                </div>
+            
+        </div>
+        
+            <div class="lower-page-navigation wrapper-outer">
+                <div class="lower-page-navigation-content wrapper-inner">
+                    
+                        <div class="sub-navigation">
+                            <!--from cache-->
+<ul class="vListe">
+<li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/folkehelse/"><span><span class="img"></span><span class="text">Folkehelse</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/frivilligheten/"><span><span class="img"></span><span class="text">Frivilligheten</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/idrett-og-friluftsliv/"><span><span class="img"></span><span class="text">Idrett og friluftsliv</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/klima-og-miljo/"><span><span class="img"></span><span class="text">Klima og miljø</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/kulturarv/"><span><span class="img"></span><span class="text">Kulturarv</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/kunst-og-kultur/"><span><span class="img"></span><span class="text">Kunst og kultur</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/naring-og-internasjonalt/"><span><span class="img"></span><span class="text">Næring og internasjonalt</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/skole-og-opplaring/"><span><span class="img"></span><span class="text">Skole og opplæring</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/veg-og-trafikk/"><span><span class="img"></span><span class="text">Veg og trafikk</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/pensjonister-og-funksjonshemmede/"><span><span class="img"></span><span class="text">Pensjonister og funksjonshemmede</span></span></a></li><li><a href="https://innlandetfylke.no:443/tjenester/sok-tilskudd/priser/"><span><span class="img"></span><span class="text">Priser</span></span></a></li></ul>
+
+                        </div>
+                    
+                </div>
+            </div>
+        
+    
+    
+    
+        <main class="main wrapper-outer">
+            <div class="main-content wrapper-inner">
+                
+    <div class="middle-column">
+        
+        
+    
+    
+        <div class="legacy-content-page legacy-content-page--article-list">
+            
+<h1 class="ArtikkelKategoriOverskrift">Søk tilskudd</h1>
+        <div class="article-preview-list js-item-container">
+            <div class="article-preview-list-body"> 
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl01_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-bygninger-fra-middelalder.16841.aspx">Tilskudd til bygninger fra middelalder</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Eiere av freda middelalderbygninger kan søke om tilskudd til&nbsp;istandsetting som samtidig ivaretar kildeverdien.&nbsp;Søknadsfrist: 1. november 2026.&nbsp;
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl02_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-enkle-tiltak-for-gaende-og-syklende.66248.aspx">Tilskudd til enkle tiltak for gående og syklende</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Kommuner kan søke om tilskudd til å gjennomføre enkle byggetiltak på det kommunale vegnettet.&nbsp;Søknadsfristen er 15. september 2026.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl03_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-etablerte-kulturaktorer-tidl-kulturinstitusjoner.42109.aspx">Tilskudd til etablerte kulturaktører (tidl. kulturinstitusjoner)</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Ordningen skal gi driftstilskudd til kunst- og kulturinstitusjoner, paraplyorganisasjoner, festivaler og kulturaktører. Tilskuddet kan også inkludere utvikling og prosjekt. Søknadsfrist 15. august
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl04_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-forebyggende-trafikksikkerhetsarbeid.66424.aspx">Tilskudd til forebyggende trafikksikkerhetsarbeid</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Kommuner og frivillige organisasjoner kan søke om midler til forebyggende tiltak for å øke trafikksikkerheten.&nbsp;Søknadsfrist 15. januar.&nbsp;
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl05_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-forprosjekt-i-forregion.41312.aspx">Tilskudd til forprosjekt i Forregion</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Hensikten med forprosjekter i&nbsp;FORREGION&nbsp;er &aring; gj&oslash;re s&oslash;kerbedriften fortrolig med forskning som et innovasjonsgrep, og &aring; utl&oslash;se videre forskning.S&oslash;knadsfrist: L&oslash;pende
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl06_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-forundersokelse-av-fredete-bygninger-og-anlegg.19954.aspx">Tilskudd til forundersøkelse av fredete bygninger og anlegg</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Eiere av fredete bygninger og anlegg kan s&oslash;ke om tilskudd til en vurdering av bygningens&nbsp;tekniske tilstand og behov.S&oslash;knadsfrist: L&oslash;pende&nbsp;
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl07_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-friluftslivsaktivitet.36453.aspx">Tilskudd til friluftslivsaktivitet</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Tilskuddsordningen skal bidra til å støtte organiserte friluftslivsaktiviteter og andre stimuleringstiltak som bidrar til økt deltakelse i friluftsliv.Søknadsfrist: 1. desember.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl08_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-fylkesomspennende-pensjonistforeninger-i-innlandet.22176.aspx">Tilskudd til fylkesomspennende pensjonistforeninger i Innlandet</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Formål: Tilskuddsordningen skal bidra til aktiviteter, opplevelser og sosialt samvær i pensjonistforeningen.Søknadsfrist 1. februar 2026.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl09_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-gjennomforing-av-alternative-opplaringsmodeller.82277.aspx">Tilskudd til gjennomføring av alternative opplæringsmodeller</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Lærebedrifter kan søke om dekning av kostnader for å kunne ta ansvar for en større del av opplæringen i faget enn det som står i Læreplanverket.&nbsp;Søknadsfrist: 9. november 2026.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl10_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-hoyere-yrkesfaglig-utdanning.14057.aspx">Tilskudd til høyere yrkesfaglig utdanning</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Offentlige og private fagskoler i Innlandet kan søke om tilskudd fra fylkeskommunen.&nbsp;Søknadsfristen er 2. november 2026.&nbsp;
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl11_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-istandsetting-av-freda-bygninger-og-anlegg.16843.aspx">Tilskudd til istandsetting av freda bygninger og anlegg</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Eiere av freda&nbsp;bygninger og anlegg kan søke om tilskudd til&nbsp;istandsetting for å&nbsp;oppnå&nbsp;et ordinært vedlikeholdsnivå.Søknadsfrist: 1. november 2026.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl12_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-kulturarenaer-i-innlandet.18509.aspx">Tilskudd til kulturarenaer i Innlandet</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Tilskuddet til kulturarenaer i Innlandet&nbsp;skal bidra til &aring; utvikle&nbsp;gode m&oslash;teplasser for kulturelle m&oslash;ter og aktiviteter.S&oslash;knadsfrist til fylkeskommunen er 1. mars.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl13_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-kunstnerisk-aktivitet-for-barn-og-ungdom.2658.aspx">Tilskudd til kunstnerisk aktivitet for barn og ungdom</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Ordningen skal styrke og løfte barne- og ungdomskulturfeltet ved å gi økonomisk støtte til kunstnerisk aktivitet med regionalt nedslagsfelt.Søknadsfristen er 1. november og 1. mai kl. 23:59.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl14_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-kunstnerresidenser-i-innlandet.2659.aspx">Tilskudd til kunstnerresidenser i Innlandet</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Tilskudd til kunstnerresidenser i Innlandet&nbsp;skal bidra til &aring; styrke grunnlaget for at kunstnere kan bo og arbeide i Innlandet. S&oslash;knadsfristen er 1. november.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+        <div class="article-preview js-item">
+            
+              <div class="article-preview-content js-item-content">
+            <h3 class="article-preview-title js-item--clickable">
+                <a id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_MidtSone_ucArtikkelOversikt_ctl01_rptOverview_ctl15_hlHeading" class="InnholdLinkTekst" href="/tjenester/sok-tilskudd/tilskudd-til-organisasjoner-for-mennesker-med-nedsatt-funksjonsevne-i-innlandet.22177.aspx">Tilskudd til organisasjoner for mennesker med nedsatt funksjonsevne i Innlandet</a>
+            </h3>
+            <div class="article-preview-excerpt js-item--clickable">
+            <p> 
+                Formål: Bidra til profesjonelle brukerorganisasjoner og et godt aktivitetsnivå.Søknadsfrist: 1. februar 2026.
+            </p>
+            </div>
+            
+            
+            
+            </div>
+        </div>
+    
+            </div>
+        </div>
+    
+<nav class="ac-content-pagination" aria-label="(controls)">
+ <ol class="ac-content-pagination-list">
+  <li class="ac-content-pagination-list-item">
+   <a class="ac-content-pagination-item ac-content-pagination-item--link" rel="prev" href="/tjenester/sok-tilskudd?Side=2" aria-label="Gå til forrige side, Valgt side 2">
+    <span class="ac-content-pagination-item-text">Forrige</span>
+   </a>
+  </li>
+  <li class="ac-content-pagination-list-item" data-val-gte="1 2">
+   <a class="ac-content-pagination-item ac-content-pagination-item--link" href="/tjenester/sok-tilskudd?Side=1" aria-label="Gå til side 1">
+    <span class="ac-content-pagination-item-text">1</span>
+   </a>
+  </li>
+  <li class="ac-content-pagination-list-item" data-val-gte="1">
+   <a class="ac-content-pagination-item ac-content-pagination-item--link" href="/tjenester/sok-tilskudd?Side=2" aria-label="Gå til side 2">
+    <span class="ac-content-pagination-item-text">2</span>
+   </a>
+  </li>
+  <li class="ac-content-pagination-list-item">
+   <a class="ac-content-pagination-item ac-content-pagination-item--link" href="/tjenester/sok-tilskudd?Side=3" aria-label="side, Valgt side 3" aria-current="true">
+    <span class="ac-content-pagination-item-text">3</span>
+   </a>
+  </li>
+  <li class="ac-content-pagination-list-item" data-val-gte="1">
+   <a class="ac-content-pagination-item ac-content-pagination-item--link" href="/tjenester/sok-tilskudd?Side=4" aria-label="Gå til side 4">
+    <span class="ac-content-pagination-item-text">4</span>
+   </a>
+  </li>
+  <li class="ac-content-pagination-list-item">
+   <a class="ac-content-pagination-item ac-content-pagination-item--link" rel="next" href="/tjenester/sok-tilskudd?Side=4" aria-label="Gå til neste side, Valgt side 4">
+    <span class="ac-content-pagination-item-text">Neste</span>
+   </a>
+  </li>
+ </ol>
+</nav>
+
+
+        </div>
+    
+
+        
+    </div>
+    
+        
+            <div class="right-column">
+                <!-- Start sone -->
+<div id="Sone13000" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart" id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_MidtSone_HoyreSone_ctl00_WebpartId_128">
+		<div class="webPartInnhold">
+			
+    <div id="tilbakemelding"></div>
+
+
+
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+            </div>
+        
+    
+
+            </div>
+        </main>
+    
+    
+
+    
+
+    
+
+    <div class="zone-containers">
+        
+        <div id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_plhZoneContainer7100" class="zone-container wrapper-outer">
+	
+            <div class="wrapper-inner">
+                <!-- Start sone -->
+	<div id="Sone7100" class="zone Zone webPartZoneVertical">
+
+		<div class="webPart" id="ctl00_ctl00_ctl00_ctl00_innhold_MidtSone_ctl09_WebpartId_2794">
+			<div class="webPartInnhold">
+				
+        <div class="share-button-list">
+            <ul class="il-share-button-list">
+    
+        <li class="il-share-button-list-item">
+            <a class="il-share-button-list-item-trigger il-share_button_print il-share-button-list-item-trigger--print" href="javascript:window.print();" title="Skriv ut">
+                <span class="il-share-button-list-item-trigger-text">Skriv ut</span>
+            </a>
+        </li>
+    
+        <li class="il-share-button-list-item">
+            <a class="il-share-button-list-item-trigger il-share_button_facebook jq-target-blank il-share-button-list-item-trigger--facebook" href="https://www.facebook.com/sharer.php?u=https%3a%2f%2finnlandetfylke.no%2ftjenester%2fsok-tilskudd%3fSide%3d3" title="Del på Facebook">
+                <span class="il-share-button-list-item-trigger-text">Del på Facebook</span>
+            </a>
+        </li>
+    
+        <li class="il-share-button-list-item">
+            <a class="il-share-button-list-item-trigger il-share_button_twitter jq-target-blank il-share-button-list-item-trigger--twitter" href="https://twitter.com/intent/tweet?url=https%3a%2f%2finnlandetfylke.no%2ftjenester%2fsok-tilskudd%3fSide%3d3&amp;amp;text=Søk+tilskudd" title="Del på Twitter">
+                <span class="il-share-button-list-item-trigger-text">Del på Twitter</span>
+            </a>
+        </li>
+    
+        <li class="il-share-button-list-item">
+            <a class="il-share-button-list-item-trigger il-share_button_linkedin jq-target-blank il-share-button-list-item-trigger--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3a%2f%2finnlandetfylke.no%2ftjenester%2fsok-tilskudd%3fSide%3d3" title="Del på LinkedIn">
+                <span class="il-share-button-list-item-trigger-text">Del på LinkedIn</span>
+            </a>
+        </li>
+    
+        <li class="il-share-button-list-item">
+            <a class="il-share-button-list-item-trigger il-share_button_email il-share-button-list-item-trigger--email" href="mailto:?subject=S%c3%b8k%20tilskudd&amp;body=Les%20mer:%20%0d%0ahttps://innlandetfylke.no/tjenester/sok-tilskudd?Side=3
+" title="Tips en venn">
+                <span class="il-share-button-list-item-trigger-text">Tips en venn</span>
+            </a>
+        </li>
+    
+        </ul>
+        </div>
+    
+<input type="hidden" id="kalenderRssUrl" value="/Handlers/rss.ashx?lang=1&typ=0&search=" />
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const shareButtonLink = document.querySelector('.js-kalender-rss');
+
+        if (shareButtonLink) {
+            // Function to update the RSS link
+            const updateRssLink = function () {
+                // Retrieve the raw URL from the hidden input
+                var kalenderRSSUrl = '/Handlers/rss.ashx?lang=1\u0026typ=0\u0026search='
+
+                // Construct a URL object for the RSS URL
+                const rssUrl = new URL(kalenderRSSUrl, window.location.origin);
+
+                // Remove 'cat' from the RSS URL
+                rssUrl.searchParams.delete('cat');
+
+                // Extract query parameters from the current browser URL
+                const urlParams = new URLSearchParams(window.location.search);
+
+                // Remove any existing 'kategori' values in the RSS URL
+                rssUrl.searchParams.delete('kategori');
+                rssUrl.searchParams.delete('typ');
+
+                // Iterate over each 'kategori' from the browser URL and append them to the RSS URL
+                urlParams.forEach((value, name) => {
+                    if (name === 'kategori') {
+                        rssUrl.searchParams.append('cat', value);
+                    } else if (name === 'hendelseType') {
+                        rssUrl.searchParams.append('typ', value);
+                    }
+                });
+
+                // Update the share button link with the new RSS URL
+                shareButtonLink.href = rssUrl.toString();
+            };
+
+            // Update RSS link when the page loads
+            updateRssLink();
+
+            // Check if eventBus is available and listen for the event
+            if (window.eventBus) {
+                window.eventBus.addEventListener('filtervisning-filterupdated', function (event) {
+                    updateRssLink(); // Update RSS link when the custom event is triggered
+                });
+            }
+        }
+    });
+</script>
+			</div>
+		</div>
+
+	</div>
+	<!-- Slutt sone -->
+            </div>
+        
+</div>
+        
+        
+        
+        
+    </div>
+    
+
+        
+        
+            <footer class="footer wrapper-outer">
+                
+                    <div class="footer-logo wrapper-inner">
+                        <!-- Start sone -->
+<div id="Sone7600" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart egendef" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl09_WebpartId_130">
+		<div class="webPartInnhold">
+			<!-- Cached at 10.11.2026 17.31.17 (html) 10.11.2026 17.31.17 (content) (2) -->
+
+
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                    </div>
+                
+                <div class="footer-content wrapper-inner">
+                    <ul>
+                        <li>
+                            <!-- Start sone -->
+<div id="Sone8000" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart egendef" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl10_WebpartId_62">
+		<div class="webPartInnhold">
+			<!-- Cached at 10.11.2026 17.30.00 (html) 08.07.2025 20.50.16 (content) (1) -->
+<h2 class="il-heading il-heading--h2">Kontakt oss</h2><p><strong>Telefon:</strong><br /><a class="InnholdLinkTekst link-telephone " href="tel:62 00 08 80" data-id='109008'>62 00 08 80</a></p><p><strong>Åpningstider:</strong><br />Mandag–fredag kl. 08.00–15.30</p><p><strong>E-post:</strong><br /><a class="InnholdLinkTekst link-email " href="mailto:post@innlandetfylke.no" data-id='468'>Send e-post</a></p><p><a class="InnholdLinkTekst link-webpage " href="https://svarut.ks.no/edialog/mottaker/920717152" onclick="window.open(this.href); return false;" target="_blank" data-id='9345'>Send sikker digital post</a></p>
+
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                        </li>
+                        <li>
+                            <!-- Start sone -->
+<div id="Sone8001" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart egendef" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl11_WebpartId_63">
+		<div class="webPartInnhold">
+			<!-- Cached at 10.11.2026 17.30.00 (html) 08.07.2025 20.50.16 (content) (1) -->
+<h2 class="il-heading il-heading--h2">Postadresse</h2><p>Innlandet fylkeskommune<br />Postboks 4404 Bedriftssenteret<br />2325 Hamar</p><p><a class="InnholdLinkTekst link-webpage " href="https://innlandetfylke.no/kontakt-oss/kontaktinformasjon/#fakturaadr" data-id='27832'>Se fakturaadresse</a></p><p><strong>Organisasjonsnummer:</strong><br />920 717 152</p>
+
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                        </li>
+                        <li>
+                            <!-- Start sone -->
+<div id="Sone8002" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart egendef" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl12_WebpartId_64">
+		<div class="webPartInnhold">
+			<!-- Cached at 10.11.2026 17.30.00 (html) 21.11.2025 12.46.05 (content) (1) -->
+<h2 class="il-heading il-heading--h2">Her finner du oss</h2><p><strong>Fylkeshuset på Hamar</strong><br />Parkgata 64<br />2317 Hamar</p><p><strong>Fylkeshuset på Lillehammer</strong><br />Kirkegata 76<br />2609 Lillehammer</p><p>&nbsp;</p><p>&nbsp;</p>
+
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-sole wrapper-inner">
+                    <!-- Start sone -->
+<div id="Sone8004" class="zone Zone webPartZoneVertical">
+
+	<div class="webPart sosiale-medier" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl13_WebpartId_65">
+		<h2 class="webPartTittel">
+			<span>Følg oss</span>
+		</h2><div class="webPartInnhold">
+			<!--Fromcache-->
+<ul class="vListe"><li class="toplevel facebook"><a href="https://www.facebook.com/innlandetfylke/" target="_blank" data-id="47" class=""><span><span class="img"></span><span class="text">Facebook</span></span></a></li><li class="toplevel instagram"><a href="https://instagram.com/innlandetfylke" target="_blank" data-id="46" class=""><span><span class="img"></span><span class="text">Instagram</span></span></a></li><li class="toplevel youtube"><a href="https://www.youtube.com/channel/UCIhfllGGcfB06RUQlAa33Sw" target="_blank" data-id="48" class=""><span><span class="img"></span><span class="text">YouTube</span></span></a></li></ul>
+		</div>
+	</div>
+
+	<div class="webPart footer-links" id="ctl00_ctl00_ctl00_ctl00_innhold_ctl13_WebpartId_66">
+		<div class="webPartInnhold">
+			<!--Fromcache-->
+<ul class="vListe"><li class="toplevel"><a href="https://innlandetfylke.no/om-fylkeskommunen/personvern/" data-id="51" class=""><span><span class="img"></span><span class="text">Personvern</span></span></a></li><li class="toplevel"><a href="https://innlandetfylke.no/om-fylkeskommunen/informasjonskapsler/" data-id="52" class=""><span><span class="img"></span><span class="text">Informasjonskapsler (cookies)</span></span></a></li><li class="toplevel"><a href="https://uustatus.no/nb/erklaringer/publisert/a071f0ac-2699-4063-b0ee-5ba2a47711f3" data-id="55153" class=""><span><span class="img"></span><span class="text">Tilgjengelighetserklæring</span></span></a></li></ul>
+		</div>
+	</div>
+
+</div>
+<!-- Slutt sone -->
+                </div>
+            </footer>
+        
+        <div class="back-to-top-button-wrapper">
+            <a class="back-to-top-button js-back-to-top-button" href="#header">
+                <span>Til toppen</span>
+            </a>
+        </div>
+    
+<script src='/clientApp/reactjs-front/tilbakemelding/build/static/js/27.e030d1ab.chunk.js?v=18.0.5012'></script><script src='/clientApp/reactjs-front/tilbakemelding/build/static/js/main.4b2560ee.js?v=18.0.5012'></script><script src='/clientApp/reactjs-front/cookie-notice/dist/assets/index-BjNee_0B.js?v=18.0.5012' type='module'></script><script src='/script/jQuery/jquery.cookie.js'></script><script src='/Design/fylkeskommunene/fylkene/v2019/assets/js/scripts.js?v=v18.0.05012'></script><script src='/script/js/jsinfo.min.js?v=1.1'></script><script src='/script/js/beredskap.js'></script><script src='/script/eventbus/eventbus.min.js'></script><script src='/templates/design/assets/js/common.js?v=v18.0.05012'></script><script src='/script/vanilla/autosuggest/autosuggest.vanilla.js?v=20260831'></script><script src='/script/js/login.e9fcj.js'></script>
+                    <script>
+                        (function() {
+                            var url = '/api/presentation/requestlog';
+
+                            var data = {
+                                GUID: 'ce520e7b-364f-4557-8e0d-ee6bbc38e0dd',
+                                userAgent: 'innlandet-grant-navigator (https://github.com/Simen-Johansen/Innlandet)',
+                                bredde: window.innerWidth, 
+                                hoyde: window.innerHeight
+                            };
+
+                            fetch(url, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json; charset=utf-8',
+                                    'X-ANTI-CSRF': '1'
+                                },
+                                body: JSON.stringify(data)
+                            });
+                        })();
+                    </script>
+                </form>
+
+     
+    
+
+    <script>
+        var virtualPath = "/";
+        var languageFile = "/kunde/grensesnitt/i18n/nb_front.json";
+    </script>
+
+    
+        <div class="cms-direkteredigering-login-bar js-cms-direkteredigering-login-bar">
+            <button class="cms-direkteredigering-login-button js-cms-direkteredigering-login-button" type="button" tabindex="-1" aria-hidden="true">
+                <span class="cms-direkteredigering-login-button-text">
+                    Innlogging
+                </span>
+            </button>
+        </div>
+        
+    <script>
+        var pageTitleHandledByDesignTemplates = false;
+
+        (function () {
+            window.addEventListener('hashchange', (event) => {
+                
+                var hash = window.location.hash;
+
+                if (hash) {
+                    var fragment = hash;
+
+                    var element = document.querySelector('[data-id="' + fragment.substr(1) + '"]');
+
+                    if (element) {
+                        setTimeout(function () {
+                            var useScrollIntoView = true;
+
+                            if (!useScrollIntoView) {
+                                var clientRect = element.getBoundingClientRect();
+
+                                var scrollToTopMargin = 130;
+
+                                var scrollToOptions = {
+                                    top: clientRect.top + scrollToTopMargin + window.scrollY,
+                                    behavior: 'smooth'
+                                };
+
+                                window.scroll(scrollToOptions);
+                            } else {
+                                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }, 250);
+                    }
+                }
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var originalHeadTitle = document.title;
+                var originalMetaDescriptionContent = (function () {
+                    var meta = document.querySelector('meta[name="description"]');
+                    return meta ? meta.getAttribute('content') : null;
+                }());
+
+                var pageTitleElement = document.querySelector('.js-page-title');
+
+                if (pageTitleElement) {
+                    var pageTitleElementStyle = window.getComputedStyle(pageTitleElement);
+                    var pageTitleElementIsVisible = pageTitleElementStyle.display !== 'none' && pageTitleElementStyle.visibility !== 'hidden' && pageTitleElementStyle.opacity !== '0';
+
+                    if (pageTitleElementIsVisible) {
+                        pageTitleHandledByDesignTemplates = true;
+
+                        document.querySelector('body').classList.add('has-page-title');
+                    }
+
+                    if (window.eventBus) {
+                        window.eventBus.addEventListener('set-page-title', function (event) {
+                            if (event.target && event.target.text) {
+                                var pageTitleTextElement = document.querySelector('.js-page-title-text');
+
+                                if (pageTitleTextElement) {
+                                    pageTitleTextElement.innerHTML = event.target.text;
+                                }
+                            }
+                        });
+                    }
+                }
+
+                if (window.eventBus) {
+                    var headTitleSuffix = (function () {
+                        var separatorIndex = originalHeadTitle.lastIndexOf(' - ');
+                        return separatorIndex !== -1 ? originalHeadTitle.substring(separatorIndex) : '';
+                    }());
+
+                    window.eventBus.addEventListener('set-head-title', function (event) {
+                        if (event.target && event.target.text) {
+                            document.title = event.target.text + headTitleSuffix;
+                        }
+                    });
+
+                    window.eventBus.addEventListener('reset-head-title', function () {
+                        document.title = originalHeadTitle;
+                    });
+
+                    window.eventBus.addEventListener('set-meta-description', function (event) {
+                        if (event.target && event.target.text) {
+                            var meta = document.querySelector('meta[name="description"]');
+                            if (!meta) {
+                                meta = document.createElement('meta');
+                                meta.setAttribute('name', 'description');
+                                document.head.appendChild(meta);
+                            }
+                            meta.setAttribute('content', event.target.text);
+                        }
+                    });
+
+                    window.eventBus.addEventListener('reset-meta-description', function () {
+                        var meta = document.querySelector('meta[name="description"]');
+                        if (meta) {
+                            if (originalMetaDescriptionContent !== null) {
+                                meta.setAttribute('content', originalMetaDescriptionContent);
+                            } else {
+                                meta.parentNode.removeChild(meta);
+                            }
+                        }
+                    });
+                }
+
+
+                var hash = window.location.hash;
+
+                if (hash) {
+
+                    if (hash.startsWith('#!#')) {
+                        var fragment = hash.substr(2);
+
+                        var element = document.querySelector(fragment);
+
+                        if (element) {
+                            setTimeout(function () {                                
+                                element.scrollIntoView({ behavior: 'instant', block: 'start' });
+
+                            }, 250);
+                        }
+                    } else {
+                        var fragment = hash;
+
+                        
+                        try {
+                            var element = document.querySelector(fragment);
+
+                            if (!element) {
+                                
+                                element = document.querySelector('[data-id="' + fragment.substr(1) + '"]');
+
+                                if (element) {
+                                    setTimeout(function () {                                        
+                                        element.scrollIntoView({ behavior: 'instant', block: 'start' });
+
+                                        if (window.eventBus) {
+                                            window.eventBus.dispatch('show-parent-container', element);
+                                        }
+                                    }, 250);
+                                }
+                            }
+                        } catch {
+
+                        }
+                    }
+                }
+
+                var anchorElements = document.getElementsByTagName('a');
+                
+                for (var i = 0; i < anchorElements.length; i++) {
+                    try {
+                        var anchor = anchorElements[i];
+
+                        var hasHref = anchor.hasAttribute('href');
+
+                        if (hasHref) {
+                            var isExternal = anchor.hostname != window.location.hostname;
+                            var isJavascript = anchor.href.indexOf('javascript:') > -1
+                            var isMailTo = anchor.href.indexOf('mailto:') > -1;
+                            var isTelLink = anchor.href.indexOf('tel:') > -1;
+                            var hasImage = anchor.querySelector('img');
+
+                            if (isExternal && !isJavascript && !isMailTo && !isTelLink && !hasImage) {
+                                if (!anchor.classList.contains('external-link')) {
+                                    anchor.classList.add('external-link');
+                                }
+
+                                if (!anchor.classList.contains('external')) {
+                                    anchor.classList.add('external');
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        // Internet Explorer might throw invalid argument exception for unknown reasons
+                    }
+                }
+
+                var contentSkipToLink = document.querySelector('a.il-skip-to-link[href="#contentInnhold"]');
+
+                if (contentSkipToLink) {
+                    contentSkipToLink.addEventListener('click', function (event) {
+                        event.preventDefault();
+
+                        var contentSkipToLinkTarget = document.querySelector('a[name="contentInnhold"]');
+
+                        if (contentSkipToLinkTarget) {
+                            contentSkipToLinkTarget.setAttribute('tabindex', '-1');
+                            contentSkipToLinkTarget.focus();
+
+                            var top = contentSkipToLinkTarget.getBoundingClientRect().top;
+
+                            var isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+
+                            var scrollToOptions = {
+                                left: 0,
+                                top: top,
+                                behavior: 'smooth'
+                            };
+
+                            if (isSmoothScrollSupported) {
+                                window.scroll(scrollToOptions);
+                            } else {
+                                window.scroll(scrollToOptions.left, scrollToOptions.top);
+                            }
+                        }
+                    });
+                }
+            }, false);
+
+            document.addEventListener('DOMContentLoaded', () => {
+				const backToTopButton = document.querySelector('.js-new-back-to-top-button');
+				if (backToTopButton) {
+					backToTopButton.addEventListener('click', (event) => {
+						event.preventDefault();
+						const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+						const header = document.getElementById('header');
+						let top;
+						if(!header){
+							  const headerElements = document.getElementsByClassName('header');
+							  if (headerElements.length > 0) {
+								top = headerElements[0].getBoundingClientRect().top;
+							  }
+						}
+						else {
+							top = header.getBoundingClientRect().top;
+						}
+						const scrollToOptions = {
+							left: 0,
+							top: top,
+							behavior: 'smooth'
+						};
+						if (isSmoothScrollSupported) {
+							window.scroll(scrollToOptions);
+						}
+						else {
+							window.scroll(0, top);
+						}
+					});
+				}
+			});
+
+            // ------------------------------------------------------------------------
+            // Focus-effekt kun ved tastaturnavigering
+            // ------------------------------------------------------------------------
+
+            document.addEventListener('mousedown', function () {
+                if (document.documentElement.classList.contains('tabbing')) {
+                    document.documentElement.classList.remove('tabbing');
+                }
+
+                if (document.body.classList.contains('tabbing')) {
+                    document.body.classList.remove('tabbing');
+                }
+            });
+
+            document.addEventListener('mouseup', function () {
+                if (document.documentElement.classList.contains('tabbing')) {
+                    document.documentElement.classList.remove('tabbing');
+                }
+
+                if (document.body.classList.contains('tabbing')) {
+                    document.body.classList.remove('tabbing');
+                }
+            });
+
+            document.addEventListener('keyup', function (event) {
+                if (event.keyCode == 9) {
+                    if (!document.documentElement.classList.contains('tabbing')) {
+                        document.documentElement.classList.add('tabbing');
+                    }
+
+                    if (!document.body.classList.contains('tabbing')) {
+                        document.body.classList.add('tabbing');
+                    }
+                }
+            });
+
+            // Fix anchor links when base tag is present
+            document.addEventListener('click', function (event) {
+                var target = event.target;
+                var anchor = null;
+
+                if (target.tagName === 'A' && target.classList.contains('cc-content-link')) {
+                    anchor = target;
+                } else if (target.parentElement && target.parentElement.tagName === 'A' && target.parentElement.classList.contains('cc-content-link')) {
+                    anchor = target.parentElement;
+                }
+
+                if (anchor && anchor.getAttribute('href') && anchor.getAttribute('href').startsWith('#')) {
+                        var hash = anchor.getAttribute('href');
+                        var currentUrl = window.location.href.split('#')[0];
+                        anchor.setAttribute('href', currentUrl + hash);
+                }
+            });
+            
+        })();
+    </script>
+   
+</body>
+</html>

@@ -5,6 +5,7 @@
 - Wiring only: `python harness/run.py --offline --dry-run`
 - Checks: each stage has `python eval/check_<stage>.py`; all must print PASS
 - Eval (from task 009): `python eval/run_eval.py`
+- County catalog (task 010): `python harness/catalog.py` weekly (fetches the index), `--offline` re-reads saved pages
 
 ## Rules
 - Never edit `eval/` without asking. The checks grade you; if a check fails, report it, do not change it.

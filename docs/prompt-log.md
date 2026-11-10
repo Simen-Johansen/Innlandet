@@ -75,3 +75,12 @@ One entry per significant prompt. Format:
   `check_filter` and `check_run` on every PR, with no model and no secrets. PR #4 went green; changing
   `region_prefix` to `340` in one grant file turned it red at `check_grants` ("region_prefix must be 2 or 4
   digits"); the revert turned it green again. Screenshots of both are in the report.
+
+## 2026-11-10: Implement task 010 (sources and catalog)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/010`; survey of Hamar + 5 neighbours done by fetching robots.txt and one
+  grant overview page each
+- **Outcome:** `docs/source-survey.md`: municipalities add their own driftstilskudd/kulturmidler, so W45 stands
+  (county auto, municipalities manual, named as a limitation). `harness/catalog.py` saved 4 index pages, 58
+  listings → `context/catalog.json`. SJ marked 23016, 36453, 2658 ingested; 55 pending (decide by 2026-11-24).
+  `check_catalog` red → PASS. `check_sources` was already PASS (sources.json committed in 89af398), so not red first.
