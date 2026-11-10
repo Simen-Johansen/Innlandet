@@ -22,3 +22,4 @@ jobs:
       - run: python eval/check_run.py
       - run: python eval/check_budget.py
       - run: python eval/check_killswitch.py
+      - run: python eval/check_update.py

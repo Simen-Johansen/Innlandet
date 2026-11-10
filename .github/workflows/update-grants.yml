@@ -1,0 +1,104 @@
+name: update-grants
+# Task 015: weekly grant update. Only unchanged/touched/updated_text and a green check_grants -> commit.
+# Anything else -> PR with the drafts (the human gate). Kill switch (2+ template failures) -> issue.
+# Needs repo setting: Actions > General > "Allow GitHub Actions to create and approve pull requests".
+# Exam freeze: once the tag `exam` exists, the job does nothing (no fetch, commit, PR or issue).
+on:
+  schedule:
+    - cron: "0 5 * * 1"  # Mondays 05:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+concurrency: update-grants
+jobs:
+  freeze:
+    runs-on: ubuntu-latest
+    outputs:
+      frozen: ${{ steps.tag.outputs.frozen }}
+    steps:
+      - name: Is the exam tag set?
+        id: tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/git/refs/tags/exam" > /dev/null 2>&1; then
+            echo "frozen=true" >> "$GITHUB_OUTPUT"; echo "exam tag exists: repository frozen, nothing to do"
+          else
+            echo "frozen=false" >> "$GITHUB_OUTPUT"
+          fi
+  update:
+    needs: freeze
+    if: needs.freeze.outputs.frozen == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Update grants (live)
+        id: update
+        run: |
+          set +e
+          python harness/update_grants.py
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+      - name: Check grants
+        id: check
+        if: steps.update.outputs.exit == '0'
+        run: |
+          set +e
+          python eval/check_grants.py
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+      - name: Decide
+        id: decide
+        run: |
+          python - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json
+          r = json.load(open("out/update_report.json", encoding="utf-8"))
+          auto = {"unchanged", "touched", "updated_text", "skipped_manual"}
+          if r.get("halted"):
+              print("outcome=issue")
+          elif "${{ steps.check.outputs.exit }}" == "0" and all(g["action"] in auto for g in r["grants"]):
+              print("outcome=commit")
+          else:
+              print("outcome=pr")
+          EOF
+          python - <<'EOF' > summary.md
+          import json
+          r = json.load(open("out/update_report.json", encoding="utf-8"))
+          print(f"Weekly grant update {r['today']}, {r['requests']} requests, check_grants exit '${{ steps.check.outputs.exit }}'.\n")
+          if r.get("halted"):
+              print(f"**Kill switch:** {r['halted']}\n")
+          print("| grant | action | reason |\n|---|---|---|")
+          for g in r["grants"]:
+              print(f"| {g['id']} | {g['action']} | {g['reason']} |")
+          EOF
+          cat summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Configure git
+        if: steps.decide.outputs.outcome != 'issue'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Commit
+        if: steps.decide.outputs.outcome == 'commit'
+        run: |
+          git add context/grants
+          git diff --cached --quiet || git commit -m "Weekly grant update $(date -u +%F)"
+          git push
+      - name: Open PR for review
+        if: steps.decide.outputs.outcome == 'pr'
+        run: |
+          branch="grant-update/$(date -u +%F)"
+          git switch -c "$branch"
+          git add context/grants context/grants_pending
+          git diff --cached --quiet && { echo "nothing to propose"; exit 0; }
+          git commit -m "Grant update $(date -u +%F): needs human review"
+          git push -u origin "$branch"
+          gh pr create --title "Grant update $(date -u +%F): needs review" --body-file summary.md
+      - name: Open issue (kill switch)
+        if: steps.decide.outputs.outcome == 'issue'
+        run: |
+          gh issue create --title "Grant update halted $(date -u +%F): page template changed?" --body-file summary.md

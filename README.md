@@ -74,3 +74,21 @@ exits 0 only if all cases pass. `--case NAME` runs one case, `--runs 1` is a che
 A full run costs up to about 3 USD per model run, roughly 27 runs, so check the budget first.
 Each case's `expected.json` is written by the Author before the case is first run.
 Refreshing the corpus is a human act: copy, re-check every `expected.json`, commit.
+
+## Weekly grant update (task 015)
+`python harness/update_grants.py` compares each county page's "Sist endret" with the stored
+`source_modified` and writes `out/update_report.json`. It only refreshes dates and wording; anything that
+may change a fact becomes a draft in `context/grants_pending/` for a human. Offline test:
+`python eval/check_update.py`. In CI, `.github/workflows/update-grants.yml` runs it weekly.
+
+## Submitted version and reproducing it later
+The submitted commit is tagged `exam` and the tag is never moved: `git checkout exam`.
+After the tag exists, the weekly update workflow does nothing, so the grant files stay as submitted.
+Grant files count as stale 30 days after `checked_at`, which makes `check_grants.py` fail and the
+kill switch halt `run.py`. To reproduce the submitted state on a later date, set the reference date to the
+submission day first:
+- bash: `export EVAL_TODAY=2026-12-03`
+- PowerShell: `$env:EVAL_TODAY = "2026-12-03"`
+
+Then run the normal run and the checks as above. `python eval/run_eval.py` already uses its own fixed dates
+and the frozen corpus, so it needs nothing extra.

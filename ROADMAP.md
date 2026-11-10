@@ -32,6 +32,15 @@ Every arrow is a file and a check.
 | W48 (23–29.11) | Freeze features; write the white paper; full eval run for the appendix | – | – |
 | Thu 03.12 11:59 | White paper on Wiseflow | – | `exam` (never moved) |
 
+### Exam freeze (W48, before Thu 03.12 11:59), in this order
+Section 3.6: the submitted commit is tagged `exam` and the tag never changes after the deadline.
+1. Review the drafts in `context/grants_pending/`; copy accepted text into `context/grants/` (humans only).
+2. Re-check `hamar_driftstilskudd_frivillige_organisasjoner` by hand (manual domain) and set `checked_at`.
+3. Run `python harness/update_grants.py` once more so every `checked_at` is days, not weeks, old.
+4. All checks PASS, `python harness/run.py --offline` exits 0, README steps followed once from a fresh clone.
+5. `git tag exam` on that commit and push the tag. Never move or delete it. The weekly
+   `update-grants.yml` stops by itself once the tag exists; also run `gh workflow disable update-grants`.
+
 If you are behind on Fri 30.10, cut depth, not stages. For example, use 2 grant files instead of 4, or skip the retry loop.
 
 ## Every task, the same loop (W40)
