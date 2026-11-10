@@ -1,0 +1,4 @@
+{
+  "reason": "invalid_orgnr",
+  "detail": "'97002902A' is not 9 digits with a valid MOD11 check digit"
+}

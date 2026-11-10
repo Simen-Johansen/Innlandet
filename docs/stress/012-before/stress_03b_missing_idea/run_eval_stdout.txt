@@ -1,0 +1,5 @@
+  stress_03b_missing_idea run 1: FAIL (exit 3)
+case                      pass  result  detail
+stress_03b_missing_idea    0/1  FAIL    rejection 'no_matching_grants', expected 'invalid_request'
+total: 0/1 cases passed, model cost 0.08 USD
+report: out/eval_report.json, log: docs/eval-logs/eval_2026-11-10_221500.log

@@ -19,6 +19,8 @@ LIST_KEYS = ("applicant_orgforms", "deadlines")
 BOOL_KEYS = ("requires_frivillighetsregisteret",)
 HEADINGS = ("Formål", "Hvem kan søke", "Hva kan det søkes om",
             "Vedlegg", "Frister og rapportering")
+# Delimiter tags around data shown to a model (task 012); data may never open or close one.
+DATA_TAG = re.compile(r"<\s*/?\s*(grant_text|project_idea)\b[^>]*>", flags=re.I)
 
 
 class GrantFormatError(ValueError):
@@ -34,6 +36,11 @@ def split_frontmatter(text, name):
         if lines[i].strip() == "---":
             return "".join(lines[1:i]), "".join(lines[i + 1:])
     raise GrantFormatError(f"{name}: frontmatter not closed with ---")
+
+
+def strip_data_tags(text):
+    """Remove look-alikes of our delimiter tags, so data cannot close its own tag."""
+    return DATA_TAG.sub("", text)
 
 
 def parse_meta(block, name):

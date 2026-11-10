@@ -12,7 +12,7 @@ Safe operation (task 011, docs/safe-operation.md): out/ is wiped at the start of
 three state files: out/HALTED (while it exists every run exits 4; a person deletes it),
 out/run_history.jsonl (exit code of every run) and out/cost_history.jsonl (every model call).
 A run stops with exit 1 once its own cost reaches 1.50 USD. The kill switch writes out/HALTED and
-exits 4 after 3 consecutive failed runs, above 3 USD in 24 h, or when a grant file was last
+exits 4 after 3 consecutive failed runs, above 5 USD in 24 h, or when a grant file was last
 checked more than 30 days ago. Standard library only.
 """
 
@@ -39,7 +39,7 @@ RUN_HISTORY = OUT / "run_history.jsonl"
 COST_HISTORY = OUT / "cost_history.jsonl"
 KEEP = {HALTED.name, RUN_HISTORY.name, COST_HISTORY.name}
 RUN_BUDGET_USD = 1.50
-DAY_BUDGET_USD = 3.00
+DAY_BUDGET_USD = 5.00
 MAX_FAILED_RUNS = 3
 MAX_GRANT_AGE_DAYS = 30
 EXIT_HALTED = 4

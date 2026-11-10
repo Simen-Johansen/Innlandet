@@ -1,0 +1,2 @@
+{"stage": "matcher", "attempt": 1, "total_cost_usd": 0.0733777, "duration_ms": 8127, "num_turns": 3, "is_error": false, "session_id": "853cfe7c-d8e8-400b-955e-fbb11047f8ec", "logged_at": "2026-11-10T21:14:50+00:00"}
+{"stage": "guide", "attempt": 1, "total_cost_usd": 0.07697779999999999, "duration_ms": 8027, "num_turns": 7, "is_error": false, "session_id": "3c6abc65-bd7a-45c0-bed8-28b26cebc4a1", "logged_at": "2026-11-10T21:14:59+00:00"}

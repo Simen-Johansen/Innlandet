@@ -1,6 +1,6 @@
 """Check for task 011: the 24 h cost cap in harness/run.py. Model-free, safe for CI.
 
-1. A fake out/cost_history.jsonl with 3.10 USD logged now (cap: 3 USD per 24 h) stops the run
+1. A fake out/cost_history.jsonl with 5.10 USD logged now (cap: 5 USD per 24 h) stops the run
    before any claude call: exit 4, out/HALTED exists, out/cost_log.jsonl stays empty.
 2. Cost older than 24 h does not count: 5.00 USD logged 2 days ago, a bad orgnr still gets the
    normal rejection (exit 3) and no model call.
@@ -57,9 +57,9 @@ def no_model_calls():
 reset()
 try:
     # 1. Above the 24 h cap
-    seed(3.10, timedelta(minutes=5))
+    seed(5.10, timedelta(minutes=5))
     r = call()
-    check(r.returncode == 4, f"3.10 USD in 24 h: exit {r.returncode}, expected 4: {r.stderr.strip()[-300:]}")
+    check(r.returncode == 4, f"5.10 USD in 24 h: exit {r.returncode}, expected 4: {r.stderr.strip()[-300:]}")
     check((OUT / "HALTED").exists(), "out/HALTED missing after the 24 h cost cap")
     no_model_calls()
 

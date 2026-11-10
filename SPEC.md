@@ -31,7 +31,7 @@ A volunteer treasurer or board member of a club registered in Enhetsregisteret, 
 4. **No ineligible grants.** No grant whose hard rules exclude the applicant appears in the plan
    (wrong organisation form, outside the region, missing required registration).
 5. **No personal data.** The plan contains no e-mail addresses, phone numbers or personal names.
-6. **Correct rejection.** Invalid orgnr (checksum), unknown or deleted entity, an entity outside
+6. **Correct rejection.** Invalid orgnr (checksum), invalid request, unknown or deleted entity, an entity outside
    Innlandet, or an empty or off-topic project idea gives `out/rejection.json` with a reason code,
    and the run exits with code 3.
 7. *(Judgment, LLM-as-judge, documented in task 014.)* The guide is plain language (klarspråk) and

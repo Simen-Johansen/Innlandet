@@ -1,0 +1,9 @@
+python eval/run_eval.py --case stress_03a_orgnr_letters --runs 1
+started 2026-11-10_221459, GRANTS_DIR=eval/corpus/grants
+
+===== stress_03a_orgnr_letters run 1/1: exit 3, PASS =====
+rejected: invalid_orgnr (stage 1, exit 3)
+
+case                       pass  result  detail
+stress_03a_orgnr_letters    1/1  PASS    
+total: 1/1 cases passed, model cost 0.00 USD

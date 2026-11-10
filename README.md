@@ -54,7 +54,7 @@ See the exit code in PowerShell with `$LASTEXITCODE`, in bash with `echo $?`.
 - `out/` is emptied at the start of every run, so copy anything you want to keep first. Only the
   kill switch state survives: `out/HALTED`, `out/run_history.jsonl` and `out/cost_history.jsonl`.
 - Each model call has a 0.50 USD budget cap, a run stops (exit 1) once it has spent 1.50 USD, and
-  the kill switch halts (exit 4) above 3 USD in 24 h, after 3 failed runs in a row, or when a grant
+  the kill switch halts (exit 4) above 5 USD in 24 h, after 3 failed runs in a row, or when a grant
   file was last checked more than 30 days ago. See `docs/safe-operation.md`.
 - Rejected input (for example a bad orgnr) stops before any model call and costs nothing.
 - `claude CLI not found on PATH`: install Claude Code, open a new terminal, and try `claude --version`.

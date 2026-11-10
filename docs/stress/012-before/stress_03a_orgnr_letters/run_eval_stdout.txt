@@ -1,0 +1,5 @@
+  stress_03a_orgnr_letters run 1: PASS (exit 3)
+case                       pass  result  detail
+stress_03a_orgnr_letters    1/1  PASS    
+total: 1/1 cases passed, model cost 0.00 USD
+report: out/eval_report.json, log: docs/eval-logs/eval_2026-11-10_221459.log

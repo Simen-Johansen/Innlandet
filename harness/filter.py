@@ -14,7 +14,7 @@ import sys
 from datetime import date
 from pathlib import Path
 
-from grants import load_grants
+from grants import load_grants, strip_data_tags
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
@@ -64,11 +64,14 @@ def scrub(text):
 
 
 def match_input(idea, grants):
-    parts = ["# Project idea", "", scrub(idea), ""]
+    """Idea and grant text wrapped in delimiter tags: data for the model, never instructions (task 012)."""
+    parts = ["# Project idea", "", "<project_idea>", strip_data_tags(scrub(idea)), "</project_idea>", ""]
     for g in grants:
-        parts += [f"## Grant: {g['id']}", "", f"Title: {g['title']}", ""]
+        parts += [f"## Grant: {g['id']}", "", f'<grant_text id="{g["id"]}">',
+                  f"Title: {strip_data_tags(g['title'])}", ""]
         for heading in MATCH_SECTIONS:
-            parts += [f"### {heading}", "", scrub(g["sections"].get(heading, "")), ""]
+            parts += [f"### {heading}", "", strip_data_tags(scrub(g["sections"].get(heading, ""))), ""]
+        parts += ["</grant_text>", ""]
     return "\n".join(parts)
 
 

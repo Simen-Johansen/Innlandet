@@ -1,0 +1,25 @@
+{
+  "organisasjonsnummer": "123456793",
+  "navn": "SYNTETISK TURLAG LILLEHAMMER (FIKTIV, IKKE ET EKTE ORGNR)",
+  "organisasjonsform": {
+    "_links": {
+      "self": {
+        "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/FLI"
+      }
+    },
+    "beskrivelse": "Forening/lag/innretning",
+    "kode": "FLI"
+  },
+  "naeringskode1": {
+    "beskrivelse": "Aktiviteter i andre interesseorganisasjoner ikke nevnt annet sted",
+    "kode": "94.992"
+  },
+  "registrertIFrivillighetsregisteret": true,
+  "konkurs": false,
+  "underAvvikling": false,
+  "underTvangsavviklingEllerTvangsopplosning": false,
+  "forretningsadresse": {
+    "kommune": "LILLEHAMMER",
+    "kommunenummer": "3405"
+  }
+}

@@ -1,0 +1,5 @@
+  stress_03c_long_idea run 1: FAIL (exit 0)
+case                   pass  result  detail
+stress_03c_long_idea    0/1  FAIL    exit 0, expected [3]
+total: 0/1 cases passed, model cost 0.19 USD
+report: out/eval_report.json, log: docs/eval-logs/eval_2026-11-10_221511.log

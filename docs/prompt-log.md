@@ -84,3 +84,12 @@ One entry per significant prompt. Format:
   (county auto, municipalities manual, named as a limitation). `harness/catalog.py` saved 4 index pages, 58
   listings → `context/catalog.json`. SJ marked 23016, 36453, 2658 ingested; 55 pending (decide by 2026-11-24).
   `check_catalog` red → PASS. `check_sources` was already PASS (sources.json committed in 89af398), so not red first.
+
+## 2026-11-10: Implement task 012 (stress test A, prompt injection)
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan implement tasks/012`; Simen wrote the five stress `expected.json` files, added the poisoned
+  corpus grant and `invalid_request` to `PRE_MODEL_REASONS`, and raised the 24 h cap test to 5.10 USD
+- **Outcome:** Before repair 3/5 stress cases passed (01, 02 absorbed by scrub, filter and the matcher; 03a by
+  MOD11); 03b and 03c reached the model and failed. Repairs: `validate_request()` in stage 1, `<grant_text>` /
+  `<project_idea>` tags in stages 3 and 5 with updated `match.md` and `guide.md`, quote guard in
+  `guide_input.py`; 24 h cap 3 → 5 USD. Full eval 17/17, 2.33 USD. Write-up: `docs/stress/012-stress-injection.md`.

@@ -1,0 +1,27 @@
+{
+  "generated": "2026-11-10_221500",
+  "grants_dir": "eval/corpus/grants",
+  "cases": [
+    {
+      "case": "stress_03b_missing_idea",
+      "today": "2026-11-05",
+      "runs": [
+        {
+          "run": 1,
+          "exit": 3,
+          "passed": false,
+          "errors": [
+            "rejection 'no_matching_grants', expected 'invalid_request'"
+          ],
+          "model_calls": 1,
+          "cost_usd": 0.0781
+        }
+      ],
+      "pass_rate": "0/1",
+      "passed": false
+    }
+  ],
+  "passed": 0,
+  "total": 1,
+  "cost_usd": 0.0781
+}

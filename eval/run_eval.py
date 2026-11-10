@@ -41,7 +41,7 @@ DEFAULT_TODAY = "2026-11-05"
 KEYS = {"today", "expected_exit", "rejection_reason", "must_match", "must_reject",
         "must_not_include", "amount_note_required"}
 # Rejections made by stages 1-3, before any model call.
-PRE_MODEL_REASONS = {"invalid_orgnr", "not_found", "outside_innlandet", "bankrupt_or_dissolving",
+PRE_MODEL_REASONS = {"invalid_orgnr", "invalid_request", "not_found", "outside_innlandet", "bankrupt_or_dissolving",
                      "no_eligible_grants"}
 
 

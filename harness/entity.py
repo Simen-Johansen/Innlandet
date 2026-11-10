@@ -21,6 +21,8 @@ API = "https://data.brreg.no/enhetsregisteret/api/enheter/{orgnr}"
 USER_AGENT = "innlandet-grant-navigator (https://github.com/Simen-Johansen/Innlandet)"
 TIMEOUT_S = 10
 INNLANDET_PREFIX = "34"
+MAX_IDEA_CHARS = 300  # SPEC.md: "one sentence, max 300 chars"
+LANGUAGES = ("en", "no")
 
 
 class Rejection(Exception):
@@ -40,6 +42,37 @@ def mod11_ok(orgnr):
     if check == 11:
         check = 0
     return check != 10 and check == int(orgnr[8])
+
+
+def validate_request(request):
+    """Input schema (SPEC.md, task 012), checked before any lookup or model call.
+
+    A bad orgnr stays `invalid_orgnr`; every other problem is `invalid_request`.
+    """
+    if not isinstance(request, dict):
+        raise Rejection("invalid_request", "input_request.json must be a JSON object")
+    orgnr = request.get("orgnr")
+    if not mod11_ok(orgnr):
+        raise Rejection(
+            "invalid_orgnr", f"{orgnr!r} is not 9 digits with a valid MOD11 check digit"
+        )
+    idea = request.get("project_idea")
+    if not isinstance(idea, str) or not idea.strip():
+        raise Rejection("invalid_request", "project_idea: missing or empty")
+    if len(idea) > MAX_IDEA_CHARS:
+        raise Rejection(
+            "invalid_request", f"project_idea: {len(idea)} characters (max {MAX_IDEA_CHARS})"
+        )
+    if request.get("output_language") not in LANGUAGES:
+        raise Rejection(
+            "invalid_request",
+            f"output_language: {request.get('output_language')!r} is not one of {list(LANGUAGES)}",
+        )
+    amount = request.get("requested_amount_nok")
+    if amount is not None and (type(amount) is not int or amount < 0):
+        raise Rejection(
+            "invalid_request", f"requested_amount_nok: {amount!r} is not a whole number >= 0"
+        )
 
 
 def fetch(orgnr, offline):
@@ -123,7 +156,8 @@ def main(argv):
     with open(args[0], encoding="utf-8") as f:
         request = json.load(f)
     try:
-        entity = lookup(str(request.get("orgnr", "")), offline)
+        validate_request(request)
+        entity = lookup(request["orgnr"], offline)
     except Rejection as r:
         write_json(OUT / "rejection.json", {"reason": r.reason, "detail": r.detail})
         print(f"rejected: {r.reason}: {r.detail}", file=sys.stderr)

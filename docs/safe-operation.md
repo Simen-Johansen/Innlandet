@@ -50,12 +50,13 @@ trades speed for being right, and for this user that is the right trade.
 ## Kill switch
 `harness/run.py` writes `out/HALTED` (time and reason) and exits 4 when any of these happens:
 (1) 3 runs in a row fail the verification gate (exit 1; rejections and delivered plans reset the
-count), (2) the model cost in the last 24 h passes 3 USD, or (3) a grant file in use was last
+count), (2) the model cost in the last 24 h passes 5 USD (raised from 3 USD in task 012, so one
+full eval of 17 cases fits with room for a few runs), or (3) a grant file in use was last
 checked more than 30 days ago (measured from `EVAL_TODAY` when it is set). While `out/HALTED`
 exists every run exits 4 at once, before touching anything. Only a person can resume, by reading
 the file, fixing the cause and deleting it. The state the switch needs (`HALTED`,
 `run_history.jsonl`, `cost_history.jsonl`) is the only thing in `out/` that survives the wipe at
-the start of a run. Eval runs count too: a full eval costs about 2.2 USD, so a second full eval
+the start of a run. Eval runs count too: a full eval costs about 2.5 USD, so a second full eval
 on the same day halts by design. Measured by: `eval/check_killswitch.py` (3 simulated failed runs →
 exit 4 and `out/HALTED`; the next run also exits 4; a stale grant file halts) and
 `eval/check_budget.py` (24 h cap).
