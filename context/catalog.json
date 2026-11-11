@@ -70,8 +70,10 @@
       "page_id": "16834",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx",
       "title": "Arrangementsutvikling innen idrett",
-      "status": "pending",
-      "added_at": "2026-11-10"
+      "status": "ingested",
+      "added_at": "2026-11-10",
+      "grant_id": "arrangementsutvikling_innen_idrett",
+      "decided_by": "SJ"
     },
     {
       "page_id": "16841",
