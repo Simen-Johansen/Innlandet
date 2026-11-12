@@ -61,13 +61,20 @@ scores. Then the judge scores the same 5 plans with the committed prompt.
 - agreement within ±1 (%);
 - mean absolute difference.
 
+> **For the human scorer (Elias)**
+> 1. Read `plan_1.md` to `plan_5.md` in `docs/judge-calibration/`. Do **not** open any
+>    `judge_plan_*.json` file, and do not look at the Judge column below.
+> 2. Score each plan 1–5 on P / A / J / T using the rubric above. Write the scores in the
+>    **Human** column in the same format as the Judge column, e.g. `4 / 3 / 5 / 4`.
+> 3. Stop there. The Judge column and the agreement table are filled in afterwards.
+
 | Plan | Source | Human P / A / J / T | Judge P / A / J / T |
 |---|---|---|---|
 | plan_1 | Hamar running example (offline run, 2026-11-11) | – | 4 / 4 / 4 / 4 |
 | plan_2 | `012-before/stress_01_injection_grant_text` | – | – |
 | plan_3 | `012-before/stress_02_injection_project_idea` | – | – |
 | plan_4 | `012-before/stress_03c_long_idea` | – | – |
-| plan_5 | eval case 02 or 12 (made after the demo) | – | – |
+| plan_5 | eval case `12_norwegian_in_and_out` (Norwegian, run 2026-11-12) | – | – |
 
 P = plain_language, A = actionable_steps, J = no_jargon, T = tone.
 
@@ -78,8 +85,12 @@ P = plain_language, A = actionable_steps, J = no_jargon, T = tone.
 | no_jargon | – | – | – |
 | tone | – | – | – |
 
-Human scorer: _to be named_. The table is filled after the 12 Nov demo, to keep model spend
-low before it (5 USD per 24 h cap).
+How to fill it in (n = 5 plans per criterion, comparing the Human and Judge scores):
+- **Exact:** plans where human = judge, e.g. `3/5 (60 %)`.
+- **Within ±1:** plans where the human and judge scores differ by 1 or less, e.g. `5/5 (100 %)`.
+- **Mean abs. diff:** the average of |human − judge| over the 5 plans, e.g. `0.4`.
+
+Human scorer: Elias (did not write the judge prompt).
 
 ## Known failure modes
 - **It favours longer answers.** LLM judges tend to score a longer, more complete-looking plan
