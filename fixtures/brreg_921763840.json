@@ -1,0 +1,30 @@
+{
+  "organisasjonsnummer": "921763840",
+  "navn": "STRIKKEKORGEN BIRKELAND",
+  "organisasjonsform": {
+    "_links": {
+      "self": {
+        "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/ENK"
+      }
+    },
+    "beskrivelse": "Enkeltpersonforetak",
+    "kode": "ENK"
+  },
+  "naeringskode1": {
+    "beskrivelse": "Detaljhandel med tekstiler og utstyrsvarer",
+    "kode": "47.510"
+  },
+  "registrertIFrivillighetsregisteret": false,
+  "konkurs": false,
+  "underAvvikling": false,
+  "underTvangsavviklingEllerTvangsopplosning": false,
+  "forretningsadresse": {
+    "kommune": "GAUSDAL",
+    "kommunenummer": "3441"
+  },
+  "postadresse": {
+    "kommune": "GAUSDAL",
+    "kommunenummer": "3441"
+  },
+  "_redacted": true
+}
