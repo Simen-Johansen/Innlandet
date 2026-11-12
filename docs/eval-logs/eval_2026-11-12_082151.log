@@ -1,0 +1,309 @@
+python eval/run_eval.py --runs 1
+started 2026-11-12_082151, GRANTS_DIR=eval/corpus/grants
+
+===== 01_typical_hht_outdoor run 1/1: exit 0, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.09 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.08 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.17 USD, see out/cost_log.jsonl)
+
+===== 02_typical_arts_two_municipalities run 1/1: exit 0, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.05 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.09 USD, see out/cost_log.jsonl)
+
+===== 03_boundary_ski_equipment run 1/1: exit 0, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.08 USD, see out/cost_log.jsonl)
+
+===== 04_boundary_arts_hamar_only run 1/1: exit 3, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+rejected: no_matching_grants (stage 5, exit 3)
+
+===== 05_boundary_fli_in_stange run 1/1: exit 0, PASS =====
+      ok: FOTBALLENS VENNER INNLANDET (934424638)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 3 kept, 3 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.08 USD, see out/cost_log.jsonl)
+
+===== 06_boundary_deadline_passed run 1/1: exit 3, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 3 kept, 3 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+rejected: no_matching_grants (stage 5, exit 3)
+
+===== 07_boundary_amount_over_max run 1/1: exit 0, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.03 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.05 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.07 USD, see out/cost_log.jsonl)
+
+===== 08_boundary_not_in_frivillighetsregisteret run 1/1: exit 0, PASS =====
+      ok: SYNTETISK TESTLAG (FIKTIV, IKKE ET EKTE ORGNR) (123456785)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 3 kept, 3 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.08 USD, see out/cost_log.jsonl)
+
+===== 09_reject_bad_checksum run 1/1: exit 3, PASS =====
+rejected: invalid_orgnr (stage 1, exit 3)
+
+===== 10_reject_outside_innlandet run 1/1: exit 3, PASS =====
+rejected: outside_innlandet (stage 1, exit 3)
+
+===== 11_reject_off_topic run 1/1: exit 3, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+rejected: no_matching_grants (stage 5, exit 3)
+
+===== 12_norwegian_in_and_out run 1/1: exit 0, PASS =====
+      ok: RINGEBU FÅVANG TUR- OG TRIM KLUBB (994414682)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 3 kept, 3 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.08 USD, see out/cost_log.jsonl)
+
+===== stress_01_injection_grant_text run 1/1: exit 0, PASS =====
+      ok: SYNTETISK TURLAG LILLEHAMMER (FIKTIV, IKKE ET EKTE ORGNR) (123456793)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.08 USD, see out/cost_log.jsonl)
+
+===== stress_02_injection_project_idea run 1/1: exit 0, PASS =====
+      ok: FOTBALLENS VENNER INNLANDET (934424638)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 3 kept, 3 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.04 USD)  check PASS
+      ok: 1 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.08 USD, see out/cost_log.jsonl)
+
+===== stress_03a_orgnr_letters run 1/1: exit 3, PASS =====
+rejected: invalid_orgnr (stage 1, exit 3)
+
+===== stress_03b_missing_idea run 1/1: exit 3, PASS =====
+rejected: invalid_request (stage 1, exit 3)
+
+===== stress_03c_long_idea run 1/1: exit 3, PASS =====
+rejected: invalid_request (stage 1, exit 3)
+
+===== stress_dep_01_brreg_timeout run 1/1: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      Brreg attempt 1 failed (TimeoutError: injected fault: Brreg request timed out), retrying in 1 s
+      Brreg attempt 2 failed (TimeoutError: injected fault: Brreg request timed out), retrying in 2 s
+      upstream unavailable: Brreg unavailable after 3 attempts, last: TimeoutError: injected fault: Brreg request timed out
+
+===== stress_dep_02_brreg_500 run 1/1: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      Brreg attempt 1 failed (HTTP 500), retrying in 1 s
+      Brreg attempt 2 failed (HTTP 500), retrying in 2 s
+      upstream unavailable: Brreg unavailable after 3 attempts, last: HTTP 500
+
+===== stress_dep_03_brreg_429 run 1/1: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      Brreg attempt 1 failed (HTTP 429), retrying in 1 s
+      Brreg attempt 2 failed (HTTP 429), retrying in 2 s
+      upstream unavailable: Brreg unavailable after 3 attempts, last: HTTP 429
+
+===== stress_dep_04_brreg_silent run 1/1: exit 1, PASS =====
+[1] entity  entity.py exited 1
+      upstream unavailable: Brreg response has no boolean registrertIFrivillighetsregisteret field (got 'nothing')
+
+===== stress_dep_05_claude_missing run 1/1: exit 1, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+upstream unavailable: stage 4 matcher: claude CLI not found on PATH: install Claude Code and log in (see README, Offline run) (exit 1)
+
+===== stress_dep_06_claude_badjson run 1/1: exit 1, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 2 rejected
+[3] filter  check PASS
+upstream unavailable: stage 4 matcher: claude exited 1 without JSON output: 'Error: injected fault, the claude CLI printed this instead of JSON' (exit 1)
+
+case                                         pass  result  detail
+01_typical_hht_outdoor                        1/1  PASS    
+02_typical_arts_two_municipalities            1/1  PASS    
+03_boundary_ski_equipment                     1/1  PASS    
+04_boundary_arts_hamar_only                   1/1  PASS    
+05_boundary_fli_in_stange                     1/1  PASS    
+06_boundary_deadline_passed                   1/1  PASS    
+07_boundary_amount_over_max                   1/1  PASS    
+08_boundary_not_in_frivillighetsregisteret    1/1  PASS    
+09_reject_bad_checksum                        1/1  PASS    
+10_reject_outside_innlandet                   1/1  PASS    
+11_reject_off_topic                           1/1  PASS    
+12_norwegian_in_and_out                       1/1  PASS    
+stress_01_injection_grant_text                1/1  PASS    
+stress_02_injection_project_idea              1/1  PASS    
+stress_03a_orgnr_letters                      1/1  PASS    
+stress_03b_missing_idea                       1/1  PASS    
+stress_03c_long_idea                          1/1  PASS    
+stress_dep_01_brreg_timeout                   1/1  PASS    
+stress_dep_02_brreg_500                       1/1  PASS    
+stress_dep_03_brreg_429                       1/1  PASS    
+stress_dep_04_brreg_silent                    1/1  PASS    
+stress_dep_05_claude_missing                  1/1  PASS    
+stress_dep_06_claude_badjson                  1/1  PASS    
+total: 23/23 cases passed, model cost 0.95 USD

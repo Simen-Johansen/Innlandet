@@ -1,0 +1,25 @@
+{
+  "organisasjonsnummer": "983758622",
+  "navn": "GJØVIK SKIKLUBB",
+  "organisasjonsform": {
+    "_links": {
+      "self": {
+        "href": "https://data.brreg.no/enhetsregisteret/api/organisasjonsformer/FLI"
+      }
+    },
+    "beskrivelse": "Forening/lag/innretning",
+    "kode": "FLI"
+  },
+  "naeringskode1": {
+    "beskrivelse": "Aktiviteter i idrettslag og -klubber",
+    "kode": "93.120"
+  },
+  "registrertIFrivillighetsregisteret": true,
+  "konkurs": false,
+  "underAvvikling": false,
+  "underTvangsavviklingEllerTvangsopplosning": false,
+  "forretningsadresse": {
+    "kommune": "GJØVIK",
+    "kommunenummer": "3407"
+  }
+}
