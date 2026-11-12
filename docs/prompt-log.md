@@ -103,3 +103,19 @@ One entry per significant prompt. Format:
   The judge only advises and is not wired into `run.py` or `run_eval.py`. Calibration (blind human scorer,
   5 plans in `docs/judge-calibration/`) and the length-bias probe are deferred until after the 12 Nov demo.
   Write-up: `docs/llm-judge.md`.
+
+## 2026-11-12: Found in demo prep: live audience org numbers failed at stage 1
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** The audience run from the runbook (`demo/audience.json`, 999220606 Strikkekafeensvenner, never seen
+  before) failed at step 1; then `/plan` "you can live enter a brreg number and it works, without an extra step"
+- **Found (missed until now):** the live Brreg lookup worked, but `eval/check_entity.py` compares `out/entity.json`
+  with `fixtures/brreg_<orgnr>.json`. Every earlier test, eval case and backup org number had a saved fixture, so
+  no run had ever checked a club we had not seen. The runbook's "find the org number on brreg.no" step could
+  not work for a new club.
+- **Outcome:** `harness/entity.py`: a live lookup of an unknown orgnr saves an allowlisted copy of the response
+  (only the fields stage 1 and the check read, address cut to kommune + kommunenummer, no contact data or free
+  text) as the fixture; never overwrites, nothing saved under `FAULT` or on a bad response. `eval/` unchanged.
+  Verified free: new orgnr → saved + `check_entity` PASS, rerun leaves the file unchanged, `check_fixtures` PASS
+  (10 clean), `FAULT=brreg_500` → exit 1 with no file, `check_run` and pytest 5/5 green. Limitation: for a new
+  club the reference comes from the same live call, so the check verifies field mapping, Innlandet and privacy,
+  not Brreg itself. Runbook §2 updated; the full audience run is left to Simen.

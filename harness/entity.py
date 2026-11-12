@@ -5,9 +5,13 @@ Usage: python harness/entity.py input_request.json [--offline]
 Writes out/entity.json (exit 0), out/rejection.json (exit 3), or out/rejection.json with reason
 upstream_unavailable (exit 1) when Brreg is down or its response fails the schema check (task 013).
 Standard library only. Never calls the roles endpoint and keeps no street address.
+A live lookup of an orgnr with no saved response also saves an allowlisted copy (no contact data,
+no street address, no free text) as fixtures/brreg_<orgnr>.json, the reference for check_entity.py.
+Existing fixtures are never overwritten.
 """
 
 import json
+import os
 import sys
 import time
 import urllib.error
@@ -160,6 +164,37 @@ def extract(raw, orgnr=None):
     }
 
 
+FIXTURE_KEYS = (
+    "organisasjonsnummer", "navn", "organisasjonsform", "naeringskode1",
+    "registrertIFrivillighetsregisteret", "konkurs", "underAvvikling",
+    "underTvangsavviklingEllerTvangsopplosning",
+)
+FIXTURE_ADDRESS_KEYS = ("kommune", "kommunenummer")
+
+
+def fixture_copy(raw):
+    """Allowlisted copy of a Brreg response: only what extract() and check_entity.py read."""
+    copy = {k: raw[k] for k in FIXTURE_KEYS if k in raw}
+    for addr in ("forretningsadresse", "postadresse"):
+        if isinstance(raw.get(addr), dict):
+            copy[addr] = {k: raw[addr][k] for k in FIXTURE_ADDRESS_KEYS if k in raw[addr]}
+    copy["_redacted"] = True
+    return copy
+
+
+def save_fixture(orgnr, raw):
+    """Save a live response as fixtures/brreg_<orgnr>.json if none exists. Never overwrites."""
+    if os.environ.get("FAULT"):
+        return  # stress tests must not leave injected data in fixtures/
+    path = FIXTURES / f"brreg_{orgnr}.json"
+    if path.exists():
+        return
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(fixture_copy(raw), f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    print(f"saved fixtures/{path.name} (new club, no personal data)", file=sys.stderr)
+
+
 def lookup(orgnr, offline):
     if not mod11_ok(orgnr):
         raise Rejection(
@@ -167,6 +202,8 @@ def lookup(orgnr, offline):
         )
     raw = fetch(orgnr, offline)
     entity = extract(raw, orgnr)
+    if not offline:
+        save_fixture(orgnr, raw)
     kommunenummer = str(entity["kommunenummer"] or "")
     if not kommunenummer.startswith(INNLANDET_PREFIX):
         raise Rejection(

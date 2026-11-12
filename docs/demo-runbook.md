@@ -25,6 +25,10 @@ Ask for an Innlandet club and a project idea. Find the org number on brreg.no. E
 $env:EXPECTED_MATCHES="demo/audience.expected.json"; python harness/run.py demo/audience.json; Remove-Item Env:EXPECTED_MATCHES
 ```
 `audience.expected.json` is `{}`: no expected answer, the model decides.
+Any real Innlandet org number works, also one we have never seen: the first live run saves the club's
+Brreg response (no contact data, no street address) as `fixtures/brreg_<orgnr>.json`, the reference
+`eval/check_entity.py` checks stage 1 against (stderr shows `saved fixtures/brreg_<orgnr>.json`).
+Saved clubs are never overwritten. Needs the network: do not add `--offline` here.
 - Exit 0: a plan. Open it.
 - Exit 3 `no_matching_grants`: correct, too. Only 5 verified grants are in use, and the system says
   "nothing fits" instead of inventing a grant.
