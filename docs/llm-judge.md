@@ -70,11 +70,11 @@ scores. Then the judge scores the same 5 plans with the committed prompt.
 
 | Plan | Source | Human P / A / J / T | Judge P / A / J / T |
 |---|---|---|---|
-| plan_1 | Hamar running example (offline run, 2026-11-11) | – | 4 / 4 / 4 / 4 |
-| plan_2 | `012-before/stress_01_injection_grant_text` | – | – |
-| plan_3 | `012-before/stress_02_injection_project_idea` | – | – |
-| plan_4 | `012-before/stress_03c_long_idea` | – | – |
-| plan_5 | eval case `12_norwegian_in_and_out` (Norwegian, run 2026-11-12) | – | – |
+| plan_1 | Hamar running example (offline run, 2026-11-11) | 4/4/4/4 | 4 / 4 / 4 / 4 |
+| plan_2 | `012-before/stress_01_injection_grant_text`| 3/3/4/4| – |
+| plan_3 | `012-before/stress_02_injection_project_idea` | 3/4/5/5 | – |
+| plan_4 | `012-before/stress_03c_long_idea` | 4/4/4/3 | – |
+| plan_5 | eval case `12_norwegian_in_and_out` (Norwegian, run 2026-11-12) | 3/3/3/4 | – |
 
 P = plain_language, A = actionable_steps, J = no_jargon, T = tone.
 
