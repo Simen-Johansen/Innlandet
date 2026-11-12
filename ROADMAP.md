@@ -29,7 +29,7 @@ Every arrow is a file and a check.
 | W45 (2–8.11) | Test set and evaluation harness, live grant fetcher | 009, 010 | `w45-eval` |
 | W46 (9–15.11) | Safe operation and first stress test, then live demo | 011, 012 | `demo` |
 | W47 (16–22.11) | Second stress test, LLM-as-judge, demo feedback fixed | 013, 014 | – |
-| W48 (23–29.11) | Freeze features; write the white paper; full eval run for the appendix | – | – |
+| W48 (23–29.11) | Freeze features; write the white paper; refresh `eval/corpus/` (human: copy grants, re-check every `expected.json`), then the final 3-run full eval for the appendix (013 Run B, any free 24 h window) | 013 | – |
 | Thu 03.12 11:59 | White paper on Wiseflow | – | `exam` (never moved) |
 
 ### Exam freeze (W48, before Thu 03.12 11:59), in this order
