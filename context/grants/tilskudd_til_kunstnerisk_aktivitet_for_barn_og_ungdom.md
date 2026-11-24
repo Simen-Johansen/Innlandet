@@ -11,7 +11,7 @@ max_amount_nok: 100000
 deadlines: 2026-11-01, 2027-05-01
 fetched_at: 2026-11-11
 verified_by: SJ
-checked_at: 2026-11-11
+checked_at: 2026-11-23
 source_modified: 2026-10-16T09:33
 ---
 
