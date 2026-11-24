@@ -119,3 +119,33 @@ One entry per significant prompt. Format:
   (10 clean), `FAULT=brreg_500` → exit 1 with no file, `check_run` and pytest 5/5 green. Limitation: for a new
   club the reference comes from the same live call, so the check verifies field mapping, Innlandet and privacy,
   not Brreg itself. Runbook §2 updated; the full audience run is left to Simen.
+
+## 2026-11-24: Dropped page sections, wrong maximum amount, catalog triage
+- **Who:** Simen + Claude Code (plan mode)
+- **Prompt:** `/plan` "do the triage, and get control over which info has to be input or can be gathered from the
+  grant pages; the max amount should be linked to some headers being ignored when getting the grants"
+- **Found (missed until now):** `harness/update_grants.py` kept only `<h2>` sections in `HEADING_MAP` and dropped
+  every other heading without a trace. On the live pages that lost "Tildelingsprosess" (arrangementsutvikling:
+  "Maksimal søknadssum er 350 000 kroner", file said `unknown`), "Kriterier", and "Avgrensning", "Støttenivå",
+  "Søknadsvurdering" (kunstnerisk aktivitet, folkehelse: the exclusions and the share of costs). The
+  arrangementsutvikling heading "Hvem kan søke?" also ends in a zero-width space, so even that core heading did not
+  match (the next real update would have failed with a template reason). **Honest failure:** the human gate
+  existed, but on 11.11 the review compared the facts against the draft, not against the source page, so a fact
+  that the extractor never saw could not be caught.
+- **Outcome:** `update_grants.py`: invisible characters stripped; extra fact headings merged under
+  `### <page heading>` (EXTRA_MAP); known background headings listed as deliberately left out (IGNORED); unknown
+  headings still go to review. New read-only `--audit` writes `out/grant_audit.md`: every page heading, the page's
+  amount and deadline dates against the frontmatter, the human-only fields, and the field-provenance table; a
+  needs_review draft gets `<id>.checklist.md`. Facts stay human-written: Claude prepared `out/grant_fix/*.md`
+  (`max_amount_nok: 350000` plus the re-extracted bodies), **Simen checked them against the live pages** and
+  copied them into `context/grants/` himself. Audit after the copy: no mismatch. `check_update` (8 cases),
+  `check_grants` PASS.
+- **Triage (no model):** new `harness/triage.py` writes a title-based proposal per pending catalog entry;
+  `--apply` records only rows a human signed. Simen and Elias reviewed the 54 proposals; Simen signed them (SJ):
+  34 `applicant_not_voluntary`, 20 `deferred_verification`, 0 pending. Signed sheet: `docs/triage-2026-11-24.tsv`.
+- **Departure from plan (eval edit by a human):** `deferred_verification` = possibly relevant for a club, not
+  verified before the exam (our time limit, not a judgment about the grant). Simen added it to `REASONS` in
+  `eval/check_catalog.py`; his first version counted `count["deferred_verification"]`, a reason and not a status,
+  so the check crashed with `KeyError` (found by Claude by running it). Simen then applied the suggested fix:
+  deferred entries count as *relevant* and are printed on their own. Coverage now:
+  `58 listed | 4 ingested | 34 not relevant | 20 deferred | 0 pending | ingested/relevant = 4/24`.

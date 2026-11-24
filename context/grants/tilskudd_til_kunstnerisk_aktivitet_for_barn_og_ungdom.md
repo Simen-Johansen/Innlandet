@@ -37,6 +37,44 @@ Innlandet fylkeskommune har fokus på ungdom som medarrangører, og det ses posi
 
 Som hovedregel ønsker Innlandet fylkeskommune å engasjere seg i tiltak som går på tvers av kommunegrensene. Aktivitet med reelt regionalt nedslagsfelt vil bli prioritert. Regionalt nedslagsfelt betyr at prosjektet tilfaller barn og ungdom fra to eller flere kommuner. Lokale kulturtiltak som gjelder kun for én kommune, er ikke kvalifisert for å søke på denne ordningen.
 
+### Støttenivå
+
+- Innlandet fylkeskommune fullfinansierer ingen prosjekter. Fylkeskommunen kan finansiere inntil 75 % av totalkostnaden.
+- Fullfinansiering betyr at Innlandet fylkeskommune ikke kan være eneste bidragsyter inn i prosjektet. Det må komme fram i søknaden hvilke andre bidragsytere som er involvert.
+- Søknader på under 10 000 kroner vil ikke bli behandlet.
+- Det bevilges ikke større tilskudd enn maksimum 100 000 kroner per søker eller søknad.
+
+### Krav til søknaden
+
+- I søknadsskjemaet skal det fylles inn blant annet: en kort og konkret prosjektbeskrivelse, framdriftsplan, budsjett og finansieringsplan.
+- Alle felter i søknadsskjemaet som kan fylles ut, skal benyttes.
+- Det skal ikke legges med vedlegg til søknaden. All informasjon skal komme fram i skjemaløsningen.
+- Vi gjør oppmerksom på at rubrikken kort prosjektbeskrivelse i skjemaløsningen vil bli benyttet i saksbehandlingen videre. Skriv teksten kort og konkret slik at hovedbudskapet kommer godt fram.
+
+### Søknadsvurdering
+
+Det kan ikke forventes at alle kvalifiserte prosjekter tildeles støtte, siden den økonomiske rammen for ordningen er begrenset.
+
+Disse kriteriene blir vektlagt i vurderingen av søknadene:
+
+- Tydelig kunstnerisk profil på aktiviteter og prosjekter.
+- Samarbeid på tvers av kommuner og regionalt nedslagsfelt vil bli prioritert.
+- Et tilfredsstillende opplegg for planlegging, gjennomføring og styring, herunder økonomistyring.
+- Overføringsverdi for andre.
+- Antall involverte ungdommer.
+
+Ved søknadsbehandlingen tas det hensyn til geografisk spredning og bredde i uttrykkene.
+
+### Avgrensning
+
+- Det gis ikke støtte innenfor felt eller aktivitet som dekkes av andre tilskuddsordninger der fylkeskommunen er vesentlig bidragsyter.
+- Det gis ikke tilskudd til prosjekter som allerede er gjennomført før søknadsfristen.
+- Det gis ikke tilskudd til bokutgivelser, turnévirksomhet, plateutgivelser og tilsvarende.
+- Det gis ikke reisestøtte for enkeltpersoner eller grupper.
+- Lokale kulturtiltak omfattes ikke av denne støtteordningen (prosjekter som gjelder kun for én kommune).
+- Det gis kun støtte til livssynsnøytrale prosjekter.
+- Det bevilges ikke støtte til drift av organisasjoner.
+
 ## Vedlegg
 
 Denne tilskuddsordningen har digitalt søknadsskjema. Kunst og kultur bruker søknadsløsningen på regionalforvaltning.no, som alle må benytte for å få godkjent søknaden. Innsendte søknader på andre plattformer vil ikke godkjennes.

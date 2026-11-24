@@ -1,7 +1,7 @@
 # Roadmap: Volunteer Grant Navigator (Tilskudds-los for frivilligheten)
 
-Today is W46. Compulsory 2 (tasks 001–008, the walking skeleton) is done; the demo ran 12.11.
-What remains is evidence, correct facts and the white paper: see Run-in below.
+Updated Tue 24.11 (W48). Compulsory 2 (tasks 001–008) is done; the demo ran 12.11; facts fixed and catalog
+triaged 24.11. What remains is evidence (judge, Run A, Run B), the corpus refresh and the white paper: see Run-in.
 
 ## The chain (architecture figure for the report)
 
@@ -28,79 +28,96 @@ Every arrow is a file and a check.
 | Fri 30.10 | **C2:** full chain runs from one command, offline, with CI | 004–008 | `c2-skeleton` |
 | W45 (2–8.11) | Test set and evaluation harness, live grant fetcher | 009, 010 | `w45-eval` |
 | W46 (9–15.11) | Safe operation and first stress test, then live demo | 011, 012 | `demo` |
-| W47 (16–22.11) | Evidence and correct facts; feature freeze Sun 22.11 (see Run-in) | 013, 014 | – |
-| W48 (23–29.11) | Final eval, fixes and writing only (see Run-in) | 013 | – |
+| W47 (16–22.11) | Evidence and correct facts; slipped to 24.11 (see Run-in) | 013, 014 | – |
+| W48 (23–29.11) | Facts + triage + judge + Run A 24.11, corpus 25.11, Run B 26.11, writing | 013, 014 | – |
 | Thu 03.12 11:59 | White paper on Wiseflow | – | `exam` (never moved) |
 
-## Run-in to the exam (12.11 → 03.12)
+## Run-in to the exam (updated Tue 24.11)
 
 35/100 points are evaluation and stress testing, 10 are honest reporting and human-in-the-loop control.
-So: **evidence and correct facts, not features. No new features after Sun 22.11.**
+We slipped about 12 days after the demo (nothing was committed 12.11–23.11). The plan stays the same: we cut slack,
+not scope. Everything below is still planned; dates that moved are said plainly.
+**Spend:** 5 USD per rolling 24 h (kill switch). A 3-run eval is about 2.9 USD, so Run A and Run B need two
+different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 h cost below 2 USD.
 
-### Hard dates (everything else may slide within its week)
+### Done (status 24.11)
+- [x] A1 350 000 kr and the dropped sections (Avgrensning, Støttenivå, Kriterier, Tildelingsprosess…) restored,
+      checked by Simen against the live pages; logged in `docs/prompt-log.md` as an honest failure
+- [x] A2 root cause: `update_grants.py` dropped unknown headings; zero-width space in "Hvem kan søke?"
+- [x] A3 county files re-checked: `python harness/update_grants.py --audit`, no mismatch left
+- [x] A4 drafts get `<id>.checklist.md`; `--audit` writes `out/grant_audit.md` with field provenance
+- [x] B1–B2 triage: 54 → 34 `applicant_not_voluntary`, 20 `deferred_verification`, 0 pending (eval edit by Simen,
+      logged); signed sheet `docs/triage-2026-11-24.tsv`
+- [x] C2 (part) Elias scored plans 1–5 blind (Human column in `docs/llm-judge.md`)
+
+### Hard dates
 | When | What | Why it is hard |
 |---|---|---|
-| by Wed 18.11 | `python harness/catalog.py` live once | stale `index_checked_at` (> 8 days) fails `check_catalog` |
-| Sun 22.11 | Feature freeze; last day a new grant may enter | must be in the corpus before the final eval |
-| by Tue 24.11 | 0 pending in `context/catalog.json` | 14-day pending limit in `eval/check_catalog.py` |
-| Tue 24.11 → Fri 27.11 | Final 3-run eval, on a day of its own (5 USD / 24 h cap) | appendix and task 013 |
-| Wed 02.12 | Freeze steps below, `git tag exam`, push (only on explicit go-ahead) | tag never moves |
+| Tue 24.11 | Run A (3-run eval) starts | Run B needs a separate 24 h window before 03.12 |
+| Wed 25.11 | live `update_grants.py` + `catalog.py` | index is stale now; a run on/after 25.11 also holds for `EVAL_TODAY=2026-12-03` |
+| Wed 25.11 evening | corpus refreshed, every `expected.json` re-checked | Run B only means something on the refreshed corpus |
+| Thu 26.11 | Run B (final 3-run eval), once Run A has left the 24 h window | the raw log for the appendix |
+| Sun 29.11 | white-paper full draft | two days left for numbers and appendices |
+| Wed 02.12 | freeze steps, `git tag exam`, push (only on explicit go-ahead) | tag never moves |
 | Thu 03.12 11:59 | Wiseflow (aim for Wed evening) | deadline |
 
-### Workstreams
-**A. Fix the facts (Must, now)**
-1. Check the live page, set `max_amount_nok: 350000`; restore the arts grant's exclusion sentence in `context/grants/`.
-2. Log both in `docs/prompt-log.md` as corrected agent output; write up as honest failures: the human gate existed,
-   but the review compared against the draft, not the source page.
-3. Re-check the other county files against their live pages for dropped sections.
-4. *(Should, before 22.11)* `update_grants.py` lists unknown page headings (e.g. "Tildelingsprosess") at the top of
-   each draft, plus a one-page reviewer fact checklist.
+### Tue 24.11 (today)
+1. **C2 judge, task 014** (Claude runs, ~0.31 USD):
+   - judge plans 2–5: `python eval/judge.py docs/judge-calibration/plan_N.md --out docs/judge-calibration/judge_plan_N.json`
+   - length-bias probe: plan_1 vs a copy padded with polite filler (`docs/judge-calibration/plan_1_padded.md`), judge both
+   - fill the Judge column and the agreement table (exact, within ±1, mean abs. diff) in `docs/llm-judge.md`;
+     write the probe result under "Known failure modes"; tick `tasks/014-llm-judge.md`
+2. **C1 Run A, task 013** (~2.9 USD): `python eval/run_eval.py` (3 runs per case) on the current corpus; report each
+   case k/3, total and cost; log kept in `docs/eval-logs/`; fix surprises tomorrow, before Run B.
+3. **C3 date-gap known failure** (~0.15 USD): one run with a June 2027 event, keep the plan as evidence
+   (`docs/stress/date-gap/`), one line in the white paper's known failures.
+4. **D1 meeting reports**: `docs/meetings/` is empty; at least 8 are required. Write them from notes and git history
+   (W40–W48 + demo 12.11), one file per meeting: date, present, decided, next. Claude drafts from the git log;
+   Simen and Elias correct them.
+5. **Hamar hand-check** (freeze step 2, manual domain): every fact against the page, set `checked_at`.
 
-**B. Catalog: 54 pending (Must, before 24.11)**
-1. Triage without a model, 27 each: can a volunteer club apply? If not → `not_relevant`, reason code, initials in `decided_by`.
-2. **Scope, stated plainly:** we do not have time to verify every relevant county grant before the exam. A relevant
-   grant we leave out gets `deferred_verification`, so the catalog shows exactly which grants a person still has to
-   verify. That is a limit of our time, not a judgment about the grant. This needs an `eval/` edit made by a human
-   (or explicitly delegated), logged in `docs/prompt-log.md` and named in the white paper as a departure from plan:
-   add the code to `REASONS`, and count deferred entries as *relevant* in the coverage line. Otherwise
-   `ingested/relevant` looks complete when it is not.
-3. Verify at most 3–4 high-value grants with four eyes, against the **live page**: every frontmatter fact, the
-   project period each deadline covers, every heading mapped or listed as dropped, domain `auto` in `context/sources.json`.
-4. Before it counts: copy to `eval/corpus/grants/`, ≥1 match case (+1 no-match if possible), re-check every
-   `expected.json`, watch cost per run.
+### Wed 25.11
+1. `python harness/update_grants.py` and `python harness/catalog.py` live; decide every new catalog entry by hand
+   (`harness/triage.py`); `check_grants` and `check_catalog` PASS.
+2. **B3 (Should, moved from 22.11):** verify up to 3 of the 20 deferred grants that clubs are most likely to use
+   (proposal: Spillemidler, ULF – Ungdommens livskvalitetsfond, Regionalt kulturfond). Per grant: `--audit` on the
+   live page, all frontmatter by hand with four eyes, the project period each deadline covers, catalog status
+   `ingested`. Cut-off: the corpus refresh in step 3; whatever is not done stays `deferred_verification`.
+3. **C4 corpus refresh (human act, eval edit):** copy `context/grants/*.md` to `eval/corpus/grants/`
+   (arrangementsutvikling and any B3 grant are new there); ≥1 match case per new grant (+1 no-match if possible);
+   Simen and Elias re-check every `eval/cases/*/expected.json` against the new texts (amounts and Avgrensning can
+   change matches). Log the edit in `docs/prompt-log.md`. Free check: `python harness/run.py --offline --dry-run`.
+4. Fix anything Run A showed.
 
-**C. Evidence (Must; judge = Should)**
-1. Mon 16.11: 3-run baseline eval on the current corpus (013 Run A).
-2. Judge calibration (014): plan_5, blind human scores, judge plans 2–5, length probe, tables (~0.35 USD).
-3. Date-gap known failure: one run for a June 2027 event (~0.15 USD); keep the plan as evidence.
-4. W48 Mon: refresh `eval/corpus/grants/` from verified files; re-check every `expected.json`.
-5. Final 3-run eval (013 Run B); update `tasks/013-stress-dependency.md`; save the raw log.
+### Thu 26.11
+1. **C5 Run B, task 013** (~2.9 USD, final): pre-flight, `python eval/run_eval.py`; save the raw log for the appendix;
+   update `docs/stress/013-stress-dependency.md` (1-run 23/23, 3-run A and B, ~2.9 USD) and tick task 013.
+2. The corpus is frozen after this run: `eval/corpus/grants/` is not touched again.
+3. White paper: evaluation chapter from the Run A/B logs and the judge table.
 
-**D. Writing (Must)**
-1. Meeting reports (demo, W47, W48 and earlier ones from notes): at least 8 in the submission, in or outside the repo.
-2. White paper 7–8 pages: revised C2 sections + evaluation, safe operation, stress testing, reflection; every
-   departure from plan stated. Appendices: prompt logs, one raw eval log, meeting reports.
-3. 30.11–01.12: every number traced to a log, page count, appendices present.
+### Fri 27.11 – Sun 29.11
+- **D2 white paper** 7–8 pages: revised C2 sections, evaluation (Run A, Run B, judge calibration), safe operation,
+  stress tests (012, 013, date gap), reflection. Every departure stated: the 12-day slip, Run A on the old corpus,
+  the `deferred_verification` eval edit, B3 after the feature freeze, the 11.11 review against the draft.
+  Appendices: prompt log, Run B raw log, meeting reports, the field-provenance table from `out/grant_audit.md`.
+- W48 meeting report.
 
-**E. Freeze (Wed 02.12):** the exam freeze steps below.
+### Mon 30.11 – Tue 01.12
+- **D3** every number traced to a log, page count, appendices present; README steps followed from a fresh clone.
+
+### Wed 02.12 – Thu 03.12
+- **E** exam freeze steps below (step 3 already done on 25.11 unless something changed), tag only on explicit
+  go-ahead, submit Wed evening (Elias).
 
 **Reproducible after submission (must hold at the tag)**
 - `python eval/run_eval.py` pins `EVAL_TODAY` per case and reads only `eval/corpus/grants/`, so its results do not
   depend on the date they are run. The corpus is frozen at the final eval and not touched again.
 - Everything else is reproduced with `EVAL_TODAY=2026-12-03` (README). On that date, `check_grants` needs every
   `checked_at` ≥ 03.11, and `check_catalog` needs `index_checked_at` ≥ 25.11 and no pending entry added before 19.11.
-  So the last live `catalog.py` and `update_grants.py` runs happen in freeze step 3, and no entry is left pending.
+  So the last live `catalog.py` and `update_grants.py` runs happen on or after 25.11, and no entry is left pending.
 - Freeze check: on a fresh clone of the tagged commit, with `EVAL_TODAY=2026-12-03`, every check PASSes and
   `python harness/run.py --offline` exits 0. CI (`checks.yml`) does not set `EVAL_TODAY`. That is harmless,
   because it runs only on PRs and on manual dispatch, but say so in the README if someone re-runs it on `exam`.
-
-### Week by week (owners are suggestions)
-- **12.11–15.11:** demo report (both) · A1–A2 (Simen) · A3 (Elias) · start B1 (both)
-- **W47:** C1 Mon · catalog live by Wed · finish B1–B2 · C2 (Elias scores, Simen runs) · A4 · B3–B4 · C3 ·
-  W47 report · **Sun 22.11 feature freeze**
-- **W48:** C4 Mon (low spend) · 0 pending by Tue · C5 on its own day · white paper draft (Elias leads, Simen
-  numbers) · freeze steps 1–3 · W48 report
-- **30.11–03.12:** D3 (both) · E Wed (Simen) · submit Wed evening (Elias)
 
 ### Future work (white paper, not built)
 - Project date in the request: `project_start`, each deadline stores the project period it covers, "next round not
@@ -113,7 +130,7 @@ So: **evidence and correct facts, not features. No new features after Sun 22.11.
 Section 3.6: the submitted commit is tagged `exam` and the tag never changes after the deadline.
 1. Review the drafts in `context/grants_pending/`; copy accepted text into `context/grants/` (humans only).
 2. Re-check `hamar_driftstilskudd_frivillige_organisasjoner` by hand (manual domain) and set `checked_at`.
-3. Run `python harness/update_grants.py` and `python harness/catalog.py` live once more (on or after 25.11), so every
+3. Run `python harness/update_grants.py` and `python harness/catalog.py` live once more (on or after 25.11; planned Wed 25.11), so every
    `checked_at` and `index_checked_at` is valid for `EVAL_TODAY=2026-12-03`; decide any new catalog entry by hand.
 4. All checks PASS, `python harness/run.py --offline` exits 0, README steps followed once from a fresh clone,
    also with `EVAL_TODAY=2026-12-03` set.

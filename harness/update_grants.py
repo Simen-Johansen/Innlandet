@@ -2,6 +2,7 @@
 
 Usage: python harness/update_grants.py [--offline --pages-dir D] [--grants-dir G] [--pending-dir Q]
                                        [--sources S] [--report R] [--today YYYY-MM-DD]
+       python harness/update_grants.py --audit [--offline --pages-dir D]   (read-only fact audit)
 
 Per grant file, compare the page's "Sist endret" with the stored source_modified (never with "the last
 7 days", so a skipped run cannot miss a change) and pick one action:
@@ -12,6 +13,10 @@ Per grant file, compare the page's "Sist endret" with the stored source_modified
   needs_review    anything that may change a fact -> file untouched, draft in the pending dir
   failed          request failed, no "Sist endret", a core heading missing -> file untouched, reason given
   skipped_manual  domain policy manual            -> file untouched, no request
+Page headings outside the five sections are merged under "### <heading>" (EXTRA_MAP), deliberately left out
+(IGNORED) or unknown (needs_review); a needs_review draft gets <id>.checklist.md beside it.
+--audit lists every heading and every page fact (amount, deadlines) against the frontmatter in
+out/grant_audit.md, so a human can correct facts; it writes nothing else.
 Facts (url, title, deadlines, ...) are never written. Kill switch: 2 or more template failures in one
 run -> nothing is written, the report says "halted", exit 2.
 Offline: the page for <id> is <pages-dir>/<id>.html; a missing file is a failed request.
@@ -51,6 +56,23 @@ HEADING_MAP = {
     "søknadsfrist": "Frister og rapportering",
     "rapportering": "Frister og rapportering",
 }
+# Extra page headings that hold facts (amount, exclusions, criteria). Their text is merged into one of the
+# five sections under a "### <page heading>" line, so nothing that decides eligibility is dropped silently.
+# (Before 24.11 these were dropped: "Tildelingsprosess" held the 350 000 kr maximum, "Avgrensning" the
+# exclusions.)
+EXTRA_MAP = {
+    "kriterier": "Hva kan det søkes om",
+    "støttenivå": "Hva kan det søkes om",
+    "tildelingsprosess": "Hva kan det søkes om",
+    "avgrensning": "Hva kan det søkes om",
+    "søknadsvurdering": "Hva kan det søkes om",
+    "krav til søknaden": "Hva kan det søkes om",
+    "søknad": "Vedlegg",
+}
+# Known headings deliberately left out (background or administrative text); listed in the audit, never silent.
+IGNORED = {"forankring", "tidligere tildelinger", "hold kontaktinformasjonen oppdatert",
+           "hva er helsefremmende tiltak"}
+INVISIBLE = re.compile("[​‌‍⁠﻿]")
 STOP_HEADING = "kontakt"  # the caseworker block; everything after it is dropped
 TEMPLATE = "template"  # reason prefix that counts towards the kill switch
 KILL_AFTER = 2
@@ -73,6 +95,11 @@ except AttributeError:
 
 def norm(text):
     return " ".join(text.split())
+
+
+def heading_key(title):
+    """Lowercase page heading without invisible characters, non-breaking spaces or a trailing '?'."""
+    return norm(INVISIBLE.sub("", title)).rstrip("?").strip().lower()
 
 
 def domain(url):
@@ -118,7 +145,7 @@ def numbers(text):
 
 
 def page_text(raw):
-    return norm(html.unescape(re.sub(r"<[^>]+>", " ", raw)))
+    return norm(INVISIBLE.sub("", html.unescape(re.sub(r"<[^>]+>", " ", raw))))
 
 
 def set_keys(block, values):
@@ -190,10 +217,10 @@ class BodyParser(HTMLParser):
             self.flush()
             self.ingress -= 1
         elif tag == "h2" and self.heading is not None:
-            text = norm("".join(self.heading))
+            text = norm(INVISIBLE.sub("", "".join(self.heading)))
             self.heading = None
             self.flush()
-            if text.rstrip("?").strip().lower() == STOP_HEADING:
+            if heading_key(text) == STOP_HEADING:
                 self.stopped = True
             elif text:
                 self.sections.append((text, []))
@@ -213,7 +240,7 @@ class BodyParser(HTMLParser):
             return
         kind, parts = self.block
         self.block = None
-        text = norm("".join(parts))
+        text = norm(INVISIBLE.sub("", "".join(parts)))
         if not text or text.startswith("Sist endret"):
             return
         if self.ingress:
@@ -227,20 +254,31 @@ def sanitize(raw):
 
 
 def extract(raw):
-    """(sections {our heading: [(kind, text)]}, problem) where problem is (template?, reason) or None."""
+    """(sections {our heading: [(kind, text)]}, problem, heads) where problem is (template?, reason) or None
+    and heads lists the page headings as {"mapped": [...], "merged": [...], "ignored": [...], "unknown": [...]}.
+    A merged heading is kept as an ("h3", page heading) block before its text."""
     p = BodyParser()
     p.feed(raw)
     p.close()
-    found, unknown = {}, []
+    found = {}
+    heads = {"mapped": [], "merged": [], "ignored": [], "unknown": []}
     for title, blocks in p.sections:
-        target = HEADING_MAP.get(title.rstrip("?").strip().lower())
-        if target is None:
-            unknown.append(title)
-            continue
-        found.setdefault(target, []).extend(blocks)
+        key = heading_key(title)
+        if key in HEADING_MAP:
+            heads["mapped"].append(f"{title} -> {HEADING_MAP[key]}")
+            found.setdefault(HEADING_MAP[key], []).extend(blocks)
+        elif key in EXTRA_MAP:
+            heads["merged"].append(f"{title} -> {EXTRA_MAP[key]}")
+            if blocks:
+                found.setdefault(EXTRA_MAP[key], []).extend([("h3", title.rstrip())] + blocks)
+        elif key in IGNORED:
+            heads["ignored"].append(title)
+        else:
+            heads["unknown"].append(title)
+    unknown = heads["unknown"]
     missing_core = [h for h in CORE_HEADINGS if h not in found]
     if missing_core:
-        return found, (True, f"{TEMPLATE}: heading missing: {', '.join(missing_core)}")
+        return found, (True, f"{TEMPLATE}: heading missing: {', '.join(missing_core)}"), heads
     # Ingress lines lead their section: a deadline line goes to the deadlines, the rest describe what
     # can be applied for. A page line already contained in an earlier line of the section is dropped.
     lead = [s for line in p.lead for s in DEADLINE_SPLIT.split(line)]
@@ -250,7 +288,7 @@ def extract(raw):
     for h, blocks in found.items():
         kept = []
         for kind, text in blocks:
-            if not any(text in t for _, t in kept):
+            if kind == "h3" or not any(text in t for k, t in kept if k != "h3"):
                 kept.append((kind, text))
         found[h] = kept
     problems = []
@@ -259,7 +297,7 @@ def extract(raw):
     missing = [h for h in HEADINGS if h not in found]
     if missing:
         problems.append(f"no page section for: {', '.join(missing)}")
-    return found, (False, "; ".join(problems)) if problems else None
+    return found, ((False, "; ".join(problems)) if problems else None), heads
 
 
 def render(found):
@@ -272,10 +310,99 @@ def render(found):
         for kind, text in blocks:
             if out[-1] != "" and not (kind == prev == "li"):
                 out.append("")
-            out.append(f"- {text}" if kind == "li" else text)
+            out.append(f"- {text}" if kind == "li" else f"### {text}" if kind == "h3" else text)
             prev = kind
         out.append("")
     return "\n" + "\n".join(out[:-1]) + "\n"
+
+
+AMOUNT_MAX = re.compile(r"(maksimal søknadssum|maksimum|maks\.?|inntil|øvre grense|høyeste)[^.]{0,60}?"
+                        r"(\d{1,3}(?:[\s.]\d{3})+|\d+)\s*(?:kr\b|kroner|,-)", re.I)
+AMOUNT_MIN = re.compile(r"(minimum|minste|under|lavere enn)[^.]{0,40}?(\d{1,3}(?:[\s.]\d{3})+|\d+)\s*(?:kr\b|kroner|,-)",
+                        re.I)
+MONTHS = {m: i + 1 for i, m in enumerate(("januar", "februar", "mars", "april", "mai", "juni", "juli", "august",
+                                          "september", "oktober", "november", "desember"))}
+DATE_NUM = re.compile(r"\b(\d{1,2})\.(\d{1,2})\.(\d{4}|\d{2})?\b")
+DATE_TXT = re.compile(r"\b(\d{1,2})\.\s*(" + "|".join(MONTHS) + r")(?:\s+(\d{4}))?", re.I)
+HUMAN_ONLY = ("provider", "applicant_orgforms", "requires_frivillighetsregisteret", "region_prefix",
+              "target_group", "verified_by")
+
+
+def to_int(s):
+    return int(re.sub(r"\D", "", s))
+
+
+def page_dates(text):
+    """[(as written, 'YYYY-MM-DD' or '--MM-DD' when the page gives no year)] in page order."""
+    out = []
+    for m in DATE_TXT.finditer(text):
+        d, mon, y = int(m.group(1)), MONTHS[m.group(2).lower()], m.group(3)
+        out.append((m.start(), m.group(0), f"{y}-{mon:02d}-{d:02d}" if y else f"--{mon:02d}-{d:02d}"))
+    for m in DATE_NUM.finditer(text):
+        d, mon, y = int(m.group(1)), int(m.group(2)), m.group(3)
+        if 1 <= d <= 31 and 1 <= mon <= 12:
+            y = f"20{y}" if y and len(y) == 2 else y
+            out.append((m.start(), m.group(0), f"{y}-{mon:02d}-{d:02d}" if y else f"--{mon:02d}-{d:02d}"))
+    return [(w, iso) for _, w, iso in sorted(out)]
+
+
+def fact_audit(meta, found):
+    """Compare facts a page states with the frontmatter. Code only proposes; a human writes the facts."""
+    text = {h: norm(" ".join(t for _, t in found.get(h, []))) for h in HEADINGS}
+    alltext = " ".join(text.values())
+    maxes = [(m.group(0).strip(), to_int(m.group(2))) for m in AMOUNT_MAX.finditer(alltext)]
+    mins = [(m.group(0).strip(), to_int(m.group(2))) for m in AMOUNT_MIN.finditer(alltext)]
+    stored = meta.get("max_amount_nok", "")
+    values = sorted({v for _, v in maxes})
+    if not values:
+        amount = "not on page" + ("" if stored == "unknown" else f" (file says {stored}: check by hand)")
+    elif stored.isdigit() and int(stored) in values and len(values) == 1:
+        amount = "match"
+    else:
+        amount = f"MISMATCH: page {', '.join(map(str, values))}, file {stored or '(missing)'}"
+    dates = page_dates(text["Frister og rapportering"])
+    isos = {iso for _, iso in dates}
+    deadlines = []
+    for d in [s.strip() for s in meta.get("deadlines", "").split(",") if s.strip()]:
+        ok = d in isos or f"--{d[5:]}" in isos
+        deadlines.append((d, "on page" if ok else "NOT ON PAGE"))
+    return {"amount": amount, "amount_lines": [w for w, _ in maxes], "minimum_lines": [w for w, _ in mins],
+            "deadlines": deadlines, "page_dates": [f"{w} ({iso})" for w, iso in dates]}
+
+
+def checklist_md(gid, meta, heads, facts, sist_endret):
+    """One-page reviewer checklist for one grant: every heading accounted for, every fact compared."""
+    L = [f"# Fact checklist: {gid}", "", f"Page: {meta.get('url', '')}  ",
+         f"Sist endret on the page: {sist_endret or 'not found'}", "",
+         "Check each line against the **live page**, not against the draft.", "", "## Page headings"]
+    for kind in ("mapped", "merged", "ignored", "unknown"):
+        for h in heads.get(kind, []):
+            mark = {"unknown": "  <- NOT IN THE FILE: map it or record why it is dropped",
+                    "ignored": "  (deliberately left out)"}.get(kind, "")
+            L.append(f"- [ ] {kind}: {h}{mark}")
+    L += ["", "## Facts the page states (code proposes, a human writes)",
+          f"- [ ] max_amount_nok: {meta.get('max_amount_nok', '(missing)')} -> {facts['amount']}"]
+    L += [f"  - page: \"{w}\"" for w in facts["amount_lines"]]
+    L += [f"  - minimum on page: \"{w}\"" for w in facts["minimum_lines"]]
+    for d, status in facts["deadlines"] or [("(none)", "NOT ON PAGE")]:
+        L.append(f"- [ ] deadline {d}: {status}; which project period does it cover?")
+    if facts["page_dates"]:
+        L.append(f"  - dates under Frister og rapportering: {', '.join(facts['page_dates'])}")
+    L += ["", "## Human-only facts (no page field; confirm by reading the page)"]
+    L += [f"- [ ] {k}: {meta.get(k, '(missing)')}" for k in HUMAN_ONLY]
+    return "\n".join(L) + "\n"
+
+
+PROVENANCE = """## Where each field comes from
+
+| Field | Source | Who writes |
+|---|---|---|
+| title, url | page h1 / county catalog | human (code proposes) |
+| max_amount_nok, deadlines | page text; candidates in this audit | human confirms and writes |
+| provider, applicant_orgforms, requires_frivillighetsregisteret, region_prefix, target_group | judgment from the page | human only |
+| verified_by | the person who checked | human only |
+| body, fetched_at, checked_at, source_modified | the page | code (task 015 rules) |
+"""
 
 
 def redact(body):
@@ -334,32 +461,34 @@ def decide(gid, block, body, policy, ua, pages_dir, state):
     if now == stored:
         return done("unchanged")
 
-    found, problem = extract(raw)
+    found, problem, heads = extract(raw)
     if problem and problem[0]:
         return done("failed", problem[1])
     new_body, hits = redact(render(found))
+    review = {"new_body": new_body,
+              "checklist": redact(checklist_md(gid, meta, heads, fact_audit(meta, found), now))[0]}
     if now < stored:
-        return done("needs_review", "page date is older than the stored source_modified", new_body=new_body)
+        return done("needs_review", "page date is older than the stored source_modified", **review)
     if problem:
-        return done("needs_review", problem[1], new_body=new_body)
+        return done("needs_review", problem[1], **review)
     if hits:
         return done("needs_review", "e-mail or phone pattern in the page text (redacted in the draft)",
-                    new_body=new_body)
+                    **review)
 
     old, new = sections_of(body), sections_of(new_body)
     if all(old.get(h) == new.get(h) for h in HEADINGS):
         return done("touched")
     changed_facts = [h for h in FACT_SECTIONS if old.get(h) != new.get(h)]
     if changed_facts:
-        return done("needs_review", f"section changed: {', '.join(changed_facts)}", new_body=new_body)
+        return done("needs_review", f"section changed: {', '.join(changed_facts)}", **review)
     if numbers(body) != numbers(new_body):
-        return done("needs_review", "a number, date or amount changed", new_body=new_body)
+        return done("needs_review", "a number, date or amount changed", **review)
     text = page_text(raw)
     for line in new_body.splitlines():
         line = norm(line.lstrip("-* "))
         if line and not line.startswith(("#", "(")) and line not in text:
             return done("needs_review", f"extracted line not found verbatim on the page: {line[:60]!r}",
-                        new_body=new_body)
+                        **review)
     changed = [h for h in HEADINGS if old.get(h) != new.get(h)]
     return done("updated_text", f"text changed in: {', '.join(changed)}", new_body=new_body)
 
@@ -383,11 +512,68 @@ def apply(entry, path, block, body, today, pending_dir):
         pending_dir.mkdir(parents=True, exist_ok=True)
         with open(pending_dir / path.name, "w", encoding="utf-8", newline="") as f:
             f.write(draft + with_newlines(entry["new_body"], draft))
+        with open(pending_dir / f"{path.stem}.checklist.md", "w", encoding="utf-8") as f:
+            f.write(entry["checklist"])
         return
     else:
         return
     with open(path, "w", encoding="utf-8", newline="") as f:
         f.write(block + body)
+
+
+def audit(grants_dir, policy, ua, pages_dir, out_dir):
+    """Read-only: per auto-domain grant, every page heading and every page fact against the frontmatter.
+    Writes out_dir/grant_audit.md and .json, plus out_dir/grant_audit_bodies/<id>.md (the body the page gives
+    now); never touches grant files or drafts."""
+    results, parts, bodies = [], [], {}
+    state = {"requests": 0}
+    for path in sorted(grants_dir.glob("*.md")):
+        with open(path, encoding="utf-8", newline="") as f:
+            block, _ = split_file(f.read())
+        meta = parse_meta(block)
+        r = {"id": path.stem, "url": meta.get("url", "")}
+        if policy.get(domain(r["url"])) != "auto":
+            r["status"] = "manual domain: check every fact by hand"
+            results.append(r)
+            parts.append(f"# Fact checklist: {path.stem}\n\nManual domain, no request made. Check every fact "
+                         f"by hand against {r['url']}.\n")
+            continue
+        if pages_dir is None and state["requests"]:
+            time.sleep(PAUSE_S)
+        state["requests"] += 1
+        try:
+            raw = sanitize(fetch(r["url"], ua, path.stem, pages_dir))
+        except Exception as e:
+            r["status"] = f"request failed: {e}"
+            results.append(r)
+            parts.append(f"# Fact checklist: {path.stem}\n\nRequest failed: {e}\n")
+            continue
+        m = SIST_ENDRET.search(page_text(raw))
+        sist = f"{m.group(3)}-{m.group(2)}-{m.group(1)}T{m.group(4)}:{m.group(5)}" if m else None
+        found, problem, heads = extract(raw)
+        facts = fact_audit(meta, found)
+        r.update(status=problem[1] if problem else "ok", sist_endret=sist, headings=heads, facts=facts)
+        results.append(r)
+        parts.append(redact(checklist_md(path.stem, meta, heads, facts, sist))[0])
+        bodies[path.stem] = redact(render(found))[0]
+    out_dir.mkdir(parents=True, exist_ok=True)
+    body_dir = out_dir / "grant_audit_bodies"
+    body_dir.mkdir(exist_ok=True)
+    for gid, text in bodies.items():  # the page body as the updater would write it now, for a human to compare
+        with open(body_dir / f"{gid}.md", "w", encoding="utf-8") as f:
+            f.write(text)
+    with open(out_dir / "grant_audit.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps({"requests": state["requests"], "grants": results}, ensure_ascii=False, indent=2) + "\n")
+    with open(out_dir / "grant_audit.md", "w", encoding="utf-8") as f:
+        f.write("\n\n".join(parts) + "\n" + PROVENANCE)
+    for r in results:
+        facts = r.get("facts", {})
+        flags = [facts.get("amount", "")] + [f"{d} {s}" for d, s in facts.get("deadlines", []) if s != "on page"]
+        unk = r.get("headings", {}).get("unknown", [])
+        if unk:
+            flags.append(f"unknown headings: {', '.join(unk)}")
+        print(f"{r['id']}: {r['status']} | " + " | ".join(x for x in flags if x))
+    print(f"{state['requests']} requests | {out_dir / 'grant_audit.md'}")
 
 
 def main():
@@ -399,6 +585,8 @@ def main():
     ap.add_argument("--sources", type=Path, default=ROOT / "context" / "sources.json")
     ap.add_argument("--report", type=Path, default=ROOT / "out" / "update_report.json")
     ap.add_argument("--today", default=date.today().isoformat())
+    ap.add_argument("--audit", action="store_true",
+                    help="read-only: write out/grant_audit.md (headings and page facts vs frontmatter), change nothing")
     args = ap.parse_args()
     if args.offline and args.pages_dir is None:
         ap.error("--offline needs --pages-dir")
@@ -407,6 +595,9 @@ def main():
     with open(args.sources, encoding="utf-8") as f:
         cfg = json.load(f)
     policy = {s["domain"]: s["policy"] for s in cfg["sources"]}
+    if args.audit:
+        audit(args.grants_dir, policy, cfg["user_agent"], pages_dir, ROOT / "out")
+        return
 
     state = {"requests": 0}
     plan = []
@@ -434,7 +625,7 @@ def main():
     report = {"today": args.today, "requests": state["requests"]}
     if halted:
         report["halted"] = halted
-    report["grants"] = [{k: v for k, v in e.items() if k != "new_body"} for *_, e in plan]
+    report["grants"] = [{k: v for k, v in e.items() if k not in ("new_body", "checklist")} for *_, e in plan]
     args.report.parent.mkdir(parents=True, exist_ok=True)
     with open(args.report, "w", encoding="utf-8") as f:
         f.write(json.dumps(report, ensure_ascii=False, indent=2) + "\n")

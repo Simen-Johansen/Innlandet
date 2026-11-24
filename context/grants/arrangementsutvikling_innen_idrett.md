@@ -7,7 +7,7 @@ applicant_orgforms: FLI
 requires_frivillighetsregisteret: true
 region_prefix: 34
 target_group: alle
-max_amount_nok: unknown
+max_amount_nok: 350000
 deadlines: 2027-04-01
 fetched_at: 2026-11-11
 verified_by: SJ
@@ -30,6 +30,8 @@ Arrangement skal bidra til å skape engasjement, samarbeid og være en arena for
 
 Frivillige lag og foreninger kan søke om midler til lokale, regionale og nasjonale idrettsarrangement.
 
+### Kriterier
+
 Arrangementet bør:
 
 - sette Innlandet på arrangørkartet og bidra til motivasjon for frivillighet og utvikling av lokalsamfunn
@@ -42,7 +44,16 @@ Arrangementet bør:
 - arrangement/mesterskap over flere dager og i kombinasjon med breddeidrett
 - antall deltakere og antall frivillige involvert
 
+### Tildelingsprosess
+
+- Søknadene behandles av seksjon for idrett, fysisk aktivitet og friluftsliv.
+- Maksimal søknadssum er 350 000 kroner.
+- Søkerne får tildelingsbrev med kriterier for bruk av midlene og informasjon om rapportering og utbetaling så snart vedtak er fattet.
+- Fylkeskommunen ønsker å bli involvert i planleggingsprosessen til de arrangementene som får tilskudd.
+
 ## Vedlegg
+
+### Søknad
 
 Alle søkere skal benytte regionalforvaltning.no for registrering av søknader.
 

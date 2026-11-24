@@ -20,7 +20,7 @@ from datetime import date
 from common import CONTEXT, FIXTURES, GRANTS, check, domain, load_json, page_id, parse_grant, today
 
 STATUSES = {"ingested", "not_relevant", "pending", "removed"}
-REASONS = {"applicant_not_voluntary", "closed", "expired_no_next_round", "not_a_grant", "duplicate"}
+REASONS = {"applicant_not_voluntary", "closed", "expired_no_next_round", "not_a_grant", "duplicate", "deferred_verification"}
 PENDING_MAX_DAYS = 14
 INDEX_MAX_DAYS = 8
 COUNTY = "innlandetfylke.no"
@@ -79,7 +79,8 @@ for pid, gid in grant_pids.items():
     check(entries.get(pid, {}).get("status") == "ingested", f"grant file {gid} (page {pid}) is not marked ingested in catalog.json")
 
 count = {s: sum(1 for e in entries.values() if e["status"] == s) for s in sorted(STATUSES)}
-relevant = count["ingested"] + count["pending"]
-print(f"coverage: {len(listed)} listed | {count['ingested']} ingested | {count['not_relevant']} not relevant | "
-      f"{count['pending']} pending | ingested/relevant = {count['ingested']}/{relevant}")
+deferred = sum(1 for e in entries.values() if e["status"] == "not_relevant" and e.get("reason") == "deferred_verification")
+relevant = count["ingested"] + count["pending"] + deferred
+print(f"coverage: {len(listed)} listed | {count['ingested']} ingested | {count['not_relevant'] - deferred} not relevant | "
+      f"{deferred} deferred | {count['pending']} pending | ingested/relevant = {count['ingested']}/{relevant}")
 print("PASS")
