@@ -20,3 +20,13 @@ can see; the information needed to catch this is not in the data. The full deadl
 **Fix (future work, not built):** a `project_start` field in the request, and each deadline stored with the
 project period it covers; when the right round has closed, say "next round not announced yet" instead of
 showing a later deadline. See ROADMAP, "Future work".
+
+## Second failure in the same run: eligibility the filter cannot see (found 2026-11-24)
+"Hvem kan søke" for Arrangementsutvikling innen idrett requires an applicant affiliated with Norges idrettsforbund,
+Det frivillige skyttervesen or Norges bilsportforbund. Hamar og Hedemarken Turistforening is **not** affiliated with any
+of them: it is a member association of Den Norske Turistforening, which is a member of Norsk Friluftsliv (checked by
+Simen, 24.11). The matcher still marked the grant as a match for HHT, and every check passed. The hard filter checks only
+org form, region, Frivillighetsregisteret and deadline. Federation membership is not in Brreg data, so only the matcher
+can catch this, and here it did not. A club that followed this plan would apply for a grant it cannot receive.
+**Fix (future work, not built):** a frontmatter field for required federation membership, plus an explicit question
+in the plan ("Is your club a member of NIF, DFS or NBF?") instead of an assumed yes.

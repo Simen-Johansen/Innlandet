@@ -1,0 +1,92 @@
+% Evaluation section, white paper KIUA2003 (grant navigator).
+% SKELETON ONLY (kiua-2003-architect, Mode 2): no prose until the authors say "you can now draft prose".
+% Tables hold traced numbers only; unknown values are \texttt{N/A}. Run B is filled on 26.11.
+% Needs \usepackage{booktabs} in the preamble.
+
+\section{Evaluation}
+\textit{TODO: one paragraph stating what is evaluated (correctness of the chain against hand-written expectations,
+robustness under injection and dependency faults, readability via a calibrated LLM judge) and what is not
+(real-world application success). Evidence: SPEC.md success criteria, ROADMAP points split (35/100 evaluation and stress).}
+
+\subsection{Test set and method}
+\paragraph{Cases.}
+\textit{TODO: 12 functional cases (typical, boundary, reject, Norwegian) and 11 stress cases (5 injection/input, task 012;
+6 dependency faults, task 013). Each case has input\_request.json and an expected.json written by the authors before the
+first run, hidden from the coding agent by deny rules. Source: eval/cases/CASES.md, .claude/settings.json.}
+\paragraph{Fixed conditions.}
+\textit{TODO: frozen corpus eval/corpus/grants, EVAL\_TODAY pinned per case, offline Brreg fixtures, so results do not
+depend on the run date. Source: eval/run\_eval.py docstring, ROADMAP "Reproducible after submission".}
+\paragraph{Pass rule.}
+\textit{TODO: cases that call the model run 3 times and pass only at 3/3; deterministic cases (rejected before any model
+call, or Brreg faults) run once. Facts are graded by code (check\_plan, check\_render), never by the judge.}
+\paragraph{Cost control.}
+\textit{TODO: 5 USD rolling 24 h kill switch; it fired on 11.11 at 5.01 USD and halted an eval at case 07
+(docs/eval-logs/eval\_2026-11-11\_013508.log). This is why Run A and Run B are in separate 24 h windows.}
+
+\subsection{Results}
+\begin{table}[h]
+  \centering
+  \caption{Evaluation runs. Model cases pass at $k/k$.}
+  \label{tab:eval-runs}
+  \begin{tabular}{lllrr}
+    \toprule
+    Run & Date & Corpus & Cases passed & Model cost (USD) \
+    \midrule
+    1-run (demo day) & 2026-11-12 & old & 23/23 & 0.95 \
+    Run A, 3 runs & 2026-11-24 & old (before C4 refresh) & 23/23 & 2.49 \
+    Run B, 3 runs & 2026-11-26 & refreshed & \texttt{N/A} & \texttt{N/A} \
+    \bottomrule
+  \end{tabular}
+\end{table}
+% Sources: docs/eval-logs/eval_2026-11-12_082151.log (line 309), docs/eval-logs/eval_2026-11-24_110707.log (last line).
+% TODO Run B 26.11: fill row 3 from the raw log; if the case count changes (case 13), say so in the caption.
+\textit{TODO: per-case k/3 for Run B in an appendix table (Run A: every model case 3/3). Discuss any case below 3/3.
+State plainly that Run A ran on the old corpus and that Run B is the result we stand on.}
+
+\subsection{LLM judge for readability}
+\paragraph{Rubric and role.}
+\textit{TODO: four criteria (plain language, actionable steps, no jargon, tone), 1--5. Advice only: never a gate, never a
+retry signal, because it cannot see factual errors and would grade its own model's text. Source: docs/llm-judge.md.}
+\paragraph{Calibration.}
+\textit{TODO: Elias, who did not write the judge prompt, scored 5 plans blind on 12.11; judge runs 10.11 and 24.11.}
+\begin{table}[h]
+  \centering
+  \caption{Agreement between one blind human scorer and the judge on 5 plans.}
+  \label{tab:judge}
+  \begin{tabular}{lrrr}
+    \toprule
+    Criterion & Exact & Within $\pm 1$ & Mean abs.\ diff. \
+    \midrule
+    Plain language & 2/5 & 5/5 & 0.6 \
+    Actionable steps & 4/5 & 5/5 & 0.2 \
+    No jargon & 4/5 & 4/5 & 0.4 \
+    Tone & 3/5 & 5/5 & 0.4 \
+    \midrule
+    Overall (20 pairs) & 13/20 & 19/20 & 0.40 \
+    \bottomrule
+  \end{tabular}
+\end{table}
+% Source: docs/llm-judge.md, Calibration.
+\paragraph{Observed behaviour.}
+\textit{TODO: the judge is flatter than the human (4 for plain language on all five plans, human mean 3.4); one
+two-point gap (plan\_3, no jargon); rerun of plan\_1 moved one score by one point (run-to-run noise); length probe:
+padded plan scored lower (3/3/4/3 vs 4/4/3/4), so no length bias seen in this probe, which cannot rule out a bias toward
+longer useful-looking text.}
+
+\subsection{Known failures}
+\paragraph{Deadline without project period.}
+\textit{TODO: a June 2027 event was told deadline 01.04.2027 (covers Jul--Dec); the right round closed 01.11.2026. All
+checks passed because the data holds only the next date. Source: docs/stress/date-gap/README.md. Fix in future work.}
+\paragraph{Eligibility beyond the filter.}
+\textit{TODO: in the same run the matcher accepted Hamar og Hedemarken Turistforening for Arrangementsutvikling
+innen idrett, whose applicants must be affiliated with NIF, DFS or NBF. HHT is a DNT member association (Norsk Friluftsliv),
+checked by hand 24.11. Membership is not in register data, so only the matcher could catch it. Source:
+docs/stress/date-gap/README.md, second section.}
+\paragraph{Dropped page sections.}
+\textit{TODO: update\_grants.py dropped unknown headings, so the 350\,000 kr maximum and sections such as Avgrensning were
+missing; found by hand, root cause fixed, --audit added. Source: docs/prompt-log.md, ROADMAP A1--A4.}
+
+\subsection{Threats to validity}
+\textit{TODO: small test set written by the same authors; judge calibrated on 5 plans and one human; the same model family
+writes and judges; Run A on the old corpus; corpus edit for deferred\_verification and C4 made by humans and logged; the
+3/3 rule over 3 runs says little about rare failures.}

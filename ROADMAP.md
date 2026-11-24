@@ -53,7 +53,11 @@ different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 
 - [x] C1 Run A 24.11: 23/23 PASS, every model case 3/3, 2.49 USD (`docs/eval-logs/eval_2026-11-24_110707.log`)
 - [x] C3 date gap 24.11: June 2027 event told deadline 01.04.2027 (covers Jul–Dec); the right round closed
       01.11.2026 (`docs/stress/date-gap/`)
-- [x] D1 (draft) 8 meeting-report drafts from git history in `docs/meetings/`; Simen and Elias must correct them
+- [x] D1 10 meeting reports in `docs/meetings/`, C2 period corrected against the Compulsory 2 report, read and
+      accepted by Simen and Elias 24.11 (W41 draft removed)
+- [x] C4 prep: `docs/corpus-refresh/README.md` is the 25.11 checklist (case 13, `must_reject` in 11 cases by script)
+- [x] Second known failure 24.11: HHT matched to arrangementsutvikling without NIF/DFS/NBF membership (`docs/stress/date-gap/`)
+- [x] Hamar hand-check (freeze step 2): `checked_at` 2026-11-24, Simen
 
 ### Hard dates
 | When | What | Why it is hard |
