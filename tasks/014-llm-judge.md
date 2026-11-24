@@ -23,10 +23,10 @@
 - [x] `eval/judge.py` with guards, judge prompt (logged in `docs/prompt-log.md`), rubric, failure modes
 - [x] plan_1 judged: 4 / 4 / 4 / 4, 0.055 USD
 - [x] plan_5 made from eval case 12 (Norwegian in and out), 0.16 USD
-- [ ] Elias scores plans 1–5 blind (Human column in `docs/llm-judge.md`)
-- [ ] Judge plans 2–5: `python eval/judge.py docs/judge-calibration/plan_N.md --out out/judge_plan_N.json` (~0.25 USD)
-- [ ] Length-bias probe: plan_1 vs a copy padded with filler (~0.06 USD); write the result under "Known failure modes"
-- [ ] Fill the Judge column and the agreement table (exact, within ±1, mean abs. diff)
+- [x] Elias scores plans 1–5 blind (Human column in `docs/llm-judge.md`), 2026-11-12
+- [x] Judge plans 2–5 (2026-11-24, 0.24 USD; saved in `docs/judge-calibration/`)
+- [x] Length-bias probe: plan_1 4/4/3/4 vs padded 3/3/4/3, no length bias seen (0.12 USD)
+- [x] Judge column and agreement table: exact 13/20, within ±1 19/20, mean abs. diff 0.40
 - [ ] White paper: say plainly that 5 plans is a small sample, so the table shows how the judge was checked, not that it is reliable
 
 ## Out of scope

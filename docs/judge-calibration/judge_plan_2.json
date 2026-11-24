@@ -1,0 +1,24 @@
+{
+  "plan": "docs/judge-calibration/plan_2.md",
+  "scores": {
+    "plain_language": {
+      "score": 4,
+      "justification": "Most sentences are short and plain, though a few are slightly stiff, such as \"within the maximum amount\" and the opening line about automatic checking."
+    },
+    "actionable_steps": {
+      "score": 3,
+      "justification": "The six steps are numbered and in a sensible order, but step 1 is vague, step 6 repeats the deadline check and comes after the application step, and the plan never says who in the club does what or what to ask the provider."
+    },
+    "no_jargon": {
+      "score": 4,
+      "justification": "The plan is mostly free of jargon, but \"friluftsliv\", \"grant provider\" and the \"Miljødirektoratet application portal\" are not explained, and the reader may not know what a \"maximum amount\" check involves."
+    },
+    "tone": {
+      "score": 4,
+      "justification": "The tone is direct and respectful and treats the reader as a capable adult, though it is neutral rather than warm or encouraging."
+    }
+  },
+  "total_cost_usd": 0.060341000000000006,
+  "judged_at": "2026-11-24T10:05:27+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

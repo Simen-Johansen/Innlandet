@@ -1,0 +1,18 @@
+      FAIL: expected at least one of ['tilskudd_til_friluftslivsaktivitet'] to be 'match', got {'arrangementsutvikling_innen_idrett': 'match', 'hamar_driftstilskudd_frivillige_organisasjoner': 'reject', 'tilskudd_til_friluftslivsaktivitet': 'reject', 'tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom': 'reject'}
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      arrangementsutvikling_innen_idrett: Arrangementsutvikling innen idrett
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 4 kept, 1 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.05 USD)  check FAIL
+[4] matcher  attempt 2/3 (0.09 USD)  check PASS
+      ok: 2 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.05 USD)  check PASS
+      ok: 2 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.20 USD, see out/cost_log.jsonl)

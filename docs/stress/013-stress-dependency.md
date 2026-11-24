@@ -92,9 +92,12 @@ Other evidence (2026-11-10):
 - An unknown `FAULT` value (for example a typo) stops with a `ValueError` naming the known values,
   instead of silently testing nothing.
 
-Full test set `python eval/run_eval.py`: **not yet run after the repair.** The 24 h model cost was
-2.91 USD when the repair was done and a full eval costs about 2.3 USD, so it would hit the 5 USD
-cap (`DAY_BUDGET_USD`) midway and halt by design. To be run once the window allows; result goes here.
+Full test set `python eval/run_eval.py` after the repair:
+- 1 run per case, 2026-11-12: 23/23 PASS, 0.95 USD (`docs/eval-logs/eval_2026-11-12_082151.log`).
+- **Run A**, 3 runs per model case, current corpus (frozen 10.11), 2026-11-24: **23/23 PASS**, every model
+  case 3/3, 2.49 USD (`docs/eval-logs/eval_2026-11-24_110707.log`). A full 3-run eval costs about 2.5–2.9 USD,
+  not 2.3 as first estimated, so it needs a 24 h window of its own under the 5 USD cap.
+- **Run B**, after the corpus refresh: planned 26.11; result goes here (raw log for the appendix).
 
 `eval/check_update.py` FAILs ("harness/update_grants.py does not exist"): that is the check for task 015,
 not built yet, and unrelated to this task.

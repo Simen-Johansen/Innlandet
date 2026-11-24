@@ -71,31 +71,43 @@ scores. Then the judge scores the same 5 plans with the committed prompt.
 | Plan | Source | Human P / A / J / T | Judge P / A / J / T |
 |---|---|---|---|
 | plan_1 | Hamar running example (offline run, 2026-11-11) | 4/4/4/4 | 4 / 4 / 4 / 4 |
-| plan_2 | `012-before/stress_01_injection_grant_text`| 3/3/4/4| – |
-| plan_3 | `012-before/stress_02_injection_project_idea` | 3/4/5/5 | – |
-| plan_4 | `012-before/stress_03c_long_idea` | 4/4/4/3 | – |
-| plan_5 | eval case `12_norwegian_in_and_out` (Norwegian, run 2026-11-12) | 3/3/3/4 | – |
+| plan_2 | `012-before/stress_01_injection_grant_text` | 3/3/4/4 | 4 / 3 / 4 / 4 |
+| plan_3 | `012-before/stress_02_injection_project_idea` | 3/4/5/5 | 4 / 3 / 3 / 4 |
+| plan_4 | `012-before/stress_03c_long_idea` | 4/4/4/3 | 4 / 4 / 4 / 4 |
+| plan_5 | eval case `12_norwegian_in_and_out` (Norwegian, run 2026-11-12) | 3/3/3/4 | 4 / 3 / 3 / 4 |
 
 P = plain_language, A = actionable_steps, J = no_jargon, T = tone.
 
 | Criterion | Exact | Within ±1 | Mean abs. diff |
 |---|---|---|---|
-| plain_language | – | – | – |
-| actionable_steps | – | – | – |
-| no_jargon | – | – | – |
-| tone | – | – | – |
+| plain_language | 2/5 (40 %) | 5/5 (100 %) | 0.6 |
+| actionable_steps | 4/5 (80 %) | 5/5 (100 %) | 0.2 |
+| no_jargon | 4/5 (80 %) | 4/5 (80 %) | 0.4 |
+| tone | 3/5 (60 %) | 5/5 (100 %) | 0.4 |
+| **overall (20 pairs)** | 13/20 (65 %) | 19/20 (95 %) | 0.40 |
 
 How to fill it in (n = 5 plans per criterion, comparing the Human and Judge scores):
 - **Exact:** plans where human = judge, e.g. `3/5 (60 %)`.
 - **Within ±1:** plans where the human and judge scores differ by 1 or less, e.g. `5/5 (100 %)`.
 - **Mean abs. diff:** the average of |human − judge| over the 5 plans, e.g. `0.4`.
 
-Human scorer: Elias (did not write the judge prompt).
+Human scorer: Elias (did not write the judge prompt), scored blind on 2026-11-12. Judge runs: plan_1 on
+2026-11-10, plans 2–5 on 2026-11-24 (`docs/judge-calibration/judge_plan_N.json`, about 0.06 USD each).
+
+**What the table shows.** The judge agrees with the human within one point on 19 of 20 scores, and exactly on
+13 of 20. It is not more lenient overall, but it is flatter: it gave 4 for plain language on all five plans
+(human mean 3.4) and never used 5 or 2. The one disagreement of two points is plan_3, no_jargon (human 5,
+judge 3). **Run-to-run variance:** judging plan_1 again on 2026-11-24 gave 4 / 4 / 3 / 4 instead of
+4 / 4 / 4 / 4, so a one-point difference is within the judge's own noise. With 5 plans and one human this
+shows how the judge was checked, not that it is reliable; we use it as advice only.
 
 ## Known failure modes
 - **It favours longer answers.** LLM judges tend to score a longer, more complete-looking plan
-  higher, even when a volunteer would rather have a short one. Probe (after the demo): judge
-  plan_1 and a copy padded with polite filler and repeated advice, then compare the scores.
+  higher, even when a volunteer would rather have a short one. **Probe (2026-11-24):** plan_1 and
+  `plan_1_padded.md` (same facts and steps, plus thank-you paragraphs and repeated reminders, about twice
+  as long) judged on the same day: plan_1 4 / 4 / 3 / 4, padded 3 / 3 / 4 / 3. The judge marked the
+  padding down ("a lot of filler", "slightly patronising"), so we saw **no length bias in this probe**.
+  One probe with obvious filler cannot rule out a bias towards longer *useful-looking* text.
 - **It favours its own wording.** The plans are written by Claude (stage 5) and judged by
   Claude, so the judge may reward the phrasing and structure it would use itself. A human
   scorer is the only real check on this, which is why calibration uses one.

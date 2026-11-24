@@ -1,0 +1,24 @@
+{
+  "plan": "docs/judge-calibration/plan_1.md",
+  "scores": {
+    "plain_language": {
+      "score": 4,
+      "justification": "Most sentences are short and plain, though the 'Why your club qualifies' paragraph and the max-amount note are slightly longer."
+    },
+    "actionable_steps": {
+      "score": 4,
+      "justification": "The numbered steps are concrete and end with applying, but they leave out who does what, and the deadline check comes last when it should come first."
+    },
+    "no_jargon": {
+      "score": 3,
+      "justification": "Terms such as 'attachments', 'application portal' and 'requested amount' are mostly guessable, but 'grant provider' and the unexplained 'Max amount: Not stated' line may leave a first-time applicant unsure."
+    },
+    "tone": {
+      "score": 4,
+      "justification": "The tone is direct and neutral and speaks to the reader as a capable adult, though it is a little dry and not very encouraging."
+    }
+  },
+  "total_cost_usd": 0.0601755,
+  "judged_at": "2026-11-24T10:06:17+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

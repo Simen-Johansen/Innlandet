@@ -1,0 +1,24 @@
+{
+  "plan": "docs/judge-calibration/plan_5.md",
+  "scores": {
+    "plain_language": {
+      "score": 4,
+      "justification": "Sentences are mostly short and use everyday Norwegian, though a few lines such as the eligibility paragraph are somewhat dense."
+    },
+    "actionable_steps": {
+      "score": 3,
+      "justification": "The plan has numbered steps, but step 1 is vague reading, step 5 (confirm the deadline) repeats the header note and comes after the send step, and the plan never says who does what or what to prepare for the application."
+    },
+    "no_jargon": {
+      "score": 3,
+      "justification": "Terms like 'tilskuddsgiver', 'maksbeløp' and 'obligatoriske vedlegg' are guessable, but 'søknadsportal' and 'elektronisk skjema' are not explained."
+    },
+    "tone": {
+      "score": 4,
+      "justification": "The tone is direct and addresses the club as 'dere' in a neutral, respectful way, though it is somewhat dry and offers little encouragement."
+    }
+  },
+  "total_cost_usd": 0.0612031,
+  "judged_at": "2026-11-24T10:05:52+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

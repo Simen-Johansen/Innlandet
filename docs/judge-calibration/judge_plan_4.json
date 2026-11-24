@@ -1,0 +1,24 @@
+{
+  "plan": "docs/judge-calibration/plan_4.md",
+  "scores": {
+    "plain_language": {
+      "score": 4,
+      "justification": "Most sentences are short and everyday, though a few such as the 'voluntary membership organisation... increase participation' line are slightly dense."
+    },
+    "actionable_steps": {
+      "score": 4,
+      "justification": "The numbered steps are concrete and in a sensible order and end with applying, but they don't say who does what, and the last step repeats the deadline check instead of ending on submission."
+    },
+    "no_jargon": {
+      "score": 4,
+      "justification": "The text is mostly free of jargon, but 'application portal', 'requested amount' and 'attachments' are used without explanation and 'friluftsliv' is left as is."
+    },
+    "tone": {
+      "score": 4,
+      "justification": "It speaks directly to the club in a neutral, capable tone, but it is somewhat flat and has little encouragement."
+    }
+  },
+  "total_cost_usd": 0.0597829,
+  "judged_at": "2026-11-24T10:05:43+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

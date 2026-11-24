@@ -48,7 +48,12 @@ different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 
 - [x] A4 drafts get `<id>.checklist.md`; `--audit` writes `out/grant_audit.md` with field provenance
 - [x] B1–B2 triage: 54 → 34 `applicant_not_voluntary`, 20 `deferred_verification`, 0 pending (eval edit by Simen,
       logged); signed sheet `docs/triage-2026-11-24.tsv`
-- [x] C2 (part) Elias scored plans 1–5 blind (Human column in `docs/llm-judge.md`)
+- [x] C2 judge calibration: Elias scored plans 1–5 blind; judge plans 2–5 and length probe run 24.11
+      (within ±1 on 19/20, exact 13/20; padded plan scored lower, no length bias seen)
+- [x] C1 Run A 24.11: 23/23 PASS, every model case 3/3, 2.49 USD (`docs/eval-logs/eval_2026-11-24_110707.log`)
+- [x] C3 date gap 24.11: June 2027 event told deadline 01.04.2027 (covers Jul–Dec); the right round closed
+      01.11.2026 (`docs/stress/date-gap/`)
+- [x] D1 (draft) 8 meeting-report drafts from git history in `docs/meetings/`; Simen and Elias must correct them
 
 ### Hard dates
 | When | What | Why it is hard |

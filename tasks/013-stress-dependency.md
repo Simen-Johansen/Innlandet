@@ -32,7 +32,8 @@ Done: 6 faults injected, 6/6 failed before the repair, trace written, 6/6 after 
 3 runs per case. Plan: `python eval/run_eval.py` (default `--runs 3`, about 2.9 USD). Do it twice, each
 time in its own 24 h window. No fixed dates: run whenever the 24 h window has room (pre-flight below).
 
-- [ ] **Run A, current corpus.** Gives time to fix surprises, so the earlier the better.
+- [x] **Run A, current corpus.** 2026-11-24: 23/23 PASS, all model cases 3/3, 2.49 USD
+      (`docs/eval-logs/eval_2026-11-24_110707.log`).
 - [ ] **Run B, after the corpus refresh (the final run, before the exam deadline).** Its log is the raw
       evaluation log for the appendix.
       Only meaningful if someone has copied the new grants into `eval/corpus/` and re-checked every

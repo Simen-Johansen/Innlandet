@@ -1,0 +1,24 @@
+{
+  "plan": "docs/judge-calibration/plan_3.md",
+  "scores": {
+    "plain_language": {
+      "score": 4,
+      "justification": "Most sentences are short and everyday, though the grant-purpose sentence and the 'ask the grant provider what the limit is' note are slightly dense."
+    },
+    "actionable_steps": {
+      "score": 3,
+      "justification": "Numbered steps are present, but step 1 gives no link or portal name beyond 'linked from the grant page', step 2 is vague about what to write, and step 5 repeats the deadline note instead of ending with how to submit."
+    },
+    "no_jargon": {
+      "score": 3,
+      "justification": "Terms like 'friluftsliv', 'grant provider', 'registered voluntary organisation' and 'application portal' are left unexplained, though a volunteer could probably guess most of them."
+    },
+    "tone": {
+      "score": 4,
+      "justification": "The plan speaks directly to 'you' in a neutral, helpful way and treats the reader as capable, though it is somewhat flat and lacks encouragement."
+    }
+  },
+  "total_cost_usd": 0.0601847,
+  "judged_at": "2026-11-24T10:05:35+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

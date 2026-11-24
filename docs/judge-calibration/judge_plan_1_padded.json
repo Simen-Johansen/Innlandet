@@ -1,0 +1,24 @@
+{
+  "plan": "docs/judge-calibration/plan_1_padded.md",
+  "scores": {
+    "plain_language": {
+      "score": 3,
+      "justification": "The core sentences are short and clear, but the plan has a lot of filler (thank-you paragraphs, repeated reminders) that makes the reader wade through text before reaching the content."
+    },
+    "actionable_steps": {
+      "score": 3,
+      "justification": "The numbered steps are concrete and end with how to apply, but they are buried among background text and filler, and the deadline and one-application reminders are repeated."
+    },
+    "no_jargon": {
+      "score": 4,
+      "justification": "The plan mostly avoids grant jargon, though terms like 'grant provider' and 'attachments' are left unexplained and a volunteer could easily guess what they mean."
+    },
+    "tone": {
+      "score": 3,
+      "justification": "The tone is warm and encouraging, but the repeated praise, 'take your time' and 'do not rush' lines are slightly patronising and dilute the direct message."
+    }
+  },
+  "total_cost_usd": 0.0622144,
+  "judged_at": "2026-11-24T10:06:26+00:00",
+  "prompt_sha256": "7b057e225bd1434894977b722e69fdac6137c74b01fb7de908b207952ea3e37b"
+}

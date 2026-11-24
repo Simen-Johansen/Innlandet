@@ -67,6 +67,7 @@ Model spend on 12.11 before the demo is about 1.4 USD, which leaves about 3.6 US
 Write `docs/meetings/2026-11-12-demo.md`: what ran, any FAIL seen live, and the feedback we got.
 A FAIL on stage is not a disaster. It goes into the white paper, as the course asks.
 Still owed after the demo: the 3-run full eval for task 013 and the task 014 judge runs (separate 24 h windows).
+Status 24.11: judge runs done; Run A done (23/23, 3 runs); Run B after the corpus refresh (planned 26.11).
 
 ## If asked
 - Only 5 of the 58 county grants are in use, because a person verifies every fact first.
