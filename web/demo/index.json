@@ -1,0 +1,16 @@
+[
+  {
+    "id": "outside_innlandet",
+    "label": {
+      "no": "Klubb utenfor Innlandet",
+      "en": "Club outside Innlandet"
+    }
+  },
+  {
+    "id": "bad_checksum",
+    "label": {
+      "no": "Feil i organisasjonsnummeret",
+      "en": "Typo in the organisation number"
+    }
+  }
+]

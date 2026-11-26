@@ -1,0 +1,24 @@
+{
+  "mode": "demo",
+  "generated": "2026-11-26",
+  "request": {
+    "orgnr": "971285133",
+    "project_idea": "Organise free outdoor activity days for children in Oslo.",
+    "requested_amount_nok": 30000,
+    "output_language": "en"
+  },
+  "exit": 3,
+  "stages": [],
+  "entity": null,
+  "plan": null,
+  "fetched_at": null,
+  "markdown": null,
+  "rejection": {
+    "reason": "outside_innlandet",
+    "detail": "kommunenummer 0301 is not in Innlandet (34xx)"
+  },
+  "halted": null,
+  "excluded": [],
+  "cost_usd": 0.0,
+  "case": "outside_innlandet"
+}

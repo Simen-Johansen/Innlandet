@@ -1,0 +1,24 @@
+{
+  "mode": "demo",
+  "generated": "2026-11-26",
+  "request": {
+    "orgnr": "970169215",
+    "project_idea": "Organise free outdoor activity days (hiking, campfire and canoe trips) for children aged 6-12 in Hamar.",
+    "requested_amount_nok": 60000,
+    "output_language": "en"
+  },
+  "exit": 3,
+  "stages": [],
+  "entity": null,
+  "plan": null,
+  "fetched_at": null,
+  "markdown": null,
+  "rejection": {
+    "reason": "invalid_orgnr",
+    "detail": "'970169215' is not 9 digits with a valid MOD11 check digit"
+  },
+  "halted": null,
+  "excluded": [],
+  "cost_usd": 0.0,
+  "case": "bad_checksum"
+}

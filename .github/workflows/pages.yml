@@ -1,0 +1,36 @@
+name: pages
+# Task 017: publish the web UI in demo mode (static files + web/demo/ bundles) to GitHub Pages.
+# It never runs the pipeline: bundles are built by a person with `python web/snapshot.py`.
+# Needs repo setting (admin): Settings > Pages > Build and deployment > Source: GitHub Actions.
+on:
+  push:
+    branches: [main]
+    paths: ["web/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect static files only (no server code)
+        run: |
+          mkdir -p _site/demo
+          cp web/index.html web/style.css web/app.js _site/
+          cp web/demo/*.json _site/demo/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

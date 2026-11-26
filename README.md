@@ -81,6 +81,15 @@ Refreshing the corpus is a human act: copy, re-check every `expected.json`, comm
 may change a fact becomes a draft in `context/grants_pending/` for a human. Offline test:
 `python eval/check_update.py`. In CI, `.github/workflows/update-grants.yml` runs it weekly.
 
+## Web interface (task 017)
+- **Live, on your machine:** `python web/server.py`, then open http://127.0.0.1:8017/. Each search runs
+  `harness/run.py` for real (Brreg + `claude`, model cost per run); tick "Offline" to use `fixtures/`.
+  One run at a time; the server only listens on 127.0.0.1.
+- **Demo, on GitHub Pages:** the same page without a server shows the saved examples in `web/demo/`.
+  Rebuild them with `python web/snapshot.py` (cases that reach stages 4-5 cost model money), commit,
+  and `.github/workflows/pages.yml` publishes `web/` on push to `main`. One-time repo setting (admin):
+  Settings > Pages > Source: GitHub Actions. `?case=<id>` links straight to one example.
+
 ## Submitted version and reproducing it later
 The submitted commit is tagged `exam` and the tag is never moved: `git checkout exam`.
 After the tag exists, the weekly update workflow does nothing, so the grant files stay as submitted.

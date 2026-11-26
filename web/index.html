@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tilskuddsnavigator</title>
+  <meta name="description" content="Finn tilskudd frivillige lag i Innlandet kan søke på, med en kontrollert sjekkliste.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span id="mode-badge" class="mode-badge" hidden></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-name">Tilskuddsnavigator</span>
+        <span class="brand-sub" data-i18n="brand_sub">for frivillige lag</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div id="demo-banner" class="demo-banner" hidden>
+          <strong data-i18n="demo_title">Demo:</strong>
+          <span data-i18n="demo_text">Dette er forhåndsberegnede eksempler. Velg et eksempel under. Egne søk krever at du kjører tjenesten lokalt.</span>
+        </div>
+
+        <h1 data-i18n="hero_title">Hvilke tilskudd kan laget søke?</h1>
+
+        <form id="search" class="search" novalidate>
+          <div class="fields">
+            <div class="field">
+              <label for="orgnr" data-i18n="orgnr_label">Organisasjonsnummer</label>
+              <input id="orgnr" name="orgnr" inputmode="numeric" autocomplete="off"
+                     placeholder="123 456 789" maxlength="11" aria-describedby="orgnr-msg">
+              <span id="orgnr-msg" class="field-msg" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="amount" data-i18n="amount_label">Omsøkt beløp (kr, valgfritt)</label>
+              <input id="amount" name="amount" inputmode="numeric" autocomplete="off"
+                     placeholder="60 000" aria-describedby="amount-msg">
+              <span id="amount-msg" class="field-msg" aria-live="polite"></span>
+            </div>
+            <fieldset class="field lang">
+              <legend data-i18n="lang_label">Språk på planen</legend>
+              <div class="segmented">
+                <input type="radio" id="lang-no" name="lang" value="no" checked>
+                <label for="lang-no">Norsk</label>
+                <input type="radio" id="lang-en" name="lang" value="en">
+                <label for="lang-en">English</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <label for="idea" class="idea-label" data-i18n="idea_label">Beskriv prosjektet med én setning</label>
+          <div class="searchbox">
+            <textarea id="idea" name="idea" rows="2" maxlength="300"
+                      data-i18n-placeholder="idea_placeholder"
+                      placeholder="F.eks. Gratis turdager med bål og kano for barn 6–12 år i Hamar"
+                      aria-describedby="idea-count idea-msg"></textarea>
+            <button type="submit" class="search-btn" id="submit" aria-label="Finn tilskudd">
+              <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14"/></svg>
+            </button>
+          </div>
+          <div class="idea-foot">
+            <span id="idea-msg" class="field-msg" aria-live="polite"></span>
+            <span id="idea-count" class="count">0 / 300</span>
+          </div>
+
+          <label id="offline-row" class="offline" hidden>
+            <input type="checkbox" id="offline">
+            <span data-i18n="offline_label">Offline (testdata fra fixtures/, ingen oppslag i Brønnøysund)</span>
+          </label>
+        </form>
+
+        <div id="chips" class="chips" aria-label="Eksempler"></div>
+      </div>
+    </section>
+
+    <section id="results" class="results" aria-live="polite">
+      <div class="wrap" id="results-inner"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap" data-i18n="footer">Tilskuddene er hentet fra de offisielle tilskuddssidene. Sjekk alltid fristen på tilskuddssiden før du søker.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
