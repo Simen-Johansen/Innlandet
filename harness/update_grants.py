@@ -45,6 +45,7 @@ CORE_HEADINGS = ("Formål", "Hvem kan søke", "Frister og rapportering")
 # Page heading (lowercase, without "?") -> our heading. Real county pages use their own names.
 HEADING_MAP = {
     "formål": "Formål",
+    "formålet med ordningen": "Formål",  # 37168 (task 017)
     "hvem kan søke": "Hvem kan søke",
     "hva kan det søkes om": "Hva kan det søkes om",
     "hva kan du søke om": "Hva kan det søkes om",
@@ -68,10 +69,19 @@ EXTRA_MAP = {
     "søknadsvurdering": "Hva kan det søkes om",
     "krav til søknaden": "Hva kan det søkes om",
     "søknad": "Vedlegg",
+    # task 017: criteria, exclusions and amounts on 37168 and 62589
+    "tildelingskriterier": "Hva kan det søkes om",
+    "avgrensing": "Hva kan det søkes om",
+    "vi gir ikke tilskudd til": "Hva kan det søkes om",
+    "vurdering av søknaden": "Hva kan det søkes om",
+    "søknadskategorier": "Hva kan det søkes om",
+    "tidligere ordninger fases inn i regionalt kulturfond": "Hva kan det søkes om",
 }
 # Known headings deliberately left out (background or administrative text); listed in the audit, never silent.
 IGNORED = {"forankring", "tidligere tildelinger", "hold kontaktinformasjonen oppdatert",
-           "hva er helsefremmende tiltak"}
+           "hva er helsefremmende tiltak",
+           # task 017: administrative text on 37168 and 62589 (processing time, how to apply, logo rules)
+           "behandlingstid", "behandlingstid og tildelingsbrev", "slik søker du", "profilering, markedsføring"}
 INVISIBLE = re.compile("[​‌‍⁠﻿]")
 STOP_HEADING = "kontakt"  # the caseworker block; everything after it is dropped
 TEMPLATE = "template"  # reason prefix that counts towards the kill switch
