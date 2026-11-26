@@ -9,10 +9,10 @@ region_prefix: 34
 target_group: alle
 max_amount_nok: unknown
 deadlines: 2026-09-15
-fetched_at: 2026-10-28
+fetched_at: 2026-11-11
 verified_by: SJ
-checked_at: 2026-11-05
-source_modified: unknown
+checked_at: 2026-11-26
+source_modified: 2026-10-16T09:34
 ---
 
 ## Formål
@@ -27,17 +27,30 @@ Kommunene kan søke alene eller i samarbeid med andre kommuner, frivillige organ
 
 ## Hva kan det søkes om
 
-Påvirkningsfaktorer på helse finnes innenfor alle samfunnsområder. Eksempler på helsefremmende tiltak i nærmiljøet kan være å legge til rette for lavterskel aktivitet og møteplasser på tvers av generasjoner, nærturer, gåing og sykling, samarbeid på tvers av sektorer i kommunen, samarbeid med lag, foreninger og næringsliv, samarbeid mellom kommunen og frivilligheten osv.
+Kommuner kan søke om tilskudd til arbeid for å bedre livskvaliteten, folkehelsen og redusere sosiale helseforskjeller. Vi oppfordrer til samarbeid med frivillige og andre organisasjoner.
+
+### Støttenivå
 
 Søker kan tildeles maksimalt 50 % tilskudd av de totale prosjektkostnadene. Egenandel i prosjektet kan være både arbeidsinnsats og egenkapital.
 
-Krav til tiltaket:
+### Søknadsvurdering
+
+Søknadene vil bli vurdert ut fra gjeldende kriterier og sammenfattet i et saksdokument som blir politisk behandlet.
+
+Siden den økonomiske rammen for ordningen er begrenset, vil ikke alle kvalifiserte prosjekter få tildelt støtte.
+
+Det er totalt 2,4 millioner kroner til fordeling gjennom denne tilskuddsordningen.
 
 - Folkehelseutfordringene det skal arbeides med skal være identifisert i kommunens folkehelseoversikt.
 - Arbeidet skal rettes mot befolkningen og gjelder ikke individrettede tiltak.
 - Kommunen må stå som søker, men kan gjerne samarbeide med andre kommuner, organisasjoner eller frivilligheten om tiltak.
+- Tiltak som kan bidra til å utjevne sosiale forskjeller i befolkningen.
+- Tiltak for å styrke et inkluderende nærmiljø.
+- Tiltak som har som mål å øke befolkningens opplevelse av livskvalitet, mestring, mening og tilhørighet.
+- Tiltak hvor kunnskap og erfaringer blir dokumentert slik at det kan deles med andre.
+- Tiltak der kommunen samarbeider med frivillige lag eller organisasjoner.
 
-Avgrensning
+### Avgrensning
 
 - Det gis ikke støtte til gjennomføring av ordinære kommunale driftsoppgaver.
 - Innlandet fylkeskommune fullfinansierer ingen prosjekter.
@@ -47,9 +60,15 @@ Avgrensning
 
 ## Vedlegg
 
+Du søker gjennom den elektroniske søknadsordningen til Regionalforvaltning. Registrer deg for å komme inn på selve søknadsskjemaet til tilskuddsordningen.
+
+Gå til regionalforvaltning.no
+
 Søknaden skal inneholde en enkel prosjektbeskrivelse, framdriftsplan og budsjett- og finansieringsplan for prosjektet.
 
 ## Frister og rapportering
+
+Søknadsfrist: 15. september 2026.
 
 Søknadsfristen er 15. september 2026.
 

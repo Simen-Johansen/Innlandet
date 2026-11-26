@@ -149,3 +149,29 @@ One entry per significant prompt. Format:
   so the check crashed with `KeyError` (found by Claude by running it). Simen then applied the suggested fix:
   deferred entries count as *relevant* and are printed on their own. Coverage now:
   `58 listed | 4 ingested | 34 not relevant | 20 deferred | 0 pending | ingested/relevant = 4/24`.
+
+## 2026-11-26: Corpus refresh C4 (eval edit by humans), case 13, `must_reject` for arrangementsutvikling
+- **Who:** Simen + Claude Code. Humans ran every step that writes to `eval/`; Claude only compared files and
+  read diff stats (never `expected.json` contents).
+- **Prompt:** `/plan` "redo the diff" (step 2 of `docs/corpus-refresh/README.md`), then the README steps by hand.
+- **Departure from plan:** planned for Wed 25.11, done Thu 26.11 morning. The live `update_grants.py` (4 unchanged,
+  Hamar manual) and `catalog.py` (58 listed, 0 new, 0 removed) runs and `triage.py` (0 pending) are from 26.11,
+  so `checked_at` and `index_checked_at` hold for `EVAL_TODAY=2026-12-03`.
+- **Diff (Claude, read-only):** since bd0c3e1 only `checked_at` changed in `context/grants/`. Against the old corpus:
+  arrangementsutvikling is new (FLI, Frivillighetsregisteret, region 34, max 350 000, deadline 2027-04-01, NIF/DFS/NBF
+  members only, sports events only); H, F and K gained the Støttenivå, Søknadsvurdering and Avgrensning sections (K
+  also Krav til søknaden; its one-municipality rule moved from Formål to Støttenivå and Avgrensning); D `checked_at`
+  only. No amount, deadline, org-form or region field changed for D, H, F or K, so no filter result changes.
+  Left as is: K repeats one Formål sentence (lines 20 and 28); no effect on any match, not yet checked against the live page.
+- **Outcome (human eval edit):** `cp context/grants/*.md eval/corpus/grants/`; `add_must_reject.py` added
+  `arrangementsutvikling_innen_idrett` to `must_reject` in 11 cases (01–07, 11, 12, stress_01, stress_02; `--check`
+  first). Not added: 08 (filter), 09, 10, stress_03a/b/c, stress_dep_01–06 (stop before the matcher). New case 13
+  (Gjøvik Skiklubb, regional youth roller-ski sprint, September 2027 → `must_match` A, 01.04.2027 round), written
+  by Simen. `CASES.md`: grant id A, the A sentence, row 04 wording, row 13.
+- **Re-check:** every `expected.json` re-checked by Simen and Elias against the new texts: **TO CONFIRM** (case 12's
+  diff is +17/−6, more than one added line; to be read before the commit).
+- **Free checks:** `run.py --offline --dry-run` wiring OK; `check_grants`, `check_fixtures` (13 clean), `check_sources`,
+  `check_update` (8 cases), `check_budget`, `check_killswitch`, `check_catalog` all PASS
+  (`58 listed | 4 ingested | 34 not relevant | 20 deferred | 0 pending`). Stage checks follow in Run B.
+- **B3 (optional):** **TO DECIDE**: either verify 1–2 deferred grants (Spillemidler, ULF) before Run B, or skip it;
+  if skipped, all 20 stay `deferred_verification` and the white paper says so.

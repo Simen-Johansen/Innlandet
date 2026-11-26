@@ -11,7 +11,7 @@ max_amount_nok: unknown
 deadlines: 2026-12-01
 fetched_at: 2026-11-11
 verified_by: SJ
-checked_at: 2026-11-23
+checked_at: 2026-11-26
 source_modified: 2026-10-15T09:37
 ---
 
