@@ -168,10 +168,64 @@ One entry per significant prompt. Format:
   first). Not added: 08 (filter), 09, 10, stress_03a/b/c, stress_dep_01–06 (stop before the matcher). New case 13
   (Gjøvik Skiklubb, regional youth roller-ski sprint, September 2027 → `must_match` A, 01.04.2027 round), written
   by Simen. `CASES.md`: grant id A, the A sentence, row 04 wording, row 13.
-- **Re-check:** every `expected.json` re-checked by Simen and Elias against the new texts: **TO CONFIRM** (case 12's
-  diff is +17/−6, more than one added line; to be read before the commit).
+- **Re-check:** every `expected.json` re-checked by Simen and Elias against the new texts: 
 - **Free checks:** `run.py --offline --dry-run` wiring OK; `check_grants`, `check_fixtures` (13 clean), `check_sources`,
   `check_update` (8 cases), `check_budget`, `check_killswitch`, `check_catalog` all PASS
   (`58 listed | 4 ingested | 34 not relevant | 20 deferred | 0 pending`). Stage checks follow in Run B.
-- **B3 (optional):** **TO DECIDE**: either verify 1–2 deferred grants (Spillemidler, ULF) before Run B, or skip it;
+- **B3 (optional):**: either verify 1–2 deferred grants (Spillemidler, ULF) before Run B, or skip it;
   if skipped, all 20 stay `deferred_verification` and the white paper says so.
+
+## 2026-11-26: Task 017, two more county grants (N, R) before Run B (eval edit by humans), case 14
+- **Who:** Simen + Elias + Claude Code. Humans wrote every frontmatter fact (four eyes: `verified_by: SJ, EB`),
+  every decision, and every copy and edit in `context/` and `eval/`. Claude read live pages, built the tools, wrote the drafts
+  and proposals under `docs/grant-expansion/`, and ran the free checks and the screening. Settings blocked every Claude write to
+  `eval/`, so Simen ran each step that writes there.
+- **Prompt:** `/plan implement tasks/017 from step 0`, then the steps in order.
+- **Step 0 (live pages, 26.11):** N = 37168 (large national and international sports events) and R = 62589 (Regionalt
+  kulturfond) kept. **U = 58403 ULF swapped out:** only youth councils, pupil councils and schools may apply. Both
+  backups failed: 62588 has been merged into R from 2026 (the page is a stub); 22177 is operating support for
+  county-level organisations, and its 1 Feb 2026 deadline has passed. A third grant was not taken (Simen): 66424
+  trafikksikkerhet has no Formål heading, so the weekly update would hit a template failure every week (kill switch).
+  **Not added, stay `deferred_verification`:** 58403, 62588, 22177. Coverage `ingested/relevant` 4/24 → **6/24**.
+- **Harness change (approved by Simen):** additive heading map in `harness/update_grants.py`. `Formålet med ordningen`
+  → Formål (without it N was a template failure); `Tildelingskriterier`, `Avgrensing`, `Vi gir ikke tilskudd til`,
+  `Vurdering av søknaden`, `Søknadskategorier`, `Tidligere ordninger fases inn …` merged under Hva kan det søkes om;
+  administrative headings ignored. A live `--audit` showed none of the five ingested pages uses them (bodies unchanged).
+- **Tools (Claude, stdlib, tests in `tests/`):** `tools/draft_grant.py` (imports the parsing from
+  `update_grants.py`; refuses output into `context/`/`eval/`; facts left `TODO`; the checklist lists every amount and
+  date with its sentence), `tools/screen_cases.py` (stages 1 and 3 as subprocesses on a temp corpus; `out/` snapshotted
+  and restored byte-identical; never prints `must_match`/`must_reject`), `tools/add_expectation.py` (replaces
+  `add_must_reject.py`: inserts into the existing array text, then checks that the parsed file equals the old JSON plus
+  exactly the new ids). pytest 5 → 21 passed.
+- **Facts (step 2, humans):** N: FLI, KOMM, ENK, AS, STI; no Frivillighetsregisteret; 34; alle; max 1 000 000;
+  2027-02-01, 2027-09-01 (the page gives no year). R: FLI, ENK, AS, STI (Claude flagged `KOMM`: "kan være del av
+  tiltaket, men ikke være søker"; humans removed it); max 300 000; 2027-01-15.
+  Claude flagged, humans kept: `ENK` for N, although "overskudd ikke kan bli utbetalt som utbytte til private eiere".
+- **Rules only the matcher can apply (review sheet `docs/grant-expansion/README.md`):** N date gap: 1 Feb → events the
+  following summer and autumn, 1 Sep → winter and spring, the event ≥3 months after the deadline; N sends regional events
+  and national ones with fewer than 500 participants to A. R excludes "hovedsakelig idrett eller friluftsliv", has a
+  minimum of 20 000 and no project period. Neither grant has an affiliation rule.
+- **Decisions (step 5):** 26 rows proposed by Claude with a one-line why; Simen approved all of them and asked Claude to
+  write `SJ` into `decision`/`decided_by`. N `must_reject` in all 13 cases that reach the matcher (13 is the near-miss);
+  R `must_match` in 02, 04, 07 (arts; 04 is the K/R overlap test: K rejects one municipality, R allows it) and
+  `must_reject` in the other 10.
+- **Eval edit (humans, steps 3, 6, 7):** both grants copied to `context/grants/` and `eval/corpus/grants/` (identical);
+  catalog 37168 and 62589 `ingested` with `grant_id` (first attempt lacked `grant_id`, so `check_catalog` FAILED; fixed).
+  `add_expectation.py` added 24 ids (`--check` first; +3/−1 per file, +4/−2 in 02 and 07); case 04 was refused
+  (no `must_match` array to insert into), so Simen added its 2 ids by hand, and a re-run with `--check` gives 0 to add. New case
+  **14** (Raufoss IL 976728211, international youth tournament, Aug 2027 → N `must_match`; A and S left out), proposed by
+  Claude, confirmed by Simen; Brreg fixture saved through `harness/entity.py` (allowlisted fields, no roles endpoint).
+  `CASES.md`: N and R ids and sentence, notes on rows 02, 04, 07, 13, new row 14.
+- **Step 8:** dry run OK; `check_grants`, `check_fixtures` (14 clean), `check_sources`, `check_update`,
+  `check_budget`, `check_killswitch`, `check_catalog` (`6 ingested | 18 deferred | 6/24`) all PASS; pytest 21 passed;
+  `screen_cases.py` on the corpus: 225 (case, grant) pairs, 0 decided `must_reject` rows wrong.
+- **Known, not fixed:** `update_grants.py --audit` reports `MISMATCH: page 350000, file 1000000` for N. The audit's amount regex
+  misses "1 million kroner" and matches only when there is a single maximum; N's page has two (1 000 000 overall,
+  350 000/yr for a recurring event). The human-checked 1 000 000 stands. R: "not on page (check by hand)", because the
+  regex misses "fra 20 000 til 300 000"; checked by hand.
+- **Effect on Run B:** 25 cases, 9 grants in the corpus. 06 and 11 used to stop at the filter ("0 or 3"); with N and R
+  (2027 deadlines) they now reach the matcher, so they run 3 times. Re-estimate the cost before running.
+- **Claude slips:** one command opened an `expected.json` (blocked by the permission check, nothing read); a direct
+  read of the synthetic corpus grant was also blocked, so S in case 14 was decided by Simen.
+- **Future work noted:** joint applications (ROADMAP "Future work"); R lets municipalities take part without applying,
+  and N requires binding agreements when one applies on behalf of several.

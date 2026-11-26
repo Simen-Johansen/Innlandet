@@ -338,9 +338,9 @@
       "page_id": "37168",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/fondsordning-til-store-nasjonale-og-internasjonale-arrangementer-innen-idrett.37168.aspx",
       "title": "Fondsordning til store nasjonale og internasjonale arrangementer innen idrett",
-      "status": "not_relevant",
+      "status": "ingested",
       "added_at": "2026-11-10",
-      "reason": "deferred_verification",
+      "grant_id": "fondsordning_store_idrettsarrangementer",
       "decided_by": "SJ"
     },
     {
@@ -455,9 +455,9 @@
       "page_id": "62589",
       "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/regionalt-kulturfond-innlandet.62589.aspx",
       "title": "Regionalt kulturfond Innlandet",
-      "status": "not_relevant",
+      "status": "ingested",
       "added_at": "2026-11-10",
-      "reason": "deferred_verification",
+      "grant_id": "regionalt_kulturfond_innlandet",
       "decided_by": "SJ"
     },
     {

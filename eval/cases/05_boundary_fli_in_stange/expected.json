@@ -14,7 +14,9 @@
       "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
       "reason": "org_form_not_allowed"
     },
-    "arrangementsutvikling_innen_idrett"
+    "arrangementsutvikling_innen_idrett",
+    "fondsordning_store_idrettsarrangementer",
+    "regionalt_kulturfond_innlandet"
   ],
   "must_not_include": [
     "hamar_driftstilskudd_frivillige_organisasjoner",

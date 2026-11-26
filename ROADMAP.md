@@ -134,6 +134,11 @@ different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 
 - `run.py` finding `<request>.expected.json` itself: would rewire eval/ checks before the exam, so not now
   (`run_eval.py` already sets `EXPECTED_MATCHES` empty per case).
 - Simple web page, remaining county grants, scheduled `catalog.py`, task 016 `draft_grant.py`.
+- Joint applications: pair organisations that would not qualify (or win) alone, so they apply together (idea from
+  the 12.11 demo, `docs/meetings/2026-11-12-demo.md`). Evidence from task 017: Regionalt kulturfond (62589)
+  "Kommuner kan være del av tiltaket, men ikke være søker" (a partner that cannot apply but may take part) and
+  weighs "samarbeid mellom flere aktører"; the big-events fund (37168) requires "forpliktende avtaler" when one
+  applies on behalf of several. Today `applicant_orgforms` only says who may *apply*, not who may *take part*.
 
 ### Exam freeze (W48, before Thu 03.12 11:59), in this order
 Section 3.6: the submitted commit is tagged `exam` and the tag never changes after the deadline.

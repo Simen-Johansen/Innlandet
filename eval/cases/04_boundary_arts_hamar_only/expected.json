@@ -4,13 +4,15 @@
     0,
     3
   ],
+  "must_match": ["regionalt_kulturfond_innlandet"],
   "must_reject": [
     "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
     {
       "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
       "reason": "org_form_not_allowed"
     },
-    "arrangementsutvikling_innen_idrett"
+    "arrangementsutvikling_innen_idrett",
+    "fondsordning_store_idrettsarrangementer"
   ],
   "must_not_include": [
     "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
