@@ -168,7 +168,7 @@ One entry per significant prompt. Format:
   first). Not added: 08 (filter), 09, 10, stress_03a/b/c, stress_dep_01–06 (stop before the matcher). New case 13
   (Gjøvik Skiklubb, regional youth roller-ski sprint, September 2027 → `must_match` A, 01.04.2027 round), written
   by Simen. `CASES.md`: grant id A, the A sentence, row 04 wording, row 13.
-- **Re-check:** every `expected.json` re-checked by Simen and Elias against the new texts: 
+- **Re-check:** every `expected.json` re-checked by Simen and Elias against the new texts 
 - **Free checks:** `run.py --offline --dry-run` wiring OK; `check_grants`, `check_fixtures` (13 clean), `check_sources`,
   `check_update` (8 cases), `check_budget`, `check_killswitch`, `check_catalog` all PASS
   (`58 listed | 4 ingested | 34 not relevant | 20 deferred | 0 pending`). Stage checks follow in Run B.
@@ -229,3 +229,34 @@ One entry per significant prompt. Format:
   read of the synthetic corpus grant was also blocked, so S in case 14 was decided by Simen.
 - **Future work noted:** joint applications (ROADMAP "Future work"); R lets municipalities take part without applying,
   and N requires binding agreements when one applies on behalf of several.
+
+## 2026-11-26: Reproducible after submission: one reference date 2026-11-27, no automatic commits
+- **Who:** Simen + Claude Code (plan mode, plan approved by Simen)
+- **Prompt:** "check the usage, so we know whether run B can be done now, and also check if it will work"; then
+  `/plan` "ensure everything is either set to december 3rd 2026 or in general works when setting it to december 3rd
+  ... shown in the README", and "no automatic update happens in the repo now so the push with exam tag is the absolute
+  last commit".
+- **Found (free):** 24 h spend 0.00 USD, but Run B would have failed. `run_eval.py` `DEFAULT_TODAY` was 2026-11-05, and
+  the C4 corpus has `checked_at` 2026-11-26, so `check_grants` failed at stage 2 in every case (probe: case 08, exit 1,
+  0.00 USD, log `docs/eval-logs/eval_2026-11-26_150035.log`). 03.12 can't be the eval date: friluftsliv's only
+  deadline is 2026-12-01. `update-grants.yml` committed to `main` on 23.11 (`023dc04`), and its next run would have
+  been Mon 30.11.
+- **Decision (Simen):** eval pinned to **2026-11-27**. Everything else reproduces with `EVAL_TODAY=2026-12-03`.
+- **Proof that no answer changes:** `tools/screen_cases.py --today` (new flag) at 11-05 and 11-27 gave identical
+  output for all 225 (case, grant) pairs. At 12-03 the only difference is friluftsliv `no_open_deadline` in 14 cases.
+- **Claude changed:** `tools/screen_cases.py` (`--today`, `DEFAULT_TODAY` mirror 2026-11-27);
+  `checks.yml` (job `EVAL_TODAY=2026-12-03`, filter step `--today 2026-12-03`); `update-grants.yml` (schedule
+  removed); README section for the evaluator; ROADMAP reproduction and freeze step 5. Every CI check, plus
+  `check_sources`, `check_catalog` and `check_fixtures`, PASSes with `EVAL_TODAY=2026-12-03` (0.00 USD).
+- **Human steps (eval/ and GitHub are not Claude's), done 26.11 by Simen:** `gh workflow disable update-grants`
+  (`disabled_manually`; Claude's attempt was blocked by the permission check). `eval/run_eval.py` `DEFAULT_TODAY` and
+  docstring, plus the `eval/common.py` comment, changed to 2026-11-27. Every `"today": "2026-11-05"` in
+  `eval/cases/*/expected.json` changed to 2026-11-27 (24 cases; case 06 keeps its own 2026-12-02, unchanged).
+  Afterwards the corpus `check_grants` PASSes at 11-27 and at 12-02, and `run_eval.py --case 09 --case 10` gives
+  2/2 at 0.00 USD.
+- **Second decision (Simen): 2026-11-27 everywhere, not 2026-12-03.** On 03.12 the filter keeps 5 grants and drops
+  friluftsliv (`no_open_deadline`). Simen read `fixtures/expected_matches.json`: `must_match_any` has
+  `tilskudd_til_friluftslivsaktivitet`. So on 03.12 `check_matches` would fail at stage 4, after the model calls.
+  Options were 11-27 everywhere, a fixture edit, or documenting the failure. Simen chose 11-27. README, `checks.yml`
+  (`EVAL_TODAY` and the filter step `--today 2026-11-27`) and ROADMAP now say 11-27. At 11-27, `check_grants`,
+  `check_sources`, `check_catalog` and `check_fixtures` PASS. The earlier 12-03 numbers above are superseded.

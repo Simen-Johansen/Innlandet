@@ -3,9 +3,9 @@ name: update-grants
 # Anything else -> PR with the drafts (the human gate). Kill switch (2+ template failures) -> issue.
 # Needs repo setting: Actions > General > "Allow GitHub Actions to create and approve pull requests".
 # Exam freeze: once the tag `exam` exists, the job does nothing (no fetch, commit, PR or issue).
+# Exam freeze (26.11): the weekly schedule (Mondays 05:00 UTC) is removed and the workflow is disabled on GitHub,
+# so nothing commits to the repo after the submitted commit. It runs only if a person starts it by hand.
 on:
-  schedule:
-    - cron: "0 5 * * 1"  # Mondays 05:00 UTC
   workflow_dispatch:
 permissions:
   contents: write

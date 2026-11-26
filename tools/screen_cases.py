@@ -5,7 +5,8 @@
   python tools/screen_cases.py                                     step 8: screen eval/corpus/grants/ and check
                                                                    every decided must_reject row
   options: --grants-dir DIR (base corpus, default eval/corpus/grants), --cases DIR, --tsv FILE,
-           --show-current (a human may print each case's current must_match / must_reject)
+           --show-current (a human may print each case's current must_match / must_reject),
+           --today DATE (screen every case on DATE, overriding its own; used 26.11 to compare 11-05 with 11-27)
 
 For each case: stage 1 (harness/entity.py --offline, Brreg fixtures) and stage 3 (harness/filter.py --today
 <case today>) as subprocesses, with GRANTS_DIR = a temporary corpus (base + --add files, deleted after). No model
@@ -23,6 +24,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -32,7 +34,7 @@ TSV = ROOT / "docs" / "grant-expansion" / "decisions.tsv"
 OUT = ROOT / "out"
 ENTITY = ROOT / "harness" / "entity.py"
 FILTER = ROOT / "harness" / "filter.py"
-DEFAULT_TODAY = "2026-11-05"  # = eval/run_eval.py
+DEFAULT_TODAY = "2026-11-27"  # = eval/run_eval.py (from 26.11; was 2026-11-05)
 FACT_KEYS = ("applicant_orgforms", "requires_frivillighetsregisteret", "region_prefix", "target_group",
              "max_amount_nok", "deadlines", "verified_by")
 COLUMNS = ("case", "grant_id", "filter", "reaches_matcher_now", "reached_matcher_before", "today", "kommunenummer",
@@ -131,8 +133,11 @@ def idea_of(case_dir):
     return idea if len(idea) <= 160 else idea[:157] + "..."
 
 
-def screen(cases_dir, base_dir, add_dir=None, out_dir=OUT):
-    """[(case, grant_id, row dict)] for every case and grant (only the --add grants when add_dir is given)."""
+def screen(cases_dir, base_dir, add_dir=None, out_dir=OUT, today=None):
+    """[(case, grant_id, row dict)] for every case and grant (only the --add grants when add_dir is given).
+
+    today, if given, replaces every case's date (also an explicit "today" in expected.json).
+    """
     add_files = sorted(Path(add_dir).glob("*.md")) if add_dir else []
     add_files = [p for p in add_files if not p.name.endswith(".checklist.md")]
     todo = {p.stem: unfinished(p) for p in add_files}
@@ -158,6 +163,8 @@ def screen(cases_dir, base_dir, add_dir=None, out_dir=OUT):
         try:
             for case in sorted(d for d in Path(cases_dir).iterdir() if (d / "expected.json").exists()):
                 meta = case_meta(case)
+                if today:
+                    meta["today"] = today
                 if meta["fault"]:
                     entity, result, stop = None, {}, "fault case (outage test): never reaches stage 3"
                 else:
@@ -228,8 +235,10 @@ def main(argv=None):
     ap.add_argument("--cases", default=str(CASES))
     ap.add_argument("--tsv", default=str(TSV))
     ap.add_argument("--show-current", action="store_true", help="humans only: print current expectations")
+    ap.add_argument("--today", type=lambda s: date.fromisoformat(s).isoformat(),
+                    help="screen every case on this date instead of its own (e.g. to compare two eval dates)")
     a = ap.parse_args(argv)
-    rows = screen(Path(a.cases), Path(a.grants_dir), a.add)
+    rows = screen(Path(a.cases), Path(a.grants_dir), a.add, today=a.today)
     for r in rows:
         print(f"{r['case']:<36} {r['grant_id']:<48} {r['filter']:<40} kn={r['kommunenummer']} {r['orgform']} "
               f"frivreg={r['frivillighetsregisteret']} | {r['project_idea'][:70]}")

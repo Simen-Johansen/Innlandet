@@ -119,14 +119,22 @@ different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 
   go-ahead, submit Wed evening (Elias).
 
 **Reproducible after submission (must hold at the tag)**
-- `python eval/run_eval.py` pins `EVAL_TODAY` per case and reads only `eval/corpus/grants/`, so its results do not
-  depend on the date they are run. The corpus is frozen at the final eval and not touched again.
-- Everything else is reproduced with `EVAL_TODAY=2026-12-03` (README). On that date, `check_grants` needs every
-  `checked_at` ≥ 03.11, and `check_catalog` needs `index_checked_at` ≥ 25.11 and no pending entry added before 19.11.
-  So the last live `catalog.py` and `update_grants.py` runs happen on or after 25.11, and no entry is left pending.
-- Freeze check: on a fresh clone of the tagged commit, with `EVAL_TODAY=2026-12-03`, every check PASSes and
-  `python harness/run.py --offline` exits 0. CI (`checks.yml`) does not set `EVAL_TODAY`. That is harmless,
-  because it runs only on PRs and on manual dispatch, but say so in the README if someone re-runs it on `exam`.
+- `python eval/run_eval.py` pins `EVAL_TODAY` per case, to **2026-11-27** (since 26.11; it was 11-05, which is before
+  the C4 corpus `checked_at` 26.11, so stage 2 failed). It reads only `eval/corpus/grants/`, so its results do not
+  depend on the date they are run. It can't use 03.12, because friluftsliv's only deadline is 01.12.
+  Case 06 keeps its own 2026-12-02 (deadline passed on purpose).
+  `screen_cases.py --today` showed identical filter results at 11-05 and 11-27 for all 225 (case, grant) pairs. The
+  corpus is frozen at the final eval and not touched again.
+- Everything else is reproduced with **`EVAL_TODAY=2026-11-27`** (README, decided 26.11). 03.12 doesn't work: the
+  running example's `fixtures/expected_matches.json` `must_match_any` needs friluftsliv, and the filter drops it after
+  01.12, so `check_matches` fails at stage 4. On 11-27, `check_grants`, `check_sources`, `check_catalog` and
+  `check_fixtures` PASS (checked 26.11). Without `EVAL_TODAY`: stage 4 fails from 02.12, and from 25.12 the grant
+  files are stale (`check_grants` FAIL, kill switch).
+- Freeze check: on a fresh clone of the tagged commit, with `EVAL_TODAY=2026-11-27`, every check PASSes and
+  `python harness/run.py --offline` exits 0. Done 26.11: CI (`checks.yml`) sets `EVAL_TODAY=2026-11-27` itself.
+- No automatic commits: `update-grants.yml` committed to `main` on 23.11 (`023dc04`), and its next run would have
+  been Mon 30.11, before the tag. The schedule is removed (26.11) and the workflow is disabled on GitHub
+  (`gh workflow disable update-grants`), so the `exam` commit is the last one.
 
 ### Future work (white paper, not built)
 - Project date in the request: `project_start`, each deadline stores the project period it covers, "next round not
@@ -145,11 +153,13 @@ Section 3.6: the submitted commit is tagged `exam` and the tag never changes aft
 1. Review the drafts in `context/grants_pending/`; copy accepted text into `context/grants/` (humans only).
 2. Re-check `hamar_driftstilskudd_frivillige_organisasjoner` by hand (manual domain) and set `checked_at`.
 3. Run `python harness/update_grants.py` and `python harness/catalog.py` live once more (on or after 25.11; planned Wed 25.11), so every
-   `checked_at` and `index_checked_at` is valid for `EVAL_TODAY=2026-12-03`; decide any new catalog entry by hand.
+   `checked_at` and `index_checked_at` is valid for `EVAL_TODAY=2026-11-27`; decide any new catalog entry by hand.
+   A grant re-check after 27.11 would set `checked_at` after the reference date and break it, so don't do one.
 4. All checks PASS, `python harness/run.py --offline` exits 0, README steps followed once from a fresh clone,
-   also with `EVAL_TODAY=2026-12-03` set.
-5. `git tag exam` on that commit and push the tag. Never move or delete it. The weekly
-   `update-grants.yml` stops by itself once the tag exists; also run `gh workflow disable update-grants`.
+   also with `EVAL_TODAY=2026-11-27` set.
+5. Before the final commit: `gh workflow list` shows `update-grants` disabled (done 26.11, schedule removed).
+   Then commit, merge into `main` if `main` is what we submit, and `git tag exam` on that commit. Push the tag
+   last and never move or delete it. Afterwards, `gh run list` and `git log origin/main` must show no new commits.
 
 If you are behind on Fri 30.10, cut depth, not stages. For example, use 2 grant files instead of 4, or skip the retry loop.
 

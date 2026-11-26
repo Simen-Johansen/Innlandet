@@ -5,7 +5,7 @@ Run: python eval/run_eval.py [--case NAME ...] [--runs N]
 Each case folder holds input_request.json and expected.json. The Author writes expected.json
 BEFORE the case is run; a case without it is reported as FAIL and not run (no tokens spent).
 expected.json keys (all optional except expected_exit):
-  today                 YYYY-MM-DD, passed as EVAL_TODAY (default 2026-11-05)
+  today                 YYYY-MM-DD, passed as EVAL_TODAY (default 2026-11-27)
   expected_exit         int, or a list of allowed ints (e.g. [0, 3])
   rejection_reason      reason in out/rejection.json
   must_match            grant ids the matcher must mark "match"
@@ -37,7 +37,7 @@ CASES = ROOT / "eval" / "cases"
 CORPUS = Path("eval") / "corpus" / "grants"
 LOGS = ROOT / "docs" / "eval-logs"
 RUN = ROOT / "harness" / "run.py"
-DEFAULT_TODAY = "2026-11-05"
+DEFAULT_TODAY = "2026-11-27"
 KEYS = {"today", "expected_exit", "rejection_reason", "must_match", "must_reject",
         "must_not_include", "amount_note_required", "fault"}
 # Rejections made by stages 1-3, before any model call.

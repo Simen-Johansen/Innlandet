@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
 FIXTURES = ROOT / "fixtures"
 # Overridable so the evaluation harness can run against a frozen corpus (task 009):
-#   GRANTS_DIR=eval/corpus/grants  EVAL_TODAY=2026-11-05
+#   GRANTS_DIR=eval/corpus/grants  EVAL_TODAY=2026-11-27
 GRANTS = Path(os.environ.get("GRANTS_DIR") or ROOT / "context" / "grants")
 if not GRANTS.is_absolute():
     GRANTS = ROOT / GRANTS
