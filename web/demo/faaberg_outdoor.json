@@ -1,0 +1,131 @@
+{
+  "mode": "demo",
+  "generated": "2026-11-26",
+  "request": {
+    "orgnr": "976433416",
+    "project_idea": "Organise open outdoor activity days (hiking, fishing and overnight trips in a lavvo) for families and children in Lillehammer during 2027.",
+    "requested_amount_nok": 40000,
+    "output_language": "en"
+  },
+  "exit": 0,
+  "stages": [
+    {
+      "n": 1,
+      "name": "entity",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 2,
+      "name": "grants",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 3,
+      "name": "filter",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 4,
+      "name": "matcher",
+      "status": "pass",
+      "attempt": 1,
+      "attempts": 3,
+      "cost": "0.08 USD"
+    },
+    {
+      "n": 5,
+      "name": "guide",
+      "status": "pass",
+      "attempt": 1,
+      "attempts": 3,
+      "cost": "0.09 USD"
+    },
+    {
+      "n": 6,
+      "name": "render",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    }
+  ],
+  "entity": {
+    "organisasjonsnummer": "976433416",
+    "navn": "FAABERG IDRETTSLAG",
+    "organisasjonsform": "FLI",
+    "kommunenummer": "3405",
+    "registrertIFrivillighetsregisteret": true,
+    "fetched_at": "2026-11-26"
+  },
+  "plan": {
+    "orgnr": "976433416",
+    "org_name": "FAABERG IDRETTSLAG",
+    "output_language": "en",
+    "grants": [
+      {
+        "grant_id": "tilskudd_til_friluftslivsaktivitet",
+        "title": "Tilskudd til friluftslivsaktivitet",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/idrett-og-friluftsliv/tilskudd-til-friluftslivsaktivitet.36453.aspx",
+        "application_deadline": "2026-12-01",
+        "max_amount_nok": "unknown",
+        "amount_note": "The grant page gives no maximum amount. Ask the grant provider if 40000 NOK is a realistic amount to apply for.",
+        "why_qualifies": "The grant supports organised outdoor activities that get more people into friluftsliv. Your open days with hiking, fishing and lavvo overnight trips for families and children are organised outdoor activities that increase participation.",
+        "attachments": [
+          "The grant page lists no required attachments. Check the application form on Miljødirektoratet's application portal to see if it asks for any documents."
+        ],
+        "steps": [
+          "Open the electronic application form on Miljødirektoratet's application portal.",
+          "Describe your outdoor activity days, who they are for, and the costs.",
+          "Put all your activities in one single application, not several.",
+          "Submit the application through the portal.",
+          "Confirm the deadline on the grant page before applying, as it is very soon."
+        ]
+      }
+    ]
+  },
+  "fetched_at": "2026-11-11",
+  "markdown": "# Grant action plan: FAABERG IDRETTSLAG\n\nOrganisation number: 976433416  \nGenerated: 26.11.2026\n\nChecked automatically against the official sources fetched on 11.11.2026. Always confirm the deadline on the grant page before applying.\n\n## [Tilskudd til friluftslivsaktivitet](https://innlandetfylke.no/tjenester/sok-tilskudd/idrett-og-friluftsliv/tilskudd-til-friluftslivsaktivitet.36453.aspx)\n\n- **Deadline:** 01.12.2026\n- **Max amount:** Not stated on the grant page\n  The grant page gives no maximum amount. Ask the grant provider if 40000 NOK is a realistic amount to apply for.\n\n### Why your club qualifies\n\nThe grant supports organised outdoor activities that get more people into friluftsliv. Your open days with hiking, fishing and lavvo overnight trips for families and children are organised outdoor activities that increase participation.\n\n### Attachments\n\n- [ ] The grant page lists no required attachments. Check the application form on Miljødirektoratet's application portal to see if it asks for any documents.\n\n### Steps\n\n1. Open the electronic application form on Miljødirektoratet's application portal.\n2. Describe your outdoor activity days, who they are for, and the costs.\n3. Put all your activities in one single application, not several.\n4. Submit the application through the portal.\n5. Confirm the deadline on the grant page before applying, as it is very soon.\n",
+  "rejection": null,
+  "halted": null,
+  "excluded": [
+    {
+      "grant_id": "hamar_driftstilskudd_frivillige_organisasjoner",
+      "title": "Driftstilskudd til frivillige organisasjoner",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/forskrift-om-tildeling-av-tilskudd-til-kulturarbeid/",
+      "stage": "filter",
+      "reason": "outside_region"
+    },
+    {
+      "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
+      "title": "Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/folkehelse/tilskudd-til-arbeid-med-folkehelse-og-livskvalitet-i-innlandet.23016.aspx",
+      "stage": "filter",
+      "reason": "org_form_not_allowed"
+    },
+    {
+      "grant_id": "arrangementsutvikling_innen_idrett",
+      "title": "Arrangementsutvikling innen idrett",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: the grant funds sports events, while the project is open outdoor recreation days, not a sports competition or event."
+    },
+    {
+      "grant_id": "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
+      "title": "Tilskudd til kunstnerisk aktivitet for barn og ungdom",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/kunst-og-kultur/tilskudd-til-kunstnerisk-aktivitet-for-barn-og-ungdom.2658.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: outdoor activity days are not artistic activity; condition 2 also fails because projects in only one municipality are excluded."
+    }
+  ],
+  "cost_usd": 0.1711,
+  "case": "faaberg_outdoor"
+}

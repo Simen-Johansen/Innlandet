@@ -1,0 +1,131 @@
+{
+  "mode": "demo",
+  "generated": "2026-11-26",
+  "request": {
+    "orgnr": "983758622",
+    "project_idea": "Host a two-day regional junior cross-country ski festival in Gjøvik in December 2027, run by young volunteers, with new electronic timing equipment.",
+    "requested_amount_nok": 80000,
+    "output_language": "en"
+  },
+  "exit": 0,
+  "stages": [
+    {
+      "n": 1,
+      "name": "entity",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 2,
+      "name": "grants",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 3,
+      "name": "filter",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 4,
+      "name": "matcher",
+      "status": "pass",
+      "attempt": 1,
+      "attempts": 3,
+      "cost": "0.09 USD"
+    },
+    {
+      "n": 5,
+      "name": "guide",
+      "status": "pass",
+      "attempt": 1,
+      "attempts": 3,
+      "cost": "0.09 USD"
+    },
+    {
+      "n": 6,
+      "name": "render",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    }
+  ],
+  "entity": {
+    "organisasjonsnummer": "983758622",
+    "navn": "GJØVIK SKIKLUBB",
+    "organisasjonsform": "FLI",
+    "kommunenummer": "3407",
+    "registrertIFrivillighetsregisteret": true,
+    "fetched_at": "2026-11-26"
+  },
+  "plan": {
+    "orgnr": "983758622",
+    "org_name": "GJØVIK SKIKLUBB",
+    "output_language": "en",
+    "grants": [
+      {
+        "grant_id": "arrangementsutvikling_innen_idrett",
+        "title": "Arrangementsutvikling innen idrett",
+        "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx",
+        "application_deadline": "2027-04-01",
+        "max_amount_nok": 350000,
+        "amount_note": "You ask for 80000 NOK. This is within the maximum of 350000 NOK.",
+        "why_qualifies": "The grant funds local, regional and national sports events run by volunteer clubs. Your two-day regional junior ski festival is run by young volunteers and uses new electronic timing equipment. This fits the goals of youth in key roles and better event quality through new equipment.",
+        "attachments": [
+          "The grant page lists no required attachments. Check the application form on regionalforvaltning.no to see what you must attach."
+        ],
+        "steps": [
+          "Check that your club is linked to Norges idrettsforbund and registered in Frivillighetsregisteret.",
+          "Plan the festival budget, the timing equipment and the tasks for young volunteers.",
+          "Wait until the application form opens on regionalforvaltning.no on 1 February.",
+          "Register and send your application on regionalforvaltning.no.",
+          "Confirm the deadline on the grant page before you apply."
+        ]
+      }
+    ]
+  },
+  "fetched_at": "2026-11-11",
+  "markdown": "# Grant action plan: GJØVIK SKIKLUBB\n\nOrganisation number: 983758622  \nGenerated: 26.11.2026\n\nChecked automatically against the official sources fetched on 11.11.2026. Always confirm the deadline on the grant page before applying.\n\n## [Arrangementsutvikling innen idrett](https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx)\n\n- **Deadline:** 01.04.2027\n- **Max amount:** 350 000 NOK\n  You ask for 80000 NOK. This is within the maximum of 350000 NOK.\n\n### Why your club qualifies\n\nThe grant funds local, regional and national sports events run by volunteer clubs. Your two-day regional junior ski festival is run by young volunteers and uses new electronic timing equipment. This fits the goals of youth in key roles and better event quality through new equipment.\n\n### Attachments\n\n- [ ] The grant page lists no required attachments. Check the application form on regionalforvaltning.no to see what you must attach.\n\n### Steps\n\n1. Check that your club is linked to Norges idrettsforbund and registered in Frivillighetsregisteret.\n2. Plan the festival budget, the timing equipment and the tasks for young volunteers.\n3. Wait until the application form opens on regionalforvaltning.no on 1 February.\n4. Register and send your application on regionalforvaltning.no.\n5. Confirm the deadline on the grant page before you apply.\n",
+  "rejection": null,
+  "halted": null,
+  "excluded": [
+    {
+      "grant_id": "hamar_driftstilskudd_frivillige_organisasjoner",
+      "title": "Driftstilskudd til frivillige organisasjoner",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/forskrift-om-tildeling-av-tilskudd-til-kulturarbeid/",
+      "stage": "filter",
+      "reason": "outside_region"
+    },
+    {
+      "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
+      "title": "Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/folkehelse/tilskudd-til-arbeid-med-folkehelse-og-livskvalitet-i-innlandet.23016.aspx",
+      "stage": "filter",
+      "reason": "org_form_not_allowed"
+    },
+    {
+      "grant_id": "tilskudd_til_friluftslivsaktivitet",
+      "title": "Tilskudd til friluftslivsaktivitet",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/idrett-og-friluftsliv/tilskudd-til-friluftslivsaktivitet.36453.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: the grant funds organised outdoor recreation activities, not competitive sports events or timing equipment."
+    },
+    {
+      "grant_id": "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
+      "title": "Tilskudd til kunstnerisk aktivitet for barn og ungdom",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/kunst-og-kultur/tilskudd-til-kunstnerisk-aktivitet-for-barn-og-ungdom.2658.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: the grant funds artistic activity for children and youth, and a ski festival is a sports event, not artistic activity."
+    }
+  ],
+  "cost_usd": 0.1772,
+  "case": "gjovik_ski"
+}

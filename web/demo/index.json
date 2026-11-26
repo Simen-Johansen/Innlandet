@@ -1,5 +1,26 @@
 [
   {
+    "id": "gjovik_ski",
+    "label": {
+      "no": "Skifestival for juniorer i Gjøvik",
+      "en": "Junior ski festival in Gjøvik"
+    }
+  },
+  {
+    "id": "faaberg_outdoor",
+    "label": {
+      "no": "Turdager for familier i Lillehammer",
+      "en": "Outdoor days for families in Lillehammer"
+    }
+  },
+  {
+    "id": "climbing_holds",
+    "label": {
+      "no": "Nye klatretak til buldrerommet",
+      "en": "New climbing holds for the bouldering room"
+    }
+  },
+  {
     "id": "outside_innlandet",
     "label": {
       "no": "Klubb utenfor Innlandet",

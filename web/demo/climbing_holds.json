@@ -1,0 +1,100 @@
+{
+  "mode": "demo",
+  "generated": "2026-11-26",
+  "request": {
+    "orgnr": "989794981",
+    "project_idea": "Support in order to buy new climbing holds for the bouldering room",
+    "requested_amount_nok": 50000,
+    "output_language": "no"
+  },
+  "exit": 3,
+  "stages": [
+    {
+      "n": 1,
+      "name": "entity",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 2,
+      "name": "grants",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 3,
+      "name": "filter",
+      "status": "pass",
+      "attempt": null,
+      "attempts": null,
+      "cost": null
+    },
+    {
+      "n": 4,
+      "name": "matcher",
+      "status": "pass",
+      "attempt": 1,
+      "attempts": 3,
+      "cost": "0.09 USD"
+    }
+  ],
+  "entity": {
+    "organisasjonsnummer": "989794981",
+    "navn": "OTTA IDRETTSLAG",
+    "organisasjonsform": "FLI",
+    "kommunenummer": "3437",
+    "registrertIFrivillighetsregisteret": true,
+    "fetched_at": "2026-11-26"
+  },
+  "plan": null,
+  "fetched_at": null,
+  "markdown": null,
+  "rejection": {
+    "reason": "no_matching_grants",
+    "detail": "none of the 3 kept grants fits the project idea"
+  },
+  "halted": null,
+  "excluded": [
+    {
+      "grant_id": "hamar_driftstilskudd_frivillige_organisasjoner",
+      "title": "Driftstilskudd til frivillige organisasjoner",
+      "url": "https://www.hamar.kommune.no/kultur-og-aktivitet/tilskudd-og-stotte/forskrift-om-tildeling-av-tilskudd-til-kulturarbeid/",
+      "stage": "filter",
+      "reason": "outside_region"
+    },
+    {
+      "grant_id": "tilskudd_til_folkehelse_og_livskvalitet",
+      "title": "Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/folkehelse/tilskudd-til-arbeid-med-folkehelse-og-livskvalitet-i-innlandet.23016.aspx",
+      "stage": "filter",
+      "reason": "org_form_not_allowed"
+    },
+    {
+      "grant_id": "arrangementsutvikling_innen_idrett",
+      "title": "Arrangementsutvikling innen idrett",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/arrangementsutvikling-innen-idrett.16834.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: the grant funds sports events, not buying climbing holds for a permanent bouldering room."
+    },
+    {
+      "grant_id": "tilskudd_til_friluftslivsaktivitet",
+      "title": "Tilskudd til friluftslivsaktivitet",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/idrett-og-friluftsliv/tilskudd-til-friluftslivsaktivitet.36453.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: the grant funds organised outdoor-recreation activities, not equipment for an indoor bouldering room."
+    },
+    {
+      "grant_id": "tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom",
+      "title": "Tilskudd til kunstnerisk aktivitet for barn og ungdom",
+      "url": "https://innlandetfylke.no/tjenester/sok-tilskudd/kunst-og-kultur/tilskudd-til-kunstnerisk-aktivitet-for-barn-og-ungdom.2658.aspx",
+      "stage": "matcher",
+      "reason": "Condition 1 fails: the grant funds artistic activity for children and youth, not sports equipment like climbing holds."
+    }
+  ],
+  "cost_usd": 0.0861,
+  "case": "climbing_holds"
+}
