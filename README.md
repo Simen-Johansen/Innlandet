@@ -87,8 +87,8 @@ may change a fact becomes a draft in `context/grants_pending/` for a human. Offl
 ## Submitted version and reproducing it later (for the evaluator)
 
 **Set this date first, in the same terminal, before any command: `EVAL_TODAY=2026-11-27`.** That is the frozen
-reference date: the date of the final eval (Run B). The repo was submitted on 2026-12-03, and the results hold
-for 2026-11-27 whatever day you run it.
+reference date for the final eval (Run B). Run B itself ran on 2026-11-29 with this reference date; the repo was
+submitted on 2026-12-03, and the results hold for 2026-11-27 whatever day you run it.
 - bash: `export EVAL_TODAY=2026-11-27`
 - PowerShell: `$env:EVAL_TODAY = "2026-11-27"`
 - cmd: `set EVAL_TODAY=2026-11-27`

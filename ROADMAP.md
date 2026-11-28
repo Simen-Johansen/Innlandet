@@ -29,7 +29,7 @@ Every arrow is a file and a check.
 | W45 (2–8.11) | Test set and evaluation harness, live grant fetcher | 009, 010 | `w45-eval` |
 | W46 (9–15.11) | Safe operation and first stress test, then live demo | 011, 012 | `demo` |
 | W47 (16–22.11) | Evidence and correct facts; slipped to 24.11 (see Run-in) | 013, 014 | – |
-| W48 (23–29.11) | Facts + triage + judge + Run A 24.11, corpus 25.11, Run B 26.11, writing | 013, 014 | – |
+| W48 (23–29.11) | Facts + triage + judge + Run A 24.11, corpus 25.11, Run B 29.11 (moved), writing | 013, 014 | – |
 | Thu 03.12 11:59 | White paper on Wiseflow | – | `exam` (never moved) |
 
 ## Run-in to the exam (updated Tue 24.11)
@@ -65,7 +65,7 @@ different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 
 | Tue 24.11 | Run A (3-run eval) starts | Run B needs a separate 24 h window before 03.12 |
 | Wed 25.11 | live `update_grants.py` + `catalog.py` | index is stale now; a run on/after 25.11 also holds for `EVAL_TODAY=2026-12-03` |
 | Wed 25.11 evening | corpus refreshed, every `expected.json` re-checked | Run B only means something on the refreshed corpus |
-| Thu 26.11 | Run B (final 3-run eval), once Run A has left the 24 h window | the raw log for the appendix |
+| Sun 29.11 | Run B (final 3-run eval; moved from 26.11, reference date `EVAL_TODAY=2026-11-27`), once the 24 h spend allows | the raw log for the appendix |
 | Sun 29.11 | white-paper full draft | two days left for numbers and appendices |
 | Wed 02.12 | freeze steps, `git tag exam`, push (only on explicit go-ahead) | tag never moves |
 | Thu 03.12 11:59 | Wiseflow (aim for Wed evening) | deadline |
@@ -98,7 +98,7 @@ different 24 h windows. Pre-flight before any paid run: `out/HALTED` absent, 24 
    change matches). Log the edit in `docs/prompt-log.md`. Free check: `python harness/run.py --offline --dry-run`.
 4. Fix anything Run A showed.
 
-### Thu 26.11
+### Sun 29.11 (planned for Thu 26.11; moved)
 1. **C5 Run B, task 013** (~2.9 USD, final): pre-flight, `python eval/run_eval.py`; save the raw log for the appendix;
    update `docs/stress/013-stress-dependency.md` (1-run 23/23, 3-run A and B, ~2.9 USD) and tick task 013.
 2. The corpus is frozen after this run: `eval/corpus/grants/` is not touched again.

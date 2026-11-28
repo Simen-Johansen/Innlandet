@@ -1,0 +1,29 @@
+python eval/run_eval.py --case 08_boundary_not_in_frivillighetsregisteret --runs 1
+started 2026-11-26_150035, GRANTS_DIR=eval/corpus/grants
+
+===== 08_boundary_not_in_frivillighetsregisteret run 1/1: exit 1, FAIL =====
+      ok: SYNTETISK TESTLAG (FIKTIV, IKKE ET EKTE ORGNR) (123456785)
+[1] entity  check PASS
+      arrangementsutvikling_innen_idrett: Arrangementsutvikling innen idrett
+      fondsordning_store_idrettsarrangementer: Fondsordning til store nasjonale og internasjonale arrangementer innen idrett
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      regionalt_kulturfond_innlandet: Regionalt kulturfond Innlandet
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check FAIL
+      FAIL: arrangementsutvikling_innen_idrett.md: need fetched_at <= checked_at <= today (2026-11-11, 2026-11-26, 2026-11-05)
+  FAIL: exit 1, expected [0]
+  FAIL: tilskudd_til_friluftslivsaktivitet: expected match, got nothing
+  FAIL: test_synthetic_frivillighetsregisteret: expected filter reason not_in_frivillighetsregisteret, got None
+  FAIL: hamar_driftstilskudd_frivillige_organisasjoner: expected reject, got nothing
+  FAIL: tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: expected reject, got nothing
+  FAIL: tilskudd_til_folkehelse_og_livskvalitet: expected filter reason org_form_not_allowed, got None
+  FAIL: fondsordning_store_idrettsarrangementer: expected reject, got nothing
+  FAIL: regionalt_kulturfond_innlandet: expected reject, got nothing
+
+case                                         pass  result  detail
+08_boundary_not_in_frivillighetsregisteret    0/1  FAIL    exit 1, expected [0]
+total: 0/1 cases passed, model cost 0.00 USD
