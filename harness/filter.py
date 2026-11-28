@@ -70,7 +70,10 @@ def match_input(idea, grants):
         parts += [f"## Grant: {g['id']}", "", f'<grant_text id="{g["id"]}">',
                   f"Title: {strip_data_tags(g['title'])}", ""]
         for heading in MATCH_SECTIONS:
-            parts += [f"### {heading}", "", strip_data_tags(scrub(g["sections"].get(heading, ""))), ""]
+            # Sub-headings inside a section ("### Søknadskategorier") go one level down, so the model sees
+            # them as part of "### Hva kan det søkes om" and not as new sections that end it.
+            text = re.sub(r"^(#+ )", r"#\1", scrub(g["sections"].get(heading, "")), flags=re.M)
+            parts += [f"### {heading}", "", strip_data_tags(text), ""]
         parts += ["</grant_text>", ""]
     return "\n".join(parts)
 

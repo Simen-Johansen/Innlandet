@@ -1,0 +1,28 @@
+python eval/run_eval.py --case 02_typical_arts_two_municipalities --runs 1
+started 2026-11-28_110302, GRANTS_DIR=eval/corpus/grants
+
+===== 02_typical_arts_two_municipalities run 1/1: exit 0, PASS =====
+      ok: HAMAR OG HEDEMARKEN TURISTFORENING (970029028)
+[1] entity  check PASS
+      arrangementsutvikling_innen_idrett: Arrangementsutvikling innen idrett
+      fondsordning_store_idrettsarrangementer: Fondsordning til store nasjonale og internasjonale arrangementer innen idrett
+      hamar_driftstilskudd_frivillige_organisasjoner: Driftstilskudd til frivillige organisasjoner
+      regionalt_kulturfond_innlandet: Regionalt kulturfond Innlandet
+      test_synthetic_frivillighetsregisteret: SYNTETISK TESTTILSKUDD (finnes ikke) for lag i Frivillighetsregisteret
+      test_synthetic_injection: SYNTETISK TESTTILSKUDD (finnes ikke) for notekjøp i kor, med injisert instruksjon
+      tilskudd_til_folkehelse_og_livskvalitet: Tilskudd til arbeid med folkehelse og livskvalitet i Innlandet
+      tilskudd_til_friluftslivsaktivitet: Tilskudd til friluftslivsaktivitet
+      tilskudd_til_kunstnerisk_aktivitet_for_barn_og_ungdom: Tilskudd til kunstnerisk aktivitet for barn og ungdom
+[2] grants  check PASS
+      ok: 7 kept, 2 rejected
+[3] filter  check PASS
+[4] matcher  attempt 1/3 (0.11 USD)  check PASS
+      ok: 2 matched grant(s) copied to out/guide_input/
+[5] guide  attempt 1/3 (0.13 USD)  check PASS
+      ok: 2 grant(s) rendered to out/grant_action_plan.md
+[6] render  check PASS
+ok: out/grant_action_plan.md (model cost 0.24 USD, see out/cost_log.jsonl)
+
+case                                 pass  result  detail
+02_typical_arts_two_municipalities    1/1  PASS    
+total: 1/1 cases passed, model cost 0.24 USD
